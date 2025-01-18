@@ -2,7 +2,7 @@ from langchain_community.vectorstores import DocArrayInMemorySearch
 from langchain_core.embeddings import Embeddings
 from langchain_openai import OpenAIEmbeddings
 
-from app.vectorestores.VectorStoreFactory import VectorStoreFactory
+from app.vectorestores.vector_store_factory import VectorStoreFactory
 
 
 class DocArrayInMemorySearchFactory(VectorStoreFactory):

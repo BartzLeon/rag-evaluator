@@ -1,6 +1,6 @@
 from langchain_core.prompts import PromptTemplate
 
-from app.promt_templates.PromptTemplateFactory import PromptTemplateFactory
+from app.promt_templates.prompt_template_factory import PromptTemplateFactory
 
 
 class SimplePromptTemplate(PromptTemplateFactory):

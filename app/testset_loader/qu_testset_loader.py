@@ -1,5 +1,5 @@
 from giskard.rag import QATestset
-from app.testset_loader.TestsetLoader import TestSetLoader
+from app.testset_loader.testset_loader import TestSetLoader
 import os
 
 class QATestsetLoader(TestSetLoader):

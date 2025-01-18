@@ -1,6 +1,6 @@
-from app.evaluate.Evaluator import Evaluator
-from app.evaluate.GiskartEvaluator import GiskartEvaluator
-from app.evaluate.RagasEvaluator import RagasEvaluator
+from app.evaluate.evaluator import Evaluator
+from app.evaluate.giskart_evaluator import GiskartEvaluator
+from app.evaluate.ragas_evaluator import RagasEvaluator
 
 
 class EvaluatorFactory:
