@@ -1,20 +1,19 @@
 from celery import Celery
 import os
 from dotenv import load_dotenv
-
+import logging
 from app.DocumnetLoader.CachedDocumentsLoader import CachedDocumentsLoader
-from app.DocumnetLoader.LoaderAndSplitter import LoaderAndSplitter
-from app.DocumnetLoader.WebBaseLoaderAndSplitter import WebBaseLoaderAndSplitter
 from app.chat_models.factory import ChatModelFactory
 from app.db import async_session
-from app.evaluate.main import EvaluateMain
+from app.evaluate.EvaluatorFactory import EvaluatorFactory
+from app.evaluate.RagasEvaluator import RagasEvaluator
 from app.models import RatingResult
 from app.promt_templates.SimplePromptTemplate import SimplePromptTemplate
 from app.testset_loader.QATestsetLoader import QATestsetLoader
 from app.vectorestores.ChromaDBFactory import ChromaDBFactory
-from app.vectorestores.DocArrayInMemorySearchFactory import DocArrayInMemorySearchFactory
 
 load_dotenv()
+logging.getLogger("httpx").setLevel(logging.WARNING)
 
 BROKER_URL = os.getenv("CELERY_BROKER_URL")
 RESULT_BACKEND = os.getenv("CELERY_RESULT_BACKEND")
@@ -46,11 +45,11 @@ async def _process_chat_request_async(request_data: dict):
             await db.commit()
             await db.refresh(rating)
             print(f"✅ New RatingResult created with ID: {rating.id}")
+            print(RagasEvaluator.__name__)
 
-            import time
-            time.sleep(10)
 
-            evaluator = EvaluateMain(
+            evaluator = EvaluatorFactory.get_model(
+                evaluator=RagasEvaluator.__name__,
                 testset_loader = QATestsetLoader('app/data/testsets/test-set.jsonl'),
                 prompt_template= SimplePromptTemplate(),
                 model=model,
