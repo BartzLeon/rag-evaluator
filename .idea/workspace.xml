@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8abceb76-8e91-4d15-b2af-e7de3f0247fb" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/JupyterProject.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/DocumnetLoader/CachedDocumentsLoader.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/DocumnetLoader/LoaderAndSplitter.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/DocumnetLoader/WebBaseLoaderAndSplitter.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/chat_models/base.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/chat_models/config.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/chat_models/factory.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/chat_models/flant5_creator.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/chat_models/llama_creator.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/chat_models/mistralai_creator.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/chat_models/openai_creator.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/chat_models/qwen_creator.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/data/chroma_storage/5e5a1243-deb4-47e7-b947-f7feb7b15245/data_level0.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/data/chroma_storage/5e5a1243-deb4-47e7-b947-f7feb7b15245/header.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/data/chroma_storage/5e5a1243-deb4-47e7-b947-f7feb7b15245/length.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/data/chroma_storage/5e5a1243-deb4-47e7-b947-f7feb7b15245/link_lists.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/data/chroma_storage/chroma.sqlite3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/data/chroma_storage/f70eeae4-4c46-4d3f-84d7-85b0e54925d8/data_level0.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/data/chroma_storage/f70eeae4-4c46-4d3f-84d7-85b0e54925d8/header.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/data/chroma_storage/f70eeae4-4c46-4d3f-84d7-85b0e54925d8/length.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/data/chroma_storage/f70eeae4-4c46-4d3f-84d7-85b0e54925d8/link_lists.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/data/documents/ml-school.pkl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/data/documents/web-scraping.pkl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/data/testsets/test-set.jsonl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/db.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/dto/process_request_dto.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/evaluate/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/promt_templates/PromptTemplateFactory.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/promt_templates/SimplePromptTemplate.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/tasks.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/testset_loader/QATestsetLoader.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/testset_loader/TestsetLoader.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/vectorestores/ChromaDBFactory.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/vectorestores/DocArrayInMemorySearchFactory.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/vectorestores/VectorStoreFactory.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/websocket.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/worker.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backup/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backup/.secret" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backup/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backup/models.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backup/rag-eval-svpino.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backup/requirements.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backup/sample.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FlaskConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform)); sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo, NoAppException&#10;for module in [&quot;main.py&quot;, &quot;wsgi.py&quot;, &quot;app.py&quot;]:&#10;    try: locals().update(ScriptInfo(app_import_path=module, create_app=None).load_app().make_shell_context()); print(&quot;\nFlask App: %s&quot; % app.import_name); break&#10;    except NoAppException: pass">
+    <envs>
+      <env key="FLASK_APP" value="app" />
+    </envs>
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform)); sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo, NoAppException&#10;for module in [&quot;main.py&quot;, &quot;wsgi.py&quot;, &quot;app.py&quot;]:&#10;    try: locals().update(ScriptInfo(app_import_path=module, create_app=None).load_app().make_shell_context()); print(&quot;\nFlask App: %s&quot; % app.import_name); break&#10;    except NoAppException: pass" />
+    <option name="myEnvs">
+      <map>
+        <entry key="FLASK_APP" value="app" />
+      </map>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2r7qEmnl8XIW5aOtOEqNZLS1ZFB" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="flattenPackages" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "ignore_missing_gitignore": "true",
+    "last_opened_file_path": "/Users/leonbartz/private/ele/rest-example/JupyterProject/app/chat_models",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "TEXT"
+    ]
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/chat_models" />
+      <recent name="$PROJECT_DIR$/app" />
+      <recent name="$PROJECT_DIR$/app/data" />
+      <recent name="$PROJECT_DIR$/app/data/documents" />
+      <recent name="$PROJECT_DIR$/app/vectorestores" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/backup" />
+      <recent name="$PROJECT_DIR$/app/TestsetLoader" />
+      <recent name="$PROJECT_DIR$/app" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-PY-243.22562.220" />
+        <option value="bundled-python-sdk-0fc6c617c4bd-9a18a617cbe4-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-243.22562.220" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8abceb76-8e91-4d15-b2af-e7de3f0247fb" name="Changes" comment="" />
+      <created>1735920351507</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1735920351507</updated>
+      <workItem from="1735920352548" duration="5293000" />
+      <workItem from="1736515957653" duration="602000" />
+      <workItem from="1736622436856" duration="10028000" />
+      <workItem from="1736792498039" duration="4554000" />
+      <workItem from="1736862316174" duration="10578000" />
+      <workItem from="1737043866708" duration="573000" />
+      <workItem from="1737046192738" duration="43448000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="jupyter-line">
+          <url>file://$PROJECT_DIR$/backup/rag-eval-svpino.ipynb</url>
+          <line>88</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

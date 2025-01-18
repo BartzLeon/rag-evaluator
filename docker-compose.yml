@@ -1,0 +1,45 @@
+services:
+  web:
+    build: .
+    container_name: fastapi_app
+    ports:
+      - "9876:9876"
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+      - redis
+
+  db:
+    image: postgres:13
+    container_name: postgres_db
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: fastapi_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  redis:
+    image: redis:7
+    container_name: redis
+    ports:
+      - "6380:6379"
+
+  worker:
+    build: .
+    container_name: celery_worker
+    command: >
+      sh -c "watchmedo auto-restart --directory=./ --pattern=*.py --recursive -- celery -A app.tasks.celery_app worker --loglevel=info --pool=solo"
+    volumes:
+      - .:/app
+    env_file:
+      - .env
+    depends_on:
+      - redis
+      - db
+
+volumes:
+  postgres_data:
