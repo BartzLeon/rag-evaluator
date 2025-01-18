@@ -23,3 +23,5 @@ langchain_chroma
 langchain_mistralai
 langchain-huggingface
 langchain_core
+ragas
+pandas
