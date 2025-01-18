@@ -1,5 +1,5 @@
 import pickle
-from app.DocumnetLoader.LoaderAndSplitter import LoaderAndSplitter
+from app.document_loader.loader_and_splitter import LoaderAndSplitter
 import os
 
 class CachedDocumentsLoader(LoaderAndSplitter):

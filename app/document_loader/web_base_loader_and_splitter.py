@@ -1,7 +1,7 @@
 from langchain_community.document_loaders import WebBaseLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 
-from app.DocumnetLoader.LoaderAndSplitter import LoaderAndSplitter
+from app.document_loader.loader_and_splitter import LoaderAndSplitter
 
 
 class WebBaseLoaderAndSplitter(LoaderAndSplitter):

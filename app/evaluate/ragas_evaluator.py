@@ -1,5 +1,5 @@
 from pandas import DataFrame
-from app.evaluate.Evaluator import Evaluator
+from app.evaluate.evaluator import Evaluator
 from ragas import evaluate as ragas_evaluate, EvaluationDataset
 
 

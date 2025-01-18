@@ -6,10 +6,10 @@ from langchain_core.output_parsers import StrOutputParser
 from langchain_core.runnables import RunnablePassthrough
 from langchain_openai import OpenAIEmbeddings
 
-from app.DocumnetLoader.LoaderAndSplitter import LoaderAndSplitter
-from app.promt_templates import PromptTemplateFactory
-from app.testset_loader.TestsetLoader import TestSetLoader
-from app.vectorestores.VectorStoreFactory import VectorStoreFactory
+from app.document_loader.loader_and_splitter import LoaderAndSplitter
+from app.promt_templates import prompt_template_factory
+from app.testset_loader.testset_loader import TestSetLoader
+from app.vectorestores.vector_store_factory import VectorStoreFactory
 
 
 class Evaluator(ABC):

@@ -2,15 +2,15 @@ from celery import Celery
 import os
 from dotenv import load_dotenv
 import logging
-from app.DocumnetLoader.CachedDocumentsLoader import CachedDocumentsLoader
+from app.document_loader.cached_documents_loader import CachedDocumentsLoader
 from app.chat_models.factory import ChatModelFactory
 from app.db import async_session
-from app.evaluate.EvaluatorFactory import EvaluatorFactory
-from app.evaluate.RagasEvaluator import RagasEvaluator
+from app.evaluate.evaluator_factory import EvaluatorFactory
+from app.evaluate.ragas_evaluator import RagasEvaluator
 from app.models import RatingResult
-from app.promt_templates.SimplePromptTemplate import SimplePromptTemplate
-from app.testset_loader.QATestsetLoader import QATestsetLoader
-from app.vectorestores.ChromaDBFactory import ChromaDBFactory
+from app.promt_templates.simple_prompt_template import SimplePromptTemplate
+from app.testset_loader.qu_testset_loader import QATestsetLoader
+from app.vectorestores.chroma_db_factory import ChromaDBFactory
 
 load_dotenv()
 logging.getLogger("httpx").setLevel(logging.WARNING)

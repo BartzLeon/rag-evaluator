@@ -1,6 +1,6 @@
 import os
 from giskard.rag import evaluate as giskart_evaluate
-from app.evaluate.Evaluator import Evaluator
+from app.evaluate.evaluator import Evaluator
 import time
 from giskard.llm.client.litellm import LiteLLMClient
 from giskard.rag import KnowledgeBase
