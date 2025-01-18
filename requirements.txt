@@ -1,0 +1,25 @@
+# infra
+fastapi
+uvicorn[standard]
+sqlalchemy[asyncio]
+asyncpg
+alembic
+celery
+redis
+watchdog
+
+# langchain
+langchain>=0.3.14
+langchain-openai
+langchain_experimental
+langchain_community
+pydantic>=2
+docarray
+ruff
+bs4
+ipytest
+giskard[llm]
+langchain_chroma
+langchain_mistralai
+langchain-huggingface
+langchain_core
