@@ -7,7 +7,7 @@ from langchain_core.runnables import RunnablePassthrough
 from langchain_openai import OpenAIEmbeddings
 
 from app.document_loader.loader_and_splitter import LoaderAndSplitter
-from app.promt_templates import prompt_template_factory
+from app.promt_templates.prompt_template_factory import PromptTemplateFactory
 from app.testset_loader.testset_loader import TestSetLoader
 from app.vectorestores.vector_store_factory import VectorStoreFactory
 

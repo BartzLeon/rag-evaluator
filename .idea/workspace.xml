@@ -4,25 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8abceb76-8e91-4d15-b2af-e7de3f0247fb" name="Changes" comment="add support for ragas as an evaluator">
+    <list default="true" id="8abceb76-8e91-4d15-b2af-e7de3f0247fb" name="Changes" comment="rename to match conventions">
       <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/dto/create_documents_dto.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/dto/create_testset_dto.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/dto/source_dto.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/backup/.env" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/backup/.secret" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/DocumnetLoader/CachedDocumentsLoader.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/document_loader/cached_documents_loader.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/DocumnetLoader/LoaderAndSplitter.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/document_loader/loader_and_splitter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/DocumnetLoader/WebBaseLoaderAndSplitter.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/document_loader/web_base_loader_and_splitter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/evaluate/Evaluator.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/evaluate/evaluator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/evaluate/EvaluatorFactory.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/evaluate/evaluator_factory.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/evaluate/GiskartEvaluator.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/evaluate/giskart_evaluator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/evaluate/RagasEvaluator.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/evaluate/ragas_evaluator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/promt_templates/PromptTemplateFactory.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/promt_templates/prompt_template_factory.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/promt_templates/SimplePromptTemplate.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/promt_templates/simple_prompt_template.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/data/chroma_storage/chroma.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/app/data/chroma_storage/chroma.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/data/chroma_storage/f70eeae4-4c46-4d3f-84d7-85b0e54925d8/length.bin" beforeDir="false" afterPath="$PROJECT_DIR$/app/data/chroma_storage/f70eeae4-4c46-4d3f-84d7-85b0e54925d8/length.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/document_loader/cached_documents_loader.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/document_loader/cached_documents_loader.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/dto/process_request_dto.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/dto/process_request_dto.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/evaluate/evaluator.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/evaluate/evaluator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/tasks.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/tasks.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/testset_loader/QATestsetLoader.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/testset_loader/qu_testset_loader.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/testset_loader/TestsetLoader.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/testset_loader/testset_loader.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/vectorestores/ChromaDBFactory.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/vectorestores/chroma_db_factory.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/vectorestores/DocArrayInMemorySearchFactory.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/vectorestores/doc_array_in_memory_search_factory.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/vectorestores/VectorStoreFactory.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/vectorestores/vector_store_factory.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/testset_loader/qu_testset_loader.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/testset_loader/qa_testset_loader.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/vectorestores/chroma_db_factory.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/vectorestores/chroma_db_factory.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,33 +64,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore_missing_gitignore&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/leonbartz/private/ele/rest-example/JupyterProject/app/evaluate&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "ignore_missing_gitignore": "true",
+    "last_opened_file_path": "/Users/leonbartz/private/ele/rest-example/JupyterProject/app/dto",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
-      &quot;TEXT&quot;
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "TEXT"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/dto" />
+      <recent name="$PROJECT_DIR$/app" />
       <recent name="$PROJECT_DIR$/app/evaluate" />
       <recent name="$PROJECT_DIR$/app/chat_models" />
-      <recent name="$PROJECT_DIR$/app" />
       <recent name="$PROJECT_DIR$/app/data" />
-      <recent name="$PROJECT_DIR$/app/data/documents" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/backup" />
@@ -120,7 +120,7 @@
       <workItem from="1736792498039" duration="4554000" />
       <workItem from="1736862316174" duration="10578000" />
       <workItem from="1737043866708" duration="573000" />
-      <workItem from="1737046192738" duration="56117000" />
+      <workItem from="1737046192738" duration="64986000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -138,7 +138,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737233281420</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="rename to match conventions">
+      <option name="closed" value="true" />
+      <created>1737233622438</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1737233622438</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -147,7 +155,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init" />
     <MESSAGE value="add support for ragas as an evaluator" />
-    <option name="LAST_COMMIT_MESSAGE" value="add support for ragas as an evaluator" />
+    <MESSAGE value="rename to match conventions" />
+    <option name="LAST_COMMIT_MESSAGE" value="rename to match conventions" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
