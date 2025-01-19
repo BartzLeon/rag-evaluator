@@ -84,6 +84,8 @@ async def create_test_set(testset_dto: CreateTestsetDTO, db: AsyncSession = Depe
             name=testset_dto.name,
             model_type=testset_dto.model_type,
             document=testset_dto.document,
+            num_questions=testset_dto.num_questions,
+            agent_description=testset_dto.agent_description,
         )
         db.add(test_set)
         await db.commit()

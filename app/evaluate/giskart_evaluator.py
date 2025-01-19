@@ -1,5 +1,9 @@
 import os
+import openai
+from giskard.llm.client.openai import OpenAIClient
 from giskard.rag import evaluate as giskart_evaluate
+
+from app.chat_models import config
 from app.evaluate.evaluator import Evaluator
 import time
 from giskard.llm.client.litellm import LiteLLMClient
@@ -8,7 +12,7 @@ import pandas as pd
 
 
 class GiskartEvaluator(Evaluator):
-    MODEL = "gpt-3.5-turbo"
+    MODEL = "gpt-4-turbo"
 
     def generate_report(self):
         df = pd.DataFrame([d.page_content for d in self.documents], columns=["text"])
@@ -22,7 +26,7 @@ class GiskartEvaluator(Evaluator):
 
         report = giskart_evaluate(
             answer_fn,
-            llm_client=None,
+            llm_client=OpenAIClient(self.MODEL, openai.OpenAI(api_key=config.OPENAI_API_KEY)),
             testset=self.testset,
             knowledge_base=knowledge_base
         )

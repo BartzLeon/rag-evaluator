@@ -1,12 +1,12 @@
 # Eval Process
 
 ## Models
-test-set generation model default gpt-3.5-turbo
+test-set generation model default gpt-4-turbo
 vektor store embeddings model default text-embedding-3-large
 
 model to be tested
 
-model evaluating the answers
+model evaluating the answers default gpt-4-turbo
 
 
 ## Documents
@@ -59,8 +59,10 @@ curl -X POST "http://localhost:9876/documents/" \
 curl -X POST "http://localhost:9876/testsets/" \
 -H "Content-Type: application/json" \
 -d '{
-    "model_type": "gpt-3.5-turbo",
+    "model_type": "gpt-4-turbo",
     "document": 1,
-    "name": "web-scraping-001-001"
+    "name": "web-scraping-001-001",
+    "num_questions": 100,
+    "agent_description": "A chatbot answering questions about products and reviews"
 }'
 ```
