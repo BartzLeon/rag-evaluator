@@ -4,7 +4,7 @@ from ragas import evaluate as ragas_evaluate, EvaluationDataset
 
 
 class RagasEvaluator(Evaluator):
-    MODEL = "gpt-3.5-turbo"
+    MODEL = "gpt-4-turbo"
 
 
     def generate_report(self):

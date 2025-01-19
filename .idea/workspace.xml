@@ -4,25 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8abceb76-8e91-4d15-b2af-e7de3f0247fb" name="Changes" comment="add document create request">
+    <list default="true" id="8abceb76-8e91-4d15-b2af-e7de3f0247fb" name="Changes" comment="add testset creation">
       <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/backup/.env" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/backup/.secret" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/app/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/chat_models/factory.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/chat_models/factory.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/chat_models/flant5_creator.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/chat_models/zephyr_creator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/chat_models/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/chat_models/config.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/data/chroma_storage/chroma.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/app/data/chroma_storage/chroma.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/db.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/db.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/document_loader/cached_documents_loader.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/document_loader/cached_documents_loader.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dto/create_testset_dto.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/dto/create_testset_dto.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dto/process_request_dto.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/dto/process_request_dto.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/evaluate/evaluator.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/evaluate/evaluator.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/evaluate/giskart_evaluator.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/evaluate/giskart_evaluator.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/evaluate/ragas_evaluator.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/evaluate/ragas_evaluator.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/tasks.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/tasks.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backup/rag-eval-svpino.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/backup/rag-eval-svpino.ipynb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +113,7 @@
       <workItem from="1736792498039" duration="4554000" />
       <workItem from="1736862316174" duration="10578000" />
       <workItem from="1737043866708" duration="573000" />
-      <workItem from="1737046192738" duration="73470000" />
+      <workItem from="1737046192738" duration="75813000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -154,7 +147,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737246647134</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="add testset creation">
+      <option name="closed" value="true" />
+      <created>1737296718115</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1737296718115</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -165,7 +166,8 @@
     <MESSAGE value="add support for ragas as an evaluator" />
     <MESSAGE value="rename to match conventions" />
     <MESSAGE value="add document create request" />
-    <option name="LAST_COMMIT_MESSAGE" value="add document create request" />
+    <MESSAGE value="add testset creation" />
+    <option name="LAST_COMMIT_MESSAGE" value="add testset creation" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
