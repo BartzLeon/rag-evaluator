@@ -1,4 +1,13 @@
-Eval Process
+# Eval Process
+
+## Models
+test-set generation model default gpt-3.5-turbo
+vektor store embeddings model default text-embedding-3-large
+
+model to be tested
+
+model evaluating the answers
+
 
 ## Documents
 - create from input
@@ -19,7 +28,8 @@ curl -X POST "http://localhost:9876/process/" \
 -H "Content-Type: application/json" \
 -d '{
 "model_type": "openai",
-"dataset": 9,
+"dataset": 1,
+"testset": 1
 }'
 ```
 
@@ -42,5 +52,15 @@ curl -X POST "http://localhost:9876/documents/" \
             "url": "https://web-scraping.dev/reviews"
         }
     ]
+}'
+```
+
+```bash
+curl -X POST "http://localhost:9876/testsets/" \
+-H "Content-Type: application/json" \
+-d '{
+    "model_type": "gpt-3.5-turbo",
+    "document": 1,
+    "name": "web-scraping-001-001"
 }'
 ```

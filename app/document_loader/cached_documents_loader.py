@@ -11,5 +11,5 @@ class CachedDocumentsLoader(LoaderAndSplitter):
         self.url = url
 
     def load_and_split(self):
-        with open(self.DOCUMENT_FOLDER + self.url, "rb") as f:
+        with open(self.DOCUMENT_FOLDER + str(self.url) + ".pkl", "rb") as f:
             return pickle.load(f)

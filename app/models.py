@@ -78,13 +78,18 @@ class Testset(Base):
     created_at = Column(DateTime, nullable=False, default=datetime.now())
     status = Column(String, nullable=False, default="requested")
     model_type = Column(String, nullable=False)
-    document_id = Column(Integer, nullable=False)
+    document = Column(Integer, nullable=False)
+    num_questions = Column(Integer, nullable=False, default=60)
+    agent_description = Column(String, nullable=False, default="A chatbot answering questions about the Machine Learning School Website")
 
 class TestsetCreate(BaseModel):
     name: str
     created_at: str = None
     status: str = None
     model_type: str = None
+    document: int = None
+    num_questions: int = 60
+    agent_description: str = "A chatbot answering questions about the Machine Learning School Website"
 
 class TestsetRead(TestsetCreate):
     id: int
@@ -92,6 +97,9 @@ class TestsetRead(TestsetCreate):
     created_at: str
     status: str
     model_type: str
+    document: int
+    num_questions: int
+    agent_description: str
 
     class Config:
         orm_mode = True

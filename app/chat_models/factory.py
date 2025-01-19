@@ -3,7 +3,7 @@ from langchain_core.language_models import BaseChatModel
 from .llama_creator import LlamaChatModelCreator
 from .mistralai_creator import MistralAIChatModelCreator
 from .openai_creator import OpenAIChatModelCreator
-from .flant5_creator import ZephyrModelCreator
+from .zephyr_creator import ZephyrModelCreator
 from .qwen_creator import QwenModelCreator
 
 

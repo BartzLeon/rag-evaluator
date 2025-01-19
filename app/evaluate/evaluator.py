@@ -48,7 +48,7 @@ class Evaluator(ABC):
         self.prompt = self.prompt_template.get_template()
         self.chain = self.build_chain(self.model, self.prompt, self.retriever)
 
-        self.generate_report()
+        return self.generate_report()
 
     @abstractmethod
     def generate_report(self):

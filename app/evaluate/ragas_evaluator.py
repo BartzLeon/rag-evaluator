@@ -13,6 +13,7 @@ class RagasEvaluator(Evaluator):
         evaluation_dataset = EvaluationDataset.from_list(dataset)
 
         result = ragas_evaluate(
+            llm=None,
             dataset=evaluation_dataset,
             #metrics=[LLMContextRecall(), Faithfulness(), FactualCorrectness()],
         )

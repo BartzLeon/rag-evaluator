@@ -22,6 +22,7 @@ class GiskartEvaluator(Evaluator):
 
         report = giskart_evaluate(
             answer_fn,
+            llm_client=None,
             testset=self.testset,
             knowledge_base=knowledge_base
         )
