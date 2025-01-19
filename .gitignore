@@ -1,0 +1,7 @@
+/app/data/chroma_storage/
+/app/data/documents/
+/app/data/reports
+/app/data/testsets
+
+.env.local
+.secret.local

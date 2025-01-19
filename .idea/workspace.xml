@@ -4,18 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8abceb76-8e91-4d15-b2af-e7de3f0247fb" name="Changes" comment="add testset creation">
+    <list default="true" id="8abceb76-8e91-4d15-b2af-e7de3f0247fb" name="Changes" comment="testset creation add num_questions and agent description as request parameters">
       <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/backup/.env" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/backup/.secret" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/app/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/chat_models/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/chat_models/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/data/chroma_storage/chroma.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/app/data/chroma_storage/chroma.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/evaluate/giskart_evaluator.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/evaluate/giskart_evaluator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/evaluate/ragas_evaluator.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/evaluate/ragas_evaluator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backup/rag-eval-svpino.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/backup/rag-eval-svpino.ipynb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +56,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
     "ignore_missing_gitignore": "true",
-    "last_opened_file_path": "/Users/leonbartz/private/ele/rest-example/JupyterProject/app/dto",
+    "last_opened_file_path": "/Users/leonbartz/private/ele/rest-example/JupyterProject",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -79,13 +72,14 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/backup" />
       <recent name="$PROJECT_DIR$/app/dto" />
       <recent name="$PROJECT_DIR$/app" />
       <recent name="$PROJECT_DIR$/app/evaluate" />
-      <recent name="$PROJECT_DIR$/app/chat_models" />
-      <recent name="$PROJECT_DIR$/app/data" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/backup" />
       <recent name="$PROJECT_DIR$/app/TestsetLoader" />
       <recent name="$PROJECT_DIR$/app" />
@@ -113,7 +107,7 @@
       <workItem from="1736792498039" duration="4554000" />
       <workItem from="1736862316174" duration="10578000" />
       <workItem from="1737043866708" duration="573000" />
-      <workItem from="1737046192738" duration="75813000" />
+      <workItem from="1737046192738" duration="76113000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -155,7 +149,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737296718115</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="testset creation add num_questions and agent description as request parameters">
+      <option name="closed" value="true" />
+      <created>1737319171704</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1737319171704</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -167,7 +169,8 @@
     <MESSAGE value="rename to match conventions" />
     <MESSAGE value="add document create request" />
     <MESSAGE value="add testset creation" />
-    <option name="LAST_COMMIT_MESSAGE" value="add testset creation" />
+    <MESSAGE value="testset creation add num_questions and agent description as request parameters" />
+    <option name="LAST_COMMIT_MESSAGE" value="testset creation add num_questions and agent description as request parameters" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
