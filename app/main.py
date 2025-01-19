@@ -8,7 +8,7 @@ from fastapi import FastAPI, APIRouter, Depends
 from app import db
 from app.dto.process_request_dto import ProcessRequestDTO
 from app.websocket import websocket_endpoint
-from app.tasks import process_chat_request, create_documents_request
+from app.tasks import process_chat_request, create_documents_request, create_testset_request
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -83,15 +83,15 @@ async def create_test_set(testset_dto: CreateTestsetDTO, db: AsyncSession = Depe
         test_set = Testset(
             name=testset_dto.name,
             model_type=testset_dto.model_type,
-            document_id=testset_dto.document,
+            document=testset_dto.document,
         )
         db.add(test_set)
         await db.commit()
         await db.refresh(test_set)
 
-        task = create_documents_request.delay(testset_dto.model_dump())
+        task = create_testset_request.delay(testset_dto.model_dump(), test_set.id)
 
-        return {"message": "Test set created", "test_set_id": test_set.id}
+        return {"message": "Test set created", "test_set_id": test_set.id, "task_id": task.id}
     except Exception as e:
         print(f"❌ Error creating test set: {e}")
         raise e
