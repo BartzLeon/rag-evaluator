@@ -1,7 +1,7 @@
 from langchain_community.embeddings import OllamaEmbeddings
-from app.embeddings.base import EmbeddingsCreator
+from app.embeddings.langchain.creator.base import LangchainEmbeddingsCreator
 
-class OllamaEmbeddingsCreator(EmbeddingsCreator):
+class OllamaEmbeddingsCreator(LangchainEmbeddingsCreator):
     def __init__(self, model: str = "ollama/nomic-embed-text:latest", base_url: str = "http://host.docker.internal:11434"):
         self.model = model
         self.base_url = base_url

@@ -1,7 +1,7 @@
 from langchain_openai import OpenAIEmbeddings
-from app.embeddings.base import EmbeddingsCreator
+from app.embeddings.langchain.creator.base import LangchainEmbeddingsCreator
 
-class OpenAIEmbeddingsCreator(EmbeddingsCreator):
+class OpenAIEmbeddingsCreator(LangchainEmbeddingsCreator):
     def __init__(self, dimensions: int = 3072, model: str = "text-embedding-3-large"):
         self.dimensions = dimensions
         self.model = model
