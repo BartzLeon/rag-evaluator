@@ -25,3 +25,5 @@ langchain-huggingface
 langchain_core
 ragas
 pandas
+langchain-ollama
+ollama
