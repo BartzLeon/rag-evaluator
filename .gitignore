@@ -18,3 +18,7 @@ __pycache__/
 
 python_packages/
 .python-version
+
+logs/
+chroma_storage/
+app/data/chroma_storage/
