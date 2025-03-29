@@ -1,13 +1,10 @@
 from langchain_huggingface import ChatHuggingFace, HuggingFaceEndpoint
-from langchain_mistralai.chat_models import ChatMistralAI
-import os
-from langchain_openai.chat_models import ChatOpenAI
 
-from . import config
-from .base import ChatModelCreator
-from .config import OPENAI_API_KEY, OPEN_AI_DEFAULT_MODEL
+from app.chat_models import config
+from app.chat_models.langchain.base import LangChainChatModelCreator
+from app.chat_models.config import OPENAI_API_KEY, OPEN_AI_DEFAULT_MODEL
 
-class LlamaChatModelCreator(ChatModelCreator):
+class LlamaLangChainChatModelCreator(LangChainChatModelCreator):
     def __init__(self, model_name: str = OPEN_AI_DEFAULT_MODEL, temperature: float = 0.7):
         self.api_key = OPENAI_API_KEY
         self.model_name = model_name
@@ -21,6 +18,7 @@ class LlamaChatModelCreator(ChatModelCreator):
             do_sample=False,
             repetition_penalty=1.03,
             huggingfacehub_api_token=config.HUGGINGFACE_API_KEY,
+            model=self.model_name,
         )
 
         return ChatHuggingFace(llm=llm)
