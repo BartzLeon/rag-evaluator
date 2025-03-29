@@ -67,8 +67,7 @@ curl -X POST "http://localhost:9876/testsets/" \
 curl -X POST "http://localhost:9876/process/" \
 -H "Content-Type: application/json" \
 -d '{
-"model_type": "openai",
-"dataset": 1,
+"model_type": "deepseek",
 "testset": 1
 }'
 ```
