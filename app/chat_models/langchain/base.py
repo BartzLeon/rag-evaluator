@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 from langchain_core.language_models.chat_models import BaseChatModel
 
-class ChatModelCreator(ABC):
+class LangChainChatModelCreator(ABC):
 
     @abstractmethod
     def create_model(self) -> BaseChatModel:
