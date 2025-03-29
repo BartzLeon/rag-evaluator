@@ -54,7 +54,7 @@ curl -X POST "http://localhost:9876/documents/" \
 curl -X POST "http://localhost:9876/testsets/" \
 -H "Content-Type: application/json" \
 -d '{
-    "model_type": "gpt-4-turbo",
+    "model_type": "deepseek-r1:7b",
     "document": 1,
     "name": "web-scraping-001-001",
     "num_questions": 100,
