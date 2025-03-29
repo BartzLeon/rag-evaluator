@@ -1,5 +1,5 @@
 from langchain_openai import OpenAIEmbeddings
-from .base import EmbeddingsCreator
+from app.embeddings.base import EmbeddingsCreator
 
 class OpenAIEmbeddingsCreator(EmbeddingsCreator):
     def __init__(self, dimensions: int = 3072, model: str = "text-embedding-3-large"):
