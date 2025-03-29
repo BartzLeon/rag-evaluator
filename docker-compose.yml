@@ -1,45 +1,58 @@
 services:
-  web:
+  rag-web:
     build: .
-    container_name: fastapi_app
+    container_name: rag-web
     ports:
       - "9876:9876"
     volumes:
       - .:/app
     depends_on:
-      - db
-      - redis
+      - rag-db
+      - rag-redis
 
-  db:
+  rag-db:
     image: postgres:13
-    container_name: postgres_db
+    container_name: rag-db
     environment:
       POSTGRES_USER: user
       POSTGRES_PASSWORD: password
-      POSTGRES_DB: fastapi_db
+      POSTGRES_DB: rag_db
     ports:
       - "5432:5432"
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - rag-postgres_data:/var/lib/postgresql/data
 
-  redis:
+  rag-redis:
     image: redis:7
-    container_name: redis
+    container_name: rag-redis
     ports:
       - "6380:6379"
 
-  worker:
+  rag-worker:
     build: .
-    container_name: celery_worker
+    container_name: rag-worker
     command: >
-      sh -c "watchmedo auto-restart --directory=./ --pattern=*.py --recursive -- celery -A app.tasks.celery_app worker --loglevel=info --pool=solo"
+      sh -c "watchmedo auto-restart --directory=./app --pattern=*.py --recursive -- celery -A app.tasks.celery_app worker --loglevel=info --pool=solo"
     volumes:
       - .:/app
     env_file:
       - .env
     depends_on:
-      - redis
-      - db
+      - rag-redis
+      - rag-db
+
+  rag-frontend:
+    image: node:18
+    container_name: rag-frontend
+    working_dir: /app
+    command: ["sh", "-c", "npm install && npm run dev"]
+    ports:
+      - "3333:3333"
+    volumes:
+      - ./frontend:/app
+    environment:
+      - NUXT_HOST=0.0.0.0
+      - NUXT_PORT=3333
 
 volumes:
-  postgres_data:
+  rag-postgres_data:
