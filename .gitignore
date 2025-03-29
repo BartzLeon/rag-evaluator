@@ -17,4 +17,4 @@ __pycache__/
 *.pyz
 
 python_packages/
-
+.python-version
