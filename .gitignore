@@ -6,6 +6,7 @@
 .env.local
 .secret.local
 .idea/
+.vscode/
 
 .DS_Store
 __pycache__/
@@ -14,3 +15,6 @@ __pycache__/
 *.pyd
 *.pyw
 *.pyz
+
+python_packages/
+
