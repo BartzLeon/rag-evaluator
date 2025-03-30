@@ -79,20 +79,22 @@ class Testset(Base):
     created_at = Column(DateTime, nullable=False, default=datetime.now())
     status = Column(String, nullable=False, default="requested")
     model_type = Column(String, nullable=False)
-    embedding_model = Column(String, nullable=False)
+    embedding_model = Column(String, nullable=False, default="openai/text-embedding-3-large")
     document = Column(Integer, nullable=False)
     num_questions = Column(Integer, nullable=False, default=60)
     agent_description = Column(String, nullable=False, default="A chatbot answering questions about the Machine Learning School Website")
+
 
 class TestsetCreate(BaseModel):
     name: str
     created_at: Optional[str] = None
     status: Optional[str] = None
     model_type: Optional[str] = None
-    embedding_model: Optional[str] = None
+    embedding_model: Optional[str] = ""
     document: Optional[int] = None
     num_questions: int = 60
     agent_description: str = "A chatbot answering questions about the Machine Learning School Website"
+
 
 class TestsetRead(BaseModel):
     id: int

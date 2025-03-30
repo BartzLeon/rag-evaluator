@@ -3,7 +3,7 @@ fastapi
 uvicorn[standard]
 sqlalchemy[asyncio]
 asyncpg
-alembic
+alembic==1.11.1
 celery
 redis
 watchdog
