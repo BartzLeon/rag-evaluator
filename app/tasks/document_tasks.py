@@ -7,7 +7,7 @@ from app.models import Document
 from app.document_loader.web_base_loader_and_splitter import WebBaseLoaderAndSplitter
 from app.vectorestores.chroma_db_factory import ChromaDBFactory
 from app.embeddings.factory import EmbeddingsFactory
-from app.logging_config import task_logger
+from app.config.logging_config import task_logger
 
 @celery_app.task
 def create_documents_request(request_data: dict, document_id: int):
@@ -50,7 +50,7 @@ async def _create_documents_async(request_data: dict, document_id: int):
             await db.commit()
             await db.refresh(document)
 
-            embeddings = EmbeddingsFactory.get_embeddings("lite_llm/nomic-embed-text:latest")
+            embeddings = EmbeddingsFactory.get_embeddings("langchain/" + document.embedding_model)
 
             ChromaDBFactory.from_documents(
                 documents=documents,

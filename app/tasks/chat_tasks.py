@@ -11,7 +11,7 @@ from app.document_loader.cached_documents_loader import CachedDocumentsLoader
 from app.vectorestores.chroma_db_factory import ChromaDBFactory
 from app.embeddings.factory import EmbeddingsFactory
 from langchain_core.vectorstores import InMemoryVectorStore
-from app.logging_config import task_logger
+from app.config.logging_config import task_logger
 
 @celery_app.task
 def process_chat_request(request_data: dict):
