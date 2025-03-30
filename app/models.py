@@ -1,3 +1,4 @@
+from typing import Optional, Dict, Any, List, Union
 import time
 from datetime import datetime
 
@@ -27,18 +28,18 @@ class RatingResult(Base):
 
 class RatingResultCreate(BaseModel):
     status: str = 'requested'
-    report_path: str = None
-    scores: str = None
-    knowledge_base_score: float = None
-    model_type: str = None
+    report_path: Optional[str] = None
+    scores: Optional[str] = None
+    knowledge_base_score: Optional[float] = None
+    model_type: Optional[str] = None
 
 class RatingResultRead(RatingResultCreate):
-    id: int = None
+    id: Optional[int] = None
     status: str = 'requested'
-    report_path: str = None
-    scores: str = None
-    knowledge_base_score: float = None
-    model_type: str = None
+    report_path: Optional[str] = None
+    scores: Optional[str] = None
+    knowledge_base_score: Optional[float] = None
+    model_type: Optional[str] = None
 
     class Config:
         orm_mode = True
@@ -56,11 +57,11 @@ class Document(Base):
 
 class DocumentCreate(BaseModel):
     name: str
-    created_at: str = None
-    status: str = None
+    created_at: Optional[str] = None
+    status: Optional[str] = None
     saved_to_chroma: bool = False
 
-class DocumentRead(DocumentCreate):
+class DocumentRead(BaseModel):
     id: int
     name: str
     created_at: str
@@ -78,20 +79,22 @@ class Testset(Base):
     created_at = Column(DateTime, nullable=False, default=datetime.now())
     status = Column(String, nullable=False, default="requested")
     model_type = Column(String, nullable=False)
+    embedding_model = Column(String, nullable=False)
     document = Column(Integer, nullable=False)
     num_questions = Column(Integer, nullable=False, default=60)
     agent_description = Column(String, nullable=False, default="A chatbot answering questions about the Machine Learning School Website")
 
 class TestsetCreate(BaseModel):
     name: str
-    created_at: str = None
-    status: str = None
-    model_type: str = None
-    document: int = None
+    created_at: Optional[str] = None
+    status: Optional[str] = None
+    model_type: Optional[str] = None
+    embedding_model: Optional[str] = None
+    document: Optional[int] = None
     num_questions: int = 60
     agent_description: str = "A chatbot answering questions about the Machine Learning School Website"
 
-class TestsetRead(TestsetCreate):
+class TestsetRead(BaseModel):
     id: int
     name: str
     created_at: str
@@ -100,6 +103,6 @@ class TestsetRead(TestsetCreate):
     document: int
     num_questions: int
     agent_description: str
-
+    embedding_model: str
     class Config:
         orm_mode = True
