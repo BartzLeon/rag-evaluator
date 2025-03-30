@@ -1,14 +1,11 @@
 import os
-
 import openai
 from giskard.llm.client.openai import OpenAIClient
 from giskard.rag import evaluate as giskart_evaluate
-from giskard.llm import set_embedding_model
-from giskard.rag.metrics import CorrectnessMetric, correctness_metric
+from giskard.rag.metrics import correctness_metric
 from giskard.rag.metrics.ragas_metrics import ragas_context_precision, ragas_faithfulness, ragas_answer_relevancy, \
     ragas_context_recall
 
-from app.chat_models import config
 from app.evaluate.evaluator import Evaluator
 import time
 from giskard.rag import KnowledgeBase
