@@ -4,8 +4,8 @@ from app.embeddings.langchain.creator.openai_creator import OpenAIEmbeddingsCrea
 
 class LangChainEmbeddingsFactory():
     _creators = {
-        "nomic-embed-text:latest": OllamaEmbeddingsCreator,
-        "text-embedding-3-large": OpenAIEmbeddingsCreator,
+        "ollama/nomic-embed-text:latest": OllamaEmbeddingsCreator,
+        "openai/text-embedding-3-large": OpenAIEmbeddingsCreator,
     }
 
     def get_embeddings(self, embedding_type: str, **kwargs) -> Embeddings:
