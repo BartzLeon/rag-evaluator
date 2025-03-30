@@ -10,6 +10,8 @@ from giskard.rag import generate_testset
 from app.logging_config import task_logger
 from app.chat_models.factory import ChatModelFactory
 from app.embeddings.factory import EmbeddingsFactory
+from app.embeddings.giskard.factory import GiskardEmbeddingsFactory
+from app.decorator.generate_testsset_decorator import with_testset_callbacks
 
 @celery_app.task
 def create_testset_request(request_data: dict, testset_id: int):
@@ -33,22 +35,32 @@ async def _create_testset_async(testset_data: dict, testset_id: int):
 
             df = pd.DataFrame([d.page_content for d in documents], columns=["text"])
 
-            ChatModelFactory.set_global_llm_model("ollama/deepseek-r1:7b")
+            ChatModelFactory.set_global_llm_model(testset_model.model_type)
+            GiskardEmbeddingsFactory.set_global_embedding_model(testset_model.embedding_model)
 
-            embeddings = EmbeddingsFactory.get_embeddings("giskard/ollama/nomic-embed-text:latest")
-            knowledge_base = KnowledgeBase(
-                df,
-                llm_client=ChatModelFactory.get_lite_llm_model(model_type="giskard/" + testset_model.model_type),
-                embedding_model=embeddings
-            )
+            knowledge_base = KnowledgeBase(df)
 
-            testset = generate_testset(
+            from tqdm import tqdm
+
+            
+            def progress_callback(event: str, data: dict):
+                if event == "progress":
+                    print(f"-------------Progress: {data['current']}/{data['total']} ({data['current']/data['total']*100:.1f}%)")
+                else:
+                    print(f"-------------{event}: {data}")
+
+            @with_testset_callbacks(callback=progress_callback)
+            def my_testset(*args, **kwargs):
+                return generate_testset(*args, **kwargs)
+
+            testset = my_testset(
                 knowledge_base,
                 num_questions=testset_model.num_questions,
                 agent_description=testset_model.agent_description,
             )
 
             ChatModelFactory.reset_global_llm_model()
+            GiskardEmbeddingsFactory.reset_global_embedding_model()
 
             testset.save(f"app/data/testsets/{testset_model.id}.jsonl")
 
