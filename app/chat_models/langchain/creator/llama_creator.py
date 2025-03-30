@@ -1,8 +1,7 @@
 from langchain_huggingface import ChatHuggingFace, HuggingFaceEndpoint
 
-from app.chat_models import config
 from app.chat_models.langchain.base import LangChainChatModelCreator
-from app.chat_models.config import OPENAI_API_KEY, OPEN_AI_DEFAULT_MODEL
+from app.config.llm_config import OPENAI_API_KEY, OPEN_AI_DEFAULT_MODEL
 
 class LlamaLangChainChatModelCreator(LangChainChatModelCreator):
     def __init__(self, model_name: str = OPEN_AI_DEFAULT_MODEL, temperature: float = 0.7):

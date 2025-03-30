@@ -2,9 +2,11 @@ from giskard.llm.embeddings import BaseEmbedding
 from app.embeddings.giskard.creator import GiskardOllamaEmbeddingsCreator
 import os
 import giskard.llm
+from app.config.llm_config import PROVIDER_CONFIGS
 
 class GiskardEmbeddingsFactory():
-    _api_base_url = "http://host.docker.internal:11434"
+
+    _provider_configs = PROVIDER_CONFIGS
 
     _creators = {
         "ollama/nomic-embed-text:latest": GiskardOllamaEmbeddingsCreator,
@@ -21,10 +23,9 @@ class GiskardEmbeddingsFactory():
     def set_global_embedding_model(cls, model_type: str, **kwargs):
         """Set the global embedding model using Giskard's set_embedding_model function."""
         model_provider = model_type.split('/')[0].lower()
-        api_base = cls._api_base_url
+        provider_config = cls._provider_configs.get(model_provider, {})
         
-        if api_base:
-            kwargs['api_base'] = api_base
+        kwargs.update(provider_config)
             
         giskard.llm.set_embedding_model(model_type, **kwargs)
 

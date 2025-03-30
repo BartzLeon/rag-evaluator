@@ -1,5 +1,4 @@
 from langchain_core.language_models import BaseChatModel
-from litellm import completion
 import os
 import giskard.llm
 
@@ -7,6 +6,8 @@ from app.chat_models.langchain.creator.llama_creator import LlamaLangChainChatMo
 from app.chat_models.langchain.creator.ollama_creator import OllamaLangChainChatModelCreator
 from app.chat_models.langchain.creator.openai_creator import OpenAILangChainChatModelCreator
 from app.chat_models.lite_llm.creator.ollama_creator import GiskardOllamaLiteLLMCreator
+
+from app.config.llm_config import PROVIDER_CONFIGS
 
 
 class ChatModelFactory:
@@ -21,13 +22,10 @@ class ChatModelFactory:
 
     _creators_lite_llm = {
         "giskard/deepseek-r1:7b": GiskardOllamaLiteLLMCreator,
+        "giskard/gpt-4-turbo": GiskardOllamaLiteLLMCreator,
     }
 
-    # Default API base URLs for different model types
-    _api_base_urls = {
-        "ollama": "http://host.docker.internal:11434",
-        "openai": "https://api.openai.com/v1",
-    }
+    _provider_configs = PROVIDER_CONFIGS
 
     @classmethod
     def get_langchain_model(cls, model_type: str, **kwargs) -> BaseChatModel:
@@ -55,14 +53,12 @@ class ChatModelFactory:
         
         Args:
             model_type: The type of model to set (e.g., "ollama/deepseek-r1:7b")
-            **kwargs: Additional parameters to pass to set_llm_model (excluding api_base)
+            **kwargs: Additional parameters to pass to set_llm_model
         """
-        # Determine the API base URL based on the model type
         model_provider = model_type.split('/')[0].lower()
-        api_base = cls._api_base_urls.get(model_provider)
+        provider_config = cls._provider_configs.get(model_provider, {})
         
-        if api_base:
-            kwargs['api_base'] = api_base
+        kwargs.update(provider_config)
             
         giskard.llm.set_llm_model(model_type, **kwargs)
 
