@@ -29,12 +29,11 @@ Do want to detect hallucinations?
 
 ---
 
-
 ```bash
 curl -X POST "http://localhost:9876/documents/" \
 -H "Content-Type: application/json" \
 -d '{
-    "name": "web-scraping-005",
+    "name": "web-scraping-006",
     "sources": [
         {
             "name": "products",
@@ -46,7 +45,8 @@ curl -X POST "http://localhost:9876/documents/" \
             "type": "url",
             "url": "https://web-scraping.dev/reviews"
         }
-    ]
+    ],
+    "embedding_model": "openai/text-embedding-3-large"
 }'
 ```
 
@@ -75,3 +75,24 @@ curl -X POST "http://localhost:9876/process/" \
 "testset": 1
 }'
 ```
+
+
+# models/embeddings needed
+## Documents
+1. vectorstrore
+
+## Testset
+1. KnowledgeBase for question generation
+
+## Eval
+1. vectorstore
+2. KnowledgeBase
+3. Model to be evaluated
+4. Evaluator
+
+
+Embedding dimensions must be the same so we will take the same embeddings from the documents in Testsets and Evaluation
+
+Vectorstore => embeddings
+KnowledgeBase => llm & embedding
+Evaluator => llm
