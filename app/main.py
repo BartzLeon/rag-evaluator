@@ -53,7 +53,7 @@ async def get_all_ratings(db: AsyncSession = Depends(get_db)):
         return []
 
 @app.get("/documents/") #response_model=List[RatingResultRead]
-async def get_all_ratings(db: AsyncSession = Depends(get_db)):
+async def get_all_documents(db: AsyncSession = Depends(get_db)):
     try:
         result = await db.execute(select(Document))
         documents = result.scalars().all()
@@ -67,6 +67,7 @@ async def create_document(document_dto: CreateDocumentsDTO, db: AsyncSession = D
     try:
         document = Document(
             name=document_dto.name,
+            embedding_model=document_dto.embedding_model,
         )
         db.add(document)
         await db.commit()
@@ -94,9 +95,10 @@ async def get_test_set(testset_id: int, db: AsyncSession = Depends(get_db)):
     try:
         result = await db.execute(select(Testset).filter(Testset.id == testset_id))
         test_set = result.scalars().first()
-        test_set_loader = QATestsetLoader(f"app/data/testsets/{test_set.id}.jsonl")
-        test_set_content = test_set_loader.load()
-        test_set.questions = test_set_content.to_pandas().to_json()
+        if test_set:
+            test_set_loader = QATestsetLoader(f"app/data/testsets/{test_set.id}.jsonl")
+            test_set_content = test_set_loader.load()
+            test_set.questions = test_set_content.to_pandas().to_json()
         return test_set
     except Exception as e:
         print(f"❌ Error fetching test set: {e}")
@@ -108,6 +110,7 @@ async def create_test_set(testset_dto: CreateTestsetDTO, db: AsyncSession = Depe
         test_set = Testset(
             name=testset_dto.name,
             model_type=testset_dto.model_type,
+            embedding_model=testset_dto.embedding_model,
             document=testset_dto.document,
             num_questions=testset_dto.num_questions,
             agent_description=testset_dto.agent_description,
