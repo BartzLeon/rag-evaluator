@@ -1,7 +1,8 @@
 from langchain_openai.chat_models import ChatOpenAI
 from app.chat_models.langchain.base import LangChainChatModelCreator
-from app.chat_models.config import OPENAI_API_KEY, OPEN_AI_DEFAULT_MODEL
 from pydantic import SecretStr
+
+from app.config.llm_config import OPEN_AI_DEFAULT_MODEL, OPENAI_API_KEY
 
 class OpenAILangChainChatModelCreator(LangChainChatModelCreator):
     model_name_map = {
