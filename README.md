@@ -50,12 +50,16 @@ curl -X POST "http://localhost:9876/documents/" \
 }'
 ```
 
+openai/gpt-4-turbo
+ollama/deepseek-r1:7b
+
 ```bash
 curl -X POST "http://localhost:9876/testsets/" \
 -H "Content-Type: application/json" \
 -d '{
-    "model_type": "deepseek-r1:7b",
-    "document": 1,
+    "model_type": "openai/gpt-4-turbo",
+    "embedding_model": "openai/text-embedding-3-large",
+    "document": 38,
     "name": "web-scraping-001-001",
     "num_questions": 100,
     "agent_description": "A chatbot answering questions about products and reviews"
