@@ -42,12 +42,12 @@ Textverarbeitung:
 	oder Postern ermöglichen.
 \end{description}
 \par
-In den folgenden Abschnitten \ref{sec:hood} bis \ref{sec:template} wird auf diverse Aspekte eingegangen, die Sie beim Erstellen Ihres Dokuments berücksichtigen sollten.
+In den folgenden Abschnitten sec:hood bis sec:template wird auf diverse Aspekte eingegangen, die Sie beim Erstellen Ihres Dokuments berücksichtigen sollten.
 %
 %
 \section{Unter der Haube}
 \label{sec:hood}
-Sie definieren in Ihren \texttt{TEX}-Dokumenten, was Ihre Inhalte sind (Text mit Gliederung, Bilder, Tabellen, Literaturverweise, \ldots) und wie diese jeweils grob aussehen sollen (z.\,B.\ Platzierung von Abbildungen mittels \emph{Gleitumgebungen}, vgl. \cref{sec:figures}).
+Sie definieren in Ihren \texttt{TEX}-Dokumenten, was Ihre Inhalte sind (Text mit Gliederung, Bilder, Tabellen, Literaturverweise, \ldots) und wie diese jeweils grob aussehen sollen (z.\,B.\ Platzierung von Abbildungen mittels \emph{Gleitumgebungen}, vgl. sec:figures).
 \par
 Beim Erstellen des endgültigen Dokuments wendet \LaTeX{} \enquote{unter der Haube} eine ganze Menge Regeln an, die festlegen, wie das alles bestmöglich umgesetzt werden kann. Diese Regeln betreffen z.\,B.\ den Anteil von Text und Bildern pro Seite, Abstände innerhalb von Zeilen, aber auch Sonderfälle wie das Vermeiden einzelner Zeilen eines Abschnitts alleine auf einer Seite (sog.\ \enquote{Schusterjungen} oder \enquote{Hurenkinder}).
 \par
@@ -55,18 +55,18 @@ Im Ergebnis kann es also passieren, dass z.\,B.\ Ihre Abbildungen \enquote{sprin
 \par
 In diesem Zusammenhang ist zu vermeiden, in den Gestaltungsprozess einzugreifen, indem z.\,B. manuell Zeilenumbrüche (\comm{newline} oder \comm{\textbackslash}) eingefügt werden oder Abstände. Ausnahmen bitte nur in begründeten Fällen wie in dieser Vorlage bei der Gestaltung des Deckblatts.
 \par
-Weitere Infos dazu, wie Sie mit dieser Vorlage hier weiterarbeiten können, finden Sie in \cref{sec:template}.
+Weitere Infos dazu, wie Sie mit dieser Vorlage hier weiterarbeiten können, finden Sie in sec:template.
 %
 %
 \section{Überschriften}
 \label{sec:headings}
 Wir nutzen in dieser Vorlage das Kapitel (\comm{chapter}) als höchste Gliederungsebene. Danach kommen Abschnitte (\comm{section}) und Unterabschnitte (\comm{subsection}). Diese drei Ebenen werden nummeriert und erscheinen im Inhaltsverzeichnis. Falls Sie Ihren Text weiter gliedern wollen, gibt es noch den \comm{paragraph}-Befehl.
 \par
-Bitte beachten Sie, dass im Text nie zwei Überschriften direkt aufeinander folgen sollten. Nach einer Überschrift kommt immer erst etwas Text (siehe z.\,B.\ die Kapitelanfänge hier auf Seite~\pageref{chap:formal} und Seite~\pageref{chap:Textsatz}). Für weitere Hinweise vgl. \cref{sec:listOfContents}.
+Bitte beachten Sie, dass im Text nie zwei Überschriften direkt aufeinander folgen sollten. Nach einer Überschrift kommt immer erst etwas Text (siehe z.\,B.\ die Kapitelanfänge hier auf Seite chap:formal und Seite chap:Textsatz). Für weitere Hinweise vgl. sec:listOfContents.
 %
 %
 \section{Absätze}
-Stellen im Text, an denen ein neuer Absatz beginnen soll, können im Quellcode durch \comm{par} markiert werden. Wie diese Absätze im fertigen Dokument genau aussehen, wird durch den Parameter \comm{parskip} in der Dokumentenklasse bestimmt~--~dazu mehr in \cref{sec:template}. Das ist ein großer Vorteil von \LaTeX{}: Der Stil kann jederzeit für das gesamte Dokument einfach verändert werden.
+Stellen im Text, an denen ein neuer Absatz beginnen soll, können im Quellcode durch \comm{par} markiert werden. Wie diese Absätze im fertigen Dokument genau aussehen, wird durch den Parameter \comm{parskip} in der Dokumentenklasse bestimmt~--~dazu mehr in sec:template. Das ist ein großer Vorteil von \LaTeX{}: Der Stil kann jederzeit für das gesamte Dokument einfach verändert werden.
 \par
 Hinweis: Sie erhalten das gleiche Verhalten auch, wenn Sie im Quellcode statt des \comm{par}-Befehls eine leere Zeile stehen lassen. Vielleicht gefällt Ihnen das sogar noch besser.
 %
@@ -75,7 +75,7 @@ Hinweis: Sie erhalten das gleiche Verhalten auch, wenn Sie im Quellcode statt de
 \label{sec:hyphenation}
 Die automatische Silbentrennung in \LaTeX{} funktioniert grundsätzlich gut. Es kann aber immer mal kleinere Probleme und erwünschtes Verhalten geben. Wenn Sie die Trennung für ein bestimmtes Wort beeinflussen möchten, können Sie mit dem \comm{hyphenation}-Befehl manuell die erlaubten Trennstellen spezifizieren. So kann man insbesondere erreichen, dass bestimmte Wörter nie getrennt werden, was z.\,B. für Eigennamen unerwünscht sein könnte.
 \par
-Zum Beispiel werden Wörter, die einen Bindestrich enthalten, \emph{nur} dort getrennt, das kann dazu führen, dass Zeilen nicht richtig dargestellt werden können, was zu einer Warnung führt (siehe \cref{sec:compilation}). In solche Fällen müssten Sie im Quellcode manuell zusätzlich Trennstellen angeben.
+Zum Beispiel werden Wörter, die einen Bindestrich enthalten, \emph{nur} dort getrennt, das kann dazu führen, dass Zeilen nicht richtig dargestellt werden können, was zu einer Warnung führt (siehe sec:compilation). In solche Fällen müssten Sie im Quellcode manuell zusätzlich Trennstellen angeben.
 %
 %
 \section{Aufzählungen}
@@ -88,7 +88,7 @@ Nutzen Sie die Umgebungen
  \item \comm{begin\{labeling\}} \ldots \comm{end\{labeling\}}
 \end{itemize}
 %
-um schöne Listen zu erstellen. Auch hier gilt, dass das genaue Aussehen im Dokument global eingestellt wird, das können Sie jederzeit verändern, dazu mehr in \cref{sec:template}.
+um schöne Listen zu erstellen. Auch hier gilt, dass das genaue Aussehen im Dokument global eingestellt wird, das können Sie jederzeit verändern, dazu mehr in sec:template.
 %
 %
 \section{Abbildungen}
@@ -96,9 +96,9 @@ um schöne Listen zu erstellen. Auch hier gilt, dass das genaue Aussehen im Doku
 %
 Wenn jemand Ihre fertige Arbeit in die Hände bekommt, kann es gut sein, dass sie/er zunächst grob durchblättert, dabei kaum Text liest, aber die Abbildungen anschaut. Aus dieser Erfahrung entstammt die \enquote{Regel}, dass man die wichtigsten Punkte der Arbeit auf diese Weise verstehen können sollte.
 \par
-Abbildungen stehen nie alleine, sondern werden durch die Unterschrift (\emph{caption}) beschrieben. Dabei sollte alles enthalten sein, was notwendig ist, um die Abbildung zu verstehen. Nur in Ausnahmefällen muss man in der Unterschrift auf den Text verweisen. Umgekehrt muss auf jede Abbildung mindestens ein Mal im Text verwiesen werden, dazu siehe auch \cref{sec:references}.
+Abbildungen stehen nie alleine, sondern werden durch die Unterschrift (\emph{caption}) beschrieben. Dabei sollte alles enthalten sein, was notwendig ist, um die Abbildung zu verstehen. Nur in Ausnahmefällen muss man in der Unterschrift auf den Text verweisen. Umgekehrt muss auf jede Abbildung mindestens ein Mal im Text verwiesen werden, dazu siehe auch sec:references.
 \par
-In den folgenden beiden Abschnitten wird zwischen Bildern (in \cref{sec:images}) und Vektorgrafiken (in \cref{sec:vectorGraphcis}) unterschieden, da es sich um ganz unterschiedliche Techniken handelt, die jeweils passend genutzt werden sollten.
+In den folgenden beiden Abschnitten wird zwischen Bildern (in sec:images) und Vektorgrafiken (in sec:vectorGraphcis) unterschieden, da es sich um ganz unterschiedliche Techniken handelt, die jeweils passend genutzt werden sollten.
 \par
 Denken Sie daran, dass nicht alle Menschen alle Farben gleich gut sehen können. Etwa 10\,\% der Männer in Deutschland sind beispielsweise von einer Rot-Grün-Schwäche betroffen. Vielleicht wird Ihre Arbeit auch auf einem Schwarz-Weiß-Drucker gedruckt. Daher sollten Sie Abbildungen im besten Fall so gestalten, dass sie auch ohne Farben verständlich sind.
 %
@@ -117,7 +117,7 @@ Bilder können Sie mit \comm{includegraphics} einbinden. Es reicht (und wird sog
 %
 In aller Regel soll ein Bild nicht alleine im Dokument erscheinen, sondern in einer Umgebung, die die automatische Nummerierung sicherstellt, eine Bildunterschrift hinzufügt und schließlich ermöglicht, dass die Abbildung an einer optimalen Stelle platziert wird (daher auch die Bezeichnung \enquote{Gleitumgebung}. In diesem Fall ist das die \comm{figure}-Umgebung.
 \par
-Für die Umgebung stellen wir ein, wo sie auftauchen darf (dazu siehe auch \cref{sec:hood}). Dabei steht \texttt{t} für ganz oben auf der Seite, \texttt{b} für ganz unten und \texttt{h} für \enquote{hier}, was also die Positionierung innerhalb des Texts meint. Falls Sie mal Platz sparen müssen, sind~\texttt{t} und~\texttt{b} zu bevorzugen.
+Für die Umgebung stellen wir ein, wo sie auftauchen darf (dazu siehe auch sec:hood). Dabei steht \texttt{t} für ganz oben auf der Seite, \texttt{b} für ganz unten und \texttt{h} für \enquote{hier}, was also die Positionierung innerhalb des Texts meint. Falls Sie mal Platz sparen müssen, sind~\texttt{t} und~\texttt{b} zu bevorzugen.
 \par
 Achtung: Viele Inhalte wie Formeln, Code, Diagramme, Visualisierung von Daten, usw.\ sollten \emph{nicht} als Bild eingefügt werden, sondern in einer passenden Form. Dazu siehe den folgenden Abschnitt über Vektorgrafiken.
 %
@@ -136,7 +136,7 @@ Ein Vorteil ist, dass Ihr Dokument so kleiner bleibt. Aber auch, dass die Abbild
 \label{fig:plotFleuret}
 \end{figure}
 %
-Das erlaubt es Ihnen sogar, Ihre Daten, z.\,B.\ aus Experimenten, separat zu halten und entsprechende Abbildungen dynamisch daraus zu generieren. Siehe dazu das Beispiel in \cref{fig:plotFleuret}.
+Das erlaubt es Ihnen sogar, Ihre Daten, z.\,B.\ aus Experimenten, separat zu halten und entsprechende Abbildungen dynamisch daraus zu generieren. Siehe dazu das Beispiel in fig:plotFleuret.
 \par
 Sie finden ganz viel Beispiele zu TikZ natürlich im Internet. Außerdem gibt es ein aktuelles Buch~\cite{kottwitz:tikz}.
 %
@@ -163,9 +163,9 @@ Vielleicht sind die Befehle \texttt{rowcolor} oder \texttt{multicolumn} irgendwa
 %
 \section{Abbildungs- und Tabellenverzeichnis}
 \label{sec:captions}
-Mit \LaTeX{} lassen sich Abbildungs- und Tabellenverzeichnis automatisch erstellen. Dabei tauchen alle Einträge entsprechend auf, für die Sie \emph{Gleitumgebungen} korrekt angelegt haben (siehe \cref{sec:images} und~\ref{sec:tables}).
+Mit \LaTeX{} lassen sich Abbildungs- und Tabellenverzeichnis automatisch erstellen. Dabei tauchen alle Einträge entsprechend auf, für die Sie \emph{Gleitumgebungen} korrekt angelegt haben (siehe sec:images und~sec:tables).
 \par
-Für diese Verzeichnisse wird standardmäßig der Text aus der \texttt{caption} übernommen. Dabei kommt es immer wieder vor, dass diese Beschreibung zu lang ist. Dafür kann mit in der \texttt{caption} in eckigen Klammern optional eine kürzere Version angeben. Dazu siehe auch \cref{sec:refFigures}.
+Für diese Verzeichnisse wird standardmäßig der Text aus der \texttt{caption} übernommen. Dabei kommt es immer wieder vor, dass diese Beschreibung zu lang ist. Dafür kann mit in der \texttt{caption} in eckigen Klammern optional eine kürzere Version angeben. Dazu siehe auch sec:refFigures.
 %
 %
 \section{Formeln}
@@ -198,7 +198,7 @@ Es empfiehlt sich, allen mathematischen Symbole, die Sie in Ihrer Arbeit benutze
 \section{Quellcode, Pseudocode}
 \label{sec:listing}
 %
-%Bitte beachten Sie, dass sich \emph{Pseudocode} vermutlich besser mit dem \texttt{algorithm2e}-Paket darstellen lässt, als mit dem \texttt{listings}-Paket, das in diesem Beispiel hier (Algorithmus~\ref{lst:quicksort}) benutzt wird.
+%Bitte beachten Sie, dass sich \emph{Pseudocode} vermutlich besser mit dem \texttt{algorithm2e}-Paket darstellen lässt, als mit dem \texttt{listings}-Paket, das in diesem Beispiel hier (Algorithmus~lst:quicksort) benutzt wird.
 %
 Soll in der Abschlussarbeit ein Ausschnitt vom Quelltext dargestellt werden, so ist die naheliegende Idee, einfach einen Screenshot davon aufzunehmen und via \texttt{\tb includegraphics} als Abbildung einzufügen. Allerdings entpuppt sich diese Idee als schlecht, sobald das fertige Dokument näher herangezoomt wird: Sofort verpixelt der dargestellte Quelltext. \LaTeX{} bietet hierfür jedoch eine elegantere Alternative: Das Paket \texttt{listings} zum Darstellen von Quelltext~--~direkt im Quelltext des \LaTeX-Dokuments oder aber direkt aus einer externen Datei ausgelesen.
 
@@ -208,7 +208,7 @@ Außerdem kann das Layout des im fertigen Dokument dargestellten Quelltexts beei
 mithilfe spezieller \emph{keys} Einfluss auf Dinge wie beispielsweise die
 zu verwendende Schriftart oder die Hintergrundfarbe genommen wird. Dazu
 wird der Befehl \texttt{\tb lstdefinestyle\{\param{Stil}\}} verwendet.
-Dabei ist \param{Stil} eine Liste mehrerer Paare der Form \texttt{\param{key}=\param{value}}, welche jeweils durch ein Komma voneinander getrennt werden. Ein Beispiel ist in der Präambel dieser Vorlage, in der Datei \texttt{definitions.tex} zu finden. Für nähere Informationen sei an dieser Stelle auf die Dokumentation des Paktes verwiesen. Ein Beispiel für solch ein mit der Umgebung \texttt{lstlisting} erzeugten Quelltext ist in \cref{fig:listing} gegeben.
+Dabei ist \param{Stil} eine Liste mehrerer Paare der Form \texttt{\param{key}=\param{value}}, welche jeweils durch ein Komma voneinander getrennt werden. Ein Beispiel ist in der Präambel dieser Vorlage, in der Datei \texttt{definitions.tex} zu finden. Für nähere Informationen sei an dieser Stelle auf die Dokumentation des Paktes verwiesen. Ein Beispiel für solch ein mit der Umgebung \texttt{lstlisting} erzeugten Quelltext ist in fig:listing gegeben.
 %
 \begin{figure}[htb]
 	\centering
@@ -306,7 +306,7 @@ definierte Symbol im Text ausgegeben werden. Beispiel gefällig? Die Kraft \gls{
 
 \section{Verweise}
 \label{sec:references}
-Setzen Sie in Ihrem Quellcode Marken mit dem \comm{label}-Befehl. Aus der Platzierung geht hervor, auf welche Nummerierung sich die Marke bezieht, also etwa Gliederungsebene (siehe \cref{sec:headings}), Tabelle (siehe \cref{sec:tables}), Abbildung (siehe \cref{sec:figures}) oder Gleichung (siehe \cref{sec:formulas}). Alle genannten werden nämlich separat nummeriert, das kann am Anfang etwas gewöhnungsbedürftig sein.
+Setzen Sie in Ihrem Quellcode Marken mit dem \comm{label}-Befehl. Aus der Platzierung geht hervor, auf welche Nummerierung sich die Marke bezieht, also etwa Gliederungsebene (siehe sec:headings), Tabelle (siehe sec:tables), Abbildung (siehe sec:figures) oder Gleichung (siehe sec:formulas). Alle genannten werden nämlich separat nummeriert, das kann am Anfang etwas gewöhnungsbedürftig sein.
 \par
 Auf die markierten Stellen können Sie dann mit dem \comm{ref}-Befehl verweisen, wobei der eben nur die passende Nummer liefert. Die passende Bezeichnung, z.\,B. \enquote{Abbildung}, müssten Sie dann selbst ergänzen. Daher haben wir hier das Paket \texttt{cleveref} eingebunden, das uns den zuletzt genannten Schritt automatisiert.
 %als Spezialfall (mit \comm{eqref}) \glqq Gleichung~\eqref{eq:gauss}\grqq.
@@ -318,7 +318,7 @@ Auf jede Abbildung und jede Tabelle muss im Text verwiesen werden, es dürfen ke
 \label{sec:specialCases}
 An Leerzeichen kann grundsätzlich ein Zeilenumbruch (oder sogar Seitenumbruch) erfolgen. In manchen Fällen möchte man das vermeiden, u.\,a., weil Zeilen nicht mit Zahlen beginnen sollten. Ein typisches Beispiel ist \enquote{Lange Straße~123}. Hier benötigt man hinter \enquote{Straße} ein sog.\ geschütztes Leerzeichen, das mit einer Tilde erzeugt wird.
 \par
-Genauso wie Gleitumgebungen optimal verteilt werden (vgl. \cref{sec:hood}), werden auch horizontale Abstände zwischen Wörtern und Sätzen in \LaTeX{} in jeder Zeile dynamisch angepasst. Dabei werden alle Punkte als Satzende interpretiert. Bei Abkürzungen wie \enquote{z.\,B.} sieht das nicht schön aus, der Leerzeichen-Abstand ist zu groß. Hier muss in der Mitte manuell ein halbes Leerzeichen erzeugt werden mit \comm{,}. Wenn Ihnen das Tippen solcher Konstrukte zu umständlich erscheint, können Sie sich eigene Kommandos wie \comm{zb} definieren. Zum Definieren eigener Befehle vgl. \cref{sec:formulas}.
+Genauso wie Gleitumgebungen optimal verteilt werden (vgl. sec:hood), werden auch horizontale Abstände zwischen Wörtern und Sätzen in \LaTeX{} in jeder Zeile dynamisch angepasst. Dabei werden alle Punkte als Satzende interpretiert. Bei Abkürzungen wie \enquote{z.\,B.} sieht das nicht schön aus, der Leerzeichen-Abstand ist zu groß. Hier muss in der Mitte manuell ein halbes Leerzeichen erzeugt werden mit \comm{,}. Wenn Ihnen das Tippen solcher Konstrukte zu umständlich erscheint, können Sie sich eigene Kommandos wie \comm{zb} definieren. Zum Definieren eigener Befehle vgl. sec:formulas.
 \par
 Auch bei waagerechten Strichen gibt es, wie bei Leerzeichen, unterschiedliche Längen. Für Gedankenstriche~-- solche hier~-- oder wenn \enquote{bis} gemeint ist (wie in 14:00--16:00), reicht der einfache Bindestrich (Minuszeichen) nicht aus, das passende Teichen wird in \LaTeX{} einfach durch ein Doppel-Minus erzeugt.
 \par
@@ -391,7 +391,7 @@ Grundsätzlich sollte das Ziel sein, dass Ihr Dokument ohne Warnungen kompiliert
 \par
 Eine typische Warnung ist \glqq \emph{Reference \ldots undefined}\grqq{}. Vielleicht verschwindet sie beim nochmaligen Erstellen, denn erst dann sind ggf.\ neue Positionen bekannt. Wenn diese Warnung bleibt, muss das Problem unbedingt behoben werden, sonst haben Sie irgendwo Fragezeichen im Text stehen.
 \par
-Warnungen, die sich auf zu volle Boxen beziehen, sind teilweise schwieriger zu verstehen und\,/\,oder zu beheben. Im \texttt{draft}-Modus (vgl. \cref{sec:template}) werden die zugehörigen Stellen genau markiert, das kann eine große Hilfe sein. Gegen zu lange Zeilen hilft teilweise, Trennstellen zu markieren (vgl. \cref{sec:hyphenation}). Sonst muss ggf. ein Satz minimal umformuliert werden.
+Warnungen, die sich auf zu volle Boxen beziehen, sind teilweise schwieriger zu verstehen und\,/\,oder zu beheben. Im \texttt{draft}-Modus (vgl. sec:template) werden die zugehörigen Stellen genau markiert, das kann eine große Hilfe sein. Gegen zu lange Zeilen hilft teilweise, Trennstellen zu markieren (vgl. sec:hyphenation). Sonst muss ggf. ein Satz minimal umformuliert werden.
 \par
 Der \texttt{draft}-Modus hat drüber hinaus den Vorteil, dass das Kompilieren schneller geht (s.\,o.), dafür werden für Abbildungen nur Platzhalter eingefügt.
 %
@@ -422,11 +422,11 @@ In der vorliegenden Vorlage werden einige Pakete eingebunden. Im Folgenden wird 
 % \item[\texttt{siunitx}] Optional
 % \item[\texttt{xcolor}] Ermöglicht es, komfortabel eigene Farben zu definieren und bringt Farben mit Namen mit: \emph{SkyBlue}, \emph{Turquoise}, \emph{LimeGreen}, \ldots (wird automatisch von \texttt{tikz} geladen)
 % \item[\texttt{graphicx}] Erweiterungen rund um den \comm{includegraphics}-Befehl (wird automatisch von \texttt{tikz} geladen)
- \item[\texttt{tikz} und \texttt{pgfplots}] Damit können Abbildungen direkt im Quellcode erzeugt werden, vgl.\ Abschnitt~\ref{sec:vectorGraphcis}
+ \item[\texttt{tikz} und \texttt{pgfplots}] Damit können Abbildungen direkt im Quellcode erzeugt werden, vgl.\ Abschnitt~sec:vectorGraphcis
  \item[\texttt{hyperref}] Anklickbare Links im PDF
  \item[\texttt{biblatex}] Verbesserte Quellenangaben und -verzeichnis
  \item[\texttt{amsmath} und \texttt{amssymb}] Große Erweiterung der Möglichkeiten, mathematische Inhalte darzustellen
- \item[\texttt{listings}] Zur Darstellung von Quellcode, vgl.\ Abschnitt~\ref{sec:listing}
- \item[\texttt{cleveref}] Vereinfacht das Einfügen von Verweisen (siehe \cref{sec:references})
+ \item[\texttt{listings}] Zur Darstellung von Quellcode, vgl.\ Abschnitt~sec:listing
+ \item[\texttt{cleveref}] Vereinfacht das Einfügen von Verweisen (siehe sec:references)
  \item[\texttt{glossaries}] Komfortables Erstellen eines Abkürzungsverzeichnis
 \end{description}
