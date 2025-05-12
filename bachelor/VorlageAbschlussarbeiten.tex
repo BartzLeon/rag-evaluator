@@ -25,8 +25,12 @@
 %
 \addbibresource{references.bib}
 
-\nocite{*} % listet alle Quellen (auch die nicht zitierten!)
-%
+% Remove nocite to only show cited references
+%\nocite{*} % listet alle Quellen (auch die nicht zitierten!)
+
+% Add bibliography style
+\bibliographystyle{plain}
+
 %=== für schnelleres kopilieren alle ungeänderten Dateien auskommentieren =====
 \includeonly{
 	content/chapDeclaration,
@@ -35,6 +39,7 @@
 	content/chapForm,
 	content/chapGestaltung,
 	content/chapLiteratur,
+	content/chapMetrics
 }
 %
 %
@@ -60,10 +65,11 @@
 \cleardoublepage
 \KOMAoptions{open=right}
 \pagenumbering{arabic}
-\include{content/chapEinleitung}
-\include{content/chapForm}
-\include{content/chapGestaltung}
-\include{content/chapLiteratur}
+%\include{content/chapEinleitung}
+%\include{content/chapForm}
+\include{content/chapMetrics}
+%\include{content/chapGestaltung}
+%\include{content/chapLiteratur}
 %
 \printbibliography[prenote=mynote]
 %
