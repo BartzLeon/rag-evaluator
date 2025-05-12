@@ -49,6 +49,8 @@ app/data/chroma_storage/
 *.run.xml
 *.bcf
 
+*.ist
+*.slo
 # LaTeX intermediate/preview files
 *.nav
 *.snm
