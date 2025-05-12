@@ -1,0 +1,166 @@
+\chapter{Metrics}
+
+\label{chap:formal}
+In diesem Kapitel geht es um die verschiedenen Metriken, die für die Bewertung von RAG Evaluations Tools verwendet werden können.
+Metriken sind das Herzstück der Bewertung von RAGs, da sie die Qualität des RAGs bewerten und somit die Entwicklung und den Fortschritt des RAGs messen.
+
+
+\section{Retrieval Augmented Generation}
+Diese Metriken basieren auf Faktenextraktion mithilfe welcher sich dann Scores berechnen lassen.
+Für die extraktion der Fakten wird häufig ein LLM verwendet welcher als Richter fungiert.
+
+
+\subsection{Context Precision}
+\begin{quote}
+Die Kontextpräzision ist eine Metrik, die den Anteil relevanter Textabschnitte in den abgerufenen Kontexten misst.
+Sie wird als Mittelwert der Präzision@k für jeden Textabschnitt im Kontext berechnet.
+Die Präzision@k ist das Verhältnis der Anzahl relevanter Textabschnitte auf Rang k zur Gesamtanzahl der Textabschnitte auf Rang k.
+(eigene Übersetzung nach \cite{ragas_context_precision})
+\end{quote}
+Diese Metrik ist für uns als Qualitätskontrolle wichtig da sie uns sagt, ob es Probleme beim testen mit dem Vectorstore gibt.
+
+\subsection{Context Recall}
+\begin{quote}
+Context Recall misst, wie viele der relevanten Dokumente (oder Informationsstücke) erfolgreich abgerufen wurden.
+Es konzentriert sich darauf, keine wichtigen Ergebnisse zu verpassen.
+Ein höherer Recall bedeutet, dass weniger relevante Dokumente ausgelassen wurden.
+Kurz gesagt geht es beim Recall darum, nichts Wichtiges zu übersehen.
+(eigene Übersetzung nach \cite{ragas_context_recall})
+\end{quote}
+
+Wenn es eine guten guten Context Precision Score gibt dann lässt sich hier gut bewerten ob das LLM in der Lage ist die relevanten Informationen in dem kontext zu finden.
+Da dies ein wichtiger Aspekt eines guten RAGs ist wird diese Metrik im Rahmen dieser Arbeit betrachtet.
+
+\subsection{Context Entities Recall}
+In deisem Kontext ist eine Entity eine Informationseinheit, die im Kontext vorkommt.
+Dies könnte z.B. ein Name, ein Ort, ein Datum oder eine andere Informationseinheit sein.
+
+\begin{quote}
+Die ContextEntityRecall-Metrik misst den Recall des abgerufenen Kontexts, basierend auf der Anzahl der Entitäten, die sowohl in der Referenz als auch im abgerufenen Kontext vorkommen, relativ zur Gesamtanzahl der Entitäten in der Referenz.\\
+Einfach ausgedrückt misst sie, welcher Anteil der Entitäten aus der Referenz im abgerufenen Kontext wiedergefunden wird.\\
+(eigene Übersetzung nach \cite{ragas_context_entities_recall})
+\end{quote}
+Diese Metrik wird Teil dieser arbeit sein da sie in gewissen nutzungsfällen, wie z.B. stark faktuale Fragen, eine gute Bewertung liefern kann.
+
+\subsection{Noise Sensitivity}
+\begin{quote}
+NoiseSensitivity misst, wie häufig ein System Fehler macht, indem es falsche Antworten gibt, wenn entweder relevante oder irrelevante abgerufene Dokumente verwendet werden.\\
+Um die Noise Sensitivity zu bestimmen, wird jede Aussage in der generierten Antwort daraufhin überprüft, ob sie auf der Grundlage der Referenz korrekt ist und ob sie dem relevanten (oder irrelevanten) abgerufenen Kontext zugeordnet werden kann.\\
+(eigene Übersetzung nach \cite{ragas_noise_sensitivity})
+\end{quote}
+Diese Metrik ist eine der wichtigsten Metriken in dieser Arbeit da sie die Richtigkeit der Antworten und damit die Qualität des RAGs bewertet.
+
+\subsection{Response Relevancy}
+\begin{quote}
+Die ResponseRelevancy-Metrik misst, wie relevant eine Antwort im Bezug auf die Nutzereingabe ist. Höhere Werte zeigen eine bessere Übereinstimmung mit der Nutzereingabe an, während niedrigere Werte vergeben werden, wenn die Antwort unvollständig ist oder redundante Informationen enthält.\\
+(eigene Übersetzung nach \cite{ragas_response_relevancy})
+\end{quote}
+
+Diese Metrik bildet mit der Noise Sensitivity eine wichtige Grundlage für die Bewertung des RAGs.
+Denn selbst wenn die Antworten richtig sind, ist die Bewertung des RAGs nicht gut wenn die Antworten nicht relevant zu der Frage sind.
+
+\subsection{Faithfulness}
+\begin{quote}
+Die Faithfulness-Metrik misst, wie faktentreu eine Antwort im Vergleich zum abgerufenen Kontext ist.\\
+
+Eine Antwort gilt als faktentreu, wenn alle ihre Aussagen durch den abgerufenen Kontext gestützt werden können.\\
+
+Die Berechnung erfolgt nach folgender Formel:
+\begin{align}
+  \text{Faithfulness Score} 
+    &= \frac{
+        \parbox{7cm}{\centering Anzahl der durch den Kontext\\ gestützten Aussagen in der Antwort}
+      }{
+        \parbox{7cm}{\centering Gesamtanzahl der Aussagen\\ in der Antwort}
+      }
+  \end{align}
+
+(eigene Übersetzung nach \cite{ragas_faithfulness})
+\end{quote}
+\subsection{Multimodal Faithfulness/Multimodal Relevance}
+Da sich diese Metriken mit mehr als textuellen Daten befassen, werden diese nicht im Rahmen dieser Arbeit betrachtet.
+
+
+\section{Nvidia Metrics}
+Diese Metriken sind subjektiver Art und benutzten wieder eine LLM um die Bewertung zu treffen.
+Hier werden einzelnde Scores generiert welche keinen tieferen Einblick in die Bewertung gewähren.
+
+\subsection{Answer Accuracy}
+\begin{quote}
+Answer Accuracy misst die Übereinstimmung zwischen der Antwort eines Modells und einer Referenz (Ground Truth) für eine gegebene Frage. Dies geschieht über zwei verschiedene "LLM-as-a-judge"-Prompts, die jeweils eine Bewertung (0, 2 oder 4) zurückgeben. Die Metrik wandelt diese Bewertungen in eine Skala von [0,1] um und nimmt dann den Durchschnitt der beiden Bewertungen der Richter.
+\\
+(eigene Übersetzung nach \cite{ragas_nvidia_metrics})
+\end{quote}
+
+Das LLM bewertet die Antwort mit der Referenz und auch die Referenz mit der Antwort.
+Hat Vorteile gegenüber der Answer Correctness, da es weniger Aufrufe mit weniger Tokens an LLM braucht.
+Es werden im Vergleich zur Answer Correctness auch robustere Bewertungen getroffen, bietet jedoch weniger Einblicke in die Bewertung.
+Diese Metrik wird im Rahmen dieser Arbeit betrachtet auch um einen Vergleich zu anderen Metriken zu haben.
+
+\subsection{Context Relevance}
+Diese Metrik ist sehr ähnlich zur Context Precision, als Alternative und um einen Vergleich zu haben wird diese im Rahmen dieser Arbeit betrachtet, auch wenn sie keine direkte Aussage über das zu bewertende LLM macht.
+
+\subsection{Response Groundedness}
+Wenn die Answer Accuracy eine gute Bewertung liefert, ist die Response Groundedness eine gute Bewertung für die Faktualität der Antwort.
+Diese Logik ist ähnlich zur Kombinierung von Context Relevancy und Context Precision.
+Hier wird es in den Experimenten interessant zu vergleichen wie diese Metriken zusammenhängen.
+\section{Natural Language Comparison}
+
+\subsection{Factual Correctness}
+Diese Metriken basieren zu Teilen auf der Wahrheitsmatrix (Confusion matrix), welche die vier Kategorien True Positive, False Positive, False Negative und True Negative definiert.\cite{wikipedia_confusion_matrix}
+Aus dieser Matrix lassen sich dann precision, recall und f1 score berechnen.
+
+\begin{quote}
+\begin{equation}
+  \label{eq:precision}
+  \text{Precision} = \frac{\text{True Positives}}{\text{True Positives} + \text{False Positives}}
+\end{equation}
+
+\begin{equation}
+  \label{eq:recall}
+  \text{Recall} = \frac{\text{True Positives}}{\text{True Positives} + \text{False Negatives}}
+\end{equation}
+
+\begin{equation}
+  \label{eq:f1_score}
+  \text{F1 Score} = 2 \cdot \frac{\text{Precision} \cdot \text{Recall}}{\text{Precision} + \text{Recall}}
+\end{equation}
+\cite{wikipedia_confusion_matrix}
+\end{quote}
+
+\subsection{Semantic Similarity}
+This metric uses embeddings to calculate the semantic similarity between the answer and the reference. TODO: should this be used?
+
+\section{Non LLM String Similarity}
+Wie der Name schon sagt, wird die String Similarity ohne LLM berechnet. Diese Metriken sind relative einfache Metriken und werden im Rahmen dieser Arbeit keine große Rolle spielen, jedoch als Vergleich zu anderen Metriken dienen.
+\subsection{BLEU Score}
+Misst die Ähnlichkeit zwischen der Antwort und der Referenz. Dabei wird die Wortanzahl der Referenz berücksichtigt und eine entsrechende Bestrafung für zu kurze Antworten eingeführt.
+\subsection{ROUGE Score}
+Mithilfe von n-gram recall, precision, und dem F1 score wird die Ähnlichkeit zwischen der Antwort und der Referenz berechnet.
+\subsection{String Presence}
+Eine einfache Metrik um zu sehen, ob die Referenz in der Antwort enthalten ist.
+\subsection{Exact Match}
+Eine noch einfachere Metrik, die nur prüft ob die Antwort exakt der Referenz entspricht. Diese ist für einzelde Wörter sinnvoll.
+
+\section{General purpose}
+Dies sind Metriken welche manuell konfiguriert werden müssen aber eine gute Bewertung der Qualität eines RAGs liefern können.
+Die Metriken reichen von einfachen Fragen wie "ist die Antwort schädlich oder hat die Intention des Users verletzt" bis hin zu komplexeren einlend definierten Scrores.
+\begin{itemize}
+    \item Aspect critic
+    \item Simple Criteria Scoring
+    \item Rubrics based Scoring
+    \item Instance Specific Rubrics Scoring
+  \end{itemize}
+
+\section{Andere Metriken}
+\subsection{Summarization}
+Anzahl der richtig beantworteten Fragen geteilt durch die Anzahl der Fragen. Dies ist eine sehr einfache und oberflächliche Metrik.
+
+
+\section{Irrelevante Metriken}
+\subsection{SQL}
+SQL spezifische Metriken welche nicht im Rahmen dieser Arbeit betrachtet werden.
+
+\subsection{Agents or Tool use cases}
+Metriken zum bewerten des einsatzes von Agents oder Tools, dies liegt ebenso außerhalb des Themas dieser Arbeit.
+https://docs.ragas.io/en/stable/concepts/metrics/
