@@ -5,6 +5,7 @@ from app.tasks import celery_app
 from app.db import async_session
 from app.models import Document
 from app.document_loader.web_base_loader_and_splitter import WebBaseLoaderAndSplitter
+from app.document_loader.file_loader_and_splitter import FileLoaderAndSplitter
 from app.vectorestores.chroma_db_factory import ChromaDBFactory
 from app.embeddings.factory import EmbeddingsFactory
 from app.config.logging_config import task_logger
@@ -20,6 +21,8 @@ def create_documents_request(request_data: dict, document_id: int):
 async def _create_documents_async(request_data: dict, document_id: int):
     async with async_session() as db:
         document = await db.get(Document, document_id)
+        if not document:
+            raise ValueError(f"Document with id {document_id} not found")
 
         document.status = "Processing"
         await db.commit()
@@ -28,9 +31,20 @@ async def _create_documents_async(request_data: dict, document_id: int):
             documents = []
 
             for source in request_data["sources"]:
-                url = source["url"]
-                task_logger.info(f"Processing URL: {url}")
-                loader = WebBaseLoaderAndSplitter(url=url)
+                source_type = source["type"]
+                task_logger.info(f"Processing source of type: {source_type}")
+                
+                if source_type == "url":
+                    url = source["url"]
+                    task_logger.info(f"Processing URL: {url}")
+                    loader = WebBaseLoaderAndSplitter(url=url)
+                elif source_type == "file":
+                    file_path = source["file_path"]
+                    task_logger.info(f"Processing file: {file_path}")
+                    loader = FileLoaderAndSplitter(file_path=file_path)
+                else:
+                    raise ValueError(f"Unknown source type: {source_type}")
+                
                 documents.extend(loader.load_and_split())
 
             document.status = "Downloaded"

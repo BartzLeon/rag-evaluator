@@ -48,6 +48,15 @@ curl -X POST "http://localhost:9876/documents/" \
     ],
     "embedding_model": "openai/text-embedding-3-large"
 }'
+
+# Create a document with uploaded files (using JSON body)
+curl -X POST "http://localhost:9876/documents/" \
+-H "Content-Type: application/json" \
+-d '{
+    "name": "document-with-files",
+    "embedding_model": "ollama/nomic-embed-text:latest",
+    "file_ids": [1, 2]
+}'
 ```
 
 openai/gpt-4-turbo
@@ -57,12 +66,12 @@ ollama/deepseek-r1:7b
 curl -X POST "http://localhost:9876/testsets/" \
 -H "Content-Type: application/json" \
 -d '{
-    "model_type": "openai/gpt-4-turbo",
-    "embedding_model": "openai/text-embedding-3-large",
-    "document": 38,
-    "name": "web-scraping-001-001",
-    "num_questions": 100,
-    "agent_description": "A chatbot answering questions about products and reviews"
+    "model_type": "ollama/deepseek-r1:7b",
+    "embedding_model": "ollama/nomic-embed-text:latest",
+    "document": 17,
+    "name": "story-001-001",
+    "num_questions": 10,
+    "agent_description": "A chatbot answering questions about a story"
 }'
 ```
 
@@ -71,7 +80,7 @@ curl -X POST "http://localhost:9876/testsets/" \
 curl -X POST "http://localhost:9876/process/" \
 -H "Content-Type: application/json" \
 -d '{
-"model_type": "deepseek",
+"model_type": "ollama/deepseek-r1:7b",
 "testset": 1
 }'
 ```
@@ -79,13 +88,13 @@ curl -X POST "http://localhost:9876/process/" \
 
 # models/embeddings needed
 ## Documents
-1. vectorstrore
+1. Vectorstore
 
 ## Testset
 1. KnowledgeBase for question generation
 
 ## Eval
-1. vectorstore
+1. Vectorstore
 2. KnowledgeBase
 3. Model to be evaluated
 4. Evaluator
