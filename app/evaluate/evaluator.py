@@ -1,12 +1,14 @@
 from abc import abstractmethod, ABC
 from operator import itemgetter
 
+from langchain_community.embeddings import OllamaEmbeddings
 from langchain_core.language_models import BaseChatModel
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.runnables import RunnablePassthrough
 from langchain_openai import OpenAIEmbeddings
 
 from app.document_loader.loader_and_splitter import LoaderAndSplitter
+from app.embeddings.factory import EmbeddingsFactory
 from app.promt_templates.prompt_template_factory import PromptTemplateFactory
 from app.testset_loader.testset_loader import TestSetLoader
 from app.vectorestores.vector_store_factory import VectorStoreFactory
@@ -39,10 +41,13 @@ class Evaluator(ABC):
     def evaluate(self):
         self.testset = self.testset_loader.load()
         self.documents = self.document_loader.load_and_split()
+
+        embeddings = EmbeddingsFactory.get_embeddings("ollama/nomic-embed-text:latest")
+
         self.vectorstore = self.vectorstore_factory.from_documents(
             self.documents,
             collection_name="default",
-            embedding=OpenAIEmbeddings(dimensions=3072, model="text-embedding-3-large"),
+            embedding=embeddings,
         )
         self.retriever = self.vectorstore.as_retriever()
         self.prompt = self.prompt_template.get_template()
@@ -53,7 +58,6 @@ class Evaluator(ABC):
     @abstractmethod
     def generate_report(self):
         pass
-
 
     @staticmethod
     def build_chain(chat_model, prompt, retriever):

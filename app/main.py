@@ -1,12 +1,16 @@
-from sqlalchemy import select
+from sqlalchemy import select, insert
 from sqlalchemy.ext.asyncio import AsyncSession
+from sqlalchemy.orm import selectinload
 
 from app.chat_models.factory import ChatModelFactory
 from app.db import get_db
 from app.dto.create_documents_dto import CreateDocumentsDTO
 from app.dto.create_testset_dto import CreateTestsetDTO
-from app.models import RatingResult, Document, Testset
-from fastapi import FastAPI, APIRouter, Depends
+from app.dto.file_dto import FileCreateDTO, FileReadDTO
+from app.models import RatingResult, Document, Testset, DocumentRead
+from app.models.file import UploadedFile
+from app.models.association import file_document
+from fastapi import FastAPI, APIRouter, Depends, UploadFile, File as FastAPIFile, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from app import db
 from app.dto.process_request_dto import ProcessRequestDTO
@@ -14,6 +18,12 @@ from app.testset_loader.qa_testset_loader import QATestsetLoader
 from app.websocket import websocket_endpoint
 from app.tasks import process_chat_request, create_documents_request, create_testset_request
 from dotenv import load_dotenv
+from typing import List, Optional
+import os
+import shutil
+from app.dto.source_dto import SourceDTO
+from pydantic import BaseModel
+from datetime import datetime
 
 load_dotenv()
 app = FastAPI()
@@ -25,6 +35,10 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Create upload directory if it doesn't exist
+UPLOAD_DIR = "app/data/uploads"
+os.makedirs(UPLOAD_DIR, exist_ok=True)
 
 @app.on_event("startup")
 async def startup():
@@ -52,18 +66,83 @@ async def get_all_ratings(db: AsyncSession = Depends(get_db)):
         print(f"❌ Error fetching ratings: {e}")
         return []
 
-@app.get("/documents/") #response_model=List[RatingResultRead]
+@app.get("/documents/")
 async def get_all_documents(db: AsyncSession = Depends(get_db)):
     try:
-        result = await db.execute(select(Document))
+        result = await db.execute(
+            select(Document)
+            .options(selectinload(Document.files))
+        )
         documents = result.scalars().all()
-        return documents
+        return [DocumentRead.model_validate(doc) for doc in documents]
     except Exception as e:
+        raise e
         print(f"❌ Error fetching documents: {e}")
         return []
 
+@app.post("/files/")
+async def upload_file(
+    uploaded_file: UploadFile = FastAPIFile(...),
+    db: AsyncSession = Depends(get_db)
+) -> FileReadDTO:
+    try:
+        if not uploaded_file.filename:
+            raise HTTPException(status_code=400, detail="Filename is required")
+            
+        file_path = os.path.join(UPLOAD_DIR, str(uploaded_file.filename))
+        with open(file_path, "wb") as buffer:
+            shutil.copyfileobj(uploaded_file.file, buffer)
+
+        file_record = UploadedFile(
+            filename=uploaded_file.filename,
+            file_path=file_path
+        )
+        db.add(file_record)
+        await db.commit()
+        await db.refresh(file_record)
+
+        return FileReadDTO.from_orm(file_record)
+    except Exception as e:
+        print(f"❌ Error uploading file: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+@app.get("/files/")
+async def get_files(db: AsyncSession = Depends(get_db)) -> List[FileReadDTO]:
+    try:
+        result = await db.execute(select(UploadedFile))
+        files = result.scalars().all()
+        return [FileReadDTO.from_orm(file) for file in files]
+    except Exception as e:
+        print(f"❌ Error fetching files: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+@app.delete("/files/{file_id}")
+async def delete_file(file_id: int, db: AsyncSession = Depends(get_db)):
+    try:
+        result = await db.execute(select(UploadedFile).filter(UploadedFile.id == file_id))
+        file = result.scalars().first()
+        if not file:
+            raise HTTPException(status_code=404, detail="File not found")
+
+        # Delete physical file
+        file_path = str(file.file_path)
+        if os.path.exists(file_path):
+            os.remove(file_path)
+
+        # Delete database record
+        await db.delete(file)
+        await db.commit() 
+
+        return {"message": "File deleted successfully"}
+    except Exception as e:
+        print(f"❌ Error deleting file: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
 @app.post("/documents/")
-async def create_document(document_dto: CreateDocumentsDTO, db: AsyncSession = Depends(get_db)):
+async def create_document(
+    document_dto: CreateDocumentsDTO,
+    db: AsyncSession = Depends(get_db)
+):
     try:
         document = Document(
             name=document_dto.name,
@@ -73,12 +152,51 @@ async def create_document(document_dto: CreateDocumentsDTO, db: AsyncSession = D
         await db.commit()
         await db.refresh(document)
 
-        task = create_documents_request.delay(document_dto.model_dump(), document.id)
+        # Get sources from URLs
+        sources = document_dto.get_sources()
+
+        # Add file sources if file_ids are provided in the DTO
+        if document_dto.file_ids:
+            # Load the files with their relationships
+            result = await db.execute(
+                select(UploadedFile)
+                .filter(UploadedFile.id.in_(document_dto.file_ids))
+                .options(selectinload(UploadedFile.documents))
+            )
+            files = result.scalars().all()
+            
+            # Verify all files exist
+            if len(files) != len(document_dto.file_ids):
+                found_ids = {int(str(file.id)) for file in files}
+                missing_ids = set(document_dto.file_ids) - found_ids
+                raise HTTPException(status_code=404, detail=f"Files with ids {missing_ids} not found")
+            
+            # Add files to document and create sources
+            for file in files:
+                # Add the relationship through the association table
+                await db.execute(
+                    insert(file_document).values(
+                        file_id=file.id,
+                        document_id=document.id
+                    )
+                )
+                sources.append(SourceDTO.create_file_source(str(file.file_path)))
+
+        await db.commit()
+
+        # Create request data with all sources
+        request_data = {
+            "name": document_dto.name,
+            "sources": [source.model_dump() for source in sources],
+            "embedding_model": document_dto.embedding_model
+        }
+
+        task = create_documents_request.delay(request_data, document.id)
         return {"message": "Data received", "task_id": task.id, "document_id": document.id}
     except Exception as e:
-        print(f"❌ Error creating document: {e}")
         raise e
-        return {"error": str(e)}
+        print(f"❌ Error creating document: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
 
 @app.get("/testsets/")
 async def get_all_test_sets(db: AsyncSession = Depends(get_db)):

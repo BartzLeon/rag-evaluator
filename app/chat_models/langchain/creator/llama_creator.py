@@ -4,10 +4,9 @@ from app.chat_models.langchain.base import LangChainChatModelCreator
 from app.config.llm_config import OPENAI_API_KEY, OPEN_AI_DEFAULT_MODEL
 
 class LlamaLangChainChatModelCreator(LangChainChatModelCreator):
-    def __init__(self, model_name: str = OPEN_AI_DEFAULT_MODEL, temperature: float = 0.7):
+    def __init__(self, model_name: str = OPEN_AI_DEFAULT_MODEL):
         self.api_key = OPENAI_API_KEY
         self.model_name = model_name
-        self.temperature = temperature
 
     def create_model(self) -> ChatHuggingFace:
         llm = HuggingFaceEndpoint(

@@ -11,6 +11,7 @@ class GiskardOllamaLiteLLMCreator(LangChainChatModelCreator):
         return LiteLLMClient(
             model=self.model_name,
             completion_params={
-                "base_url": "http://host.docker.internal:11434"
+                "base_url": "http://host.docker.internal:11434",
+                "temperature": self.temperature,
             }
         ) 

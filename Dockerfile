@@ -5,6 +5,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
     curl \
     gcc \
+    git \
     libssl-dev \
     pkg-config \
     && rm -rf /var/lib/apt/lists/*
@@ -21,6 +22,7 @@ WORKDIR /app
 # Install dependencies
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-deps "giskard[llm]>=2.16.0"
 
 
 RUN pip uninstall -y uvloop

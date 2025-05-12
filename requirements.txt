@@ -1,3 +1,7 @@
+# This is a temporary fix for the litellm package to fix connection issues with ollama
+#litellm #==1.67.5
+litellm @ git+https://github.com/BartzLeon/litellm.git@patched-litellm#egg=litellm
+
 # infra
 fastapi
 uvicorn[standard]
@@ -19,7 +23,7 @@ docarray
 ruff
 bs4
 ipytest
-giskard[llm]
+giskard[llm] #>= 2.16.0
 langchain_chroma
 langchain_mistralai
 langchain-huggingface
@@ -28,3 +32,5 @@ ragas
 pandas
 langchain-ollama
 ollama
+python-multipart
+pypdf

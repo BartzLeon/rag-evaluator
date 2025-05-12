@@ -1,8 +1,11 @@
-from langchain_community.embeddings import OllamaEmbeddings
+from langchain_ollama import OllamaEmbeddings
 from app.embeddings.langchain.creator.base import LangchainEmbeddingsCreator
 
 class OllamaEmbeddingsCreator(LangchainEmbeddingsCreator):
-    def __init__(self, model: str = "ollama/nomic-embed-text:latest", base_url: str = "http://host.docker.internal:11434"):
+    def __init__(self, model: str = "nomic-embed-text:latest", base_url: str = "http://host.docker.internal:11434"):
+        # Strip ollama/ prefix if it exists
+        if model.startswith("ollama/"):
+            model = model[7:]  # Remove "ollama/" prefix
         self.model = model
         self.base_url = base_url
 
