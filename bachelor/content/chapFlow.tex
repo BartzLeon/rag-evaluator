@@ -1,0 +1,199 @@
+\chapter{Experiment Flow}
+
+\section{RAG Evaluation Process}
+
+The flow diagram illustrates the three main stages of the RAG evaluation process:
+
+\begin{enumerate}
+    \item \textbf{Document Processing}
+    \begin{itemize}
+        \item Documents are loaded and split into chunks
+        \item Text chunks are embedded
+        \item Embedded vectors are stored in ChromaDB
+    \end{itemize}
+    
+    \item \textbf{Test Set Generation}
+    \begin{itemize}
+        \item Uses LLM for generating questions
+        \item Creates test sets with questions and reference answers
+    \end{itemize}
+    
+    \item \textbf{Evaluation Process}
+    \begin{itemize}
+        \item Uses the generated test set
+        \item Retrieves context from ChromaDB
+        \item Evaluates model responses using LLM as a judge
+        \item Generates comprehensive evaluation reports
+    \end{itemize}
+\end{enumerate}
+
+\begin{figure}[htbp]
+    \centering
+    \resizebox{\textwidth}{!}{
+    \begin{tikzpicture}[
+        node distance=1.8cm and 1.5cm,
+        model/.style={rectangle, draw, fill=pink!20, text width=3cm, text centered, minimum height=1cm, rounded corners=3pt},
+        storage/.style={rectangle, draw, fill=blue!20, text width=3cm, text centered, minimum height=1cm, rounded corners=3pt},
+        process/.style={rectangle, draw, fill=green!20, text width=3cm, text centered, minimum height=1cm, rounded corners=3pt},
+        data/.style={rectangle, draw, fill=red!20, text width=3cm, text centered, minimum height=1cm, rounded corners=3pt},
+        arrow/.style={thick,->,>=stealth},
+        stage_label/.style={font=\bfseries, text width=3.5cm, text centered, node distance=0.8cm}
+    ]
+        % Stage 1: Data Processing
+        \node[data] (doc) {Document Collection};
+        \node[stage_label] (stage1_label) [above=of doc] {Stage 1: Data Processing};
+        \node[process] (dl) [below=of doc] {Document Loader};
+        \node[data] (chunks) [below=of dl] {\textbf{Text Chunks}};
+        \node[model] (emb1) [below=of chunks, xshift=-2cm] {Embedding Model for Document Processing};
+        \node[storage] (vstore) [below=of chunks, xshift=2cm] {Vector Store};
+        \node[storage] (chroma) [below=of vstore] {ChromaDB Collection};
+
+        % Stage 2: Testset Creation
+        \node[process] (tsgen) [right=4.5cm of doc, yshift=-1cm] {Test Set Generator};
+        \node[stage_label] (stage2_label) [above=of tsgen] {Stage 2: Testset Creation};
+        \node[model] (llm1) [above left=0.8cm and 0.4cm of tsgen] {LLM for Testset Generation};
+        \node[model] (emb2) [below left=0.8cm and 0.4cm of tsgen] {Embedding Model for Testset Generation};
+        \node[data] (testset) [below=of tsgen] {Test Set};
+
+        % Stage 3: RAG Evaluation
+        \node[process] (eval) [right=4.5cm of tsgen, yshift=1cm] {Evaluator};
+        \node[stage_label] (stage3_label) [above=of eval] {Stage 3: RAG Evaluation};
+        \node[model] (llm2) [above left=0.8cm and 0.4cm of eval] {\textbf{Model To Be Evaluated}};
+        \node[model] (llm3) [below left=0.8cm and 0.4cm of eval] {LLM Model as a Judge};    
+        \node[data] (report) [below=of eval] {Evaluation Report};
+        \node[storage] (repfile) [below=of report] {Report Files};
+
+        % Connections
+        % Document Processing Flow
+        \draw[arrow] (doc) -- (dl);
+        \draw[arrow] (dl) -- (chunks);
+        \draw[arrow] (chunks) -| (emb1);
+        \draw[arrow] (chunks) -| (vstore);
+        \draw[arrow] (emb1) -- (vstore);
+        \draw[arrow] (vstore) -- (chroma);
+
+        % Test Set Generation Flow
+        \draw[arrow] (doc) -- (tsgen);
+        \draw[arrow] (llm1) -- (tsgen);
+        \draw[arrow] (emb2) -- (tsgen);
+        \draw[arrow] (tsgen) -- (testset);
+
+        % Evaluation Flow
+        \draw[arrow] (testset.north east) to[bend left=15] (eval.west);
+        \draw[arrow] (chroma.east) -| (eval.west);
+        \draw[arrow] (llm2) -- (eval);
+        \draw[arrow] (llm3) -- (eval);
+        \draw[arrow] (eval) -- (report);
+        \draw[arrow] (report) -- (repfile);
+    \end{tikzpicture}
+    }
+    \caption{Flow diagram of the RAG evaluation process showing the interaction between different components and models. Specific model names (e.g., gpt-4-turbo, text-embedding-3-large) are detailed in the main text.}
+    \label{fig:rag-flow}
+\end{figure}
+
+% Color legend for the flowchart
+\begin{center}
+\begin{minipage}{0.85\textwidth}
+\textbf{Legend for flowchart colors:}
+\begin{itemize}
+    \item \colorbox{pink!20}{\strut\hspace{1.5em}} \textbf{Model}: (e.g., LLMs, Embedding Models)
+    \item \colorbox{blue!20}{\strut\hspace{1.5em}} \textbf{Storage}: (e.g., Vector Store, ChromaDB)
+    \item \colorbox{green!20}{\strut\hspace{1.5em}} \textbf{Process}: (e.g., Document Loader, Evaluator)
+    \item \colorbox{red!20}{\strut\hspace{1.5em}} \textbf{Data}: (e.g., Document Collection, Test Set, Report)
+\end{itemize}
+\end{minipage}
+\end{center}
+
+The diagram highlights how certain components, such as LLM, are reused for different purposes while maintaining separate embedding models for specific tasks. This modular approach allows for flexible experimentation with different models and configurations while maintaining a consistent evaluation framework.
+
+\section{Experiment Plan}
+
+To systematically evaluate whether RAG evaluation tools are ready for adoption in smaller businesses, a comprehensive experimental approach is required. The following experiment plan outlines the key variables, methodology, and evaluation criteria.
+
+\subsection{Research Questions}
+
+The experiment will address the following key research questions:
+
+\begin{enumerate}
+    \item Are current RAG evaluation frameworks suitable for small business adoption in terms of cost, complexity, and resource requirements?
+    \item How do different document types and data volumes impact retrieval and generation quality?
+    \item How reliable and consistent are the available evaluation metrics for assessing RAG performance?
+    \item What is the optimal balance between cost, performance, and implementation complexity for each small business use case?
+\end{enumerate}
+
+\subsection{Experimental Variables}
+
+\subsubsection{Document Types}
+Different document formats will be tested to evaluate the system's versatility:
+\begin{itemize}
+    \item Plain text (.txt)
+    \item PDF documents with text, tables, and images
+    \item HTML content from web pages
+    \item Microsoft Office documents (.docx, .xlsx)
+    \item JSON and structured data formats
+\end{itemize}
+
+\subsubsection{Data Volume}
+The scalability of the system will be tested with varying data sizes:
+\begin{itemize}
+    \item Small (10-50 documents, ~100 pages) this could be setup on a per use case basis and discarded after the experiment
+    \item Medium (100-500 documents, ~1,000 pages) this could be setup on a per user basis and would grow over time
+    \item Large (1,000+ documents, ~10,000 pages) this could be setup on a company wide basis and would grow over time
+\end{itemize}
+
+\subsubsection{Models for Evaluation}
+Several models will be evaluated, representing different cost tiers and capabilities.\\
+Here it is important to think about which options are valid use cases for small businesses.
+Open-source models (e.g., Llama 2, Mistral 7B, Deepseek R1) offer a variaty of benefits like being able to modify them and having more controll over the data, offering legal advantages but also disadvantages. The ability to self host them can be a plus but also a minus, depending on the type of business.\\
+Mid-tier API models (e.g., Claude Haiku, GPT-3.5 Turbo) are cheaper then the high-performance models while still offering good performance. Since they are not open source they offer less control over the data and the model itself, sometimes requiring to pay more for private instances.\\
+High-performance models (e.g., GPT-4, Claude 3 Opus) are the most expensive option but also offer the best performance, regarding not only the speed but also the quality of the generated answers. The have similar advantages and disadvantages as the mid-tier API models. \\
+Looking at it from a legal perspective, the high-performance models are the most secure option since they have to publish certain documentation and provide legal guarantees.
+% TODO: artikel 53 und Anhang 12 und 13
+% TODO: explain
+
+\subsubsection{Evaluation Metrics}
+During the experiment two frameworks for evaluation will be used besides the human evaluation.
+Giskard and RAGAS will generate the later on described metrics which can later on be compared and evaluated.
+The humand evaluation will be used as a subjective measure to compare the results of the other two.
+
+\subsection{Cost and Time Analysis}
+If we want to do this is not clear yet, ragas offers cost calculation but i havent looked into it yet.
+
+\subsection{Experimental Protocol}
+
+\begin{enumerate}
+    \item \textbf{Document Collection and Preparation}
+    Gather documents across all above mentioned target formats.
+    
+    \item \textbf{Test Set Generation}
+    Generate diverse question types (factual, inferential, comparative) and create reference answers for evaluation.
+    This happens automativally by the RAGAS framework.
+    Manually validate the test set for quality and coverage, this will be done on a set of random samples.
+    
+    
+    \item \textbf{System Configuration}
+    Configure embedding models and parameters, set up vector stores with consistent settings and deploy evaluation frameworks.
+    
+    \item \textbf{Evaluation Execution}
+    Since we can reuse the uploaded files the generated documents and the test set, these will be created first.
+    Then the evaluation pipeline will be executed and the results will be recorded.
+    
+    \item \textbf{Analysis and Reporting}
+    Comparative analysis across all variables, cost-benefit analysis for business decision-making and recommendations for optimal configurations.
+\end{enumerate}
+
+\subsection{Business Readiness Assessment Criteria}
+
+The final evaluation will rate RAG systems across these dimensions:
+\begin{itemize}
+    \item \textbf{Implementation Complexity}: How difficult is setup and maintenance?
+    \item \textbf{Cost Predictability}: Are costs stable and predictable?
+    \item \textbf{Performance Reliability}: Does the system perform consistently?
+    \item \textbf{Scalability}: How well does the system handle growing data needs?
+    %\item \textbf{Integration Potential}: Can it connect with existing business systems?
+    %\item \textbf{Total Cost of Ownership}: What are the complete costs over time?
+\end{itemize}
+
+This experimental approach will provide a comprehensive framework to assess whether current RAG evaluation tools are sufficiently mature for small business adoption, with clear guidance on optimal configurations and implementation strategies.
+
+
