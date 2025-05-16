@@ -4,6 +4,8 @@
 In diesem Kapitel geht es um die verschiedenen Metriken, die für die Bewertung von RAG Evaluations Tools verwendet werden können.
 Metriken sind das Herzstück der Bewertung von RAGs, da sie die Qualität des RAGs bewerten und somit die Entwicklung und den Fortschritt des RAGs messen.
 
+Diese Metriken basieren auf Faktenextraktion, mithilfe welcher sich dann Scores berechnen lassen.
+Für die Extraktion der Fakten wird häufig ein LLM verwendet, welcher als Richter fungiert.
 
 \section{Retrieval Augmented Generation}
 Diese Metriken basieren auf Faktenextraktion mithilfe welcher sich dann Scores berechnen lassen.
@@ -17,7 +19,10 @@ Sie wird als Mittelwert der Präzision@k für jeden Textabschnitt im Kontext ber
 Die Präzision@k ist das Verhältnis der Anzahl relevanter Textabschnitte auf Rang k zur Gesamtanzahl der Textabschnitte auf Rang k.
 (eigene Übersetzung nach \cite{ragas_context_precision})
 \end{quote}
-Diese Metrik ist für uns als Qualitätskontrolle wichtig da sie uns sagt, ob es Probleme beim testen mit dem Vectorstore gibt.
+Diese Metrik ist für uns als Qualitätskontrolle wichtig, da sie uns sagt, ob es Probleme beim Testen mit dem Vectorstore gibt.
+
+Wenn es einen guten Context Precision Score gibt, dann lässt sich hier gut bewerten, ob das LLM in der Lage ist, die relevanten Informationen in dem Kontext zu finden.
+Da dies ein wichtiger Aspekt eines guten RAGs ist, wird diese Metrik im Rahmen dieser Arbeit betrachtet.
 
 \subsection{Context Recall}
 \begin{quote}
@@ -28,11 +33,11 @@ Kurz gesagt geht es beim Recall darum, nichts Wichtiges zu übersehen.
 (eigene Übersetzung nach \cite{ragas_context_recall})
 \end{quote}
 
-Wenn es eine guten Context Precision Score gibt dann lässt sich hier gut bewerten ob das LLM in der Lage ist die relevanten Informationen in dem kontext zu finden.
+Wenn es eine gute Context Precision Score gibt dann lässt sich hier gut bewerten ob das LLM in der Lage ist die relevanten Informationen in dem kontext zu finden.
 Da dies ein wichtiger Aspekt eines guten RAGs ist wird diese Metrik im Rahmen dieser Arbeit betrachtet.
 
 \subsection{Context Entities Recall}
-In deisem Kontext ist eine Entity eine Informationseinheit, die im Kontext vorkommt.
+In diesem Kontext ist eine Entity eine Informationseinheit, die im Kontext vorkommt.
 Dies könnte z.B. ein Name, ein Ort, ein Datum oder eine andere Informationseinheit sein.
 
 \begin{quote}
@@ -40,7 +45,7 @@ Die ContextEntityRecall-Metrik misst den Recall des abgerufenen Kontexts, basier
 Einfach ausgedrückt misst sie, welcher Anteil der Entitäten aus der Referenz im abgerufenen Kontext wiedergefunden wird.\\
 (eigene Übersetzung nach \cite{ragas_context_entities_recall})
 \end{quote}
-Diese Metrik wird Teil dieser arbeit sein da sie in gewissen nutzungsfällen, wie z.B. stark faktuale Fragen, eine gute Bewertung liefern kann.
+Diese Metrik ist für uns als Qualitätskontrolle wichtig da sie uns sagt, ob es Probleme beim Testen mit dem Vectorstore gibt.
 
 \subsection{Noise Sensitivity}
 \begin{quote}
@@ -57,7 +62,7 @@ Die ResponseRelevancy-Metrik misst, wie relevant eine Antwort im Bezug auf die N
 \end{quote}
 
 Diese Metrik bildet mit der Noise Sensitivity eine wichtige Grundlage für die Bewertung des RAGs.
-Denn selbst wenn die Antworten richtig sind, ist die Bewertung des RAGs nicht gut wenn die Antworten nicht relevant zu der Frage sind.
+Denn selbst wenn die Antworten richtig sind, ist die Bewertung des RAGs nicht gut, wenn die Antworten nicht relevant zu der Frage sind.
 
 \subsection{Faithfulness}
 \begin{quote}
@@ -143,8 +148,8 @@ Eine einfache Metrik um zu sehen, ob die Referenz in der Antwort enthalten ist.
 Eine noch einfachere Metrik, die nur prüft ob die Antwort exakt der Referenz entspricht. Diese ist für einzelde Wörter sinnvoll.
 
 \section{General purpose}
-Dies sind Metriken welche manuell konfiguriert werden müssen aber eine gute Bewertung der Qualität eines RAGs liefern können.
-Die Metriken reichen von einfachen Fragen wie "ist die Antwort schädlich oder hat die Intention des Users verletzt" bis hin zu komplexeren einlend definierten Scrores.
+Dies sind Metriken, welche manuell konfiguriert werden müssen, aber eine gute Bewertung der Qualität eines RAGs liefern können.
+Die Metriken reichen von einfachen Fragen, wie "ist die Antwort schädlich oder hat die Intention des Users verletzt", bis hin zu komplexeren, einleitend definierten Scores.
 \begin{itemize}
     \item Aspect critic
     \item Simple Criteria Scoring
@@ -162,5 +167,7 @@ Anzahl der richtig beantworteten Fragen geteilt durch die Anzahl der Fragen. Die
 SQL spezifische Metriken welche nicht im Rahmen dieser Arbeit betrachtet werden.
 
 \subsection{Agents or Tool use cases}
-Metriken zum bewerten des einsatzes von Agents oder Tools, dies liegt ebenso außerhalb des Themas dieser Arbeit.
+Metriken zum Bewerten des Einsatzes von Agents oder Tools, dies liegt ebenso außerhalb des Themas dieser Arbeit.
 https://docs.ragas.io/en/stable/concepts/metrics/
+
+Diese Metrik wird Teil dieser Arbeit sein, da sie in gewissen Nutzungsfällen, wie z.B. stark faktuale Fragen, eine gute Bewertung liefern kann.
