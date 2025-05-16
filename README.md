@@ -66,10 +66,23 @@ ollama/deepseek-r1:7b
 curl -X POST "http://localhost:9876/testsets/" \
 -H "Content-Type: application/json" \
 -d '{
-    "model_type": "ollama/deepseek-r1:7b",
-    "embedding_model": "ollama/nomic-embed-text:latest",
+    "model_type": "openai/gpt-4-turbo",
+    "embedding_model": "openai/text-embedding-3-large",
     "document": 17,
     "name": "story-001-001",
+    "num_questions": 10,
+    "agent_description": "A chatbot answering questions about a story"
+}'
+```
+
+````bash
+curl -X POST "http://localhost:9876/testsets/" \
+-H "Content-Type: application/json" \
+-d '{
+    "model_type": "openai/gpt-4-turbo",
+    "embedding_model": "openai/text-embedding-3-large",
+    "document": 26,
+    "name": "d4f-009-001",
     "num_questions": 10,
     "agent_description": "A chatbot answering questions about a story"
 }'
@@ -85,6 +98,14 @@ curl -X POST "http://localhost:9876/process/" \
 }'
 ```
 
+```bash
+curl -X POST "http://localhost:9876/process/" \
+-H "Content-Type: application/json" \
+-d '{
+"model_type": "openai/gpt-4-turbo",
+"testset": 26
+}'
+```
 
 # models/embeddings needed
 ## Documents
