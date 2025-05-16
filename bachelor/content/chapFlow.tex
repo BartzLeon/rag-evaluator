@@ -1,29 +1,29 @@
-\chapter{Experiment Flow}
+\chapter{Ablauf des Experiments}
 
-\section{RAG Evaluation Process}
+\section{RAG-Bewertungsprozess}
 
-The flow diagram illustrates the three main stages of the RAG evaluation process:
+Das Flussdiagramm veranschaulicht die drei Hauptphasen des RAG-Bewertungsprozesses:
 
 \begin{enumerate}
-    \item \textbf{Document Processing}
+    \item \textbf{Dokumentenverarbeitung}
     \begin{itemize}
-        \item Documents are loaded and split into chunks
-        \item Text chunks are embedded
-        \item Embedded vectors are stored in ChromaDB
+        \item Dokumente werden geladen und in Abschnitte unterteilt
+        \item Textabschnitte werden eingebettet
+        \item Eingebettete Vektoren werden in ChromaDB gespeichert
     \end{itemize}
     
-    \item \textbf{Test Set Generation}
+    \item \textbf{Erstellung des Testsets}
     \begin{itemize}
-        \item Uses LLM for generating questions
-        \item Creates test sets with questions and reference answers
+        \item Verwendet LLM zur Generierung von Fragen
+        \item Erstellt Testsets mit Fragen und Referenzantworten
     \end{itemize}
     
-    \item \textbf{Evaluation Process}
+    \item \textbf{Bewertungsprozess}
     \begin{itemize}
-        \item Uses the generated test set
-        \item Retrieves context from ChromaDB
-        \item Evaluates model responses using LLM as a judge
-        \item Generates comprehensive evaluation reports
+        \item Verwendet das generierte Testset
+        \item Ruft Kontext aus ChromaDB ab
+        \item Bewertet Modellantworten mit LLM als Richter
+        \item Generiert umfassende Bewertungsberichte
     \end{itemize}
 \end{enumerate}
 
@@ -39,32 +39,32 @@ The flow diagram illustrates the three main stages of the RAG evaluation process
         arrow/.style={thick,->,>=stealth},
         stage_label/.style={font=\bfseries, text width=3.5cm, text centered, node distance=0.8cm}
     ]
-        % Stage 1: Data Processing
-        \node[data] (doc) {Document Collection};
-        \node[stage_label] (stage1_label) [above=of doc] {Stage 1: Data Processing};
-        \node[process] (dl) [below=of doc] {Document Loader};
-        \node[data] (chunks) [below=of dl] {\textbf{Text Chunks}};
-        \node[model] (emb1) [below=of chunks, xshift=-2cm] {Embedding Model for Document Processing};
-        \node[storage] (vstore) [below=of chunks, xshift=2cm] {Vector Store};
-        \node[storage] (chroma) [below=of vstore] {ChromaDB Collection};
+        % Stage 1: Datenverarbeitung
+        \node[data] (doc) {Dokumentensammlung};
+        \node[stage_label] (stage1_label) [above=of doc] {Phase 1: Datenverarbeitung};
+        \node[process] (dl) [below=of doc] {Dokumentenlader};
+        \node[data] (chunks) [below=of dl] {\textbf{Textabschnitte}};
+        \node[model] (emb1) [below=of chunks, xshift=-2cm] {Einbettungsmodell für die Dokumentenverarbeitung};
+        \node[storage] (vstore) [below=of chunks, xshift=2cm] {Vektorspeicher};
+        \node[storage] (chroma) [below=of vstore] {ChromaDB-Sammlung};
 
-        % Stage 2: Testset Creation
-        \node[process] (tsgen) [right=4.5cm of doc, yshift=-1cm] {Test Set Generator};
-        \node[stage_label] (stage2_label) [above=of tsgen] {Stage 2: Testset Creation};
-        \node[model] (llm1) [above left=0.8cm and 0.4cm of tsgen] {LLM for Testset Generation};
-        \node[model] (emb2) [below left=0.8cm and 0.4cm of tsgen] {Embedding Model for Testset Generation};
-        \node[data] (testset) [below=of tsgen] {Test Set};
+        % Stage 2: Testset-Erstellung
+        \node[process] (tsgen) [right=4.5cm of doc, yshift=-1cm] {Testset-Generator};
+        \node[stage_label] (stage2_label) [above=of tsgen] {Phase 2: Testset-Erstellung};
+        \node[model] (llm1) [above left=0.8cm and 0.4cm of tsgen] {LLM für die Testset-Generierung};
+        \node[model] (emb2) [below left=0.8cm and 0.4cm of tsgen] {Einbettungsmodell für die Testset-Generierung};
+        \node[data] (testset) [below=of tsgen] {Testset};
 
-        % Stage 3: RAG Evaluation
-        \node[process] (eval) [right=4.5cm of tsgen, yshift=1cm] {Evaluator};
-        \node[stage_label] (stage3_label) [above=of eval] {Stage 3: RAG Evaluation};
-        \node[model] (llm2) [above left=0.8cm and 0.4cm of eval] {\textbf{Model To Be Evaluated}};
-        \node[model] (llm3) [below left=0.8cm and 0.4cm of eval] {LLM Model as a Judge};    
-        \node[data] (report) [below=of eval] {Evaluation Report};
-        \node[storage] (repfile) [below=of report] {Report Files};
+        % Stage 3: RAG-Bewertung
+        \node[process] (eval) [right=4.5cm of tsgen, yshift=1cm] {Bewertung};
+        \node[stage_label] (stage3_label) [above=of eval] {Phase 3: RAG-Bewertung};
+        \node[model] (llm2) [above left=0.8cm and 0.4cm of eval] {\textbf{Zu bewertendes Modell}};
+        \node[model] (llm3) [below left=0.8cm and 0.4cm of eval] {LLM-Modell als Richter};    
+        \node[data] (report) [below=of eval] {Bewertungsbericht};
+        \node[storage] (repfile) [below=of report] {Berichtsdateien};
 
-        % Connections
-        % Document Processing Flow
+        % Verbindungen
+        % Dokumentenverarbeitungsfluss
         \draw[arrow] (doc) -- (dl);
         \draw[arrow] (dl) -- (chunks);
         \draw[arrow] (chunks) -| (emb1);
@@ -72,13 +72,13 @@ The flow diagram illustrates the three main stages of the RAG evaluation process
         \draw[arrow] (emb1) -- (vstore);
         \draw[arrow] (vstore) -- (chroma);
 
-        % Test Set Generation Flow
+        % Testset-Generierungsfluss
         \draw[arrow] (doc) -- (tsgen);
         \draw[arrow] (llm1) -- (tsgen);
         \draw[arrow] (emb2) -- (tsgen);
         \draw[arrow] (tsgen) -- (testset);
 
-        % Evaluation Flow
+        % Bewertungsfluss
         \draw[arrow] (testset.north east) to[bend left=15] (eval.west);
         \draw[arrow] (chroma.east) -| (eval.west);
         \draw[arrow] (llm2) -- (eval);
@@ -87,113 +87,214 @@ The flow diagram illustrates the three main stages of the RAG evaluation process
         \draw[arrow] (report) -- (repfile);
     \end{tikzpicture}
     }
-    \caption{Flow diagram of the RAG evaluation process showing the interaction between different components and models. Specific model names (e.g., gpt-4-turbo, text-embedding-3-large) are detailed in the main text.}
+    \caption{Flussdiagramm des RAG-Bewertungsprozesses, das die Interaktion zwischen verschiedenen Komponenten und Modellen zeigt. Spezifische Modellnamen (z.B. gpt-4-turbo, text-embedding-3-large) sind im Haupttext beschrieben.}
     \label{fig:rag-flow}
 \end{figure}
 
-% Color legend for the flowchart
+% Farblegende für das Flussdiagramm
 \begin{center}
 \begin{minipage}{0.85\textwidth}
-\textbf{Legend for flowchart colors:}
+\textbf{Legende für Flussdiagrammfarben:}
 \begin{itemize}
-    \item \colorbox{pink!20}{\strut\hspace{1.5em}} \textbf{Model}: (e.g., LLMs, Embedding Models)
-    \item \colorbox{blue!20}{\strut\hspace{1.5em}} \textbf{Storage}: (e.g., Vector Store, ChromaDB)
-    \item \colorbox{green!20}{\strut\hspace{1.5em}} \textbf{Process}: (e.g., Document Loader, Evaluator)
-    \item \colorbox{red!20}{\strut\hspace{1.5em}} \textbf{Data}: (e.g., Document Collection, Test Set, Report)
+    \item \colorbox{pink!20}{\strut\hspace{1.5em}} \textbf{Modell}: (z.B. LLMs, Einbettungsmodelle)
+    \item \colorbox{blue!20}{\strut\hspace{1.5em}} \textbf{Speicher}: (z.B. Vektorspeicher, ChromaDB)
+    \item \colorbox{green!20}{\strut\hspace{1.5em}} \textbf{Prozess}: (z.B. Dokumentenlader, Bewertung)
+    \item \colorbox{red!20}{\strut\hspace{1.5em}} \textbf{Daten}: (z.B. Dokumentensammlung, Testset, Bericht)
 \end{itemize}
 \end{minipage}
 \end{center}
 
-The diagram highlights how certain components, such as LLM, are reused for different purposes while maintaining separate embedding models for specific tasks. This modular approach allows for flexible experimentation with different models and configurations while maintaining a consistent evaluation framework.
+Das Diagramm hebt hervor, wie bestimmte Komponenten, wie LLM, für verschiedene Zwecke wiederverwendet werden, während separate Einbettungsmodelle für spezifische Aufgaben beibehalten werden. Dieser modulare Ansatz ermöglicht flexible Experimente mit verschiedenen Modellen und Konfigurationen, während ein konsistentes Bewertungsframework beibehalten wird.
 
-\section{Experiment Plan}
+\section{Experimentplan}
 
-To systematically evaluate whether RAG evaluation tools are ready for adoption in smaller businesses, a comprehensive experimental approach is required. The following experiment plan outlines the key variables, methodology, and evaluation criteria.
+Um systematisch zu bewerten, ob RAG-Bewertungstools für den Einsatz in kleineren Unternehmen bereit sind, ist ein umfassender experimenteller Ansatz erforderlich. Der folgende Experimentplan skizziert die wichtigsten Variablen, die Methodik und die Bewertungskriterien.
 
-\subsection{Research Questions}
+\subsection{Forschungsfragen}
 
-The experiment will address the following key research questions:
+Das Experiment wird die folgenden zentralen Forschungsfragen behandeln:
 
 \begin{enumerate}
-    \item Are current RAG evaluation frameworks suitable for small business adoption in terms of cost, complexity, and resource requirements?
-    \item How do different document types and data volumes impact retrieval and generation quality?
-    \item How reliable and consistent are the available evaluation metrics for assessing RAG performance?
-    \item What is the optimal balance between cost, performance, and implementation complexity for each small business use case?
+    \item Sind aktuelle RAG-Bewertungsframeworks in Bezug auf Kosten, Komplexität und Ressourcenanforderungen für den Einsatz in kleinen Unternehmen geeignet?
+    \item Wie beeinflussen verschiedene Dokumenttypen und Datenvolumina die Qualität von Abruf und Generierung?
+    \item Wie zuverlässig und konsistent sind die verfügbaren Bewertungsmetriken zur Beurteilung der RAG-Leistung?
+    \item Was ist das optimale Gleichgewicht zwischen Kosten, Leistung und Implementierungskomplexität für jeden Anwendungsfall in kleinen Unternehmen?
 \end{enumerate}
 
-\subsection{Experimental Variables}
+\subsection{Experimentelle Variablen}
 
-\subsubsection{Document Types}
-Different document formats will be tested to evaluate the system's versatility:
+\subsubsection{Dokumenttypen}
+Verschiedene Dokumentformate werden getestet, um die Vielseitigkeit des Systems zu bewerten:
 \begin{itemize}
-    \item Plain text (.txt)
-    \item PDF documents with text, tables, and images
-    \item HTML content from web pages
-    \item Microsoft Office documents (.docx, .xlsx)
-    \item JSON and structured data formats
+    \item Klartext (.txt)
+    \item PDF-Dokumente mit Text, Tabellen und Bildern
+    \item HTML-Inhalte von Webseiten
+    \item Microsoft Office-Dokumente (.docx, .xlsx)
+    \item JSON und strukturierte Datenformate
 \end{itemize}
 
-\subsubsection{Data Volume}
-The scalability of the system will be tested with varying data sizes:
+\subsubsection{Datenvolumen}
+Die Skalierbarkeit des Systems wird mit unterschiedlichen Datenmengen getestet:
 \begin{itemize}
-    \item Small (10-50 documents, ~100 pages) this could be setup on a per use case basis and discarded after the experiment
-    \item Medium (100-500 documents, ~1,000 pages) this could be setup on a per user basis and would grow over time
-    \item Large (1,000+ documents, ~10,000 pages) this could be setup on a company wide basis and would grow over time
+    \item Klein (10-50 Dokumente, ~100 Seiten) dies könnte pro Anwendungsfall eingerichtet und nach dem Experiment verworfen werden
+    \item Mittel (100-500 Dokumente, ~1.000 Seiten) dies könnte pro Benutzer eingerichtet werden und im Laufe der Zeit wachsen
+    \item Groß (1.000+ Dokumente, ~10.000 Seiten) dies könnte unternehmensweit eingerichtet werden und im Laufe der Zeit wachsen
 \end{itemize}
 
-\subsubsection{Models for Evaluation}
-Several models will be evaluated, representing different cost tiers and capabilities.\\
-Here it is important to think about which options are valid use cases for small businesses.
-Open-source models (e.g., Llama 2, Mistral 7B, Deepseek R1) offer a variaty of benefits like being able to modify them and having more controll over the data, offering legal advantages but also disadvantages. The ability to self host them can be a plus but also a minus, depending on the type of business.\\
-Mid-tier API models (e.g., Claude Haiku, GPT-3.5 Turbo) are cheaper then the high-performance models while still offering good performance. Since they are not open source they offer less control over the data and the model itself, sometimes requiring to pay more for private instances.\\
-High-performance models (e.g., GPT-4, Claude 3 Opus) are the most expensive option but also offer the best performance, regarding not only the speed but also the quality of the generated answers. The have similar advantages and disadvantages as the mid-tier API models. \\
-Looking at it from a legal perspective, the high-performance models are the most secure option since they have to publish certain documentation and provide legal guarantees.
+\subsubsection{Modelle zur Bewertung}
+Mehrere Modelle werden bewertet, die verschiedene Kostenschichten und Fähigkeiten repräsentieren.\
+Hierbei ist es wichtig zu überlegen, welche Optionen für kleine Unternehmen gültige Anwendungsfälle sind.
+Open-Source-Modelle (z.B. Llama 2, Mistral 7B, Deepseek R1) bieten eine Vielzahl von Vorteilen, wie die Möglichkeit, sie zu modifizieren und mehr Kontrolle über die Daten zu haben, was rechtliche Vorteile bietet, aber auch Nachteile. Die Fähigkeit, sie selbst zu hosten, kann ein Plus, aber auch ein Minus sein, je nach Art des Unternehmens.\
+Mittelklasse-API-Modelle (z.B. Claude Haiku, GPT-3.5 Turbo) sind günstiger als die Hochleistungsmodelle und bieten dennoch eine gute Leistung. Da sie nicht Open Source sind, bieten sie weniger Kontrolle über die Daten und das Modell selbst, manchmal muss man mehr für private Instanzen zahlen.\
+Hochleistungsmodelle (z.B. GPT-4, Claude 3 Opus) sind die teuerste Option, bieten aber auch die beste Leistung, sowohl in Bezug auf Geschwindigkeit als auch auf die Qualität der generierten Antworten. Sie haben ähnliche Vor- und Nachteile wie die Mittelklasse-API-Modelle. \
+Aus rechtlicher Sicht sind die Hochleistungsmodelle die sicherste Option, da sie bestimmte Dokumentationen veröffentlichen und rechtliche Garantien bieten müssen.
 % TODO: artikel 53 und Anhang 12 und 13
-% TODO: explain
+% TODO: erklären
 
-\subsubsection{Evaluation Metrics}
-During the experiment two frameworks for evaluation will be used besides the human evaluation.
-Giskard and RAGAS will generate the later on described metrics which can later on be compared and evaluated.
-The humand evaluation will be used as a subjective measure to compare the results of the other two.
+\subsubsection{Bewertungsmetriken}
+Während des Experiments werden neben der menschlichen Bewertung zwei Frameworks zur Bewertung verwendet.
+Giskard und RAGAS werden die später beschriebenen Metriken generieren, die später verglichen und bewertet werden können.
+Die menschliche Bewertung wird als subjektives Maß verwendet, um die Ergebnisse der anderen beiden zu vergleichen.
 
-\subsection{Cost and Time Analysis}
-If we want to do this is not clear yet, ragas offers cost calculation but i havent looked into it yet.
+\subsection{Kosten- und Zeitanalyse}
+Ob wir dies tun wollen, ist noch nicht klar, RAGAS bietet Kostenberechnung an, aber ich habe es mir noch nicht angesehen.
 
-\subsection{Experimental Protocol}
+\subsection{Experimentelles Protokoll}
 
 \begin{enumerate}
-    \item \textbf{Document Collection and Preparation}
-    Gather documents across all above mentioned target formats.
+    \item \textbf{Dokumentensammlung und -vorbereitung}
+    Sammeln Sie Dokumente in allen oben genannten Zielformaten.
     
-    \item \textbf{Test Set Generation}
-    Generate diverse question types (factual, inferential, comparative) and create reference answers for evaluation.
-    This happens automativally by the RAGAS framework.
-    Manually validate the test set for quality and coverage, this will be done on a set of random samples.
+    \item \textbf{Testset-Generierung}
+    Generieren Sie verschiedene Fragetypen (faktisch, inferentiell, vergleichend) und erstellen Sie Referenzantworten zur Bewertung.
+    Dies geschieht automatisch durch das RAGAS-Framework.
+    Validieren Sie das Testset manuell auf Qualität und Abdeckung, dies wird an einer Reihe zufälliger Proben durchgeführt.
     
     
-    \item \textbf{System Configuration}
-    Configure embedding models and parameters, set up vector stores with consistent settings and deploy evaluation frameworks.
+    \item \textbf{Systemkonfiguration}
+    Konfigurieren Sie Einbettungsmodelle und Parameter, richten Sie Vektorspeicher mit konsistenten Einstellungen ein und setzen Sie Bewertungsframeworks ein.
     
-    \item \textbf{Evaluation Execution}
-    Since we can reuse the uploaded files the generated documents and the test set, these will be created first.
-    Then the evaluation pipeline will be executed and the results will be recorded.
+    \item \textbf{Durchführung der Bewertung}
+    Da wir die hochgeladenen Dateien, die generierten Dokumente und das Testset wiederverwenden können, werden diese zuerst erstellt.
+    Dann wird die Bewertungspipeline ausgeführt und die Ergebnisse werden aufgezeichnet.
     
-    \item \textbf{Analysis and Reporting}
-    Comparative analysis across all variables, cost-benefit analysis for business decision-making and recommendations for optimal configurations.
+    \item \textbf{Analyse und Berichterstattung}
+    Vergleichende Analyse über alle Variablen hinweg, Kosten-Nutzen-Analyse für geschäftliche Entscheidungsfindung und Empfehlungen für optimale Konfigurationen.
 \end{enumerate}
 
-\subsection{Business Readiness Assessment Criteria}
+\subsection{Bewertungskriterien für die Geschäftsfähigkeit}
 
-The final evaluation will rate RAG systems across these dimensions:
+Die endgültige Bewertung wird RAG-Systeme in diesen Dimensionen bewerten:
 \begin{itemize}
-    \item \textbf{Implementation Complexity}: How difficult is setup and maintenance?
-    \item \textbf{Cost Predictability}: Are costs stable and predictable?
-    \item \textbf{Performance Reliability}: Does the system perform consistently?
-    \item \textbf{Scalability}: How well does the system handle growing data needs?
-    %\item \textbf{Integration Potential}: Can it connect with existing business systems?
-    %\item \textbf{Total Cost of Ownership}: What are the complete costs over time?
+    \item \textbf{Implementierungskomplexität}: Wie schwierig ist die Einrichtung und Wartung?
+    \item \textbf{Kostenvorhersehbarkeit}: Sind die Kosten stabil und vorhersehbar?
+    \item \textbf{Leistungszuverlässigkeit}: Leistet das System konsistent?
+    \item \textbf{Skalierbarkeit}: Wie gut bewältigt das System wachsende Datenanforderungen?
+    %\item \textbf{Integrationspotenzial}: Kann es mit bestehenden Geschäftssystemen verbunden werden?
+    %\item \textbf{Gesamtkosten des Eigentums}: Was sind die vollständigen Kosten über die Zeit?
 \end{itemize}
 
-This experimental approach will provide a comprehensive framework to assess whether current RAG evaluation tools are sufficiently mature for small business adoption, with clear guidance on optimal configurations and implementation strategies.
+Dieser experimentelle Ansatz bietet einen umfassenden Rahmen, um zu bewerten, ob aktuelle RAG-Bewertungstools ausreichend ausgereift für die Einführung in kleinen Unternehmen sind, mit klaren Anleitungen zu optimalen Konfigurationen und Implementierungsstrategien.
 
+\section{Konkretisierung der Experimente}
 
+\subsection{Dokumentenverarbeitung}
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        \textbf{Embedding-Modell} & \textbf{10} & \textbf{100} & \textbf{1000} \\
+        \hline
+        openai/text-embedding-3-large & X & X & X \\
+        ollama/nomic-embed-text       & X & X & X \\
+        \hline
+    \end{tabular}
+    \caption{Kombinationen aus Dokumentanzahl und Embedding-Modell für die Experimente (X = Kombination wird getestet)}
+    \label{tab:dokument-erstellung}
+\end{table}
+
+Für die Experimente werden folgende Dokumentmengen und -typen verwendet:
+
+\begin{itemize}
+    \item Für die Experimente mit \textbf{10 Dokumenten} werden existierende Dokumente ausgewählt.
+    \item Für die Experimente mit \textbf{100} und \textbf{1000 Dokumenten} müssen zusätzliche Dokumente generiert werden, vorzugsweise mit einem LLM.
+\end{itemize}
+
+\noindent
+In allen Versuchen werden Dateien der folgenden Typen verwendet:
+
+\begin{itemize}
+    \item PDF (.pdf)
+    \item Klartext (.txt)
+    \item Word-Dokumente (.docx, .doc)
+    \item Excel-Tabellen (.xlsx, .xls)
+    \item CSV-Dateien (.csv)
+    \item E-Mails (.eml)
+    \item PowerPoint-Präsentationen (.pptx, .ppt)
+\end{itemize}
+
+\subsection{Testset-Generierung}
+Die Question Synthesizers bleiben in allen Experimenten gleich.  
+Weitere Informationen: \url{https://docs.ragas.io/en/stable/concepts/test_data_generation/rag/}
+
+\begin{itemize}
+    \item \textbf{SingleHopSpecificQuerySynthesizer} (Gewichtung: 0{,}5)
+    \item \textbf{MultiHopAbstractQuerySynthesizer} (Gewichtung: 0{,}25)
+    \item \textbf{MultiHopSpecificQuerySynthesizer} (Gewichtung: 0{,}25)
+\end{itemize}
+
+Um die optimale Anzahl an Fragen pro Testset zu untersuchen, werden folgende Kombinationen generiert:
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+        \textbf{Dokumentanzahl} & \textbf{Anzahl Fragen pro Testset} & \textbf{Anzahl Testsets pro Modell} \\
+        \hline
+        10   & 15, 30    & 2 \\
+        100  & 50, 100   & 2 \\
+        1000 & 150, 300  & 2 \\
+        \hline
+        \multicolumn{2}{|c|}{\textbf{Summe Testsets pro Modell}} & 6 \\
+        \hline
+    \end{tabular}
+    \caption{Kombinationen aus Dokumentanzahl und Testset-Größe}
+\end{table}
+
+\subsection{Bewertung}
+Für jedes dieser 6 Testsets pro Modell (OpenAI und Ollama) wird jeweils ein Bewertungsbericht erstellt, was insgesamt 12 Berichte ergibt.
+Für jeden dieser Berichte werden alle als relevant bewerteten Metriken betrachtet.
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        \textbf{Experiment} & \textbf{Embedding} & \textbf{Dokumente} & \textbf{Fragen} & \textbf{Bewerter} & \textbf{Richter} \\
+        \hline
+        1  & OAI-E & 10   & 15  & GPT-4 & GPT-4 \\
+        2  & OAI-E & 10   & 30  & GPT-4 & GPT-4 \\
+        3  & OAI-E & 100  & 50  & GPT-4 & GPT-4 \\
+        4  & OAI-E & 100  & 100 & GPT-4 & GPT-4 \\
+        5  & OAI-E & 1000 & 150 & GPT-4 & GPT-4 \\
+        6  & OAI-E & 1000 & 300 & GPT-4 & GPT-4 \\
+        \hline
+        7  & OLL-E & 10   & 15  & DSK-R & DSK-R \\
+        8  & OLL-E & 10   & 30  & DSK-R & DSK-R \\
+        9  & OLL-E & 100  & 50  & DSK-R & DSK-R \\
+        10 & OLL-E & 100  & 100 & DSK-R & DSK-R \\
+        11 & OLL-E & 1000 & 150 & DSK-R & DSK-R \\
+        12 & OLL-E & 1000 & 300 & DSK-R & DSK-R \\
+        \hline
+    \end{tabular}
+    \caption{Übersicht aller 12 zu generierenden Bewertungsberichte mit Abkürzungen}
+    \label{tab:bewertungsberichte}
+\end{table}
+
+\noindent
+\textbf{Verwendete Abkürzungen in der Tabelle:}
+\begin{itemize}
+    \item \textbf{OAI-E} = openai/text-embedding-3-large
+    \item \textbf{OLL-E} = ollama/nomic-embed-text
+    \item \textbf{GPT-4} = openai/gpt-4
+    \item \textbf{DSK-R} = ollama/deepseek-r1:7b
+\end{itemize}
