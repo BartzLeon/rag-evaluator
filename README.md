@@ -75,7 +75,7 @@ curl -X POST "http://localhost:9876/testsets/" \
 }'
 ```
 
-````bash
+```bash
 curl -X POST "http://localhost:9876/testsets/" \
 -H "Content-Type: application/json" \
 -d '{
