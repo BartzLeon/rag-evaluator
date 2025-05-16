@@ -12,6 +12,7 @@ celery
 redis
 watchdog
 uvicorn
+requests
 
 # langchain
 langchain>=0.3.14
@@ -34,3 +35,7 @@ langchain-ollama
 ollama
 python-multipart
 pypdf
+docx2txt
+unstructured
+openpyxl
+python-pptx
