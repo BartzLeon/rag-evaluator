@@ -27,7 +27,6 @@ async def _process_chat_request_async(request_data: dict):
             model_type = request_data.get("model_type", "unknown")
             testset_id = request_data.get("testset", None)
 
-            # Get the model
             model = ChatModelFactory.get_langchain_model(model_type)
             rating = await create_rating(db, model_type)
 

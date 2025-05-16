@@ -42,8 +42,8 @@ class Evaluator(ABC):
         self.testset = self.testset_loader.load()
         self.documents = self.document_loader.load_and_split()
 
-        embeddings = EmbeddingsFactory.get_embeddings("ollama/nomic-embed-text:latest")
-
+        #embeddings = EmbeddingsFactory.get_embeddings("ollama/nomic-embed-text:latest")
+        embeddings = OpenAIEmbeddings(model="text-embedding-3-large")
         self.vectorstore = self.vectorstore_factory.from_documents(
             self.documents,
             collection_name="default",
