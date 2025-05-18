@@ -64,6 +64,7 @@ async def _create_testset_async(testset_data: dict, testset_id: int):
                 knowledge_base,
                 num_questions=testset_model.num_questions,
                 agent_description=testset_model.agent_description,
+                language="de",
             )
 
             ChatModelFactory.reset_global_llm_model()
