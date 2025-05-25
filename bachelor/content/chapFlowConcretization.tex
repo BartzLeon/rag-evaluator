@@ -1,0 +1,115 @@
+\section{Konkretisierung der Experimente}
+
+\subsection{Dokumentenverarbeitung}
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        \textbf{Embedding-Modell} & \textbf{10} & \textbf{100} & \textbf{1000} \\
+        \hline
+        openai/text-embedding-3-large & X & X & X \\
+        ollama/nomic-embed-text       & X & X & X \\
+        \hline
+    \end{tabular}
+    \caption{Kombinationen aus Dokumentanzahl und Embedding-Modell für die Experimente (X = Kombination wird getestet)}
+    \label{tab:dokument-erstellung}
+\end{table}
+
+Für die Experimente werden folgende Dokumentmengen und -typen verwendet:
+
+\begin{itemize}
+    \item Für die Experimente mit \textbf{10 Dokumenten} werden existierende Dokumente ausgewählt.
+    \item Für die Experimente mit \textbf{100} und \textbf{1000 Dokumenten} müssen zusätzliche Dokumente generiert werden, vorzugsweise mit einem LLM.
+\end{itemize}
+
+\noindent
+In allen Versuchen werden Dateien der folgenden Typen verwendet:
+
+\begin{itemize}
+    \item PDF (.pdf)
+    \item Klartext (.txt)
+    \item Word-Dokumente (.docx, .doc)
+    \item Excel-Tabellen (.xlsx, .xls)
+    \item CSV-Dateien (.csv)
+    \item E-Mails (.eml)
+    \item PowerPoint-Präsentationen (.pptx, .ppt)
+\end{itemize}
+
+\subsection{Testset-Generierung}
+Die Question Synthesizers bleiben in allen Experimenten gleich.  
+Weitere Informationen: \url{https://docs.ragas.io/en/stable/concepts/test_data_generation/rag/}
+
+\begin{itemize}
+    \item \textbf{SingleHopSpecificQuerySynthesizer} (Gewichtung: 0{,}5)
+    \item \textbf{MultiHopAbstractQuerySynthesizer} (Gewichtung: 0{,}25)
+    \item \textbf{MultiHopSpecificQuerySynthesizer} (Gewichtung: 0{,}25)
+\end{itemize}
+
+Um die optimale Anzahl an Fragen pro Testset zu untersuchen, werden folgende Kombinationen generiert:
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+        \textbf{Dokumentanzahl} & \textbf{Anzahl Fragen pro Testset} & \textbf{Anzahl Testsets pro Modell} \\
+        \hline
+        10   & 15, 30    & 2 \\
+        100  & 50, 100   & 2 \\
+        1000 & 150, 300  & 2 \\
+        \hline
+        \multicolumn{2}{|c|}{\textbf{Summe Testsets pro Modell}} & 6 \\
+        \hline
+    \end{tabular}
+    \caption{Kombinationen aus Dokumentanzahl und Testset-Größe}
+\end{table}
+
+\subsection{Bewertung}
+Um die Robustheit und Übertragbarkeit der Bewertungsergebnisse zu erhöhen, werden alle Kombinationen aus Embedding-Modell und Bewertungsmodell getestet. Das bedeutet, dass für jedes Testset sowohl openai/text-embedding-3-large als auch ollama/nomic-embed-text als Embedding-Modell verwendet werden und die Bewertung jeweils mit GPT-4 sowie Deepseek-R1 (ollama/deepseek-r1:7b) erfolgt. Insgesamt ergeben sich so 24 Experimente (2 Embeddings × 2 Bewerter × 6 Testset-Varianten).
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|c|}
+        \hline
+        \textbf{Experiment} & \textbf{Embedding} & \textbf{Dokumente} & \textbf{Fragen} & \textbf{Bewerter} & \textbf{Richter} & \textbf{Wdh.} \\
+        \hline
+        1  & OAI-E & 10   & 15  & GPT-4 & GPT-4 & 1 \\
+        2  & OAI-E & 10   & 30  & GPT-4 & GPT-4 & 4 \\
+        3  & OAI-E & 100  & 50  & GPT-4 & GPT-4 & 1 \\
+        4  & OAI-E & 100  & 100 & GPT-4 & GPT-4 & 4 \\
+        5  & OAI-E & 1000 & 150 & GPT-4 & GPT-4 & 1 \\
+        6  & OAI-E & 1000 & 300 & GPT-4 & GPT-4 & 1 \\
+        \hline
+        7  & OAI-E & 10   & 15  & DSK-R & DSK-R & 1 \\
+        8  & OAI-E & 10   & 30  & DSK-R & DSK-R & 1 \\
+        9  & OAI-E & 100  & 50  & DSK-R & DSK-R & 1 \\
+        10 & OAI-E & 100  & 100 & DSK-R & DSK-R & 1 \\
+        11 & OAI-E & 1000 & 150 & DSK-R & DSK-R & 1 \\
+        12 & OAI-E & 1000 & 300 & DSK-R & DSK-R & 1 \\
+        \hline
+        13 & OLL-E & 10   & 15  & GPT-4 & GPT-4 & 1 \\
+        14 & OLL-E & 10   & 30  & GPT-4 & GPT-4 & 1 \\
+        15 & OLL-E & 100  & 50  & GPT-4 & GPT-4 & 1 \\
+        16 & OLL-E & 100  & 100 & GPT-4 & GPT-4 & 1 \\
+        17 & OLL-E & 1000 & 150 & GPT-4 & GPT-4 & 1 \\
+        18 & OLL-E & 1000 & 300 & GPT-4 & GPT-4 & 1 \\
+        \hline
+        19 & OLL-E & 10   & 15  & DSK-R & DSK-R & 1 \\
+        20 & OLL-E & 10   & 30  & DSK-R & DSK-R & 4 \\
+        21 & OLL-E & 100  & 50  & DSK-R & DSK-R & 1 \\
+        22 & OLL-E & 100  & 100 & DSK-R & DSK-R & 1 \\
+        23 & OLL-E & 1000 & 150 & DSK-R & DSK-R & 1 \\
+        24 & OLL-E & 1000 & 300 & DSK-R & DSK-R & 1 \\
+        \hline
+    \end{tabular}
+    \caption{Übersicht aller 24 zu generierenden Bewertungsberichte mit Abkürzungen und Wiederholungen}
+    \label{tab:bewertungsberichte}
+\end{table}
+
+\noindent
+\textbf{Verwendete Abkürzungen in der Tabelle:}
+\begin{itemize}
+    \item \textbf{OAI-E} = openai/text-embedding-3-large
+    \item \textbf{OLL-E} = ollama/nomic-embed-text
+    \item \textbf{GPT-4} = openai/gpt-4
+    \item \textbf{DSK-R} = ollama/deepseek-r1:7b
+\end{itemize} 
