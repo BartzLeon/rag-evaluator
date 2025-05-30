@@ -1,5 +1,5 @@
 from giskard.llm.embeddings import BaseEmbedding
-from app.embeddings.giskard.creator import GiskardOllamaEmbeddingsCreator
+from app.embeddings.giskard.creator import GiskardOllamaEmbeddingsCreator, GiskardOpenAIEmbeddingsCreator
 import os
 import giskard.llm
 from app.config.llm_config import PROVIDER_CONFIGS
@@ -10,6 +10,7 @@ class GiskardEmbeddingsFactory():
 
     _creators = {
         "ollama/nomic-embed-text:latest": GiskardOllamaEmbeddingsCreator,
+        "openai/text-embedding-3-large": GiskardOpenAIEmbeddingsCreator,
     }
 
     def get_embeddings(self, model: str, **kwargs) -> BaseEmbedding:
