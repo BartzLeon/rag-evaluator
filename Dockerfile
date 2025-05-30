@@ -24,6 +24,8 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 RUN pip install --no-deps "giskard[llm]>=2.16.0"
 
+# Download NLTK resources needed for sentence tokenization
+RUN python -m nltk.downloader all
 
 RUN pip uninstall -y uvloop
 

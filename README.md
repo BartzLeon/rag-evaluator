@@ -79,12 +79,12 @@ curl -X POST "http://localhost:9876/testsets/" \
 curl -X POST "http://localhost:9876/testsets/" \
 -H "Content-Type: application/json" \
 -d '{
-    "model_type": "openai/gpt-4-turbo",
-    "embedding_model": "openai/text-embedding-3-large",
-    "document": 26,
-    "name": "d4f-009-001",
-    "num_questions": 10,
-    "agent_description": "A chatbot answering questions about a story"
+    "model_type": "ollama/deepseek-r1:32b",
+    "embedding_model": "ollama/nomic-embed-text:latest",
+    "document": 135,
+    "name": "d4f-100doc-odeep32bnomic-001-001",
+    "num_questions": 50,
+    "agent_description": "Ein Chatbot welcher Fragen für das Startup Develop 4 Future beantwortet."
 }'
 ```
 
@@ -93,8 +93,9 @@ curl -X POST "http://localhost:9876/testsets/" \
 curl -X POST "http://localhost:9876/process/" \
 -H "Content-Type: application/json" \
 -d '{
-"model_type": "ollama/deepseek-r1:7b",
-"testset": 1
+"llm_to_be_evaluated_type": "ollama/deepseek-r1:32b",
+"judge_llm_type": "ollama/deepseek-r1:32b",
+"testset": 36
 }'
 ```
 
@@ -102,8 +103,9 @@ curl -X POST "http://localhost:9876/process/" \
 curl -X POST "http://localhost:9876/process/" \
 -H "Content-Type: application/json" \
 -d '{
-"model_type": "openai/gpt-4-turbo",
-"testset": 26
+"llm_to_be_evaluated_type": "openai/gpt-4-turbo",
+"judge_llm_type": "openai/gpt-4-turbo",
+"testset": 36
 }'
 ```
 
