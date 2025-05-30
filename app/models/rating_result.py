@@ -1,6 +1,6 @@
 from typing import Optional
 from pydantic import BaseModel
-from sqlalchemy import Column, Integer, String, JSON, Float
+from sqlalchemy import Column, Integer, String, JSON, Float, ForeignKey
 from app.models.base import Base
 
 class RatingResult(Base):
@@ -11,7 +11,9 @@ class RatingResult(Base):
     report_path = Column(String, nullable=True)
     scores = Column(JSON, nullable=True)
     knowledge_base_score = Column(Float, nullable=True)
-    model_type = Column(String, nullable=True)
+    llm_to_be_evaluated_type = Column(String, nullable=True)
+    judge_llm_type = Column(String, nullable=True)
+    testset_id = Column(Integer, ForeignKey("testsets.id"), nullable=True)
 
 
 class RatingResultCreate(BaseModel):
@@ -19,7 +21,9 @@ class RatingResultCreate(BaseModel):
     report_path: Optional[str] = None
     scores: Optional[str] = None
     knowledge_base_score: Optional[float] = None
-    model_type: Optional[str] = None
+    llm_to_be_evaluated_type: Optional[str] = None
+    judge_llm_type: Optional[str] = None
+    testset_id: Optional[int] = None
 
 
 class RatingResultRead(RatingResultCreate):
@@ -28,7 +32,9 @@ class RatingResultRead(RatingResultCreate):
     report_path: Optional[str] = None
     scores: Optional[str] = None
     knowledge_base_score: Optional[float] = None
-    model_type: Optional[str] = None
+    llm_to_be_evaluated_type: Optional[str] = None
+    judge_llm_type: Optional[str] = None
+    testset_id: Optional[int] = None
 
     class Config:
         orm_mode = True 

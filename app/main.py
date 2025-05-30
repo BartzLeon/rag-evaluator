@@ -59,7 +59,10 @@ async def process_data(request: ProcessRequestDTO):
 @app.get("/ratings/") #response_model=List[RatingResultRead]
 async def get_all_ratings(db: AsyncSession = Depends(get_db)):
     try:
-        result = await db.execute(select(RatingResult))
+        result = await db.execute(
+            select(RatingResult)
+            .order_by(RatingResult.id.desc())
+        )
         ratings = result.scalars().all()
         return ratings
     except Exception as e:
@@ -72,6 +75,7 @@ async def get_all_documents(db: AsyncSession = Depends(get_db)):
         result = await db.execute(
             select(Document)
             .options(selectinload(Document.files))
+            .order_by(Document.id.desc())
         )
         documents = result.scalars().all()
         return [DocumentRead.model_validate(doc) for doc in documents]
@@ -201,7 +205,10 @@ async def create_document(
 @app.get("/testsets/")
 async def get_all_test_sets(db: AsyncSession = Depends(get_db)):
     try:
-        result = await db.execute(select(Testset))
+        result = await db.execute(
+            select(Testset)
+            .order_by(Testset.id.desc())
+        )
         test_sets = result.scalars().all()
         return test_sets
     except Exception as e:
