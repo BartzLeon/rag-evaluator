@@ -32,7 +32,7 @@ services:
     build: .
     container_name: rag-worker
     command: >
-      sh -c "watchmedo auto-restart --directory=./app --pattern=*.py --recursive -- celery -A app.tasks.celery_app worker --loglevel=info --pool=solo"
+      sh -c "python migration.py upgrade head && watchmedo auto-restart --directory=./app --pattern=*.py --recursive -- celery -A app.tasks.celery_app worker --loglevel=info --pool=solo"
     volumes:
       - .:/app
     env_file:
