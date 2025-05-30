@@ -2,7 +2,10 @@
 /app/data/documents/
 /app/data/reports
 /app/data/testsets
-
+/example_upload_data/d4f
+/example_upload_data/d4f/
+/app/data/uploads/
+/app/data/chroma_storage/
 .env.local
 .secret.local
 .idea/
