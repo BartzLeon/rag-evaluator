@@ -1,56 +1,68 @@
 import os
-import openai
-from giskard.llm.client.openai import OpenAIClient
 from giskard.rag import evaluate as giskart_evaluate
 from giskard.rag.metrics import correctness_metric
 from giskard.rag.metrics.ragas_metrics import ragas_context_precision, ragas_faithfulness, ragas_answer_relevancy, \
     ragas_context_recall
-
-from app.config.llm_config import OPEN_AI_DEFAULT_MODEL, OPENAI_API_KEY
-from app.evaluate.evaluator import Evaluator
+from giskard.llm.embeddings import BaseEmbedding
+from giskard.llm import set_embedding_model
 import time
+
+from app.evaluate.evaluator import Evaluator
 from giskard.rag import KnowledgeBase
 import pandas as pd
 from app.chat_models.factory import ChatModelFactory
-
+from app.embeddings.factory import EmbeddingsFactory
+from app.embeddings.giskard.factory import GiskardEmbeddingsFactory
 
 class GiskartEvaluator(Evaluator):
-    MODEL = "gpt-4-turbo"
-
     def generate_report(self):
+        if self.documents is None:
+            raise ValueError("Documents not provided to GiskartEvaluator")
         df = pd.DataFrame([d.page_content for d in self.documents], columns=["text"])
 
-        #ChatModelFactory.set_global_llm_model("ollama/nomic-embed-text")
-        ChatModelFactory.set_global_llm_model("openai/gpt-4-turbo")
+        ChatModelFactory.set_global_llm_model(self.judge_llm_type)
 
-        knowledge_base = KnowledgeBase(
-            df,
-            llm_client=OpenAIClient(self.MODEL, openai.OpenAI(api_key=OPENAI_API_KEY)),
-        )
+        embedding_model_instance = EmbeddingsFactory.get_embeddings("giskard/" + self.embedding_model)
+        GiskardEmbeddingsFactory.set_global_embedding_model(self.embedding_model)
 
-        def answer_fn(question, history=None):
-            return self.chain.invoke({"question": question})
+        try:
+            knowledge_base = KnowledgeBase(
+                df,
+                llm_client=ChatModelFactory.get_lite_llm_model("giskard/" + self.judge_llm_type),
+                embedding_model=embedding_model_instance
+            )
 
-        report = giskart_evaluate(
-            answer_fn,
-            testset=self.testset,
-            knowledge_base=knowledge_base,
-            #metrics=[
-            #    correctness_metric,
-            #    ragas_context_precision,
-            #    ragas_faithfulness,
-            #    ragas_answer_relevancy,
-            #    ragas_context_recall,
-            #],
-        )
+            def answer_fn(question, history=None):
+                if self.chain is None:
+                    raise ValueError("Chain not initialized in GiskartEvaluator")
+                return self.chain.invoke({"question": question})
 
-        filename = self.generate_filename()
-        report.save(filename)
+            if self.testset is None:
+                raise ValueError("Testset not loaded in GiskartEvaluator")
 
-        ChatModelFactory.reset_global_llm_model()
+            report = giskart_evaluate(
+                answer_fn,
+                testset=self.testset,
+                knowledge_base=knowledge_base,
+                metrics=[
+                    #correctness_metric,
+                    #ragas_context_precision,
+                    #ragas_faithfulness,
+                    #ragas_answer_relevancy,
+                    #ragas_context_recall,
+                ],
+            )
 
-        return filename, report.component_scores(), report.knowledge_base_score
+            filename = self.generate_filename()
+            report.save(filename)
 
+            scores = report.component_scores() if hasattr(report, 'component_scores') else None
+            kb_score = report.knowledge_base_score if hasattr(report, 'knowledge_base_score') else None
+
+            return filename, scores, kb_score
+        finally:
+            GiskardEmbeddingsFactory.reset_global_embedding_model()
+            ChatModelFactory.reset_global_llm_model()
 
     @staticmethod
     def generate_filename():
