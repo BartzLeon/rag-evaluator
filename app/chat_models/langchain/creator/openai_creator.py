@@ -12,14 +12,12 @@ class OpenAILangChainChatModelCreator(LangChainChatModelCreator):
         "openai/gpt4-o-mini": "gpt-4-o-mini"
     }
 
-    def __init__(self, model_name: str = OPEN_AI_DEFAULT_MODEL, temperature: float = 0.7):
+    def __init__(self, model_name: str = OPEN_AI_DEFAULT_MODEL, ):
         self.api_key = SecretStr(OPENAI_API_KEY) if OPENAI_API_KEY else None
         self.model_name = self.model_name_map.get(model_name, OPEN_AI_DEFAULT_MODEL)
-        self.temperature = temperature
 
     def create_model(self) -> ChatOpenAI:
         return ChatOpenAI(
             api_key=self.api_key,
             model=self.model_name,
-            temperature=self.temperature
         )

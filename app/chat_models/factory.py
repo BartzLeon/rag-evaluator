@@ -6,7 +6,7 @@ from app.chat_models.langchain.creator.llama_creator import LlamaLangChainChatMo
 from app.chat_models.langchain.creator.ollama_creator import OllamaLangChainChatModelCreator
 from app.chat_models.langchain.creator.openai_creator import OpenAILangChainChatModelCreator
 from app.chat_models.lite_llm.creator.ollama_creator import GiskardOllamaLiteLLMCreator
-
+from app.chat_models.lite_llm.creator.chatgpt_creator import GiskardOpenAILiteLLMCreator
 from app.config.llm_config import PROVIDER_CONFIGS
 
 
@@ -15,6 +15,10 @@ class ChatModelFactory:
         "openai/gpt-4": OpenAILangChainChatModelCreator,
         "openai/gpt-4-turbo": OpenAILangChainChatModelCreator,
         "openai/gpt-4-o": OpenAILangChainChatModelCreator,
+        "openai/gpt-4.1-mini": OpenAILangChainChatModelCreator,
+        "openai/gpt-4.1-nano": OpenAILangChainChatModelCreator,
+        "openai/gpt-4o": OpenAILangChainChatModelCreator,
+        "openai/gpt-4o-mini": OpenAILangChainChatModelCreator,
         "openai/gpt4-o-mini": OpenAILangChainChatModelCreator,
         "meta-llama/Llama-3.3-70B-Instruct": LlamaLangChainChatModelCreator,
         "deepseek": OllamaLangChainChatModelCreator,
@@ -22,7 +26,8 @@ class ChatModelFactory:
 
     _creators_lite_llm = {
         "giskard/deepseek-r1:7b": GiskardOllamaLiteLLMCreator,
-        "giskard/gpt-4-turbo": GiskardOllamaLiteLLMCreator,
+        "giskard/deepseek-r1:32b": GiskardOllamaLiteLLMCreator,
+        "giskard/openai/gpt-4-turbo": GiskardOpenAILiteLLMCreator,
     }
 
     _provider_configs = PROVIDER_CONFIGS
@@ -40,7 +45,14 @@ class ChatModelFactory:
         creator_class = cls._creators_lite_llm.get(model_type.lower())
         if not creator_class:
             raise ValueError(f"Unsupported model type: {model_type}")
-        creator = creator_class(model_name=model_type.lower(), **kwargs)
+        
+        model_name_for_creator: str
+        if model_type.lower().startswith("giskard/"):
+            model_name_for_creator = model_type.lower().replace("giskard/", "", 1)
+        else:
+            model_name_for_creator = model_type.lower()
+
+        creator = creator_class(model_name=model_name_for_creator, **kwargs)
         return creator.create_model()
 
     @classmethod
