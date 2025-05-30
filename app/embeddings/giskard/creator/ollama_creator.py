@@ -2,7 +2,7 @@ from .base import GiskardEmbeddingsCreator
 from giskard.llm.embeddings.litellm import LiteLLMEmbedding
 
 class GiskardOllamaEmbeddingsCreator(GiskardEmbeddingsCreator):
-    def __init__(self, model: str = "ollama/nomic-embed-text:latest", base_url: str = "http://host.docker.internal:11434"):
+    def __init__(self, model: str = "ollama/nomic-embed-text:latest", base_url: str = "http://192.168.5.2:11434"):
         self.model = model
         self.base_url = base_url
 
