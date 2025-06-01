@@ -1,7 +1,8 @@
 from typing import Optional
 from pydantic import BaseModel
-from sqlalchemy import Column, Integer, String, JSON, Float, ForeignKey
+from sqlalchemy import Column, Integer, String, JSON, Float, ForeignKey, DateTime
 from app.models.base import Base
+from datetime import datetime
 
 class RatingResult(Base):
     __tablename__ = "rating_results"
@@ -14,6 +15,9 @@ class RatingResult(Base):
     llm_to_be_evaluated_type = Column(String, nullable=True)
     judge_llm_type = Column(String, nullable=True)
     testset_id = Column(Integer, ForeignKey("testsets.id"), nullable=True)
+    start_eval = Column(DateTime, nullable=True)
+    end_eval = Column(DateTime, nullable=True)
+    time_eval = Column(Float, nullable=True)  # Duration in seconds
 
 
 class RatingResultCreate(BaseModel):
@@ -24,6 +28,9 @@ class RatingResultCreate(BaseModel):
     llm_to_be_evaluated_type: Optional[str] = None
     judge_llm_type: Optional[str] = None
     testset_id: Optional[int] = None
+    start_eval: Optional[datetime] = None
+    end_eval: Optional[datetime] = None
+    time_eval: Optional[float] = None
 
 
 class RatingResultRead(RatingResultCreate):
@@ -35,6 +42,9 @@ class RatingResultRead(RatingResultCreate):
     llm_to_be_evaluated_type: Optional[str] = None
     judge_llm_type: Optional[str] = None
     testset_id: Optional[int] = None
+    start_eval: Optional[datetime] = None
+    end_eval: Optional[datetime] = None
+    time_eval: Optional[float] = None
 
     class Config:
         orm_mode = True 

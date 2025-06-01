@@ -1,4 +1,5 @@
 import asyncio
+from datetime import datetime
 from app.tasks import celery_app
 from app.db import async_session
 from app.models import RatingResult, Testset, Document
@@ -68,6 +69,12 @@ async def _process_chat_request_async(request_data: dict):
                 await db.commit()
                 return
 
+            # Set start time for evaluation
+            start_time = datetime.now()
+            rating.start_eval = start_time
+            await db.commit()
+            task_logger.info(f"Evaluation started at: {start_time}")
+
             evaluator = EvaluatorFactory.get_model(
                 #evaluator=GiskartEvaluator.__name__,
                 evaluator=RagasEvaluator.__name__,
@@ -82,6 +89,17 @@ async def _process_chat_request_async(request_data: dict):
             )
             
             eval_result = evaluator.evaluate()
+            
+            # Set end time for evaluation
+            end_time = datetime.now()
+            rating.end_eval = end_time
+            
+            # Calculate duration in seconds
+            duration = (end_time - start_time).total_seconds()
+            rating.time_eval = duration
+            
+            task_logger.info(f"Evaluation completed at: {end_time}, Duration: {duration:.2f} seconds")
+            
             if eval_result is None:
                 error_msg = "Evaluator returned None, indicating an issue during evaluation."
                 task_logger.error(error_msg)
@@ -113,6 +131,13 @@ async def _process_chat_request_async(request_data: dict):
             task_logger.error(f"Error processing chat request: {e}", exc_info=True)
             if rating: 
                 try:
+                    # Set end time even for errors to track total time
+                    if rating.start_eval and not rating.end_eval:
+                        end_time = datetime.now()
+                        rating.end_eval = end_time
+                        duration = (end_time - rating.start_eval).total_seconds()
+                        rating.time_eval = duration
+                    
                     rating.status = "Error"
                     rating.report_path = str(e) 
                     await db.commit()
