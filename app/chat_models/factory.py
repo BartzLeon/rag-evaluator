@@ -15,6 +15,7 @@ class ChatModelFactory:
         "openai/gpt-4": OpenAILangChainChatModelCreator,
         "openai/gpt-4-turbo": OpenAILangChainChatModelCreator,
         "openai/gpt-4-o": OpenAILangChainChatModelCreator,
+        "openai/gpt-4.1": OpenAILangChainChatModelCreator,
         "openai/gpt-4.1-mini": OpenAILangChainChatModelCreator,
         "openai/gpt-4.1-nano": OpenAILangChainChatModelCreator,
         "openai/gpt-4o": OpenAILangChainChatModelCreator,
