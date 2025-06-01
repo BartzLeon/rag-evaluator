@@ -10,7 +10,7 @@ from app.dto.file_dto import FileCreateDTO, FileReadDTO
 from app.models import RatingResult, Document, Testset, DocumentRead
 from app.models.file import UploadedFile
 from app.models.association import file_document
-from fastapi import FastAPI, APIRouter, Depends, UploadFile, File as FastAPIFile, HTTPException
+from fastapi import FastAPI, APIRouter, Depends, UploadFile, File as FastAPIFile, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 from app import db
 from app.dto.process_request_dto import ProcessRequestDTO
@@ -57,12 +57,29 @@ async def process_data(request: ProcessRequestDTO):
         return {"error": str(e)}
 
 @app.get("/ratings/") #response_model=List[RatingResultRead]
-async def get_all_ratings(db: AsyncSession = Depends(get_db)):
+async def get_all_ratings(
+    db: AsyncSession = Depends(get_db),
+    status: Optional[str] = Query(None, description="Filter by status"),
+    llm_to_be_evaluated_type: Optional[str] = Query(None, description="Filter by LLM to be evaluated type"),
+    judge_llm_type: Optional[str] = Query(None, description="Filter by judge LLM type"),
+    testset_id: Optional[int] = Query(None, description="Filter by testset ID")
+):
     try:
-        result = await db.execute(
-            select(RatingResult)
-            .order_by(RatingResult.id.desc())
-        )
+        query = select(RatingResult)
+        
+        # Apply filters if provided
+        if status is not None:
+            query = query.filter(RatingResult.status == status)
+        if llm_to_be_evaluated_type is not None:
+            query = query.filter(RatingResult.llm_to_be_evaluated_type == llm_to_be_evaluated_type)
+        if judge_llm_type is not None:
+            query = query.filter(RatingResult.judge_llm_type == judge_llm_type)
+        if testset_id is not None:
+            query = query.filter(RatingResult.testset_id == testset_id)
+        
+        query = query.order_by(RatingResult.id.desc())
+        
+        result = await db.execute(query)
         ratings = result.scalars().all()
         return ratings
     except Exception as e:
