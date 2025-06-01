@@ -1,45 +1,39 @@
 services:
-  rag-web:
+  # DEV STACK
+  rag-web-dev:
     build: .
-    container_name: rag-web
+    container_name: rag-web-dev
     ports:
       - "9876:9876"
     volumes:
       - .:/app
+    env_file:
+      - .env.dev
     depends_on:
       - rag-db
-      - rag-redis
+      - rag-redis-dev
+    profiles: ["dev"]
 
-  rag-db:
-    image: postgres:13
-    container_name: rag-db
-    environment:
-      POSTGRES_USER: user
-      POSTGRES_PASSWORD: password
-      POSTGRES_DB: rag_db
-    ports:
-      - "5432:5432"
-    volumes:
-      - rag-postgres_data:/var/lib/postgresql/data
-
-  rag-redis:
+  rag-redis-dev:
     image: redis:7
-    container_name: rag-redis
+    container_name: rag-redis-dev
     ports:
       - "6380:6379"
+    profiles: ["dev"]
 
-  rag-worker:
+  rag-worker-dev:
     build: .
-    container_name: rag-worker
+    container_name: rag-worker-dev
     command: >
       sh -c "python migration.py upgrade head && watchmedo auto-restart --directory=./app --pattern=*.py --recursive -- celery -A app.tasks.celery_app worker --loglevel=info --pool=solo"
     volumes:
       - .:/app
     env_file:
-      - .env
+      - .env.dev
     depends_on:
-      - rag-redis
+      - rag-redis-dev
       - rag-db
+    profiles: ["dev"]
 
   rag-frontend:
     image: node:18
@@ -54,7 +48,40 @@ services:
       - NUXT_HOST=0.0.0.0
       - NUXT_PORT=3333
     profiles:
-      - frontend
+      - dev
+
+  # PROD-LIKE STACK
+  rag-web-prod:
+    build: .
+    container_name: rag-web-prod
+    ports:
+      - "9877:9876"
+    env_file:
+      - .env.prod
+    depends_on:
+      - rag-db
+      - rag-redis-prod
+    profiles: ["prod"]
+
+  rag-redis-prod:
+    image: redis:7
+    container_name: rag-redis-prod
+    ports:
+      - "6381:6379"
+    profiles: ["prod"]
+
+  # SHARED DB
+  rag-db:
+    image: postgres:13
+    container_name: rag-db
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: rag_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - rag-postgres_data:/var/lib/postgresql/data
 
 volumes:
   rag-postgres_data:
