@@ -1,0 +1,461 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global/global}
+    \entry{gemini2024v15}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=176790f20018e62732750fd3853fffa5}{%
+           family={{Gemini Team}},
+           familyi={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{176790f20018e62732750fd3853fffa5}
+      \strng{fullhash}{176790f20018e62732750fd3853fffa5}
+      \strng{fullhashraw}{176790f20018e62732750fd3853fffa5}
+      \strng{bibnamehash}{176790f20018e62732750fd3853fffa5}
+      \strng{authorbibnamehash}{176790f20018e62732750fd3853fffa5}
+      \strng{authornamehash}{176790f20018e62732750fd3853fffa5}
+      \strng{authorfullhash}{176790f20018e62732750fd3853fffa5}
+      \strng{authorfullhashraw}{176790f20018e62732750fd3853fffa5}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://storage.googleapis.com/deepmind-media/gemini/gemini_v1_5_report.pdf}}
+      \field{note}{Google DeepMind Technical Report}
+      \field{title}{{Gemini 1.5: Unlocking multimodal understanding across millions of tokens of context}}
+      \field{year}{2024}
+    \endentry
+    \entry{honroth2024retrieval}{misc}{}{}
+      \name{author}{3}{}{%
+        {{hash=3f875d1e68f0b3a320726896d468e3c6}{%
+           family={Honroth},
+           familyi={H\bibinitperiod},
+           given={Thorsten},
+           giveni={T\bibinitperiod}}}%
+        {{hash=f719847015a2a8859c5aa18be0d19f2d}{%
+           family={Siebert},
+           familyi={S\bibinitperiod},
+           given={Julien},
+           giveni={J\bibinitperiod}}}%
+        {{hash=fa4a91023f0bf8f78bbb38dcd98bcec3}{%
+           family={Kelbert},
+           familyi={K\bibinitperiod},
+           given={Patricia},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{bd8363c22efe3dc266e68cdcec35eef9}
+      \strng{fullhash}{bd8363c22efe3dc266e68cdcec35eef9}
+      \strng{fullhashraw}{bd8363c22efe3dc266e68cdcec35eef9}
+      \strng{bibnamehash}{bd8363c22efe3dc266e68cdcec35eef9}
+      \strng{authorbibnamehash}{bd8363c22efe3dc266e68cdcec35eef9}
+      \strng{authornamehash}{bd8363c22efe3dc266e68cdcec35eef9}
+      \strng{authorfullhash}{bd8363c22efe3dc266e68cdcec35eef9}
+      \strng{authorfullhashraw}{bd8363c22efe3dc266e68cdcec35eef9}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{Mai}
+      \field{note}{Zugriff am 7. Februar 2025}
+      \field{title}{Retrieval Augmented Generation (RAG): Chatten mit den eigenen Daten}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://www.iese.fraunhofer.de/blog/retrieval-augmented-generation-rag/
+      \endverb
+      \verb{url}
+      \verb https://www.iese.fraunhofer.de/blog/retrieval-augmented-generation-rag/
+      \endverb
+    \endentry
+    \entry{pixion2024rag}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=ef23a170f82c892e379a07127abe05b1}{%
+           family={Panic},
+           familyi={P\bibinitperiod},
+           given={Luka},
+           giveni={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{ef23a170f82c892e379a07127abe05b1}
+      \strng{fullhash}{ef23a170f82c892e379a07127abe05b1}
+      \strng{fullhashraw}{ef23a170f82c892e379a07127abe05b1}
+      \strng{bibnamehash}{ef23a170f82c892e379a07127abe05b1}
+      \strng{authorbibnamehash}{ef23a170f82c892e379a07127abe05b1}
+      \strng{authornamehash}{ef23a170f82c892e379a07127abe05b1}
+      \strng{authorfullhash}{ef23a170f82c892e379a07127abe05b1}
+      \strng{authorfullhashraw}{ef23a170f82c892e379a07127abe05b1}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Abgerufen am 30. Mai 2025}
+      \field{title}{{RAG in der Praxis – Generierung synthetischer Testdatensätze}}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://pixion.co/blog/rag-in-practice-test-set-generation
+      \endverb
+      \verb{url}
+      \verb https://pixion.co/blog/rag-in-practice-test-set-generation
+      \endverb
+    \endentry
+    \entry{ragas_context_entities_recall}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=b1999c0b68db3b28e7336ea0e30dcd52}{%
+           family={Ragas},
+           familyi={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{b1999c0b68db3b28e7336ea0e30dcd52}
+      \strng{fullhash}{b1999c0b68db3b28e7336ea0e30dcd52}
+      \strng{fullhashraw}{b1999c0b68db3b28e7336ea0e30dcd52}
+      \strng{bibnamehash}{b1999c0b68db3b28e7336ea0e30dcd52}
+      \strng{authorbibnamehash}{b1999c0b68db3b28e7336ea0e30dcd52}
+      \strng{authornamehash}{b1999c0b68db3b28e7336ea0e30dcd52}
+      \strng{authorfullhash}{b1999c0b68db3b28e7336ea0e30dcd52}
+      \strng{authorfullhashraw}{b1999c0b68db3b28e7336ea0e30dcd52}
+      \field{extraname}{1}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: 2024}
+      \field{title}{Context Entities Recall}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://docs.ragas.io/en/stable/concepts/metrics/available_metrics/context_entities_recall/
+      \endverb
+      \verb{url}
+      \verb https://docs.ragas.io/en/stable/concepts/metrics/available_metrics/context_entities_recall/
+      \endverb
+    \endentry
+    \entry{ragas_context_precision}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=b1999c0b68db3b28e7336ea0e30dcd52}{%
+           family={Ragas},
+           familyi={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{b1999c0b68db3b28e7336ea0e30dcd52}
+      \strng{fullhash}{b1999c0b68db3b28e7336ea0e30dcd52}
+      \strng{fullhashraw}{b1999c0b68db3b28e7336ea0e30dcd52}
+      \strng{bibnamehash}{b1999c0b68db3b28e7336ea0e30dcd52}
+      \strng{authorbibnamehash}{b1999c0b68db3b28e7336ea0e30dcd52}
+      \strng{authornamehash}{b1999c0b68db3b28e7336ea0e30dcd52}
+      \strng{authorfullhash}{b1999c0b68db3b28e7336ea0e30dcd52}
+      \strng{authorfullhashraw}{b1999c0b68db3b28e7336ea0e30dcd52}
+      \field{extraname}{2}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: 2024}
+      \field{title}{Context Precision}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://docs.ragas.io/en/stable/concepts/metrics/available_metrics/context_precision/
+      \endverb
+      \verb{url}
+      \verb https://docs.ragas.io/en/stable/concepts/metrics/available_metrics/context_precision/
+      \endverb
+    \endentry
+    \entry{ragas_context_recall}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=b1999c0b68db3b28e7336ea0e30dcd52}{%
+           family={Ragas},
+           familyi={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{b1999c0b68db3b28e7336ea0e30dcd52}
+      \strng{fullhash}{b1999c0b68db3b28e7336ea0e30dcd52}
+      \strng{fullhashraw}{b1999c0b68db3b28e7336ea0e30dcd52}
+      \strng{bibnamehash}{b1999c0b68db3b28e7336ea0e30dcd52}
+      \strng{authorbibnamehash}{b1999c0b68db3b28e7336ea0e30dcd52}
+      \strng{authornamehash}{b1999c0b68db3b28e7336ea0e30dcd52}
+      \strng{authorfullhash}{b1999c0b68db3b28e7336ea0e30dcd52}
+      \strng{authorfullhashraw}{b1999c0b68db3b28e7336ea0e30dcd52}
+      \field{extraname}{3}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: 2024}
+      \field{title}{Context Recall}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://docs.ragas.io/en/stable/concepts/metrics/available_metrics/context_recall/
+      \endverb
+      \verb{url}
+      \verb https://docs.ragas.io/en/stable/concepts/metrics/available_metrics/context_recall/
+      \endverb
+    \endentry
+    \entry{ragas_faithfulness}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=b1999c0b68db3b28e7336ea0e30dcd52}{%
+           family={Ragas},
+           familyi={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{b1999c0b68db3b28e7336ea0e30dcd52}
+      \strng{fullhash}{b1999c0b68db3b28e7336ea0e30dcd52}
+      \strng{fullhashraw}{b1999c0b68db3b28e7336ea0e30dcd52}
+      \strng{bibnamehash}{b1999c0b68db3b28e7336ea0e30dcd52}
+      \strng{authorbibnamehash}{b1999c0b68db3b28e7336ea0e30dcd52}
+      \strng{authornamehash}{b1999c0b68db3b28e7336ea0e30dcd52}
+      \strng{authorfullhash}{b1999c0b68db3b28e7336ea0e30dcd52}
+      \strng{authorfullhashraw}{b1999c0b68db3b28e7336ea0e30dcd52}
+      \field{extraname}{4}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: 2024}
+      \field{title}{Faithfulness}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://docs.ragas.io/en/stable/concepts/metrics/available_metrics/faithfulness/
+      \endverb
+      \verb{url}
+      \verb https://docs.ragas.io/en/stable/concepts/metrics/available_metrics/faithfulness/
+      \endverb
+    \endentry
+    \entry{ragas_noise_sensitivity}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=b1999c0b68db3b28e7336ea0e30dcd52}{%
+           family={Ragas},
+           familyi={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{b1999c0b68db3b28e7336ea0e30dcd52}
+      \strng{fullhash}{b1999c0b68db3b28e7336ea0e30dcd52}
+      \strng{fullhashraw}{b1999c0b68db3b28e7336ea0e30dcd52}
+      \strng{bibnamehash}{b1999c0b68db3b28e7336ea0e30dcd52}
+      \strng{authorbibnamehash}{b1999c0b68db3b28e7336ea0e30dcd52}
+      \strng{authornamehash}{b1999c0b68db3b28e7336ea0e30dcd52}
+      \strng{authorfullhash}{b1999c0b68db3b28e7336ea0e30dcd52}
+      \strng{authorfullhashraw}{b1999c0b68db3b28e7336ea0e30dcd52}
+      \field{extraname}{5}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: 2024}
+      \field{title}{Noise Sensitivity}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://docs.ragas.io/en/stable/concepts/metrics/available_metrics/noise_sensitivity/
+      \endverb
+      \verb{url}
+      \verb https://docs.ragas.io/en/stable/concepts/metrics/available_metrics/noise_sensitivity/
+      \endverb
+    \endentry
+    \entry{ragas_nvidia_metrics}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=b1999c0b68db3b28e7336ea0e30dcd52}{%
+           family={Ragas},
+           familyi={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{b1999c0b68db3b28e7336ea0e30dcd52}
+      \strng{fullhash}{b1999c0b68db3b28e7336ea0e30dcd52}
+      \strng{fullhashraw}{b1999c0b68db3b28e7336ea0e30dcd52}
+      \strng{bibnamehash}{b1999c0b68db3b28e7336ea0e30dcd52}
+      \strng{authorbibnamehash}{b1999c0b68db3b28e7336ea0e30dcd52}
+      \strng{authornamehash}{b1999c0b68db3b28e7336ea0e30dcd52}
+      \strng{authorfullhash}{b1999c0b68db3b28e7336ea0e30dcd52}
+      \strng{authorfullhashraw}{b1999c0b68db3b28e7336ea0e30dcd52}
+      \field{extraname}{6}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: 2024}
+      \field{title}{Nvidia Metrics}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://docs.ragas.io/en/stable/concepts/metrics/available_metrics/nvidia_metrics/
+      \endverb
+      \verb{url}
+      \verb https://docs.ragas.io/en/stable/concepts/metrics/available_metrics/nvidia_metrics/
+      \endverb
+    \endentry
+    \entry{ragas_response_relevancy}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=b1999c0b68db3b28e7336ea0e30dcd52}{%
+           family={Ragas},
+           familyi={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{b1999c0b68db3b28e7336ea0e30dcd52}
+      \strng{fullhash}{b1999c0b68db3b28e7336ea0e30dcd52}
+      \strng{fullhashraw}{b1999c0b68db3b28e7336ea0e30dcd52}
+      \strng{bibnamehash}{b1999c0b68db3b28e7336ea0e30dcd52}
+      \strng{authorbibnamehash}{b1999c0b68db3b28e7336ea0e30dcd52}
+      \strng{authornamehash}{b1999c0b68db3b28e7336ea0e30dcd52}
+      \strng{authorfullhash}{b1999c0b68db3b28e7336ea0e30dcd52}
+      \strng{authorfullhashraw}{b1999c0b68db3b28e7336ea0e30dcd52}
+      \field{extraname}{7}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: 2024}
+      \field{title}{Response Relevancy}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://docs.ragas.io/en/stable/concepts/metrics/available_metrics/answer_relevance/
+      \endverb
+      \verb{url}
+      \verb https://docs.ragas.io/en/stable/concepts/metrics/available_metrics/answer_relevance/
+      \endverb
+    \endentry
+    \entry{shaikh2024cbeval}{misc}{}{}
+      \name{author}{4}{}{%
+        {{hash=a0ca9c18c06436c5c72b1dc024a5d3f9}{%
+           family={Shaikh},
+           familyi={S\bibinitperiod},
+           given={Ammar},
+           giveni={A\bibinitperiod}}}%
+        {{hash=76de2c06bee974e9f5ad5e622953ba3c}{%
+           family={Dandekar},
+           familyi={D\bibinitperiod},
+           given={Raj\bibnamedelima Abhijit},
+           giveni={R\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=2733ebded1da666cd7aa49041a757c10}{%
+           family={Panat},
+           familyi={P\bibinitperiod},
+           given={Sreedath},
+           giveni={S\bibinitperiod}}}%
+        {{hash=c6208a05268aaf49fcf952547d9b9879}{%
+           family={Dandekar},
+           familyi={D\bibinitperiod},
+           given={Rajat},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{e2dee37d8050d4bd2d83738a6458aca4}
+      \strng{fullhash}{c63e766d00fdae574fa6077852669c8e}
+      \strng{fullhashraw}{c63e766d00fdae574fa6077852669c8e}
+      \strng{bibnamehash}{e2dee37d8050d4bd2d83738a6458aca4}
+      \strng{authorbibnamehash}{e2dee37d8050d4bd2d83738a6458aca4}
+      \strng{authornamehash}{e2dee37d8050d4bd2d83738a6458aca4}
+      \strng{authorfullhash}{c63e766d00fdae574fa6077852669c8e}
+      \strng{authorfullhashraw}{c63e766d00fdae574fa6077852669c8e}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{cs.CL}
+      \field{eprinttype}{arXiv}
+      \field{title}{{CBEval: A framework for evaluating and interpreting cognitive biases in LLMs}}
+      \field{year}{2024}
+      \verb{doi}
+      \verb 10.48550/arXiv.2412.03605
+      \endverb
+      \verb{eprint}
+      \verb 2412.03605
+      \endverb
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2412.03605
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2412.03605
+      \endverb
+    \endentry
+    \entry{wikipedia_confusion_matrix}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=9c677286866aad38f8e9b660f5411814}{%
+           family={Wikipedia},
+           familyi={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{fullhash}{9c677286866aad38f8e9b660f5411814}
+      \strng{fullhashraw}{9c677286866aad38f8e9b660f5411814}
+      \strng{bibnamehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{authorbibnamehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{authornamehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{authorfullhash}{9c677286866aad38f8e9b660f5411814}
+      \strng{authorfullhashraw}{9c677286866aad38f8e9b660f5411814}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: 2024}
+      \field{title}{Confusion matrix}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://en.wikipedia.org/wiki/Confusion_matrix
+      \endverb
+      \verb{url}
+      \verb https://en.wikipedia.org/wiki/Confusion_matrix
+      \endverb
+    \endentry
+    \entry{yang2023llmfairness}{misc}{}{}
+      \name{author}{6}{}{%
+        {{hash=9dab191c24fe5934367a91bccc2e61cb}{%
+           family={Yang},
+           familyi={Y\bibinitperiod},
+           given={Jingfeng},
+           giveni={J\bibinitperiod}}}%
+        {{hash=a9f1e89449a8f9e0a4b65ee24d8f421d}{%
+           family={Xu},
+           familyi={X\bibinitperiod},
+           given={Peng},
+           giveni={P\bibinitperiod}}}%
+        {{hash=76e1ef9c528e661efc49331df87f6fd7}{%
+           family={Jin},
+           familyi={J\bibinitperiod},
+           given={Xisen},
+           giveni={X\bibinitperiod}}}%
+        {{hash=f0ae8cd7eb0b07fe71e1654376c0fc0e}{%
+           family={Fu},
+           familyi={F\bibinitperiod},
+           given={Jie},
+           giveni={J\bibinitperiod}}}%
+        {{hash=6ff611991cba7ee48521ab941158ac2f}{%
+           family={Yang},
+           familyi={Y\bibinitperiod},
+           given={Diyi},
+           giveni={D\bibinitperiod}}}%
+        {{hash=1e0e35911625ab47a73a77dfc69dab72}{%
+           family={Zou},
+           familyi={Z\bibinitperiod},
+           given={Xu},
+           giveni={X\bibinitperiod}}}%
+      }
+      \strng{namehash}{70240e8bdd85655bc80a8ee96f086c6e}
+      \strng{fullhash}{009ed61d8d09f11836217f9c265f2a6e}
+      \strng{fullhashraw}{009ed61d8d09f11836217f9c265f2a6e}
+      \strng{bibnamehash}{70240e8bdd85655bc80a8ee96f086c6e}
+      \strng{authorbibnamehash}{70240e8bdd85655bc80a8ee96f086c6e}
+      \strng{authornamehash}{70240e8bdd85655bc80a8ee96f086c6e}
+      \strng{authorfullhash}{009ed61d8d09f11836217f9c265f2a6e}
+      \strng{authorfullhashraw}{009ed61d8d09f11836217f9c265f2a6e}
+      \field{sortinit}{Y}
+      \field{sortinithash}{fd67ad5a9ef0f7456bdd9aab10fe1495}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{cs.CL}
+      \field{eprinttype}{arXiv}
+      \field{title}{{Large Language Models are not Fair Evaluators}}
+      \field{year}{2023}
+      \verb{eprint}
+      \verb 2305.17926
+      \endverb
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2305.17926
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2305.17926
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

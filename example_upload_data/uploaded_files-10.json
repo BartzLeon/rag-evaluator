@@ -1,0 +1,90 @@
+[
+  {
+    "id": 12,
+    "filename": "Datenschutzerkl\u00e4rung Heier Grundschule.docx",
+    "file_path": "app/data/uploads/Datenschutzerkl\u00e4rung Heier Grundschule.docx",
+    "created_at": "2025-05-15T11:12:25.702298",
+    "document_id": null,
+    "relative_path": "Datenschutzerkl\u00e4rung Heier Grundschule.docx"
+  },
+  {
+    "id": 23,
+    "filename": "Empfehlungsschreiben Leon Bartz.pdf",
+    "file_path": "app/data/uploads/Empfehlungsschreiben Leon Bartz.pdf",
+    "created_at": "2025-05-15T11:12:25.702298",
+    "document_id": null,
+    "relative_path": "PTJ/Empfehlungsschreiben Leon Bartz.pdf"
+  },
+  {
+    "id": 24,
+    "filename": "anlage-1-zb-rmv.pdf",
+    "file_path": "app/data/uploads/anlage-1-zb-rmv.pdf",
+    "created_at": "2025-05-15T11:12:25.702298",
+    "document_id": null,
+    "relative_path": "PTJ/anlage-1-zb-rmv.pdf"
+  },
+  {
+    "id": 25,
+    "filename": "vn-2Bsb_ab_01.10.2020-1.docx",
+    "file_path": "app/data/uploads/vn-2Bsb_ab_01.10.2020-1.docx",
+    "created_at": "2025-05-15T11:12:25.702298",
+    "document_id": null,
+    "relative_path": "PTJ/vn-2Bsb_ab_01.10.2020-1.docx"
+  },
+  {
+    "id": 29,
+    "filename": "20210302-1000552834-umsatz.CSV",
+    "file_path": "app/data/uploads/20210302-1000552834-umsatz.CSV",
+    "created_at": "2025-05-15T11:12:25.702298",
+    "document_id": null,
+    "relative_path": "PTJ/Rechnungen/02.21/20210302-1000552834-umsatz.CSV"
+  },
+  {
+    "id": 30,
+    "filename": "388802_Quittung.pdf",
+    "file_path": "app/data/uploads/388802_Quittung.pdf",
+    "created_at": "2025-05-15T11:12:25.702298",
+    "document_id": null,
+    "relative_path": "PTJ/Rechnungen/02.21/388802_Quittung.pdf"
+  },
+  {
+    "id": 46,
+    "filename": "Businessplan 02.12.21 DRAW.docx",
+    "file_path": "app/data/uploads/Businessplan 02.12.21 DRAW.docx",
+    "created_at": "2025-05-15T11:12:25.702298",
+    "document_id": null,
+    "relative_path": "Microsoft Teams-Chatdateien/Businessplan 02.12.21 DRAW.docx"
+  },
+  {
+    "id": 52,
+    "filename": "Beratungsvertrag.docx",
+    "file_path": "app/data/uploads/Beratungsvertrag.docx",
+    "created_at": "2025-05-15T11:12:25.702298",
+    "document_id": null,
+    "relative_path": "Vertr\u00e4ge/Beratungsvertrag.docx"
+  },
+  {
+    "id": 53,
+    "filename": "Hauptformular.docx",
+    "file_path": "app/data/uploads/Hauptformular.docx",
+    "created_at": "2025-05-15T11:12:25.702298",
+    "document_id": null,
+    "relative_path": "Vertr\u00e4ge/Heier/Hauptformular.docx"
+  },
+  {
+    "id": 54,
+    "filename": "AVV.doc",
+    "file_path": "app/data/uploads/AVV.doc",
+    "created_at": "2025-05-15T11:12:25.702298",
+    "document_id": null,
+    "relative_path": "Vertr\u00e4ge/Heier/AVV.doc"
+  },
+  {
+    "id": 55,
+    "filename": "AGB.docx",
+    "file_path": "app/data/uploads/AGB.docx",
+    "created_at": "2025-05-15T11:12:25.702298",
+    "document_id": null,
+    "relative_path": "Vertr\u00e4ge/Heier/AGB.docx"
+  }
+]

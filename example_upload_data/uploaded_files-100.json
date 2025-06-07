@@ -1,0 +1,787 @@
+[
+  {
+    "id": 12,
+    "filename": "Datenschutzerkl\u00e4rung Heier Grundschule.docx",
+    "file_path": "app/data/uploads/Datenschutzerkl\u00e4rung Heier Grundschule.docx",
+    "created_at": "2025-05-15T11:12:25.702298",
+    "document_id": null,
+    "relative_path": "Datenschutzerkl\u00e4rung Heier Grundschule.docx"
+  },
+  {
+    "id": 13,
+    "filename": "Drop shipping.docx",
+    "file_path": "app/data/uploads/Drop shipping.docx",
+    "created_at": "2025-05-15T11:12:25.702298",
+    "document_id": null,
+    "relative_path": "Drop shipping.docx"
+  },
+  {
+    "id": 16,
+    "filename": "Book.xlsx",
+    "file_path": "app/data/uploads/Book.xlsx",
+    "created_at": "2025-05-15T11:12:25.702298",
+    "document_id": null,
+    "relative_path": "Book.xlsx"
+  },
+  {
+    "id": 19,
+    "filename": "Rechner 2k.docx",
+    "file_path": "app/data/uploads/Rechner 2k.docx",
+    "created_at": "2025-05-15T11:12:25.702298",
+    "document_id": null,
+    "relative_path": "Rechner 2k.docx"
+  },
+  {
+    "id": 21,
+    "filename": "Erkl\u00e4rung.pdf",
+    "file_path": "app/data/uploads/Erkl\u00e4rung.pdf",
+    "created_at": "2025-05-15T11:12:25.702298",
+    "document_id": null,
+    "relative_path": "PTJ/Erkl\u00e4rung.pdf"
+  },
+  {
+    "id": 23,
+    "filename": "Empfehlungsschreiben Leon Bartz.pdf",
+    "file_path": "app/data/uploads/Empfehlungsschreiben Leon Bartz.pdf",
+    "created_at": "2025-05-15T11:12:25.702298",
+    "document_id": null,
+    "relative_path": "PTJ/Empfehlungsschreiben Leon Bartz.pdf"
+  },
+  {
+    "id": 24,
+    "filename": "anlage-1-zb-rmv.pdf",
+    "file_path": "app/data/uploads/anlage-1-zb-rmv.pdf",
+    "created_at": "2025-05-15T11:12:25.702298",
+    "document_id": null,
+    "relative_path": "PTJ/anlage-1-zb-rmv.pdf"
+  },
+  {
+    "id": 25,
+    "filename": "vn-2Bsb_ab_01.10.2020-1.docx",
+    "file_path": "app/data/uploads/vn-2Bsb_ab_01.10.2020-1.docx",
+    "created_at": "2025-05-15T11:12:25.702298",
+    "document_id": null,
+    "relative_path": "PTJ/vn-2Bsb_ab_01.10.2020-1.docx"
+  },
+  {
+    "id": 26,
+    "filename": "2101gr002a_Bartz_ZB_27.01.2021.pdf",
+    "file_path": "app/data/uploads/2101gr002a_Bartz_ZB_27.01.2021.pdf",
+    "created_at": "2025-05-15T11:12:25.702298",
+    "document_id": null,
+    "relative_path": "PTJ/2101gr002a_Bartz_ZB_27.01.2021.pdf"
+  },
+  {
+    "id": 27,
+    "filename": "anlage-1.pdf",
+    "file_path": "app/data/uploads/anlage-1.pdf",
+    "created_at": "2025-05-15T11:12:25.702298",
+    "document_id": null,
+    "relative_path": "PTJ/anlage-1.pdf"
+  },
+  {
+    "id": 29,
+    "filename": "20210302-1000552834-umsatz.CSV",
+    "file_path": "app/data/uploads/20210302-1000552834-umsatz.CSV",
+    "created_at": "2025-05-15T11:12:25.702298",
+    "document_id": null,
+    "relative_path": "PTJ/Rechnungen/02.21/20210302-1000552834-umsatz.CSV"
+  },
+  {
+    "id": 30,
+    "filename": "388802_Quittung.pdf",
+    "file_path": "app/data/uploads/388802_Quittung.pdf",
+    "created_at": "2025-05-15T11:12:25.702298",
+    "document_id": null,
+    "relative_path": "PTJ/Rechnungen/02.21/388802_Quittung.pdf"
+  },
+  {
+    "id": 31,
+    "filename": "Alles.xlsx",
+    "file_path": "app/data/uploads/Alles.xlsx",
+    "created_at": "2025-05-15T11:12:25.702298",
+    "document_id": null,
+    "relative_path": "PTJ/Rechnungen/02.21/Alles.xlsx"
+  },
+  {
+    "id": 32,
+    "filename": "Router und Telefon.pdf",
+    "file_path": "app/data/uploads/Router und Telefon.pdf",
+    "created_at": "2025-05-15T11:12:25.702298",
+    "document_id": null,
+    "relative_path": "PTJ/Rechnungen/03.21/Router und Telefon.pdf"
+  },
+  {
+    "id": 33,
+    "filename": "Druckerpatrone.pdf",
+    "file_path": "app/data/uploads/Druckerpatrone.pdf",
+    "created_at": "2025-05-15T11:12:25.702298",
+    "document_id": null,
+    "relative_path": "PTJ/Rechnungen/03.21/Druckerpatrone.pdf"
+  },
+  {
+    "id": 34,
+    "filename": "88667.PDF",
+    "file_path": "app/data/uploads/88667.PDF",
+    "created_at": "2025-05-15T11:12:25.702298",
+    "document_id": null,
+    "relative_path": "PTJ/Rechnungen/03.21/88667.PDF"
+  },
+  {
+    "id": 35,
+    "filename": "Alles.xlsx",
+    "file_path": "app/data/uploads/Alles.xlsx",
+    "created_at": "2025-05-15T11:12:25.702298",
+    "document_id": null,
+    "relative_path": "PTJ/Rechnungen/03.21/Alles.xlsx"
+  },
+  {
+    "id": 36,
+    "filename": "04-2021.pdf",
+    "file_path": "app/data/uploads/04-2021.pdf",
+    "created_at": "2025-05-15T11:12:25.702298",
+    "document_id": null,
+    "relative_path": "PTJ/Mittelanforderung/04-2021.pdf"
+  },
+  {
+    "id": 37,
+    "filename": "12-2021.pdf",
+    "file_path": "app/data/uploads/12-2021.pdf",
+    "created_at": "2025-05-15T11:12:25.702298",
+    "document_id": null,
+    "relative_path": "PTJ/Mittelanforderung/12-2021.pdf"
+  },
+  {
+    "id": 38,
+    "filename": "08-2021.pdf",
+    "file_path": "app/data/uploads/08-2021.pdf",
+    "created_at": "2025-05-15T11:12:25.702298",
+    "document_id": null,
+    "relative_path": "PTJ/Mittelanforderung/08-2021.pdf"
+  },
+  {
+    "id": 39,
+    "filename": "02-2021.pdf",
+    "file_path": "app/data/uploads/02-2021.pdf",
+    "created_at": "2025-05-15T11:12:25.702298",
+    "document_id": null,
+    "relative_path": "PTJ/Mittelanforderung/02-2021.pdf"
+  },
+  {
+    "id": 40,
+    "filename": "10-2021.pdf",
+    "file_path": "app/data/uploads/10-2021.pdf",
+    "created_at": "2025-05-15T11:12:25.702298",
+    "document_id": null,
+    "relative_path": "PTJ/Mittelanforderung/10-2021.pdf"
+  },
+  {
+    "id": 41,
+    "filename": "06-2021.pdf",
+    "file_path": "app/data/uploads/06-2021.pdf",
+    "created_at": "2025-05-15T11:12:25.702298",
+    "document_id": null,
+    "relative_path": "PTJ/Mittelanforderung/06-2021.pdf"
+  },
+  {
+    "id": 42,
+    "filename": "Vorlage.pdf",
+    "file_path": "app/data/uploads/Vorlage.pdf",
+    "created_at": "2025-05-15T11:12:25.702298",
+    "document_id": null,
+    "relative_path": "PTJ/Mittelanforderung/Vorlage.pdf"
+  },
+  {
+    "id": 43,
+    "filename": "01-2022.pdf",
+    "file_path": "app/data/uploads/01-2022.pdf",
+    "created_at": "2025-05-15T11:12:25.702298",
+    "document_id": null,
+    "relative_path": "PTJ/Mittelanforderung/01-2022.pdf"
+  },
+  {
+    "id": 46,
+    "filename": "Businessplan 02.12.21 DRAW.docx",
+    "file_path": "app/data/uploads/Businessplan 02.12.21 DRAW.docx",
+    "created_at": "2025-05-15T11:12:25.702298",
+    "document_id": null,
+    "relative_path": "Microsoft Teams-Chatdateien/Businessplan 02.12.21 DRAW.docx"
+  },
+  {
+    "id": 47,
+    "filename": "Businessplan 26.05.2021 (1).docx",
+    "file_path": "app/data/uploads/Businessplan 26.05.2021 (1).docx",
+    "created_at": "2025-05-15T11:12:25.702298",
+    "document_id": null,
+    "relative_path": "Microsoft Teams-Chatdateien/Businessplan 26.05.2021 (1).docx"
+  },
+  {
+    "id": 52,
+    "filename": "Beratungsvertrag.docx",
+    "file_path": "app/data/uploads/Beratungsvertrag.docx",
+    "created_at": "2025-05-15T11:12:25.702298",
+    "document_id": null,
+    "relative_path": "Vertr\u00e4ge/Beratungsvertrag.docx"
+  },
+  {
+    "id": 53,
+    "filename": "Hauptformular.docx",
+    "file_path": "app/data/uploads/Hauptformular.docx",
+    "created_at": "2025-05-15T11:12:25.702298",
+    "document_id": null,
+    "relative_path": "Vertr\u00e4ge/Heier/Hauptformular.docx"
+  },
+  {
+    "id": 54,
+    "filename": "AVV.doc",
+    "file_path": "app/data/uploads/AVV.doc",
+    "created_at": "2025-05-15T11:12:25.702298",
+    "document_id": null,
+    "relative_path": "Vertr\u00e4ge/Heier/AVV.doc"
+  },
+  {
+    "id": 55,
+    "filename": "AGB.docx",
+    "file_path": "app/data/uploads/AGB.docx",
+    "created_at": "2025-05-15T11:12:25.702298",
+    "document_id": null,
+    "relative_path": "Vertr\u00e4ge/Heier/AGB.docx"
+  },
+  {
+    "id": 56,
+    "filename": "Hauptformular[42].pdf",
+    "file_path": "app/data/uploads/Hauptformular[42].pdf",
+    "created_at": "2025-05-15T11:12:25.702298",
+    "document_id": null,
+    "relative_path": "Vertr\u00e4ge/GGS Becke/Hauptformular[42].pdf"
+  },
+  {
+    "id": 57,
+    "filename": "Hauptformular.docx",
+    "file_path": "app/data/uploads/Hauptformular.docx",
+    "created_at": "2025-05-15T11:12:25.702298",
+    "document_id": null,
+    "relative_path": "Vertr\u00e4ge/GGS Becke/Hauptformular.docx"
+  },
+  {
+    "id": 58,
+    "filename": "AVV.doc",
+    "file_path": "app/data/uploads/AVV.doc",
+    "created_at": "2025-05-15T11:12:25.702298",
+    "document_id": null,
+    "relative_path": "Vertr\u00e4ge/GGS Becke/AVV.doc"
+  },
+  {
+    "id": 59,
+    "filename": "Hauptformular[41].docx",
+    "file_path": "app/data/uploads/Hauptformular[41].docx",
+    "created_at": "2025-05-15T11:12:25.702298",
+    "document_id": null,
+    "relative_path": "Vertr\u00e4ge/GGS Becke/Hauptformular[41].docx"
+  },
+  {
+    "id": 60,
+    "filename": "AGB.docx",
+    "file_path": "app/data/uploads/AGB.docx",
+    "created_at": "2025-05-15T11:12:25.702298",
+    "document_id": null,
+    "relative_path": "Vertr\u00e4ge/GGS Becke/AGB.docx"
+  },
+  {
+    "id": 61,
+    "filename": "Hauptformular[41].pdf",
+    "file_path": "app/data/uploads/Hauptformular[41].pdf",
+    "created_at": "2025-05-15T11:12:25.702298",
+    "document_id": null,
+    "relative_path": "Vertr\u00e4ge/GGS Becke/Hauptformular[41].pdf"
+  },
+  {
+    "id": 62,
+    "filename": "AGB_Vorlage.docx",
+    "file_path": "app/data/uploads/AGB_Vorlage.docx",
+    "created_at": "2025-05-15T11:12:25.702298",
+    "document_id": null,
+    "relative_path": "Vertr\u00e4ge/Vorlage/AGB_Vorlage.docx"
+  },
+  {
+    "id": 63,
+    "filename": "Hauptvertrag_Vorlage.docx",
+    "file_path": "app/data/uploads/Hauptvertrag_Vorlage.docx",
+    "created_at": "2025-05-15T11:12:25.702298",
+    "document_id": null,
+    "relative_path": "Vertr\u00e4ge/Vorlage/Hauptvertrag_Vorlage.docx"
+  },
+  {
+    "id": 64,
+    "filename": "AVV_Vorlage.doc",
+    "file_path": "app/data/uploads/AVV_Vorlage.doc",
+    "created_at": "2025-05-15T11:12:25.702298",
+    "document_id": null,
+    "relative_path": "Vertr\u00e4ge/Vorlage/AVV_Vorlage.doc"
+  },
+
+  {
+    "id": 68,
+    "filename": "Vertragsformular_V2.docx",
+    "file_path": "app/data/uploads/Vertragsformular_V2.docx",
+    "created_at": "2025-05-15T11:12:25.702298",
+    "document_id": null,
+    "relative_path": "BHO/Vertragsformular_V2.docx"
+  },
+  {
+    "id": 69,
+    "filename": "AVV_Vorlage.doc",
+    "file_path": "app/data/uploads/AVV_Vorlage.doc",
+    "created_at": "2025-05-15T11:12:25.702298",
+    "document_id": null,
+    "relative_path": "BHO/AVV_Vorlage.doc"
+  },
+  {
+    "id": 70,
+    "filename": "Leistungsbeschreibung V2.docx",
+    "file_path": "app/data/uploads/Leistungsbeschreibung V2.docx",
+    "created_at": "2025-05-15T11:12:25.702298",
+    "document_id": null,
+    "relative_path": "BHO/Leistungsbeschreibung V2.docx"
+  },
+  {
+    "id": 71,
+    "filename": "Ideenpapier Leon Bartz 3.docx",
+    "file_path": "app/data/uploads/Ideenpapier Leon Bartz 3.docx",
+    "created_at": "2025-05-15T11:12:25.702298",
+    "document_id": null,
+    "relative_path": "Stipendium/Ideenpapier Leon Bartz 3.docx"
+  },
+  {
+    "id": 72,
+    "filename": "FinalIdeenpapierGsnrw - Old.docx",
+    "file_path": "app/data/uploads/FinalIdeenpapierGsnrw - Old.docx",
+    "created_at": "2025-05-15T11:12:25.702298",
+    "document_id": null,
+    "relative_path": "Stipendium/FinalIdeenpapierGsnrw - Old.docx"
+  },
+  {
+    "id": 73,
+    "filename": "Ideenpapier Leon Bartz-1.docx",
+    "file_path": "app/data/uploads/Ideenpapier Leon Bartz-1.docx",
+    "created_at": "2025-05-15T11:12:25.702298",
+    "document_id": null,
+    "relative_path": "Stipendium/Ideenpapier Leon Bartz-1.docx"
+  },
+  {
+    "id": 75,
+    "filename": "ideenpapier_gsnrw.docx",
+    "file_path": "app/data/uploads/ideenpapier_gsnrw.docx",
+    "created_at": "2025-05-15T11:12:25.702298",
+    "document_id": null,
+    "relative_path": "Stipendium/ideenpapier_gsnrw.docx"
+  },
+  {
+    "id": 76,
+    "filename": "Ideenpapier Leon Bartz.docx",
+    "file_path": "app/data/uploads/Ideenpapier Leon Bartz.docx",
+    "created_at": "2025-05-15T11:12:25.702298",
+    "document_id": null,
+    "relative_path": "Stipendium/Ideenpapier Leon Bartz.docx"
+  },
+  {
+    "id": 77,
+    "filename": "Pitch.pptx",
+    "file_path": "app/data/uploads/Pitch.pptx",
+    "created_at": "2025-05-15T11:12:25.702298",
+    "document_id": null,
+    "relative_path": "Stipendium/Pitch.pptx"
+  },
+  {
+    "id": 78,
+    "filename": "Gr\u00fcnderStipendiumIdeenpapier.docx",
+    "file_path": "app/data/uploads/Gr\u00fcnderStipendiumIdeenpapier.docx",
+    "created_at": "2025-05-15T11:12:25.702298",
+    "document_id": null,
+    "relative_path": "Stipendium/Gr\u00fcnderStipendiumIdeenpapier.docx"
+  },
+  {
+    "id": 79,
+    "filename": "Leitfragen Canvas.pptx",
+    "file_path": "app/data/uploads/Leitfragen Canvas.pptx",
+    "created_at": "2025-05-15T11:12:25.702298",
+    "document_id": null,
+    "relative_path": "GTC/Leitfragen Canvas.pptx"
+  },
+  {
+    "id": 80,
+    "filename": "Schul gespr\u00e4che.xlsx",
+    "file_path": "app/data/uploads/Schul gespr\u00e4che.xlsx",
+    "created_at": "2025-05-15T11:12:25.702298",
+    "document_id": null,
+    "relative_path": "GTC/Schul gespr\u00e4che.xlsx"
+  },
+  {
+    "id": 81,
+    "filename": "Bericht 27.06.2022.docx",
+    "file_path": "app/data/uploads/Bericht 27.06.2022.docx",
+    "created_at": "2025-05-15T11:12:25.702298",
+    "document_id": null,
+    "relative_path": "GTC/Bericht 27.06.2022.docx"
+  },
+  {
+    "id": 82,
+    "filename": "Gesch\u00e4ftsmodell Vision.docx",
+    "file_path": "app/data/uploads/Gesch\u00e4ftsmodell Vision.docx",
+    "created_at": "2025-05-15T11:12:25.702298",
+    "document_id": null,
+    "relative_path": "GTC/Gesch\u00e4ftsmodell Vision.docx"
+  },
+  {
+    "id": 83,
+    "filename": "Fixkosten.xlsx",
+    "file_path": "app/data/uploads/Fixkosten.xlsx",
+    "created_at": "2025-05-15T11:12:25.702298",
+    "document_id": null,
+    "relative_path": "GTC/Fixkosten.xlsx"
+  },
+  {
+    "id": 84,
+    "filename": "Bericht 27.06.2022 copy.docx",
+    "file_path": "app/data/uploads/Bericht 27.06.2022 copy.docx",
+    "created_at": "2025-05-15T11:12:25.702298",
+    "document_id": null,
+    "relative_path": "GTC/Bericht 27.06.2022 copy.docx"
+  },
+  {
+    "id": 85,
+    "filename": "\u00c4nderungsliste.docx",
+    "file_path": "app/data/uploads/\u00c4nderungsliste.docx",
+    "created_at": "2025-05-15T11:12:25.702298",
+    "document_id": null,
+    "relative_path": "GTC/\u00c4nderungsliste.docx"
+  },
+  {
+    "id": 86,
+    "filename": "M\u00f6gliche Preiskalkulationen.docx",
+    "file_path": "app/data/uploads/M\u00f6gliche Preiskalkulationen.docx",
+    "created_at": "2025-05-15T11:12:25.702298",
+    "document_id": null,
+    "relative_path": "GTC/M\u00f6gliche Preiskalkulationen.docx"
+  },
+  {
+    "id": 87,
+    "filename": "Vergleich Develop 4 Future vs Schulmanager 14.02.2021.docx",
+    "file_path": "app/data/uploads/Vergleich Develop 4 Future vs Schulmanager 14.02.2021.docx",
+    "created_at": "2025-05-15T11:12:25.702298",
+    "document_id": null,
+    "relative_path": "GTC/Vergleich Develop 4 Future vs Schulmanager 14.02.2021.docx"
+  },
+  {
+    "id": 88,
+    "filename": "Todo Liste Schule.docx",
+    "file_path": "app/data/uploads/Todo Liste Schule.docx",
+    "created_at": "2025-05-15T11:12:25.702298",
+    "document_id": null,
+    "relative_path": "GTC/Todo Liste Schule.docx"
+  },
+  {
+    "id": 89,
+    "filename": "Meilenstein-Grobplanung.xlsx",
+    "file_path": "app/data/uploads/Meilenstein-Grobplanung.xlsx",
+    "created_at": "2025-05-15T11:12:25.702298",
+    "document_id": null,
+    "relative_path": "GTC/Meilenstein-Grobplanung.xlsx"
+  },
+  {
+    "id": 90,
+    "filename": "Preiskalkulation_Dienstleistung_und_Handwerk_-_Tool.xlsx",
+    "file_path": "app/data/uploads/Preiskalkulation_Dienstleistung_und_Handwerk_-_Tool.xlsx",
+    "created_at": "2025-05-15T11:12:25.702298",
+    "document_id": null,
+    "relative_path": "GTC/Preiskalkulation_Dienstleistung_und_Handwerk_-_Tool.xlsx"
+  },
+  {
+    "id": 91,
+    "filename": "Meilensteinplan-Vorlage-Excel.xlsx",
+    "file_path": "app/data/uploads/Meilensteinplan-Vorlage-Excel.xlsx",
+    "created_at": "2025-05-15T11:12:25.702298",
+    "document_id": null,
+    "relative_path": "GTC/Meilensteinplan-Vorlage-Excel.xlsx"
+  },
+  {
+    "id": 92,
+    "filename": "Bericht 29.06.2022.docx",
+    "file_path": "app/data/uploads/Bericht 29.06.2022.docx",
+    "created_at": "2025-05-15T11:12:25.702298",
+    "document_id": null,
+    "relative_path": "GTC/Bericht 29.06.2022.docx"
+  },
+  {
+    "id": 93,
+    "filename": "Businessplan 03.12.2021.docx",
+    "file_path": "app/data/uploads/Businessplan 03.12.2021.docx",
+    "created_at": "2025-05-15T11:12:25.702298",
+    "document_id": null,
+    "relative_path": "GTC/Buisnesplan/Businessplan 03.12.2021.docx"
+  },
+  {
+    "id": 94,
+    "filename": "Businessplan 02.12.21 DRAW.docx",
+    "file_path": "app/data/uploads/Businessplan 02.12.21 DRAW.docx",
+    "created_at": "2025-05-15T11:12:25.702298",
+    "document_id": null,
+    "relative_path": "GTC/Buisnesplan/Businessplan 02.12.21 DRAW.docx"
+  },
+  {
+    "id": 95,
+    "filename": "Businessplan Finanzteil 03.12.2021.xlsx",
+    "file_path": "app/data/uploads/Businessplan Finanzteil 03.12.2021.xlsx",
+    "created_at": "2025-05-15T11:12:25.702298",
+    "document_id": null,
+    "relative_path": "GTC/Buisnesplan/Businessplan Finanzteil 03.12.2021.xlsx"
+  },
+  {
+    "id": 96,
+    "filename": "Businessplan 27.04.2021.docx",
+    "file_path": "app/data/uploads/Businessplan 27.04.2021.docx",
+    "created_at": "2025-05-15T11:12:25.702298",
+    "document_id": null,
+    "relative_path": "GTC/Buisnesplan/Businessplan 27.04.2021.docx"
+  },
+  {
+    "id": 97,
+    "filename": "Buisnessplan 14.02.2021.docx",
+    "file_path": "app/data/uploads/Buisnessplan 14.02.2021.docx",
+    "created_at": "2025-05-15T11:12:25.702298",
+    "document_id": null,
+    "relative_path": "GTC/Buisnesplan/Buisnessplan 14.02.2021.docx"
+  },
+  {
+    "id": 98,
+    "filename": "Businessplan 01.12.2021.docx",
+    "file_path": "app/data/uploads/Businessplan 01.12.2021.docx",
+    "created_at": "2025-05-15T11:12:25.702298",
+    "document_id": null,
+    "relative_path": "GTC/Buisnesplan/Businessplan 01.12.2021.docx"
+  },
+  {
+    "id": 99,
+    "filename": "Businessplan 26.05.2021.docx",
+    "file_path": "app/data/uploads/Businessplan 26.05.2021.docx",
+    "created_at": "2025-05-15T11:12:25.702298",
+    "document_id": null,
+    "relative_path": "GTC/Buisnesplan/Businessplan 26.05.2021.docx"
+  },
+  {
+    "id": 101,
+    "filename": "KI_Projekt_Stellenanzeige.txt",
+    "file_path": "app/data/uploads/KI_Projekt_Stellenanzeige.txt",
+    "created_at": "2025-05-21T15:12:05.261515",
+    "document_id": null,
+    "relative_path": "KI_Projekt_Stellenanzeige.txt"
+  },
+  {
+    "id": 102,
+    "filename": "KI_Projekt_Risikoanalyse.txt",
+    "file_path": "app/data/uploads/KI_Projekt_Risikoanalyse.txt",
+    "created_at": "2025-05-21T15:12:05.261515",
+    "document_id": null,
+    "relative_path": "KI_Projekt_Risikoanalyse.txt"
+  },
+  {
+    "id": 103,
+    "filename": "SmartKlassenzimmer_Kostenkalkulation.csv",
+    "file_path": "app/data/uploads/SmartKlassenzimmer_Kostenkalkulation.csv",
+    "created_at": "2025-05-21T15:12:05.261515",
+    "document_id": null,
+    "relative_path": "SmartKlassenzimmer_Kostenkalkulation.csv"
+  },
+  {
+    "id": 104,
+    "filename": "Einladung_Sommerfest_2025.pdf.txt",
+    "file_path": "app/data/uploads/Einladung_Sommerfest_2025.pdf.txt",
+    "created_at": "2025-05-21T15:12:05.261515",
+    "document_id": null,
+    "relative_path": "Einladung_Sommerfest_2025.pdf.txt"
+  },
+  {
+    "id": 105,
+    "filename": "KI_Projekt_Pressemitteilung.txt",
+    "file_path": "app/data/uploads/KI_Projekt_Pressemitteilung.txt",
+    "created_at": "2025-05-21T15:12:05.261515",
+    "document_id": null,
+    "relative_path": "KI_Projekt_Pressemitteilung.txt"
+  },
+  {
+    "id": 106,
+    "filename": "KI_Projekt_Feedbackbogen_Lehrkraefte.txt",
+    "file_path": "app/data/uploads/KI_Projekt_Feedbackbogen_Lehrkraefte.txt",
+    "created_at": "2025-05-21T15:12:05.261515",
+    "document_id": null,
+    "relative_path": "KI_Projekt_Feedbackbogen_Lehrkraefte.txt"
+  },
+  {
+    "id": 107,
+    "filename": "SmartKlassenzimmer_Elterninfo.txt",
+    "file_path": "app/data/uploads/SmartKlassenzimmer_Elterninfo.txt",
+    "created_at": "2025-05-21T15:12:05.261515",
+    "document_id": null,
+    "relative_path": "SmartKlassenzimmer_Elterninfo.txt"
+  },
+  {
+    "id": 108,
+    "filename": "SmartKlassenzimmer_Risikoanalyse.txt",
+    "file_path": "app/data/uploads/SmartKlassenzimmer_Risikoanalyse.txt",
+    "created_at": "2025-05-21T15:12:05.261515",
+    "document_id": null,
+    "relative_path": "SmartKlassenzimmer_Risikoanalyse.txt"
+  },
+  {
+    "id": 109,
+    "filename": "KI_Projekt_Memo.txt",
+    "file_path": "app/data/uploads/KI_Projekt_Memo.txt",
+    "created_at": "2025-05-21T15:12:05.261515",
+    "document_id": null,
+    "relative_path": "KI_Projekt_Memo.txt"
+  },
+  {
+    "id": 110,
+    "filename": "KI_Projekt_Besprechungsprotokoll_2025-06-05.txt",
+    "file_path": "app/data/uploads/KI_Projekt_Besprechungsprotokoll_2025-06-05.txt",
+    "created_at": "2025-05-21T15:12:05.261515",
+    "document_id": null,
+    "relative_path": "KI_Projekt_Besprechungsprotokoll_2025-06-05.txt"
+  },
+  {
+    "id": 111,
+    "filename": "KI_Projekt_Elterninfo.pdf.txt",
+    "file_path": "app/data/uploads/KI_Projekt_Elterninfo.pdf.txt",
+    "created_at": "2025-05-21T15:12:05.261515",
+    "document_id": null,
+    "relative_path": "KI_Projekt_Elterninfo.pdf.txt"
+  },
+  {
+    "id": 112,
+    "filename": "Rechnung_2025-05-20_Musterfirma.pdf.txt",
+    "file_path": "app/data/uploads/Rechnung_2025-05-20_Musterfirma.pdf.txt",
+    "created_at": "2025-05-21T15:12:05.261515",
+    "document_id": null,
+    "relative_path": "Rechnung_2025-05-20_Musterfirma.pdf.txt"
+  },
+  {
+    "id": 113,
+    "filename": "SmartKlassenzimmer_Projektbeschreibung.txt",
+    "file_path": "app/data/uploads/SmartKlassenzimmer_Projektbeschreibung.txt",
+    "created_at": "2025-05-21T15:12:05.261515",
+    "document_id": null,
+    "relative_path": "SmartKlassenzimmer_Projektbeschreibung.txt"
+  },
+  {
+    "id": 114,
+    "filename": "SmartKlassenzimmer_Pressemitteilung.txt",
+    "file_path": "app/data/uploads/SmartKlassenzimmer_Pressemitteilung.txt",
+    "created_at": "2025-05-21T15:12:05.261515",
+    "document_id": null,
+    "relative_path": "SmartKlassenzimmer_Pressemitteilung.txt"
+  },
+  {
+    "id": 115,
+    "filename": "KI_Projekt_Kostenkalkulation.csv",
+    "file_path": "app/data/uploads/KI_Projekt_Kostenkalkulation.csv",
+    "created_at": "2025-05-21T15:12:05.261515",
+    "document_id": null,
+    "relative_path": "KI_Projekt_Kostenkalkulation.csv"
+  },
+  {
+    "id": 116,
+    "filename": "SmartKlassenzimmer_Stellenanzeige_IT-Administrator.txt",
+    "file_path": "app/data/uploads/SmartKlassenzimmer_Stellenanzeige_IT-Administrator.txt",
+    "created_at": "2025-05-21T15:12:05.261515",
+    "document_id": null,
+    "relative_path": "SmartKlassenzimmer_Stellenanzeige_IT-Administrator.txt"
+  },
+  {
+    "id": 117,
+    "filename": "SmartKlassenzimmer_TechnischesKonzept.txt",
+    "file_path": "app/data/uploads/SmartKlassenzimmer_TechnischesKonzept.txt",
+    "created_at": "2025-05-21T15:12:05.261515",
+    "document_id": null,
+    "relative_path": "SmartKlassenzimmer_TechnischesKonzept.txt"
+  },
+  {
+    "id": 118,
+    "filename": "KI_Projekt_TechnischesKonzept.txt",
+    "file_path": "app/data/uploads/KI_Projekt_TechnischesKonzept.txt",
+    "created_at": "2025-05-21T15:12:05.261515",
+    "document_id": null,
+    "relative_path": "KI_Projekt_TechnischesKonzept.txt"
+  },
+  {
+    "id": 119,
+    "filename": "Bilanz_2024.csv",
+    "file_path": "app/data/uploads/Bilanz_2024.csv",
+    "created_at": "2025-05-21T15:12:05.261515",
+    "document_id": null,
+    "relative_path": "Bilanz_2024.csv"
+  },
+  {
+    "id": 120,
+    "filename": "Bilanz_2025.csv",
+    "file_path": "app/data/uploads/Bilanz_2025.csv",
+    "created_at": "2025-05-21T15:12:05.261515",
+    "document_id": null,
+    "relative_path": "Bilanz_2025.csv"
+  },
+  {
+    "id": 121,
+    "filename": "KI_Projekt_Datenschutzkonzept.txt",
+    "file_path": "app/data/uploads/KI_Projekt_Datenschutzkonzept.txt",
+    "created_at": "2025-05-21T15:12:05.261515",
+    "document_id": null,
+    "relative_path": "KI_Projekt_Datenschutzkonzept.txt"
+  },
+  {
+    "id": 122,
+    "filename": "KI_Projekt_Elternabend_Fragen_Antworten.txt",
+    "file_path": "app/data/uploads/KI_Projekt_Elternabend_Fragen_Antworten.txt",
+    "created_at": "2025-05-21T15:12:05.261515",
+    "document_id": null,
+    "relative_path": "KI_Projekt_Elternabend_Fragen_Antworten.txt"
+  },
+  {
+    "id": 123,
+    "filename": "SmartKlassenzimmer_FAQ_Eltern.txt",
+    "file_path": "app/data/uploads/SmartKlassenzimmer_FAQ_Eltern.txt",
+    "created_at": "2025-05-21T15:12:05.261515",
+    "document_id": null,
+    "relative_path": "SmartKlassenzimmer_FAQ_Eltern.txt"
+  },
+  {
+    "id": 124,
+    "filename": "KI_Projekt_Meilensteinplan.csv",
+    "file_path": "app/data/uploads/KI_Projekt_Meilensteinplan.csv",
+    "created_at": "2025-05-21T15:12:05.261515",
+    "document_id": null,
+    "relative_path": "KI_Projekt_Meilensteinplan.csv"
+  },
+  {
+    "id": 125,
+    "filename": "SmartKlassenzimmer_Meilensteinplan.csv",
+    "file_path": "app/data/uploads/SmartKlassenzimmer_Meilensteinplan.csv",
+    "created_at": "2025-05-21T15:12:05.261515",
+    "document_id": null,
+    "relative_path": "SmartKlassenzimmer_Meilensteinplan.csv"
+  },
+  {
+    "id": 126,
+    "filename": "Teammeeting_Protokoll_2025-05-10.txt",
+    "file_path": "app/data/uploads/Teammeeting_Protokoll_2025-05-10.txt",
+    "created_at": "2025-05-21T15:12:05.261515",
+    "document_id": null,
+    "relative_path": "Teammeeting_Protokoll_2025-05-10.txt"
+  },
+  {
+    "id": 127,
+    "filename": "SmartKlassenzimmer_Feedbackbogen_Lehrkraefte.txt",
+    "file_path": "app/data/uploads/SmartKlassenzimmer_Feedbackbogen_Lehrkraefte.txt",
+    "created_at": "2025-05-21T15:12:05.261515",
+    "document_id": null,
+    "relative_path": "SmartKlassenzimmer_Feedbackbogen_Lehrkraefte.txt"
+  }
+]
