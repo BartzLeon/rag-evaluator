@@ -68,7 +68,7 @@ curl -X POST "http://localhost:9876/testsets/" \
 -d '{
     "model_type": "openai/gpt-4-turbo",
     "embedding_model": "openai/text-embedding-3-large",
-    "document": 17,
+    "document": 140,
     "name": "story-001-001",
     "num_questions": 10,
     "agent_description": "A chatbot answering questions about a story"
@@ -87,7 +87,6 @@ curl -X POST "http://localhost:9876/testsets/" \
     "agent_description": "Ein Chatbot welcher Fragen für das Startup Develop 4 Future beantwortet."
 }'
 ```
-
     
 ```bash
 curl -X POST "http://localhost:9876/process/" \
@@ -95,7 +94,7 @@ curl -X POST "http://localhost:9876/process/" \
 -d '{
 "llm_to_be_evaluated_type": "ollama/deepseek-r1:32b",
 "judge_llm_type": "ollama/deepseek-r1:32b",
-"testset": 36
+"testset": 41
 }'
 ```
 

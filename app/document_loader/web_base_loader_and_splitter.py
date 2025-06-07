@@ -12,7 +12,12 @@ class WebBaseLoaderAndSplitter(LoaderAndSplitter):
         self.url = url
 
     def load_and_split(self):
-        text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=20)
+        text_splitter = RecursiveCharacterTextSplitter(
+            chunk_size=500,
+            chunk_overlap=50,
+            length_function=len,
+            separators=["\n\n", "\n", " ", ""]
+        )
 
         loader = WebBaseLoader(self.url)
         return loader.load_and_split(text_splitter)

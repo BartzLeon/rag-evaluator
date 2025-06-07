@@ -1,15 +1,15 @@
-\chapter{Metrics}
+\chapter{Metriken}
 
 \label{chap:formal}
-In diesem Kapitel geht es um die verschiedenen Metriken, die für die Bewertung von RAG Evaluations Tools verwendet werden können.
+In diesem Kapitel geht es um die verschiedenen Metriken, die für die Bewertung von RAG Evaluationstools verwendet werden können.
 Metriken sind das Herzstück der Bewertung von RAGs, da sie die Qualität des RAGs bewerten und somit die Entwicklung und den Fortschritt des RAGs messen.
 
-Diese Metriken basieren auf Faktenextraktion, mithilfe welcher sich dann Scores berechnen lassen.
+Diese Metriken basieren auf Faktenextraktion, mithilfe welcher sich dann Bewertungen berechnen lassen.
 Für die Extraktion der Fakten wird häufig ein LLM verwendet, welcher als Richter fungiert.
 
 \section{Retrieval Augmented Generation}
-Diese Metriken basieren auf Faktenextraktion mithilfe welcher sich dann Scores berechnen lassen.
-Für die extraktion der Fakten wird häufig ein LLM verwendet welcher als Richter fungiert.
+Diese Metriken basieren auf Faktenextraktion, mithilfe welcher sich dann Bewertungen berechnen lassen.
+Für die Extraktion der Fakten wird häufig ein LLM verwendet welcher als Richter fungiert.
 
 
 \subsection{Context Precision}
@@ -19,7 +19,7 @@ Sie wird als Mittelwert der Präzision@k für jeden Textabschnitt im Kontext ber
 Die Präzision@k ist das Verhältnis der Anzahl relevanter Textabschnitte auf Rang k zur Gesamtanzahl der Textabschnitte auf Rang k.
 (eigene Übersetzung nach \cite{ragas_context_precision})
 \end{quote}
-Diese Metrik ist für uns als Qualitätskontrolle wichtig, da sie uns sagt, ob es Probleme beim Testen mit dem Vectorstore gibt.
+Diese Metrik ist für uns als Qualitätskontrolle wichtig, da sie uns sagt, ob es Probleme beim Testen mit dem Vektortore gibt.
 
 Wenn es einen guten Context Precision Score gibt, dann lässt sich hier gut bewerten, ob das LLM in der Lage ist, die relevanten Informationen in dem Kontext zu finden.
 Da dies ein wichtiger Aspekt eines guten RAGs ist, wird diese Metrik im Rahmen dieser Arbeit betrachtet.
@@ -33,8 +33,8 @@ Kurz gesagt geht es beim Recall darum, nichts Wichtiges zu übersehen.
 (eigene Übersetzung nach \cite{ragas_context_recall})
 \end{quote}
 
-Wenn es eine gute Context Precision Score gibt dann lässt sich hier gut bewerten ob das LLM in der Lage ist die relevanten Informationen in dem kontext zu finden.
-Da dies ein wichtiger Aspekt eines guten RAGs ist wird diese Metrik im Rahmen dieser Arbeit betrachtet.
+Wenn es eine gute Context Precision Score gibt dann lässt sich hier gut bewerten ob das LLM in der Lage ist die relevanten Informationen in dem Kontext zu finden.
+Da dies ein wichtiger Aspekt eines guten RAGs ist, wird diese Metrik im Rahmen dieser Arbeit betrachtet.
 
 \subsection{Context Entities Recall}
 In diesem Kontext ist eine Entity eine Informationseinheit, die im Kontext vorkommt.
@@ -87,8 +87,8 @@ Da sich diese Metriken mit mehr als textuellen Daten befassen, werden diese nich
 
 
 \section{Nvidia Metrics}
-Diese Metriken sind subjektiver Art und benutzten wieder eine LLM um die Bewertung zu treffen.
-Hier werden einzelnde Scores generiert welche keinen tieferen Einblick in die Bewertung gewähren.
+Diese Metriken sind subjektiver Art und benutzten wieder eine LLM, um die Bewertung zu treffen.
+Hier werden einzelne Bewertungen generiert, welche keinen tieferen Einblick in die Bewertung gewähren.
 
 \subsection{Answer Accuracy}
 \begin{quote}
@@ -139,17 +139,17 @@ This metric uses embeddings to calculate the semantic similarity between the ans
 \section{Non LLM String Similarity}
 Wie der Name schon sagt, wird die String Similarity ohne LLM berechnet. Diese Metriken sind relative einfache Metriken und werden im Rahmen dieser Arbeit keine große Rolle spielen, jedoch als Vergleich zu anderen Metriken dienen.
 \subsection{BLEU Score}
-Misst die Ähnlichkeit zwischen der Antwort und der Referenz. Dabei wird die Wortanzahl der Referenz berücksichtigt und eine entsrechende Bestrafung für zu kurze Antworten eingeführt.
+Misst die Ähnlichkeit zwischen der Antwort und der Referenz. Dabei wird die Wortanzahl der Referenz berücksichtigt und eine entsprechende Bestrafung für zu kurze Antworten eingeführt.
 \subsection{ROUGE Score}
 Mithilfe von n-gram recall, precision, und dem F1 score wird die Ähnlichkeit zwischen der Antwort und der Referenz berechnet.
 \subsection{String Presence}
 Eine einfache Metrik um zu sehen, ob die Referenz in der Antwort enthalten ist.
 \subsection{Exact Match}
-Eine noch einfachere Metrik, die nur prüft ob die Antwort exakt der Referenz entspricht. Diese ist für einzelde Wörter sinnvoll.
+Eine noch einfachere Metrik, die nur prüft ob die Antwort exakt der Referenz entspricht. Diese ist für einzelne Wörter sinnvoll.
 
 \section{General purpose}
 Dies sind Metriken, welche manuell konfiguriert werden müssen, aber eine gute Bewertung der Qualität eines RAGs liefern können.
-Die Metriken reichen von einfachen Fragen, wie "ist die Antwort schädlich oder hat die Intention des Users verletzt", bis hin zu komplexeren, einleitend definierten Scores.
+Die Metriken reichen von einfachen Fragen, wie "ist die Antwort schädlich oder hat die Intention des Users verletzt", bis hin zu komplexeren, einleitend definierten Bewertungen.
 \begin{itemize}
     \item Aspect critic
     \item Simple Criteria Scoring
@@ -164,10 +164,10 @@ Anzahl der richtig beantworteten Fragen geteilt durch die Anzahl der Fragen. Die
 
 \section{Irrelevante Metriken}
 \subsection{SQL}
-SQL spezifische Metriken welche nicht im Rahmen dieser Arbeit betrachtet werden.
+SQL spezifische Metriken, welche nicht im Rahmen dieser Arbeit betrachtet werden.
 
 \subsection{Agents or Tool use cases}
-Metriken zum Bewerten des Einsatzes von Agents oder Tools, dies liegt ebenso außerhalb des Themas dieser Arbeit.
+Metriken zum Bewerten des Einsatzes von Agenten oder Tools, dies liegt ebenso außerhalb des Themas dieser Arbeit.
 https://docs.ragas.io/en/stable/concepts/metrics/
 
-Diese Metrik wird Teil dieser Arbeit sein, da sie in gewissen Nutzungsfällen, wie z.B. stark faktuale Fragen, eine gute Bewertung liefern kann.
+Diese Metrik wird Teil dieser Arbeit sein, da sie in gewissen Nutzungsfällen, wie z.B. stark Fakten basierte Fragen, eine gute Bewertung liefern kann.

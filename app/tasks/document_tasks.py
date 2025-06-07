@@ -6,6 +6,7 @@ from app.db import async_session
 from app.models import Document
 from app.document_loader.web_base_loader_and_splitter import WebBaseLoaderAndSplitter
 from app.document_loader.file_loader_and_splitter import FileLoaderAndSplitter
+from app.document_loader.git_loader_and_splitter import GitLoaderAndSplitter
 from app.vectorestores.chroma_db_factory import ChromaDBFactory
 from app.embeddings.factory import EmbeddingsFactory
 from app.config.logging_config import task_logger
@@ -42,6 +43,10 @@ async def _create_documents_async(request_data: dict, document_id: int):
                     file_path = source["file_path"]
                     task_logger.info(f"Processing file: {file_path}")
                     loader = FileLoaderAndSplitter(file_path=file_path)
+                elif source_type == "git":
+                    repo_path = source["repo_path"]
+                    task_logger.info(f"Processing git repository: {repo_path}")
+                    loader = GitLoaderAndSplitter(repo_path=repo_path)
                 else:
                     raise ValueError(f"Unknown source type: {source_type}")
                 

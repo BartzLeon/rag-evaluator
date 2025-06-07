@@ -62,7 +62,8 @@ async def get_all_ratings(
     status: Optional[str] = Query(None, description="Filter by status"),
     llm_to_be_evaluated_type: Optional[str] = Query(None, description="Filter by LLM to be evaluated type"),
     judge_llm_type: Optional[str] = Query(None, description="Filter by judge LLM type"),
-    testset_id: Optional[int] = Query(None, description="Filter by testset ID")
+    testset_id: Optional[int] = Query(None, description="Filter by testset ID"),
+    show_scores: Optional[bool] = Query(False, description="Whether to include scores in the response")
 ):
     try:
         query = select(RatingResult)
@@ -81,7 +82,27 @@ async def get_all_ratings(
         
         result = await db.execute(query)
         ratings = result.scalars().all()
-        return ratings
+        
+        # Convert to dict and conditionally remove scores
+        rating_dicts = []
+        for rating in ratings:
+            rating_dict = {
+                "id": rating.id,
+                "status": rating.status,
+                "report_path": rating.report_path,
+                "llm_to_be_evaluated_type": rating.llm_to_be_evaluated_type,
+                "judge_llm_type": rating.judge_llm_type,
+                "testset_id": rating.testset_id,
+                "start_eval": rating.start_eval,
+                "end_eval": rating.end_eval,
+                "time_eval": rating.time_eval
+            }
+            if show_scores:
+                rating_dict["scores"] = rating.scores
+                rating_dict["knowledge_base_score"] = rating.knowledge_base_score
+            rating_dicts.append(rating_dict)
+            
+        return rating_dicts
     except Exception as e:
         print(f"❌ Error fetching ratings: {e}")
         return []
@@ -95,11 +116,10 @@ async def get_all_documents(db: AsyncSession = Depends(get_db)):
             .order_by(Document.id.desc())
         )
         documents = result.scalars().all()
-        return [DocumentRead.model_validate(doc) for doc in documents]
+        return [doc.to_read_model() for doc in documents]
     except Exception as e:
-        raise e
         print(f"❌ Error fetching documents: {e}")
-        return []
+        raise e
 
 @app.post("/files/")
 async def upload_file(
@@ -168,6 +188,7 @@ async def create_document(
         document = Document(
             name=document_dto.name,
             embedding_model=document_dto.embedding_model,
+            repos=document_dto.repos or [],
         )
         db.add(document)
         await db.commit()
@@ -272,6 +293,38 @@ async def create_test_set(testset_dto: CreateTestsetDTO, db: AsyncSession = Depe
 @app.get('/models/')
 async def get_models():
     return ChatModelFactory.available_models()
+
+@app.get('/repos/')
+async def get_available_repos():
+    """Get list of available git repositories in data/repos folder"""
+    try:
+        repos_dir = "app/data/repos"
+        if not os.path.exists(repos_dir):
+            return []
+        
+        repos = []
+        for item in os.listdir(repos_dir):
+            repo_path = os.path.join(repos_dir, item)
+            if os.path.isdir(repo_path):
+                # Check if it's a git repository by looking for .git folder
+                git_path = os.path.join(repo_path, '.git')
+                if os.path.exists(git_path):
+                    repos.append({
+                        "name": item,
+                        "path": repo_path,
+                        "is_git_repo": True
+                    })
+                else:
+                    repos.append({
+                        "name": item,
+                        "path": repo_path,
+                        "is_git_repo": False
+                    })
+        
+        return repos
+    except Exception as e:
+        print(f"❌ Error fetching repositories: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
 
 router = APIRouter()
 

@@ -48,7 +48,7 @@ services:
       - NUXT_HOST=0.0.0.0
       - NUXT_PORT=3333
     profiles:
-      - dev
+      - frontend
 
   # PROD-LIKE STACK
   rag-web-prod:
@@ -81,7 +81,4 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - rag-postgres_data:/var/lib/postgresql/data
-
-volumes:
-  rag-postgres_data:
+      - ${POSTGRES_DATA_PATH:-./postgres_data}:/var/lib/postgresql/data

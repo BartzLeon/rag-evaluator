@@ -48,7 +48,7 @@ def main():
     script_dir = os.path.dirname(os.path.abspath(__file__))
     
     # Directory to upload (relative to script location)
-    upload_dir = os.path.join(script_dir, "d4f")
+    upload_dir = os.path.join(script_dir, "d4f/generated")
     
     # Make sure the directory exists
     if not os.path.exists(upload_dir):

@@ -1,8 +1,8 @@
-\section{Methoden und Materialien}
+\chapter{Methoden und Materialien}
 
 \subsection{Tools}
 
-Für das RAG selber und die Bewertung der RAGs werden gewisse Tools benötigt.
+Für das RAG selbst und die Bewertung der RAGs werden gewisse Tools benötigt.
 Diese Tools werden im Folgenden erklärt.
 
 \subsubsection{Ollama}
@@ -11,22 +11,24 @@ Es können verschiedene Open-Source LLMs und Embedding-Modelle ausgeführt werde
 
 \subsubsection{ChromaDB}
 ChromaDB ist eine Open-Source Vektordatenbank, die für die Speicherung von Vektordatenbanken verwendet wird.
-Diese Datenbank wird in unseren Experimenten sowohl für die Open-Source Modelle verwendet, als auch für die Closed-Source Modelle von OpenAi.
+Diese Datenbank wird in unseren Experimenten sowohl für die Open-Source Modelle verwendet, als auch für die Closed-Source Modelle von OpenAI.
 Damit soll eine einheitliche Grundlage für die Experimente geschaffen werden.
 
 \subsubsection{RAGAS}
-Ragas ist eine Bibliothek, die Werkzeuge bereitstellt, um die Evaluation von Large Language Model (LLM) Anwendungen zu verbessern. Sie wurde entwickelt, um die Bewertung von LLM-Anwendungen einfach und zuverlässig zu gestalten.\footnote{\url{https://docs.ragas.io/en/stable/#frequently-asked-questions}}
+RAGAS ist eine Bibliothek, die Werkzeuge bereitstellt, um die Evaluation von Large Language Model (LLM) Anwendungen zu verbessern.
+Sie wurde entwickelt, um die Bewertung von LLM-Anwendungen einfach und zuverlässig zu gestalten.
+\footnote{\url{https://docs.ragas.io/en/stable/#frequently-asked-questions}}
 
-RAGAS ist ein Open-Source Tool, und liefert neben dem Tool selber hilfreiche Dokumentation für die Metriken und die Bewertung von RAGs.
+RAGAS ist ein Open-Source-Tool und liefert neben dem Tool selber hilfreiche Dokumentation für die Metriken und die Bewertung von RAGs.
 Für diese Arbeit sind die Funktionen der Testset-Generierung und die damit ermöglichte Bewertung der RAGs relevant.
 Es gibt noch weitere Funktionen wie die automatische Generation von Interessengruppen, diese sind für diese Arbeit jedoch nicht relevant.
 
-Was RAGAS besonders macht im vergleich zu vorherigen Tools ist, dass keine "reference Answer" benötigt wird.
-RAGAS beliebt, da es sich gut mit vielen Tools integriert ist.
+Was RAGAS besonders macht zu vorherigen Tools ist, dass keine "reference answer" benötigt wird.
+RAGAS ist beliebt, da es sich gut mit vielen Tools integriert.
 
-\subsubsection{Gistkard}
-Gistkart ist teils Open-Source Tool, welches die Bewertung von RAGs unterstützt.
-Der Schwerpunkt von Gistkard liegt eher auf der generellen Bewertung von LLMs.
+\subsubsection{Giskard}
+Giskard ist ein teils Open-Source-Tool, welches die Bewertung von RAGs unterstützt.
+Der Schwerpunkt von Giskard liegt eher auf der generellen Bewertung von LLMs.
 Dazu gehören unter anderem Prompt-Injectionen, Halluzinationen und andere Fehler, welche durch die Verwendung von LLMs entstehen können.
 
 

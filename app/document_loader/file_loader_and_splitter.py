@@ -13,7 +13,12 @@ class FileLoaderAndSplitter(LoaderAndSplitter):
         self.file_path = file_path
 
     def load_and_split(self) -> list[Document]:
-        text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=20)
+        text_splitter = RecursiveCharacterTextSplitter(
+            chunk_size=500,
+            chunk_overlap=50,
+            length_function=len,
+            separators=["\n\n", "\n", " ", ""]
+        )
         
         # Determine file type and use appropriate loader
         file_extension = os.path.splitext(self.file_path)[1].lower()

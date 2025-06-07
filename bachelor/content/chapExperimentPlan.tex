@@ -1,6 +1,8 @@
-\section{Experimentplan}
+\chapter{Experimente}
 
-Um systematisch zu bewerten, ob RAG-Bewertungstools für den Einsatz in kleineren Unternehmen bereit sind, ist ein umfassender experimenteller Ansatz erforderlich. Der folgende Experimentplan skizziert die wichtigsten Variablen, die Methodik und die Bewertungskriterien.
+\section{Experiment plan}
+
+Um systematisch zu bewerten, ob RAG-Bewertungstools für den Einsatz in kleineren Unternehmen bereit sind, ist ein umfassender experimenteller Ansatz erforderlich. Der folgende Experiment plan skizziert die wichtigsten Variablen, die Methodik und die Bewertungskriterien.
 
 \subsection{Forschungsfragen}
 
@@ -28,16 +30,15 @@ Verschiedene Dokumentformate werden getestet, um die Vielseitigkeit des Systems 
 \subsubsection{Datenvolumen}
 Die Skalierbarkeit des Systems wird mit unterschiedlichen Datenmengen getestet:
 \begin{itemize}
-    \item Klein (10-50 Dokumente, ~100 Seiten) dies könnte pro Anwendungsfall eingerichtet und nach dem Experiment verworfen werden
-    \item Mittel (100-500 Dokumente, ~1.000 Seiten) dies könnte pro Benutzer eingerichtet werden und im Laufe der Zeit wachsen
-    \item Groß (1.000+ Dokumente, ~10.000 Seiten) dies könnte unternehmensweit eingerichtet werden und im Laufe der Zeit wachsen
+    \item Klein (10-50 Dokumente, ~100 Seiten): Dies könnte pro Anwendungsfall eingerichtet und nach dem Experiment verworfen werden
+    \item Mittel (100-500 Dokumente, ~1.000 Seiten): Dies könnte pro Benutzer eingerichtet werden und im Laufe der Zeit wachsen
+    \item Groß (1.000+ Dokumente, ~10.000 Seiten): Dies könnte unternehmensweit eingerichtet werden und im Laufe der Zeit wachsen
 \end{itemize}
 
 \subsubsection{Modelle zur Bewertung}
-Mehrere Modelle werden bewertet, die verschiedene Kostenschichten und Fähigkeiten repräsentieren.\
-Hierbei ist es wichtig zu überlegen, welche Optionen für kleine Unternehmen gültige Anwendungsfälle sind.
+Mehrere Modelle werden bewertet, die verschiedene Kostenschichten und Fähigkeiten repräsentieren. Hierbei ist es wichtig zu überlegen, welche Optionen für kleine Unternehmen gültige Anwendungsfälle sind.
 Open-Source-Modelle (z.B. Llama 2, Mistral 7B, Deepseek R1) bieten eine Vielzahl von Vorteilen, wie die Möglichkeit, sie zu modifizieren und mehr Kontrolle über die Daten zu haben, was rechtliche Vorteile bietet, aber auch Nachteile. Die Fähigkeit, sie selbst zu hosten, kann ein Plus, aber auch ein Minus sein, je nach Art des Unternehmens.\
-Mittelklasse-API-Modelle (z.B. Claude Haiku, GPT-3.5 Turbo) sind günstiger als die Hochleistungsmodelle und bieten dennoch eine gute Leistung. Da sie nicht Open Source sind, bieten sie weniger Kontrolle über die Daten und das Modell selbst, manchmal muss man mehr für private Instanzen zahlen.\
+Mittelklasse-API-Modelle (z.B. Claude Haiku, GPT-3.5 Turbo) sind günstiger als die Hochleistungsmodelle und bieten dennoch eine gute Leistung. Da sie nicht Open Source sind, bieten sie weniger Kontrolle über die Daten und das Modell selbst. Manchmal muss man mehr für private Instanzen zahlen.\
 Hochleistungsmodelle (z.B. GPT-4, Claude 3 Opus) sind die teuerste Option, bieten aber auch die beste Leistung, sowohl in Bezug auf Geschwindigkeit als auch auf die Qualität der generierten Antworten. Sie haben ähnliche Vor- und Nachteile wie die Mittelklasse-API-Modelle. \
 Aus rechtlicher Sicht sind die Hochleistungsmodelle die sicherste Option, da sie bestimmte Dokumentationen veröffentlichen und rechtliche Garantien bieten müssen.
 % TODO: artikel 53 und Anhang 12 und 13
@@ -49,7 +50,7 @@ Giskard und RAGAS werden die später beschriebenen Metriken generieren, die spä
 Die menschliche Bewertung wird als subjektives Maß verwendet, um die Ergebnisse der anderen beiden zu vergleichen.
 
 \subsection{Kosten- und Zeitanalyse}
-Ob wir dies tun wollen, ist noch nicht klar, RAGAS bietet Kostenberechnung an, aber ich habe es mir noch nicht angesehen.
+Ob wir dies tun wollen, ist noch nicht klar. RAGAS bietet Kostenberechnung an, aber ich habe es mir noch nicht angesehen.
 
 \subsection{Experimentelles Protokoll}
 
@@ -60,7 +61,7 @@ Ob wir dies tun wollen, ist noch nicht klar, RAGAS bietet Kostenberechnung an, a
     \item \textbf{Testset-Generierung}
     Generieren Sie verschiedene Fragetypen (faktisch, inferentiell, vergleichend) und erstellen Sie Referenzantworten zur Bewertung.
     Dies geschieht automatisch durch das RAGAS-Framework.
-    Validieren Sie das Testset manuell auf Qualität und Abdeckung, dies wird an einer Reihe zufälliger Proben durchgeführt.
+    Validieren Sie das Testset manuell auf Qualität und Abdeckung. Dies wird an einer Reihe zufälliger Proben durchgeführt.
     
     
     \item \textbf{Systemkonfiguration}
@@ -74,7 +75,7 @@ Ob wir dies tun wollen, ist noch nicht klar, RAGAS bietet Kostenberechnung an, a
     Vergleichende Analyse über alle Variablen hinweg, Kosten-Nutzen-Analyse für geschäftliche Entscheidungsfindung und Empfehlungen für optimale Konfigurationen.
 \end{enumerate}
 
-\subsection{Bewertungskriterien für die Geschäftsfähigkeit}
+\subsection{Bewertungskriterien für die Geschäftstauglichkeit}
 
 Die endgültige Bewertung wird RAG-Systeme in diesen Dimensionen bewerten:
 \begin{itemize}
