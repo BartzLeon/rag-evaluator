@@ -1,8 +1,9 @@
+import os
 from langchain_ollama import OllamaEmbeddings
 from app.embeddings.langchain.creator.base import LangchainEmbeddingsCreator
 
 class OllamaEmbeddingsCreator(LangchainEmbeddingsCreator):
-    def __init__(self, model: str = "nomic-embed-text:latest", base_url: str = "http://192.168.5.2:11434"):
+    def __init__(self, model: str = "nomic-embed-text:latest", base_url: str = f"http://{os.getenv('OLLAMA_IP', '192.168.5.2')}:11434"):
         # Strip ollama/ prefix if it exists
         if model.startswith("ollama/"):
             model = model[7:]  # Remove "ollama/" prefix

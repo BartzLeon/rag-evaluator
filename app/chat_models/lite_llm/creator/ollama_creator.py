@@ -1,3 +1,4 @@
+import os
 from giskard.llm.client.litellm import LiteLLMClient
 
 from app.chat_models.lite_llm.base import LangChainChatModelCreator
@@ -10,6 +11,6 @@ class GiskardOllamaLiteLLMCreator(LangChainChatModelCreator):
         return LiteLLMClient(
             model=self.model_name,
             completion_params={
-                "base_url": "http://192.168.5.2:11434",
+                "base_url": f"http://{os.getenv('OLLAMA_IP', '192.168.5.2')}:11434",
             }
         )

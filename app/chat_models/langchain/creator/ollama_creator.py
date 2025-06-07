@@ -1,3 +1,4 @@
+import os
 from langchain_ollama import ChatOllama
 
 from app.chat_models.langchain.base import LangChainChatModelCreator
@@ -13,5 +14,5 @@ class OllamaLangChainChatModelCreator(LangChainChatModelCreator):
 
         return ChatOllama(
             model=self.model_name,
-            base_url="http://192.168.5.2:11434"
+            base_url=f"http://{os.getenv('OLLAMA_IP', '192.168.5.2')}:11434"
         )

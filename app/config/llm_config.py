@@ -17,7 +17,7 @@ HUGGINGFACE_API_KEY = os.getenv("HUGGINGFACE_API_KEY")
 # Provider Configurations
 PROVIDER_CONFIGS = {
     "ollama": {
-        "api_base": "http://192.168.5.2:11434",
+        "api_base": f"http://{os.getenv('OLLAMA_IP', '192.168.5.2')}:11434",
     },
     "openai": {
         "api_key": OPENAI_API_KEY,
