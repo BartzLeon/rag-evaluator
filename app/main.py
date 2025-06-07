@@ -108,13 +108,30 @@ async def get_all_ratings(
         return []
 
 @app.get("/documents/")
-async def get_all_documents(db: AsyncSession = Depends(get_db)):
+async def get_all_documents(
+    db: AsyncSession = Depends(get_db),
+    name: Optional[str] = Query(None, description="Filter by document name (partial match)"),
+    embedding_model: Optional[str] = Query(None, description="Filter by embedding model"),
+    repo: Optional[str] = Query(None, description="Filter by repository name"),
+    status: Optional[str] = Query(None, description="Filter by document status")
+):
     try:
-        result = await db.execute(
-            select(Document)
-            .options(selectinload(Document.files))
-            .order_by(Document.id.desc())
-        )
+        query = select(Document).options(selectinload(Document.files))
+        
+        # Apply filters if provided
+        if name is not None:
+            query = query.filter(Document.name.ilike(f"%{name}%"))
+        if embedding_model is not None:
+            query = query.filter(Document.embedding_model == embedding_model)
+        if repo is not None:
+            # Filter documents that contain the specified repo in their repos array
+            query = query.filter(Document.repos.contains([repo]))
+        if status is not None:
+            query = query.filter(Document.status == status)
+        
+        query = query.order_by(Document.id.desc())
+        
+        result = await db.execute(query)
         documents = result.scalars().all()
         return [doc.to_read_model() for doc in documents]
     except Exception as e:
