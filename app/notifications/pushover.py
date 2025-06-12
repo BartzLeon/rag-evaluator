@@ -239,11 +239,12 @@ class PushoverNotifier:
             logger.info(f"Pushover credentials loaded: {self.user_key} and {api_token}")
             self.client = Pushover(api_token)
 
-    def send_message(self, message: str, title: str):
+    def send_message(self, message: str, title: str) -> None:
         if self.client and self.user_key:
             try:
-                self.client.message(self.user_key, message, title=title)
+                client = self.client.message(self.user_key, message, title=title)
                 logger.info(f"Pushover notification sent: {title}")
+                logger.info(f"Pushover notification response: {client}")
             except RequestError as e:
                 logger.error(f"Failed to send Pushover notification due to request error: {e.errors}")
             except Exception as e:
