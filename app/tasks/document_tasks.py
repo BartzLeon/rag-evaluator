@@ -12,6 +12,50 @@ from app.embeddings.factory import EmbeddingsFactory
 from app.config.logging_config import task_logger
 
 @celery_app.task
+def import_document_request(document_id: int):
+    loop = asyncio.get_event_loop()
+    if loop.is_running():
+        asyncio.ensure_future(_import_document_async(document_id))
+    else:
+        loop.run_until_complete(_import_document_async(document_id))
+
+async def _import_document_async(document_id: int):
+    async with async_session() as db:
+        document = await db.get(Document, document_id)
+        if not document:
+            raise ValueError(f"Document with id {document_id} not found")
+
+        document.status = "Indexing"
+        await db.commit()
+        await db.refresh(document)
+
+        try:
+            document_pkl_path = f"app/data/documents/{document.id}.pkl"
+            with open(document_pkl_path, "rb") as f:
+                documents = pickle.load(f)
+
+            embeddings = EmbeddingsFactory.get_embeddings("langchain/" + document.embedding_model)
+
+            ChromaDBFactory.from_documents(
+                documents=documents,
+                collection_name=document.name,
+                embedding=embeddings,
+            )
+
+            document.saved_to_chroma = True
+            document.status = "Finished"
+            await db.commit()
+            await db.refresh(document)
+
+        except Exception as e:
+            document.status = "Error"
+            await db.commit()
+            await db.refresh(document)
+
+            task_logger.error(f"Error importing document: {e}")
+            raise e
+
+@celery_app.task
 def create_documents_request(request_data: dict, document_id: int):
     loop = asyncio.get_event_loop()
     if loop.is_running():

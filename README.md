@@ -89,12 +89,12 @@ curl -X POST "http://localhost:9876/testsets/" \
 ```
     
 ```bash
-curl -X POST "http://localhost:9876/process/" \
+curl -X POST "http://localhost:9877/process/" \
 -H "Content-Type: application/json" \
 -d '{
 "llm_to_be_evaluated_type": "ollama/deepseek-r1:32b",
 "judge_llm_type": "ollama/deepseek-r1:32b",
-"testset": 41
+"testset": 4
 }'
 ```
 
@@ -127,3 +127,64 @@ Embedding dimensions must be the same so we will take the same embeddings from t
 Vectorstore => embeddings
 KnowledgeBase => llm & embedding
 Evaluator => llm
+
+
+
+
+
+
+
+
+TH SERVER 08
+
+documents
+
+1 => 10 files
+2 => 100 files
+3 => 400 files
+
+testset
+
+curl -X POST "http://localhost:9877/testsets/" \
+-H "Content-Type: application/json" \
+-d '{
+    "model_type": "ollama/deepseek-r1:32b",
+    "embedding_model": "ollama/nomic-embed-text:latest",
+    "document": 1,
+    "name": "d4f-10doc-odeep32bnomic-002-001",
+    "num_questions": 30,
+    "agent_description": "Ein Chatbot welcher Fragen für das Startup Develop 4 Future beantwortet."
+}'
+
+curl -X POST "http://localhost:9877/testsets/" \
+-H "Content-Type: application/json" \
+-d '{
+    "model_type": "ollama/deepseek-r1:32b",
+    "embedding_model": "ollama/nomic-embed-text:latest",
+    "document": 2,
+    "name": "d4f-100doc-odeep32bnomic-003-001",
+    "num_questions": 50,
+    "agent_description": "Ein Chatbot welcher Fragen für das Startup Develop 4 Future beantwortet."
+}'
+
+curl -X POST "http://localhost:9876/testsets/" \
+-H "Content-Type: application/json" \
+-d '{
+    "model_type": "ollama/deepseek-r1:32b",
+    "embedding_model": "ollama/nomic-embed-text:latest",
+    "document": 3,
+    "name": "d4f-400doc-odeep32bnomic-001-001",
+    "num_questions": 150,
+    "agent_description": "Ein Chatbot welcher Fragen für das Startup Develop 4 Future beantwortet."
+}'
+
+
+
+
+curl -X POST "http://localhost:9877/process/" \
+-H "Content-Type: application/json" \
+-d '{
+"llm_to_be_evaluated_type": "ollama/deepseek-r1:32b",
+"judge_llm_type": "openai/gpt-4.1",
+"testset": 1
+}'

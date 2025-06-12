@@ -10,13 +10,13 @@ from app.dto.file_dto import FileCreateDTO, FileReadDTO
 from app.models import RatingResult, Document, Testset, DocumentRead
 from app.models.file import UploadedFile
 from app.models.association import file_document
-from fastapi import FastAPI, APIRouter, Depends, UploadFile, File as FastAPIFile, HTTPException, Query
+from fastapi import FastAPI, APIRouter, Depends, UploadFile, File as FastAPIFile, HTTPException, Query, Form
 from fastapi.middleware.cors import CORSMiddleware
 from app import db
 from app.dto.process_request_dto import ProcessRequestDTO
 from app.testset_loader.qa_testset_loader import QATestsetLoader
 from app.websocket import websocket_endpoint
-from app.tasks import process_chat_request, create_documents_request, create_testset_request
+from app.tasks import process_chat_request, create_documents_request, create_testset_request, import_document_request
 from dotenv import load_dotenv
 from typing import List, Optional
 import os
@@ -253,8 +253,43 @@ async def create_document(
         task = create_documents_request.delay(request_data, document.id)
         return {"message": "Data received", "task_id": task.id, "document_id": document.id}
     except Exception as e:
-        raise e
         print(f"❌ Error creating document: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+@app.post("/documents/import")
+async def import_document(
+    file: UploadFile = FastAPIFile(...),
+    name: str = Form(...),
+    embedding_model: str = Form(...),
+    repos: Optional[List[str]] = Form(None),
+    db: AsyncSession = Depends(get_db)
+):
+    try:
+        if not file.filename or not file.filename.endswith('.pkl'):
+            raise HTTPException(status_code=400, detail="Invalid file type. Only .pkl files are supported.")
+
+        # Create Document record
+        document = Document(
+            name=name,
+            embedding_model=embedding_model,
+            repos=repos or [],
+            status="Uploaded",
+        )
+        db.add(document)
+        await db.commit()
+        await db.refresh(document)
+
+        # Save the uploaded file to the documents folder
+        document_pkl_path = f"app/data/documents/{document.id}.pkl"
+        with open(document_pkl_path, "wb") as buffer:
+            shutil.copyfileobj(file.file, buffer)
+        
+        # Start background task for indexing
+        task = import_document_request.delay(document.id)
+
+        return {"message": "Document imported and is being indexed.", "task_id": task.id, "document_id": document.id}
+    except Exception as e:
+        print(f"❌ Error importing document: {e}")
         raise HTTPException(status_code=500, detail=str(e))
 
 @app.get("/testsets/")
@@ -306,6 +341,50 @@ async def create_test_set(testset_dto: CreateTestsetDTO, db: AsyncSession = Depe
         print(f"❌ Error creating test set: {e}")
         raise e
         return {"error": str(e)}
+
+@app.post("/testsets/import")
+async def import_testset(
+    file: UploadFile = FastAPIFile(...),
+    name: str = Form(...),
+    model_type: str = Form(...),
+    embedding_model: str = Form(...),
+    document_id: int = Form(...),
+    num_questions: int = Form(...),
+    agent_description: str = Form(...),
+    db: AsyncSession = Depends(get_db)
+):
+    try:
+        if not file.filename or (not file.filename.endswith('.json') and not file.filename.endswith('.jsonl')):
+            raise HTTPException(status_code=400, detail="Invalid file type. Only .json or .jsonl files are supported.")
+
+        # Check if document exists
+        doc = await db.get(Document, document_id)
+        if not doc:
+            raise HTTPException(status_code=404, detail=f"Document with id {document_id} not found")
+
+        # Create Testset record
+        testset = Testset(
+            name=name,
+            model_type=model_type,
+            embedding_model=embedding_model,
+            document=document_id,
+            num_questions=num_questions,
+            agent_description=agent_description,
+            status="Finished", # It's already created
+        )
+        db.add(testset)
+        await db.commit()
+        await db.refresh(testset)
+
+        # Save the uploaded file
+        testset_file_path = f"app/data/testsets/{testset.id}.jsonl"
+        with open(testset_file_path, "wb") as buffer:
+            shutil.copyfileobj(file.file, buffer)
+        
+        return {"message": "Testset imported successfully.", "testset_id": testset.id}
+    except Exception as e:
+        print(f"❌ Error importing testset: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
 
 @app.get('/models/')
 async def get_models():
