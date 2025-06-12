@@ -52,13 +52,17 @@ class RagasEvaluator(Evaluator):
         
         scores_df = result.to_pandas() if hasattr(result, 'to_pandas') else pd.DataFrame()
         
+        # Add raw_responses to the scores DataFrame
+        if not scores_df.empty:
+            scores_df['raw_response'] = [item.get('response_raw', '') for item in dataset_list]
+        
         filename = self.generate_filename()
         # Ensure the directory exists
         os.makedirs(os.path.dirname(filename), exist_ok=True)
         
         # Save scores_df to JSON
         if not scores_df.empty:
-            scores_df.to_json(filename, orient="records", lines=True, indent=4)
+            scores_df.to_json(filename, orient="records", indent=4)
         else:
             # Create an empty JSON file or a file with an empty list/object
             with open(filename, 'w') as f:
@@ -78,8 +82,17 @@ class RagasEvaluator(Evaluator):
             
             relevant_docs = retriever.invoke(question)
             # Changed chain invocation to match working version
-            response_text = chain.invoke({"context": relevant_docs, "question": question})
-            
+            response_text_raw = chain.invoke({"context": relevant_docs, "question": question})
+
+            # Filter out <think>...</think> blocks from response_text
+            import re
+
+            def remove_think_blocks(text):
+                # Remove all occurrences of <think>...</think> (non-greedy)
+                return re.sub(r"<think>.*?</think>", "", text, flags=re.DOTALL).strip()
+
+            response_text = remove_think_blocks(response_text_raw)
+
             # Assuming chain.invoke now directly returns the string response based on working example
             # If response_text is a dict like {'answer': '...'}, it needs extraction:
             # response_output = response_text # or response_text.get('answer', '') if it's a dict
@@ -88,6 +101,7 @@ class RagasEvaluator(Evaluator):
                 {
                     "user_input": question,
                     "response": response_text, # Use the direct output from chain
+                    "response_raw": response_text_raw,
                     "retrieved_contexts": [rdoc.page_content for rdoc in relevant_docs],
                     "reference": reference_answer if reference_answer is not None else ""
                 }

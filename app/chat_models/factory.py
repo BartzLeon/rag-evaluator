@@ -23,6 +23,7 @@ class ChatModelFactory:
         "openai/gpt4-o-mini": OpenAILangChainChatModelCreator,
         "meta-llama/Llama-3.3-70B-Instruct": LlamaLangChainChatModelCreator,
         "ollama/deepseek-r1:32b": OllamaLangChainChatModelCreator,
+        "ollama/deepseek-r1:7b": OllamaLangChainChatModelCreator,
     }
 
     _creators_lite_llm = {
