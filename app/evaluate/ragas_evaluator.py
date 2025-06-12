@@ -39,7 +39,7 @@ class RagasEvaluator(Evaluator):
         # A common Tier 1 RPM might be 60-500 depending on the model.
         # If each task takes ~1-2s, max_workers=5 means ~2.5-5 req/s, or 150-300 RPM.
         # If you have lower RPM limits (e.g., 60 RPM), set max_workers to a lower value (e.g., 1 or 2).
-        run_config = RunConfig(timeout=600, log_tenacity=True) # Adjust this value as per your specific tier limits
+        run_config = RunConfig(max_workers=1, timeout=600, log_tenacity=True) # Adjust this value as per your specific tier limits
 
         # Removed embeddings preparation and parameter
         result = ragas_evaluate(
