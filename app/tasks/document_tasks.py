@@ -10,6 +10,7 @@ from app.document_loader.git_loader_and_splitter import GitLoaderAndSplitter
 from app.vectorestores.chroma_db_factory import ChromaDBFactory
 from app.embeddings.factory import EmbeddingsFactory
 from app.config.logging_config import task_logger
+from app.notifications.pushover import PushoverNotifier
 
 @celery_app.task
 def import_document_request(document_id: int):
@@ -20,9 +21,11 @@ def import_document_request(document_id: int):
         loop.run_until_complete(_import_document_async(document_id))
 
 async def _import_document_async(document_id: int):
+    pushover = PushoverNotifier()
     async with async_session() as db:
         document = await db.get(Document, document_id)
         if not document:
+            pushover.send_message(f"Document import failed: Document with id {document_id} not found", "RAG Eval Failure")
             raise ValueError(f"Document with id {document_id} not found")
 
         document.status = "Indexing"
@@ -46,12 +49,13 @@ async def _import_document_async(document_id: int):
             document.status = "Finished"
             await db.commit()
             await db.refresh(document)
+            pushover.send_message(f"Document {document.id} imported successfully.", "RAG Eval Success")
 
         except Exception as e:
             document.status = "Error"
             await db.commit()
             await db.refresh(document)
-
+            pushover.send_message(f"Document import failed for doc {document.id}: {e}", "RAG Eval Failure")
             task_logger.error(f"Error importing document: {e}")
             raise e
 
@@ -64,9 +68,11 @@ def create_documents_request(request_data: dict, document_id: int):
         loop.run_until_complete(_create_documents_async(request_data, document_id))
 
 async def _create_documents_async(request_data: dict, document_id: int):
+    pushover = PushoverNotifier()
     async with async_session() as db:
         document = await db.get(Document, document_id)
         if not document:
+            pushover.send_message(f"Document creation failed: Document with id {document_id} not found", "RAG Eval Failure")
             raise ValueError(f"Document with id {document_id} not found")
 
         document.status = "Processing"
@@ -125,11 +131,12 @@ async def _create_documents_async(request_data: dict, document_id: int):
             document.status = "Finished"
             await db.commit()
             await db.refresh(document)
+            pushover.send_message(f"Document {document.id} created successfully.", "RAG Eval Success")
 
         except Exception as e:
             document.status = "Error"
             await db.commit()
             await db.refresh(document)
-
+            pushover.send_message(f"Document creation failed for doc {document.id}: {e}", "RAG Eval Failure")
             task_logger.error(f"Error creating document: {e}")
             raise e 

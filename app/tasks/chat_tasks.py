@@ -17,6 +17,7 @@ from app.config.logging_config import task_logger
 from langchain_core.documents import Document as LangchainDocument
 from typing import Tuple, List, Optional, cast, Any
 from langchain_core.embeddings import Embeddings as LangchainEmbeddings
+from app.notifications.pushover import PushoverNotifier
 
 @celery_app.task
 def process_chat_request(request_data: dict):
@@ -27,6 +28,7 @@ def process_chat_request(request_data: dict):
         loop.run_until_complete(_process_chat_request_async(request_data))
 
 async def _process_chat_request_async(request_data: dict):
+    pushover = PushoverNotifier()
     async with async_session() as db:
         rating = None
         try:
@@ -44,6 +46,7 @@ async def _process_chat_request_async(request_data: dict):
                 rating.status = "Error"
                 rating.report_path = "Testset ID is missing."
                 await db.commit()
+                pushover.send_message("Chat request failed: Testset ID is missing.", "RAG Eval Failure")
                 return
 
             testset_model = await db.get(Testset, testset_id)
@@ -52,6 +55,7 @@ async def _process_chat_request_async(request_data: dict):
                 rating.status = "Error"
                 rating.report_path = f"Testset with ID {testset_id} not found."
                 await db.commit()
+                pushover.send_message(f"Chat request failed: Testset with ID {testset_id} not found.", "RAG Eval Failure")
                 return
             
             testset_model_id = cast(int, testset_model.id)
@@ -67,6 +71,7 @@ async def _process_chat_request_async(request_data: dict):
                 rating.status = "Error"
                 rating.report_path = error_msg
                 await db.commit()
+                pushover.send_message(f"Chat request failed: {error_msg}", "RAG Eval Failure")
                 return
 
             # Set start time for evaluation
@@ -106,6 +111,7 @@ async def _process_chat_request_async(request_data: dict):
                 rating.status = "Error"
                 rating.report_path = error_msg
                 await db.commit()
+                pushover.send_message(f"Chat request failed: {error_msg}", "RAG Eval Failure")
                 return
                 
             report_path, scores, knowledge_base_score = eval_result
@@ -124,11 +130,13 @@ async def _process_chat_request_async(request_data: dict):
             rating.knowledge_base_score = knowledge_base_score
             await db.commit()
             await db.refresh(rating)
-
+            
+            pushover.send_message(f"Rating {rating.id} completed successfully.", "RAG Eval Success")
             task_logger.info(f"Rating completed successfully with ID: {rating.id}")
 
         except Exception as e:
             task_logger.error(f"Error processing chat request: {e}", exc_info=True)
+            pushover.send_message(f"Chat request failed: {e}", "RAG Eval Failure")
             if rating: 
                 try:
                     # Set end time even for errors to track total time

@@ -12,6 +12,7 @@ from app.chat_models.factory import ChatModelFactory
 from app.embeddings.factory import EmbeddingsFactory
 from app.embeddings.giskard.factory import GiskardEmbeddingsFactory
 from app.decorator.generate_testsset_decorator import with_testset_callbacks
+from app.notifications.pushover import PushoverNotifier
 
 @celery_app.task
 def create_testset_request(request_data: dict, testset_id: int):
@@ -22,6 +23,7 @@ def create_testset_request(request_data: dict, testset_id: int):
         loop.run_until_complete(_create_testset_async(request_data, testset_id))
 
 async def _create_testset_async(testset_data: dict, testset_id: int):
+    pushover = PushoverNotifier()
     async with async_session() as db:
         try:
             document_id = testset_data.get("document", None)
@@ -29,6 +31,7 @@ async def _create_testset_async(testset_data: dict, testset_id: int):
             document_model = await db.get(Document, document_id)
             
             if not testset_model or not document_model:
+                pushover.send_message(f"Testset creation failed: Testset or Document not found for testset ID {testset_id}", "RAG Eval Failure")
                 raise ValueError("Testset or Document not found")
 
             testset_model.status = "Processing"
@@ -78,12 +81,14 @@ async def _create_testset_async(testset_data: dict, testset_id: int):
             testset_model.status = "Finished"
             await db.commit()
             await db.refresh(testset_model)
+            pushover.send_message(f"Testset {testset_model.id} created successfully.", "RAG Eval Success")
 
         except Exception as e:
             if testset_model:
                 testset_model.status = "Error"
                 await db.commit()
                 await db.refresh(testset_model)
+                pushover.send_message(f"Testset creation failed for testset {testset_model.id}: {e}", "RAG Eval Failure")
 
             task_logger.error(f"Error creating test set: {e}")
 
