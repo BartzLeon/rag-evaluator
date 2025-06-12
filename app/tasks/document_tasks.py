@@ -25,6 +25,7 @@ async def _import_document_async(document_id: int):
     async with async_session() as db:
         document = await db.get(Document, document_id)
         if not document:
+            task_logger.error(f"Document with id {document_id} not found")
             pushover.send_message(f"Document import failed: Document with id {document_id} not found", "RAG Eval Failure")
             raise ValueError(f"Document with id {document_id} not found")
 
@@ -56,7 +57,7 @@ async def _import_document_async(document_id: int):
             await db.commit()
             await db.refresh(document)
             pushover.send_message(f"Document import failed for doc {document.id}: {e}", "RAG Eval Failure")
-            task_logger.error(f"Error importing document: {e}")
+            task_logger.error(f"Error importing document: {e}", exc_info=True)
             raise e
 
 @celery_app.task
@@ -72,6 +73,7 @@ async def _create_documents_async(request_data: dict, document_id: int):
     async with async_session() as db:
         document = await db.get(Document, document_id)
         if not document:
+            task_logger.error(f"Document with id {document_id} not found")
             pushover.send_message(f"Document creation failed: Document with id {document_id} not found", "RAG Eval Failure")
             raise ValueError(f"Document with id {document_id} not found")
 
@@ -138,5 +140,5 @@ async def _create_documents_async(request_data: dict, document_id: int):
             await db.commit()
             await db.refresh(document)
             pushover.send_message(f"Document creation failed for doc {document.id}: {e}", "RAG Eval Failure")
-            task_logger.error(f"Error creating document: {e}")
+            task_logger.error(f"Error creating document: {e}", exc_info=True)
             raise e 

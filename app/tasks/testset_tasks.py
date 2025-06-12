@@ -31,6 +31,7 @@ async def _create_testset_async(testset_data: dict, testset_id: int):
             document_model = await db.get(Document, document_id)
             
             if not testset_model or not document_model:
+                task_logger.error(f"Testset or Document not found for testset ID {testset_id}")
                 pushover.send_message(f"Testset creation failed: Testset or Document not found for testset ID {testset_id}", "RAG Eval Failure")
                 raise ValueError("Testset or Document not found")
 
@@ -90,7 +91,7 @@ async def _create_testset_async(testset_data: dict, testset_id: int):
                 await db.refresh(testset_model)
                 pushover.send_message(f"Testset creation failed for testset {testset_model.id}: {e}", "RAG Eval Failure")
 
-            task_logger.error(f"Error creating test set: {e}")
+            task_logger.error(f"Error creating test set: {e}", exc_info=True)
 
             ChatModelFactory.reset_global_llm_model()
             GiskardEmbeddingsFactory.reset_global_embedding_model()

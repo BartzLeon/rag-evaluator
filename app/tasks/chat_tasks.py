@@ -150,7 +150,7 @@ async def _process_chat_request_async(request_data: dict):
                     rating.report_path = str(e) 
                     await db.commit()
                 except Exception as e2:
-                    task_logger.error(f"Error updating rating status: {e2}")
+                    task_logger.error(f"Error updating rating status: {e2}", exc_info=True)
             await db.rollback()
 
 async def create_rating(db, llm_to_be_evaluated_type: str, judge_llm_type: str, testset_id: Optional[int] = None) -> RatingResult:
