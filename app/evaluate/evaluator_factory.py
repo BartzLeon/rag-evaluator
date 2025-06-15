@@ -27,6 +27,7 @@ class EvaluatorFactory:
                   documents: List[Document],
                   vectorstore: VectorStore,
                   embedding_model: str,
+                  rating_id: int,
                   **kwargs) -> Evaluator:
         creator_class = cls._evaluators.get(evaluator)
         if not creator_class:
@@ -40,5 +41,6 @@ class EvaluatorFactory:
             documents=documents,
             vectorstore=vectorstore,
             embedding_model=embedding_model,
+            rating_id=rating_id,
             **kwargs
         )

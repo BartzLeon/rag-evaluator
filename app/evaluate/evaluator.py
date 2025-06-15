@@ -23,7 +23,8 @@ class Evaluator(ABC):
             judge_llm_type: str,
             documents: List[Document],
             vectorstore: VectorStore,
-            embedding_model: str
+            embedding_model: str,
+            rating_id: int
     ):
         self.testset_loader = testset_loader
         self.model_to_be_evaluated = model_to_be_evaluated
@@ -33,6 +34,7 @@ class Evaluator(ABC):
         self.documents = documents
         self.vectorstore = vectorstore
         self.embedding_model = embedding_model
+        self.rating_id = rating_id
         self.chain: Optional[Any] = None
         self.prompt: Optional[Any] = None
         self.retriever: Optional[Any] = None

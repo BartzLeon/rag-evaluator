@@ -90,7 +90,8 @@ async def _process_chat_request_async(request_data: dict):
                 judge_llm_type=judge_llm_type,
                 documents=documents,
                 vectorstore=vectorstore,
-                embedding_model=str(testset_model.embedding_model)
+                embedding_model=str(testset_model.embedding_model),
+                rating_id=rating.id
             )
             
             eval_result = evaluator.evaluate()

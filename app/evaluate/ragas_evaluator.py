@@ -1,3 +1,4 @@
+import sys
 from pandas import DataFrame
 from app.evaluate.evaluator import Evaluator
 from ragas import evaluate as ragas_evaluate, EvaluationDataset
@@ -7,6 +8,7 @@ from ragas.run_config import RunConfig
 import os
 import time
 import json
+from langchain.callbacks.tracers import LangChainTracer
 
 class RagasEvaluator(Evaluator):
 
@@ -41,13 +43,16 @@ class RagasEvaluator(Evaluator):
         # If you have lower RPM limits (e.g., 60 RPM), set max_workers to a lower value (e.g., 1 or 2).
         run_config = RunConfig(timeout=600, log_tenacity=True, max_retries=20, max_workers=2) # Adjust this value as per your specific tier limits
 
+        tracer = LangChainTracer(project_name="ragas", tags=[str(self.rating_id), sys.platform])
+
         # Removed embeddings preparation and parameter
         result = ragas_evaluate(
             dataset=evaluation_dataset,
             llm=self.judge_llm,
             embeddings=ragas_embeddings,
             run_config=run_config,
-            show_progress=True # Can be True for overall progress
+            show_progress=True, # Can be True for overall progress
+            callbacks=[tracer],
         )
         
         scores_df = result.to_pandas() if hasattr(result, 'to_pandas') else pd.DataFrame()
