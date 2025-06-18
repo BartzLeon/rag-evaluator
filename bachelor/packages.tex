@@ -23,6 +23,7 @@
 %
 \usepackage{tikz}
 \usetikzlibrary{positioning}
+\usetikzlibrary{arrows.meta}
 \usepackage{pgfplots}
 %
 \usepackage[backend=biber]{biblatex}
@@ -30,12 +31,12 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 %
+% Load hyperref near the end
 \usepackage{hyperref}
 %
 %=== wichtig, dass folgende Pakete NACH hyperref geladen werden ===============
 \usepackage{scrhack}% Um Warnung bzgl. \float@addtolists im listings-Paket (s.u.) zu vermeiden
 \usepackage{listings}
-%
 \usepackage[nameinlink]{cleveref}
 \usepackage[all]{hypcap}
 \usepackage[
@@ -43,4 +44,6 @@
 	symbols,
 	acronyms,
 ]{glossaries}
-\usepackage{amsmath}
+
+%\usepackage[utf8x]{inputenc}
+\usepackage{libertine}

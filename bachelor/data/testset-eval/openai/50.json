@@ -1,0 +1,146 @@
+[
+    {
+      "id": "50a93c91-0778-47aa-bc43-352fe71b1976",
+      "question": "Als Mitarbeiter bei Develop 4 Future, der sich auf die Erstellung kreativer Fragen für zukünftige Projekte vorbereitet, würde ich gerne wissen, wie genau ein Vertrag bei d4f zustande kommt?",
+      "reference_answer": "Der Vertrag kommt durch Annahme des Vertragsangebots des Kunden seitens d4f zustande. Die Annahme wird entweder ausdrücklich erklärt oder gilt mit dem Beginn der Ausführung der Leistung durch d4f erklärt.",
+      "reference_context": "Document 229: (4) Ist mit dem Kunden die Durchleitung einer bestimmten Datenmenge pro Abrechnungszeitraum vereinbart, wird der Kunde dieses Limit überwachen. Übersteigt das auf das Angebot des Kunden entfallende Datentransfervolumen (Traffic), die für den jeweiligen Zeitabschnitt mit dem Kunden vereinbarte Höchstmenge, stellt d4f dem Kunden den für das überschießende Volumen entfallenden Betrag zu den hierfür vereinbarten Preisen in Rechnung.\n\n§ 6 Vertragsschluss, Vertragslaufzeit, Kündigung\n\n(1) Der Vertrag kommt durch Annahme des Vertragsangebots des Kunden seitens d4f zustande. Die Annahme wird entweder ausdrücklich erklärt oder gilt mit dem Beginn der Ausführung der Leistung durch d4f erklärt.\n\nDocument 193: (4) Ist mit dem Kunden die Durchleitung einer bestimmten Datenmenge pro Abrechnungszeitraum vereinbart, wird der Kunde dieses Limit überwachen. Übersteigt das auf das Angebot des Kunden entfallende Datentransfervolumen (Traffic), die für den jeweiligen Zeitabschnitt mit dem Kunden vereinbarte Höchstmenge, stellt d4f dem Kunden den für das überschießende Volumen entfallenden Betrag zu den hierfür vereinbarten Preisen in Rechnung.\n\n§ 6 Vertragsschluss, Vertragslaufzeit, Kündigung\n\n(1) Der Vertrag kommt durch Annahme des Vertragsangebots des Kunden seitens d4f zustande. Die Annahme wird entweder ausdrücklich erklärt oder gilt mit dem Beginn der Ausführung der Leistung durch d4f erklärt.\n\nDocument 257: (4) Ist mit dem Kunden die Durchleitung einer bestimmten Datenmenge pro Abrechnungszeitraum vereinbart, wird der Kunde dieses Limit überwachen. Übersteigt das auf das Angebot des Kunden entfallende Datentransfervolumen (Traffic), die für den jeweiligen Zeitabschnitt mit dem Kunden vereinbarte Höchstmenge, stellt d4f dem Kunden den für das überschießende Volumen entfallenden Betrag zu den hierfür vereinbarten Preisen in Rechnung.\n\n§ 6 Vertragsschluss, Vertragslaufzeit, Kündigung\n\n(1) Der Vertrag kommt durch Annahme des Vertragsangebots des Kunden seitens d4f zustande. Die Annahme wird entweder ausdrücklich erklärt oder gilt mit dem Beginn der Ausführung der Leistung durch d4f erklärt.",
+      "metadata": {
+        "question_type": "situational",
+        "seed_document_id": 229,
+        "situational_context": "Ein Startup-Mitarbeiter bei Develop 4 Future bereitet sich darauf vor, kreative Fragen für zukünftige Projekte zu generieren.",
+        "topic": "Vertragsbedingungen und Support"
+      },
+      "conversation_history": []
+    },
+    {
+      "id": "b949535d-7eed-4500-9972-9a93c5c42463",
+      "question": "Was ist d4f berechtigt zu tun, wenn der Vertrag zwischen dem Kunden und d4f beendet wird?",
+      "reference_answer": "d4f ist berechtigt, die Domains in die direkte Verwaltung der jeweiligen Vergabestelle bzw. des Registrars zu überführen oder die Domains im Namen des Kunden freizugeben.",
+      "reference_context": "Document 234: Frist schriftlich zum Verfahren mit den Domains zu erklären, ist d4f berechtigt, die Domains in die direkte Verwaltung der jeweiligen Vergabestelle bzw. des Registrars zu überführen oder die Domains im Namen des Kunden freizugeben. Entsprechendes gilt bei jeder Beendigung des Vertrags zwischen dem Kunden und d4f, gleich aus welchem Grunde und durch welche Partei.\n\nDocument 198: Frist schriftlich zum Verfahren mit den Domains zu erklären, ist d4f berechtigt, die Domains in die direkte Verwaltung der jeweiligen Vergabestelle bzw. des Registrars zu überführen oder die Domains im Namen des Kunden freizugeben. Entsprechendes gilt bei jeder Beendigung des Vertrags zwischen dem Kunden und d4f, gleich aus welchem Grunde und durch welche Partei.\n\nDocument 262: Frist schriftlich zum Verfahren mit den Domains zu erklären, ist d4f berechtigt, die Domains in die direkte Verwaltung der jeweiligen Vergabestelle bzw. des Registrars zu überführen oder die Domains im Namen des Kunden freizugeben. Entsprechendes gilt bei jeder Beendigung des Vertrags zwischen dem Kunden und d4f, gleich aus welchem Grunde und durch welche Partei.",
+      "metadata": {
+        "question_type": "simple",
+        "seed_document_id": 234,
+        "topic": "Vertragsbedingungen und Support"
+      },
+      "conversation_history": []
+    },
+    {
+      "id": "d8f87891-cb9d-42c5-aece-1cd32cd07e72",
+      "question": "In welchem spezifischen Online-Tool wird die Dokumentation des Quellcodes gespeichert, und wie verhält sich dies zu anderen Unternehmensdokumenten?",
+      "reference_answer": "Die Dokumentation des Quellcodes liegt in Gitlab zusammen mit dem eigentlichen Quellcode.",
+      "reference_context": "Document 421: Der wichtigste Erfolgsfaktor ist die Anzahl der Grundschulen und deren Zufriedenheit. \n\nSobald der Infofuchs an der jeweiligen Schule robust installiert ist und ohne weiteres Hinzutun fehlerfrei funktioniert, kann eine Person durchaus derzeit geschätzt 30 Schulen betreuen. \n\n\n\nUm Reibungsverluste innerhalb der Firma zu vermeiden, werden alle Dokumente in der Cloud abgelegt und mit den entsprechenden Berechtigungen versehen.\n\nProgrammierer müssen zudem bei jeder Änderung die Dokumentation über den Code aktualisieren, um dessen Instandhaltung zu garantieren. Auch dies ist mit den entsprechenden Berechtigungen versehen.\n\nDie Dokumente werden in der Cloud von Microsoft liegen, da mit Microsoft Office gearbeitet wird. Die Dokumentation des Quellcodes liegt jedoch in Gitlab zusammen mit dem eigentlichen Quellcode.\n\n\n\n\n\nGründerteam und Schlüsselpersonen\n\nDocument 461: Der wichtigste Erfolgsfaktor ist die Anzahl der Grundschulen und deren Zufriedenheit. \n\nSobald der Infofuchs an der jeweiligen Schule robust installiert ist und ohne weiteres Hinzutun fehlerfrei funktioniert, kann eine Person durchaus derzeit geschätzt 30 Schulen betreuen. \n\n\n\nUm Reibungsverluste innerhalb der Firma zu vermeiden, werden alle Dokumente in der Cloud abgelegt und mit den entsprechenden Berechtigungen versehen.\n\nProgrammierer müssen zudem bei jeder Änderung die Dokumentation über den Code aktualisieren, um dessen Instandhaltung zu garantieren. Auch dies ist mit den entsprechenden Berechtigungen versehen.\n\nDie Dokumente werden in der Cloud von Microsoft liegen, da mit Microsoft Office gearbeitet wird. Die Dokumentation des Quellcodes liegt jedoch in Gitlab zusammen mit dem eigentlichen Quellcode.\n\n\n\n\n\nGründerteam und Schlüsselpersonen\n\nDocument 112: Der wichtigste Erfolgsfaktor ist die Anzahl der Grundschulen und deren Zufriedenheit. \n\nSobald der Infofuchs an der jeweiligen Schule robust installiert ist und ohne weiteres Hinzutun fehlerfrei funktioniert, kann eine Person durchaus derzeit geschätzt 30 Schulen betreuen. \n\n\n\nUm Reibungsverluste innerhalb der Firma zu vermeiden, werden alle Dokumente in der Cloud abgelegt und mit den entsprechenden Berechtigungen versehen.\n\nProgrammierer müssen zudem bei jeder Änderung die Dokumentation über den Code aktualisieren, um dessen Instandhaltung zu garantieren. Auch dies ist mit den entsprechenden Berechtigungen versehen.\n\nDie Dokumente werden in der Cloud von Microsoft liegen, da mit Microsoft Office gearbeitet wird. Die Dokumentation des Quellcodes liegt jedoch in Gitlab zusammen mit dem eigentlichen Quellcode.\n\n\n\n\n\nGründerteam und Schlüsselpersonen",
+      "metadata": {
+        "question_type": "complex",
+        "seed_document_id": 421,
+        "topic": "Schulmanagement und Kundengewinnung"
+      },
+      "conversation_history": []
+    },
+    {
+      "id": "52091bfd-215c-43b1-887d-3227aedce44d",
+      "question": "An wen richten sich diese?",
+      "reference_answer": "Das Angebot von Develop 4 Future richtet sich ausdrücklich nicht an Verbraucher.",
+      "reference_context": "Document 248: Develop 4 Future\n\n\t\t\tDevelop 4 Future\n\n\n\nAllgemeine Geschäftsbedingunge Develop 4 Future\n\n§ 1 Geltungsbereich\n\n(1) Die folgenden AGB regeln das Vertragsverhältnis zwischen Leon Bartz, Heilerstraße 63, 51647 Windhagen, handelnd unter Develop 4 Future, (nachfolgend d4f genannt) und dem jeweiligen Kunden. Diese AGB gelten auch für zukünftige Verträge zwischen den Parteien aus dem Bereich Website-Hosting und damit zusammenhängenden Dienstleistungen. Abweichende Geschäftsbedingungen des Kunden können nicht anerkannt werden. \n\n(2) Das Angebot von d4f auf Abschluss eines Vertrags nach diesen AGB richtet sich ausdrücklich nicht an Verbraucher. Kunde kann daher nicht sein, wer Verbraucher im Sinne des § 13 BGB ist.\n\n§ 2 Leistungspflichten von d4f\n\n(1) Die Leistungspflichten von d4f ergeben sich aus der Leistungsbeschreibung des jeweiligen Produkts. \n\nDie Dienste und Leistungen von d4f umfassen insbesondere:\n\nDocument 184: Develop 4 Future\n\n\t\t\tDevelop 4 Future\n\n\n\nAllgemeine Geschäftsbedingunge Develop 4 Future\n\n§ 1 Geltungsbereich\n\n(1) Die folgenden AGB regeln das Vertragsverhältnis zwischen Leon Bartz, Heilerstraße 63, 51647 Windhagen, handelnd unter Develop 4 Future, (nachfolgend d4f genannt) und dem jeweiligen Kunden. Diese AGB gelten auch für zukünftige Verträge zwischen den Parteien aus dem Bereich Website-Hosting und damit zusammenhängenden Dienstleistungen. Abweichende Geschäftsbedingungen des Kunden können nicht anerkannt werden. \n\n(2) Das Angebot von d4f auf Abschluss eines Vertrags nach diesen AGB richtet sich ausdrücklich nicht an Verbraucher. Kunde kann daher nicht sein, wer Verbraucher im Sinne des § 13 BGB ist.\n\n§ 2 Leistungspflichten von d4f\n\n(1) Die Leistungspflichten von d4f ergeben sich aus der Leistungsbeschreibung des jeweiligen Produkts. \n\nDie Dienste und Leistungen von d4f umfassen insbesondere:\n\nDocument 220: Develop 4 Future\n\n\t\t\tDevelop 4 Future\n\n\n\nAllgemeine Geschäftsbedingunge Develop 4 Future\n\n§ 1 Geltungsbereich\n\n(1) Die folgenden AGB regeln das Vertragsverhältnis zwischen Leon Bartz, Heilerstraße 63, 51647 Windhagen, handelnd unter Develop 4 Future, (nachfolgend d4f genannt) und dem jeweiligen Kunden. Diese AGB gelten auch für zukünftige Verträge zwischen den Parteien aus dem Bereich Website-Hosting und damit zusammenhängenden Dienstleistungen. Abweichende Geschäftsbedingungen des Kunden können nicht anerkannt werden. \n\n(2) Das Angebot von d4f auf Abschluss eines Vertrags nach diesen AGB richtet sich ausdrücklich nicht an Verbraucher. Kunde kann daher nicht sein, wer Verbraucher im Sinne des § 13 BGB ist.\n\n§ 2 Leistungspflichten von d4f\n\n(1) Die Leistungspflichten von d4f ergeben sich aus der Leistungsbeschreibung des jeweiligen Produkts. \n\nDie Dienste und Leistungen von d4f umfassen insbesondere:",
+      "metadata": {
+        "question_type": "conversational",
+        "seed_document_id": 248,
+        "topic": "Vertragsbedingungen und Datenschutz"
+      },
+      "conversation_history": [
+        {
+          "role": "user",
+          "content": "Die Angebote von Develop 4 Future laut ihren AGB."
+        },
+        {
+          "role": "assistant",
+          "content": "How can I help you with that?"
+        }
+      ]
+    },
+    {
+      "id": "ea9445be-bf2d-4145-b531-a7bddd7964ef",
+      "question": "Welchen Betrag weisen die sonstigen Verbindlichkeiten in der ersten Kategorie auf, wenn man davon ausgeht, dass die Rentabilitätsschwelle des Unternehmens bei einem Gewinn von 0 Euro erreicht ist?",
+      "reference_answer": "14000",
+      "reference_context": "Document 708: Kategorie: Passiva\nUnterkategorie: Sonstige Verbindlichkeiten\nBetrag (EUR): 14000\n\nDocument 694: Kategorie: Passiva\nUnterkategorie: Sonstige Verbindlichkeiten\nBetrag (EUR): 10000",
+      "metadata": {
+        "question_type": "distracting element",
+        "seed_document_id": 708,
+        "distracting_context": "als (Mindest-)Gehalt beziehen. Die Kostendeckung/Rentabilitätsschwelle des Unternehmens wäre demnach erreicht bei\n\neinem Gewinn von 0,- Euro!\n\nUmsatz- und Rentabilitätsplanung (1. Jahr, monatlich)",
+        "topic": "Bilanzierung"
+      },
+      "conversation_history": []
+    },
+    {
+      "id": "792eb15e-6984-4330-9b9e-7802fa1dc7b5",
+      "question": "Wie hoch sind die monatlichen Auszahlungen für Büroausstattung, PCs und Firmenfahrzeuge im Jahr 1?",
+      "reference_answer": "80 €",
+      "reference_context": "Document 538: Beträge in € Jahr 2 Jan Feb. Mrz Apr Mai Jun Jul Aug Sep Okt Nov Dez Übertrag Liquiditäts-Endbestand Vormonat 25433 25621 25809 25997 26185 26373 26561 26749 26937 27125 27313 27501\n\nEinzahlungen (brutto) aus\n\nForderungen aus Lieferung u. Leistung (bezahlte Rechnungen) 1600 1600 1600 1600 1600 1600 1600 1600 1600 1600 1600 1600 Barverkäufe 0 0 0 0 0 0 0 0 0 0 0 0 erwartete Kundenanzahlungen 0 0 0 0 0 0 0 0 0 0 0 Eigenkapital-Einlagen 0 0 0 0 0 0 0 0 0 0 0 0 Kreditauszahlung 0 0 0 0 0 0 0 0 0 0 0 0 sonstige Einnahmen\\n(z.B. Gründungszuschuss) 0 0 0 0 0 0 0 0 0 0 0 0 Summe Liquiditätszugang 1600 1600 1600 1600 1600 1600 1600 1600 1600 1600 1600 1600\n\nRechengröße:\\nvereinnahmte Umsatzsteuer (Mehrwertsteuer) 0 0 0 0 0 0 0 0 0 0 0 0\n\nAuszahlungen für Investitionen\n\nDocument 530: Beträge in € Jahr 1 Jan Feb. Mrz Apr Mai Jun Jul Aug Sep Okt Nov Dez Übertrag Liquiditäts-Endbestand Vormonat 0 823 1106 2399 4772 5265 7778 9421 10124 11837 12610\n\nEinzahlungen (brutto) aus\n\nForderungen aus Lieferung u. Leistung (bezahlte Rechnungen) 0 1070 70 1140 2280 280 2420 1490 490 1560 560 1630 Barverkäufe 0 0 0 0 0 0 0 0 0 0 0 0 erwartete Kundenanzahlungen 0 0 0 0 0 0 0 0 0 0 0 Eigenkapital-Einlagen 0 Kreditauszahlung 0 0 0 0 0 0 0 0 0 0 0 0 sonstige Einnahmen\\n(z.B. Gründungszuschuss) 0 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 Summe Liquiditätszugang 0 2070 1070 2140 3280 1280 3420 2490 1490 2560 1560 2630\n\nRechengröße:\\nvereinnahmte Umsatzsteuer (Mehrwertsteuer) 0 0 0 0 0 0 0 0 0 0 0 0\n\nAuszahlungen für Investitionen\n\nGrundstück/Gebäude/Umbaumaßnahmen 0 0 0 0 0 0 0 0 0 0 0 0 Anschaffung Maschinen/Geräte 0 0 0 0 0 0 0 0 0 0 0 0 Büroausstattung, PCs, Firmenfahrzeug 0 80 80 80 80 80 80 80 80 80 80 80 Summe Investitionsausgaben 0 80 80 80 80 80 80 80 80 80 80 80\n\nDocument 534: Beträge in € Jahr 1 Jan Feb. Mrz Apr Mai Jun Jul Aug Sep Okt Nov Dez Übertrag Liquiditäts-Endbestand Vormonat -532 123 238 1363 3568 3893 6238 7713 8248 9793 10398\n\nEinzahlungen (brutto) aus\n\nForderungen aus Lieferung u. Leistung (bezahlte Rechnungen) 0 1070 70 1140 2280 280 2420 1490 490 1560 560 1630 Barverkäufe 0 0 0 0 0 0 0 0 0 0 0 0 erwartete Kundenanzahlungen 0 0 0 0 0 0 0 0 0 0 0 Eigenkapital-Einlagen 0 Kreditauszahlung 0 0 0 0 0 0 0 0 0 0 0 0 sonstige Einnahmen\\n(z.B. Gründungszuschuss) 0 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 Summe Liquiditätszugang 0 2070 1070 2140 3280 1280 3420 2490 1490 2560 1560 2630\n\nRechengröße:\\nvereinnahmte Umsatzsteuer (Mehrwertsteuer) 0 0 0 0 0 0 0 0 0 0 0 0\n\nAuszahlungen für Investitionen\n\nGrundstück/Gebäude/Umbaumaßnahmen 0 0 0 0 0 0 0 0 0 0 0 0 Anschaffung Maschinen/Geräte 0 0 0 0 0 0 0 0 0 0 0 0 Büroausstattung, PCs, Firmenfahrzeug 0 80 80 80 80 80 80 80 80 80 80 80 Summe Investitionsausgaben 0 80 80 80 80 80 80 80 80 80 80 80",
+      "metadata": {
+        "question_type": "simple",
+        "seed_document_id": 538,
+        "topic": "Finanzplanung und Liquidität"
+      },
+      "conversation_history": []
+    },
+    {
+      "id": "ac5a96ab-baf9-4dbb-afc5-6024f9321e99",
+      "question": "Wie hoch sind die monatlichen Kosten für eine Haftpflichtversicherung im zweiten Jahr, wenn man bedenkt, dass die Kosten für Werbung und Kundenakquise möglicherweise das Budget beeinflussen?",
+      "reference_answer": "25 €",
+      "reference_context": "Document 515: Planperiode Rechengrößen Summe Monate\\nim 2. Jahr Jahr 2 Alle Beträge in € (netto, ohne USt) Jan Feb. Mrz Apr Mai Jun Jul Aug Sep Okt Nov Dez Umsatzerlöse Geschäftsfeld 1 19200 1600 1600 1600 1600 1600 1600 1600 1600 1600 1600 1600 1600 Umsatzerlöse Geschäftsfeld 2 0 0 0 0 0 0 0 0 0 0 0 0 0 Umsatzerlöse Geschäftsfeld 3 0 0 0 0 0 0 0 0 0 0 0 0 0 Umsatzerlöse ( Summe ) 19200 1600 1600 1600 1600 1600 1600 1600 1600 1600 1600 1600 1600 Waren-/Materialeinsatz 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 Rohertrag 19200 1600 1600 1600 1600 1600 1600 1600 1600 1600 1600 1600 1600 Haftpflichtversicherung 300 25 25 25 25 25 25 25 25 25 25 25 25 Miete einschl. Nebenkosten 1200 100 100 100 100 100 100 100 100 100 100 100 100 Rechner 960 80 80 80 80 80 80 80 80 80 80 80 80 Visiten Karten 240 20 20 20 20 20 20 20 20 20 20 20 20 KFZ-Kosten: Leasing, Steuern, Versicherung 2520 210 210 210 210 210 210 210 210 210 210 210 210 KFZ-Kosten: Benzin, Instandhaltung, Pflege 900 75 75 75 75 75 75 75 75 75 75 75 75 Car\n\nDocument 509: Planperiode Rechengrößen Summe Monate\\nim 2. Jahr Jahr 2 Alle Beträge in € (netto, ohne USt) Jan Feb. Mrz Apr Mai Jun Jul Aug Sep Okt Nov Dez Umsatzerlöse Geschäftsfeld 1 19200 1600 1600 1600 1600 1600 1600 1600 1600 1600 1600 1600 1600 Umsatzerlöse Geschäftsfeld 2 0 0 0 0 0 0 0 0 0 0 0 0 0 Umsatzerlöse Geschäftsfeld 3 0 0 0 0 0 0 0 0 0 0 0 0 0 Umsatzerlöse ( Summe ) 19200 1600 1600 1600 1600 1600 1600 1600 1600 1600 1600 1600 1600 Waren-/Materialeinsatz 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 Rohertrag 19200 1600 1600 1600 1600 1600 1600 1600 1600 1600 1600 1600 1600 Haftpflichtversicherung 300 25 25 25 25 25 25 25 25 25 25 25 25 Miete einschl. Nebenkosten 1200 100 100 100 100 100 100 100 100 100 100 100 100 Rechner 960 80 80 80 80 80 80 80 80 80 80 80 80 Visiten Karten 240 20 20 20 20 20 20 20 20 20 20 20 20 KFZ-Kosten: Leasing, Steuern, Versicherung 2520 210 210 210 210 210 210 210 210 210 210 210 210 KFZ-Kosten: Benzin, Instandhaltung, Pflege 900 75 75 75 75 75 75 75 75 75 75 75 75 Car",
+      "metadata": {
+        "question_type": "distracting element",
+        "seed_document_id": 515,
+        "distracting_context": "FBA (Fufilment by Amazon) => Lager bei Amazon\n\nProfi für Werbung?\n\n\n\n\n\nWas wir nicht wollen:\n\nLangsame lieferzeiten\n\nBillige Produkte\n\n\n\n\n\n\n\n\n\nAufgabenbereiche\n\nAnfangs:\n\nVersandkosten (DHL, etc.?)\n\n\n\n\n\n\n\nProdukte evaluieren\n\nWas kostet uns 1\n\nWerbe Material\n\nWie viel Kostet ein Kunde? => Werbung schalten\n\nFunnel Aufbauen / Marketing\n\nProdukte Lagern & versenden\n\nShop\n\nKundensupport\n\nOrganisation\n\nKosten im Überblick\n\nHaben wir noch die besten Anbieter\n\nSind die Shop Preise noch gut?\n\nZeiteinteilung\n\nZugänge zu Funndels und etc\n\nBuchhaltung\n\nFinanzplanung\n\nLegal\n\n\n\n\n\nSchritte:\n\n\n\nProdukte Suchen\n\nEigene Fähigkeiten einschätzen\n\nWie viel Zeit habe ich?\n\nWas ist das Budget",
+        "topic": "Finanzplanung für Unternehmen"
+      },
+      "conversation_history": []
+    },
+    {
+      "id": "1835da68-aea3-4d94-9954-15338e9dd6ab",
+      "question": "Wie wird das Produkt Infofuchs an die Kunden verkauft und welche zusätzlichen Kosten sind nach dem Kauf enthalten, insbesondere unter Berücksichtigung der Anfängerfreundlichkeit und der speziellen Funktionen wie der Abwesenheitsanzeige?",
+      "reference_answer": "Das System wird direkt an die Kunden als Software as a Service verkauft. Das Produkt wird einmalig beim Verkauf mit einer Installationsgebühr versehen und danach mit monatlich laufenden Serviceverträgen. In diesen Serviceverträgen sind die Kosten für den Server und dessen Wartung enthalten.",
+      "reference_context": "Document 559: Für die nächsten 2 Jahre ist das Ziel jeden Monat eine Grundschule anzuwerben also 24 Grundschulen, mit den Einnahmen aus den Monatlichen Einnahmen könnte eine erste Person eingestellt werden und weitere Produkte neben dem Schulfuchs entwickelt werden.\n\n\n\nWie sieht das Ertragsmodell für Dein Produkt/ Deine Dienstleistung aus ?\n\nDas System wird direkt an die Kunden als Software as a Service verkauft.\n\nDas Produkt wird einmalig bim Verkauf mit einer Installationsgebühr versehen und danach mit monatlich laufenden Serviceverträgen. In diesen Serviceverträgen sind die Kosten für den Server und dessen Wartung enthalten.\n\nDa das Produkt schon auf Grundschulen spezialisiert hat das System zusätzlich den Anspruch Qualitätsführer zu werden.\n\nDa die Anzahl der Grundschulen nur gering schwankt hängt der Gewinn stark von der Anzahl der Verkauften und langfristigen Kunden ab.\n\nDocument 607: Für die nächsten 2 Jahre ist das Ziel jeden Monat eine Grundschule anzuwerben also 24 Grundschulen, mit den Einnahmen aus den Monatlichen Einnahmen könnte eine erste Person eingestellt werden und weitere Produkte neben dem Schulfuchs entwickelt werden.\n\n\n\nWie sieht das Ertragsmodell für Dein Produkt/ Deine Dienstleistung aus ?\n\nDas System wird direkt an die Kunden als Software as a Service verkauft.\n\nDas Produkt wird einmalig bim Verkauf mit einer Installationsgebühr versehen und danach mit monatlich laufenden Serviceverträgen. In diesen Serviceverträgen sind die Kosten für den Server und dessen Wartung enthalten.\n\nDa das Produkt schon auf Grundschulen spezialisiert hat das System zusätzlich den Anspruch Qualitätsführer zu werden.\n\nDa die Anzahl der Grundschulen nur gering schwankt hängt der Gewinn stark von der Anzahl der Verkauften und langfristigen Kunden ab.\n\nDocument 633: Für die nächsten 2 Jahre ist das Ziel jeden Monat eine Grundschule anzuwerben also 24 Grundschulen, mit den Einnahmen aus den Monatlichen Einnahmen könnte eine erste Person eingestellt werden und weitere Produkte neben dem Schulfuchs entwickelt werden.\n\n\n\nWie sieht das Ertragsmodell für Dein Produkt/ Deine Dienstleistung aus ?\n\nDas System wird direkt an die Kunden als Software as a Service verkauft.\n\nDas Produkt wird einmalig bim Verkauf mit einer Installationsgebühr versehen und danach mit monatlich laufenden Serviceverträgen. In diesen Serviceverträgen sind die Kosten für den Server und dessen Wartung enthalten.\n\nDa das Produkt schon auf Grundschulen spezialisiert hat das System zusätzlich den Anspruch Qualitätsführer zu werden.\n\nDa die Anzahl der Grundschulen nur gering schwankt hängt der Gewinn stark von der Anzahl der Verkauften und langfristigen Kunden ab.",
+      "metadata": {
+        "question_type": "distracting element",
+        "seed_document_id": 559,
+        "distracting_context": "Im Vergleich mit den existierenden Webseitenbaukästen werden beim Infofuchs nur die nötigen Funktionen zu Verfügung gestellt. Das macht dieses System sehr anfängerfreundlich. \n\nDas hat zur Folge, dass Develop 4 Future nicht bei jeder Änderung der Webseite kontaktiert werden muss.\n\nHervorzuheben ist besonders die Möglichkeit der Abwesenheitsanzeige der SchülerInnen durch deren Erziehungsberechtigte über das Onlineportal des Infofuchses. \n\nDurch die Onlineentschuldigung werden die eingehenden Anrufe verringert, die sich besonders bei Ausnahmesituationen wie Unwettern häufen können. Die Entschuldigungen können auch schon im Voraus und jederzeit eingereicht werden. Das Sekretariat kann die List der für den jeweiligen Tag entschuldigten SchülerInnen mit nur einem Klick exportieren.\n\nDie Infobox, welche farblich hervorgehoben ist, beinhaltet die wichtigsten Informationen direkt, wenn man die Website aufruft.",
+        "topic": "Others"
+      },
+      "conversation_history": []
+    },
+    {
+      "id": "23f8c2f2-1043-47fe-a9d6-0eb8c39c8b31",
+      "question": "Wie wird das System an den Pilotschulen verbessert, insbesondere in Bezug auf die Anpassung und Erweiterung der Artikel- und Startseitenfunktionen gemäß den spezifischen Bedürfnissen der Schulen?",
+      "reference_answer": "Mit den Schulen wird aktiv zusammengearbeitet, um das System weiter zu verbessern.",
+      "reference_context": "Document 574: Diese Annahme beruht auf dem Vergleich der verwendeten Technologien und vorhandenen Funktionen mit denen vom Schoolmanager.\n\nDer Entwicklungsvorsprung wird durch neue und ständig verbesserte Funktionen gehalten.\n\n\n\n2.3.3.4 Stand der Entwicklung\n\nDas System wird bereits an zwei Pilotschulen erfolgreich eingesetzt. Mit den Schulen wird aktiv zusammengearbeitet, um das System weiter zu verbessern.\n\nDie Webseite wird nach und nach um weitere Funktionen erweitert, diese Erweiterungen werden Module genannt. Diese Module können unabhängig voneinander agieren und individuell angepasst werden.\n\n\n\n2.3.3.5 Fertigung und Erstellung\n\nFür die Entwicklung des Systems wird Gitlab verwendet, welches das Verwalten von Code und dessen Planung vereinfacht. Für jede Schule wird ein separater Server gemietet. Dieser wird von der Software Laravel Forge verwaltet und kontrolliert.\n\nDas System für eine Schule kann in wenigen Stunden komplett eingerichtet werden.",
+      "metadata": {
+        "question_type": "distracting element",
+        "seed_document_id": 574,
+        "distracting_context": "Develop 4 Future    \n  1 \nVertrag über die Bereitstellung und Nutzung einer Website-Lösung für Schulen (Webhosting und Zurverfügungstellung des Rahmen-CMS)  zwischen Develop 4 Future / Leon Bartz, Heilerstraße 63, 51647 Gummersbach - nachfolgend d4f genannt - und GGS Becke / Rektorin Jessica Schudt Am Sonnenberg 3, 51647 Gummersbach - nachfolgend Kunde genannt -  Gebuchte Funktionen:   Funktion Beschreibung Preis mtl. c  Basic 50 €  Startseite Eine Startseite, welche die Hinweise, Schnellzugriffe, eine kurze Liste von Artikel und eine kurze Liste von Terminen umfasst. Bei der Startseite können Hintergrundbilder und Text auf Anfrage bearbeitet werden.   \n \n Artikel Artikel, welche erstellt, bearbeitet und gelöscht werden können. Ein Artikel umfasst einen Vorschautext, einen RichText, ein Veröffentlichkeitsdatum und die Möglichkeit, Artikel privat zu stellen. Artikel sind in der nur in der Listen-Ansicht verfügbar.",
+        "topic": "Softwareentwicklung für Schulen"
+      },
+      "conversation_history": []
+    },
+    {
+      "id": "ae93c2c1-a061-4d5d-a848-f8f1655c6a81",
+      "question": "Welche Ausbildung hat die Person, die zukünftiger geschäftsführender Gesellschafter von Develop4Future werden soll, und welche Funktionen bietet Develop4Future, die Webschools nicht bietet?",
+      "reference_answer": "Die Person, die zukünftiger geschäftsführender Gesellschafter von Develop4Future werden soll, hat 2019 das Abitur am Lindengymnasium gemacht und studiert seit 2019 an der TH-Köln. Develop4Future bietet eigene Artikel, Krankmeldung, Logineo Integration und die Möglichkeit für mehrere Accounts an, Funktionen, die Webschools nicht bietet.",
+      "reference_context": "Document 327: Inhaltsverzeichnis\n\n\n\nWer bin ich\n\n2019 Abitur Lindengymnasium\n\nSeit 2019 Student an der TH-Köln\n\nZwei Praktika bei develop4edu\n\nSeit einem Jahr als Werkstudent bei Kiwis and Brownies\n\nZukünftiger geschäftsführender Gesellschafter von Develop4Future\n\n\n\nVorher\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nKontaktformular für Lehrer im Admin Bereich\n\nKalender Export für Kalender Apps\n\nGeplante Funktionen\n\n\n\nNächster Kunde\n\n\n\nVergleich mit Webschools\n\nFunktion Webschools Develop4Future Zentrale Informationen ✅ ✅ Eigenes Layout ✅ ❌ Personalisierbar ✅ ✅ Newsletter ✅ ❌ Kalender ✅ ✅ Bildbearbeitung ✅ ❌ Selber bearbeiten 🟡 ✅ Domain 🟡 ✅ Artikel ❌ ✅ Krankmeldung ❌ ✅ Logineo Integration ❌ ✅ Mehrere Accounts ❌ ✅ Einfache Bedienung ❌ ✅\n\n🟡 Webschools: min. 79€ monatlicher Aufpreis\n\n\n\nWas Develop4Future hervorhebt\n\nSpezialisiert auf Grundschulen\n\nBenutzerfreundliches Tool\n\nEnger Kontakt zu Grundschulen",
+      "metadata": {
+        "question_type": "double",
+        "original_questions": [
+          {
+            "question": "Welche Ausbildung hat die Person, die zukünftiger geschäftsführender Gesellschafter von Develop4Future werden soll?",
+            "answer": "2019 Abitur Lindengymnasium, seit 2019 Student an der TH-Köln."
+          },
+          {
+            "question": "Welche Funktionen bietet Develop4Future, die Webschools nicht bietet?",
+            "answer": "Develop4Future bietet eigene Artikel, Krankmeldung, Logineo Integration und die Möglichkeit für mehrere Accounts an, während Webschools diese Funktionen nicht bietet."
+          }
+        ],
+        "seed_document_id": 327,
+        "topic": "Others"
+      },
+      "conversation_history": []
+    }
+  ]

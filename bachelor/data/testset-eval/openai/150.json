@@ -1,0 +1,145 @@
+[
+    {
+      "id": "f0199abb-dd71-4f2e-bf71-1ad847a96503",
+      "question": "Bitte identifizieren Sie anhand des bereitgestellten Kontextes die Middleware, die explizit für das Setzen von Cache-Headern verantwortlich ist, und erläutern Sie zusätzlich, wie Sie diese Middleware in einer Laravel-Route korrekt einbinden würden. Geben Sie dabei den vollständigen Klassennamen an.",
+      "reference_answer": "'cache.headers' => \\Illuminate\\Http\\Middleware\\SetCacheHeaders::class",
+      "reference_context": "Document 470: 'cache.headers' => \\Illuminate\\Http\\Middleware\\SetCacheHeaders::class,\n        'can' => \\Illuminate\\Auth\\Middleware\\Authorize::class,\n        'guest' => \\App\\Http\\Middleware\\RedirectIfAuthenticated::class,\n        'password.confirm' => \\Illuminate\\Auth\\Middleware\\RequirePassword::class,\n        'signed' => \\Illuminate\\Routing\\Middleware\\ValidateSignature::class,\n        'throttle' => \\Illuminate\\Routing\\Middleware\\ThrottleRequests::class,",
+      "metadata": {
+        "question_type": "complex",
+        "seed_document_id": 470,
+        "topic": "Laravel PHP Application Development"
+      },
+      "conversation_history": []
+    },
+    {
+      "id": "1508341c-666d-43b9-a684-66214718b6f5",
+      "question": "Hallo, ich bin gerade dabei, einen Finanzbericht für unser Team bei Develop 4 Future zu erstellen und prüfe dazu die aktuellen Umsatz- und Rohertragszahlen aus den letzten Geschäftsunterlagen. Kannst du mir sagen, wie hoch die Umsatzerlöse im Geschäftsfeld 2 für erweiterten Support laut den bereitgestellten Daten sind?",
+      "reference_answer": "Die Umsatzerlöse im Geschäftsfeld 2 für erweiterten Support betragen laut den bereitgestellten Daten 0.",
+      "reference_context": "Document 4974: 2280 280 2420 1490 490 1560 560 1630 Umsatzerlöse Geschäftsfeld 2 erweiteter support 0 0 0 0 0 0 0 0 0 0 0 0 0 Umsatzerlöse Geschäftsfeld 3 0 0 0 0 0 0 0 0 0 0 0 0 0 Umsatzerlöse ( Summe ) 12990 0 1070 70 1140 2280 280 2420 1490 490 1560 560 1630 Waren-/Materialeinsatz 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 Rohertrag 12990 0 1070 70 1140 2280 280 2420 1490 490 1560 560 1630 Feste Private Einnahmen -10800 -900 -900 -900 -900 -900 -900 -900 -900 -900 -900 -900 -900 Private Sonstige Ausgaben 11400 950 950\n\nDocument 4986: 1070 70 1140 2280 280 2420 1490 490 1560 560 1630 Umsatzerlöse Geschäftsfeld 2 erweiteter support 0 0 0 0 0 0 0 0 0 0 0 0 0 Umsatzerlöse Geschäftsfeld 3 0 0 0 0 0 0 0 0 0 0 0 0 0 Umsatzerlöse ( Summe ) 12990 0 1070 70 1140 2280 280 2420 1490 490 1560 560 1630 Waren-/Materialeinsatz 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 Rohertrag 12990 0 1070 70 1140 2280 280 2420 1490 490 1560 560 1630 Feste Private Einnahmen -10800 -900 -900 -900 -900 -900 -900 -900 -900 -900 -900 -900 -900 Private Sonstige Ausgaben",
+      "metadata": {
+        "question_type": "situational",
+        "seed_document_id": 4974,
+        "situational_context": "A member of the Develop 4 Future team is preparing a financial report and needs to review Umsatz- and Rohertragszahlen from recent business documents.",
+        "topic": "Software Development for Educational Institutions"
+      },
+      "conversation_history": []
+    },
+    {
+      "id": "38528bf1-8e6d-4c73-8f6c-8e94a08113e7",
+      "question": "Was passiert mit dem padding-right Stil von body, wenn der Code ausgeführt wird?",
+      "reference_answer": "Der ursprüngliche Wert von padding-right des body-Elements wird gespeichert und anschließend um die Breite des Scrollbalkens erhöht.",
+      "reference_context": "Document 2838: o=document.body.style.paddingRight,i=e(document.body).css(\"padding-right\");e(document.body).data(\"padding-right\",o).css(\"padding-right\",parseFloat(i)+this._scrollbarWidth+\"px\")}e(document.body).addClass(Gt)},n._resetScrollbar=function(){var t=[].slice.call(document.querySelectorAll(te));e(t).each((function(t,n){var r=e(n).data(\"padding-right\");e(n).removeData(\"padding-right\"),n.style.paddingRight=r||\"\"}));var n=[].slice.call(document.querySelectorAll(\"\"+ee));e(n).each((function(t,n){var",
+      "metadata": {
+        "question_type": "simple",
+        "seed_document_id": 2838,
+        "topic": "JavaScript Frontend Frameworks"
+      },
+      "conversation_history": []
+    },
+    {
+      "id": "7c05456a-f708-46cd-bc29-76b7e019e814",
+      "question": "Wie viele Artikel werden durch den ArticleSeeder in der Datenbank erstellt, wenn das Seeder-Skript im Rahmen eines geplanten Artisan-Befehls ausgeführt wird?",
+      "reference_answer": "Der ArticleSeeder erstellt 100 Artikel in der Datenbank.",
+      "reference_context": "Document 597: <?php\nnamespace Database\\Seeders;\n\nuse App\\Models\\Article;\nuse Illuminate\\Database\\Seeder;\n\nclass ArticleSeeder extends Seeder\n{\n    public function run()\n    {\n        Article::factory()\n            ->count(100)\n            ->create();\n    }\n}",
+      "metadata": {
+        "question_type": "distracting element",
+        "seed_document_id": 597,
+        "distracting_context": "<?php\n\nnamespace App\\Console;\n\nuse App\\Models\\Excuse;\nuse DateTime;\nuse Illuminate\\Console\\Scheduling\\Schedule;\nuse Illuminate\\Foundation\\Console\\Kernel as ConsoleKernel;\n\nclass Kernel extends ConsoleKernel\n{\n    /**\n     * The Artisan commands provided by your application.\n     *\n     * @var array\n     */\n    protected $commands = [\n    ];",
+        "topic": "Laravel PHP Application Development"
+      },
+      "conversation_history": []
+    },
+    {
+      "id": "0a2fbe49-d0f3-4d7b-82a6-2e333c1c3d03",
+      "question": "Bitte geben Sie unter Angabe des exakten HEX- oder RGB-Werts an, welche Hintergrundfarbe eine .btn-light Schaltfläche im normalen Zustand gemäß der bereitgestellten CSS-Dokumentation besitzt. Nennen Sie außerdem, ob diese Farbe als hell oder dunkel einzustufen ist.",
+      "reference_answer": "Der Hintergrund einer .btn-light Schaltfläche ist im normalen Zustand #f8f9fa.",
+      "reference_context": "Document 1481: 0 0 0 rgba(239,87,83,.5)}.btn-outline-light{color:#f8f9fa;border-color:#f8f9fa}.btn-outline-light:hover{color:#212529;background-color:#f8f9fa;border-color:#f8f9fa}.btn-outline-light.focus,.btn-outline-light:focus{box-shadow:0 0 0 0\n\nDocument 1459: 0 0 0 rgba(241,112,109,.5)}.btn-light{color:#212529;background-color:#f8f9fa;border-color:#f8f9fa}.btn-light:hover{color:#212529;background-color:#e2e6ea;border-color:#dae0e5}.btn-light.focus,.btn-light:focus{box-shadow:0 0 0 0\n\nDocument 1056: 0 0 .2rem rgba(98,27,24,.5)}.btn-outline-light{color:#f8f9fa;border-color:#f8f9fa}.btn-outline-light:hover{color:#212529;background-color:#f8f9fa;border-color:#f8f9fa}.btn-outline-light.focus,.btn-outline-light:focus{box-shadow:0 0 0 .2rem",
+      "metadata": {
+        "question_type": "complex",
+        "seed_document_id": 1481,
+        "topic": "Others"
+      },
+      "conversation_history": []
+    },
+    {
+      "id": "9918a7df-4f20-4b7e-b02f-74d18979de62",
+      "question": "Bitte beschreibe möglichst genau, welche Art von Information in der Tabellenspalte mit dem Attribut 'data-timeago' angezeigt wird, und erläutere zusätzlich, wie sich der angezeigte Wert auf den tatsächlichen Zeitstempel bezieht. Gehe dabei auch darauf ein, ob und wie sich diese Anzeige im Laufe der Zeit dynamisch verändert.",
+      "reference_answer": "In der Spalte mit dem Attribut 'data-timeago' wird angezeigt, wie viel Zeit seit dem Erstellungszeitpunkt des Eintrags vergangen ist (z.B. 'vor 5 Minuten').",
+      "reference_context": "Document 3593: \"+t._s(e.entry.content.composers?e.entry.content.composers.length:0)+\"\\n        \")]),t._v(\" \"),n(\"td\",{staticClass:\"table-fit\",attrs:{\"data-timeago\":e.entry.created_at}},[t._v(t._s(t.timeAgo(e.entry.created_at)))]),t._v(\" \"),n(\"td\",{staticClass:\"table-fit\"},[n(\"router-link\",{staticClass:\"control-action\",attrs:{to:{name:\"view-preview\",params:{id:e.entry.id}}}},[n(\"svg\",{attrs:{xmlns:\"http://www.w3.org/2000/svg\",viewBox:\"0 0 22 16\"}},[n(\"path\",{attrs:{d:\"M16.56 13.66a8 8 0 0 1-11.32\n\nDocument 2282: \")])]),t._v(\" \"),n(\"td\",{staticClass:\"table-fit\",attrs:{\"data-timeago\":e.entry.created_at,title:e.entry.created_at}},[t._v(\"\\n            \"+t._s(t.timeAgo(e.entry.created_at))+\"\\n        \")]),t._v(\" \"),n(\"td\",{staticClass:\"table-fit\"},[n(\"router-link\",{staticClass:\"control-action\",attrs:{to:{name:\"cache-preview\",params:{id:e.entry.id}}}},[n(\"svg\",{attrs:{xmlns:\"http://www.w3.org/2000/svg\",viewBox:\"0 0 22 16\"}},[n(\"path\",{attrs:{d:\"M16.56 13.66a8 8 0 0 1-11.32 0L.3 8.7a1 1 0 0 1\n\nDocument 3473: \")]):n(\"span\",[t._v(\"\\n                \"+t._s(e.entry.content.time)+\"ms\\n            \")])]),t._v(\" \"),n(\"td\",{staticClass:\"table-fit\",attrs:{\"data-timeago\":e.entry.created_at,title:e.entry.created_at}},[t._v(\"\\n            \"+t._s(t.timeAgo(e.entry.created_at))+\"\\n        \")]),t._v(\" \"),n(\"td\",{staticClass:\"table-fit\"},[n(\"router-link\",{staticClass:\"control-action\",attrs:{to:{name:\"query-preview\",params:{id:e.entry.id}}}},[n(\"svg\",{attrs:{xmlns:\"http://www.w3.org/2000/svg\",viewBox:\"0\n\nDocument 3467: \"),n(\"td\",{staticClass:\"table-fit\",attrs:{\"data-timeago\":e.entry.created_at,title:e.entry.created_at}},[t._v(\"\\n            \"+t._s(t.timeAgo(e.entry.created_at))+\"\\n        \")]),t._v(\" \"),n(\"td\",{staticClass:\"table-fit\"},[n(\"router-link\",{staticClass:\"control-action\",attrs:{to:{name:\"request-preview\",params:{id:e.entry.id}}}},[n(\"svg\",{attrs:{xmlns:\"http://www.w3.org/2000/svg\",viewBox:\"0 0 22 16\"}},[n(\"path\",{attrs:{d:\"M16.56 13.66a8 8 0 0 1-11.32 0L.3 8.7a1 1 0 0 1 0-1.42l4.95-4.95a8 8 0 0 1",
+      "metadata": {
+        "question_type": "complex",
+        "seed_document_id": 3593,
+        "topic": "JavaScript Frontend Frameworks"
+      },
+      "conversation_history": []
+    },
+    {
+      "id": "7b226679-20de-4fa2-a40f-c834f2345b81",
+      "question": "Hallo, ich bin Praktikant bei Develop 4 Future und arbeite mich gerade in die technischen Dokumentationen zu unseren Frontend-Styling-Konventionen ein. Könntest du mir bitte erklären, welche CSS-Klassen im Kontext unseres Unternehmens speziell für die Steuerung von Padding und Margin auf XL-Bildschirmgrößen verwendet werden?",
+      "reference_answer": "Im bereitgestellten Kontext werden CSS-Klassen wie .p-xl-5, .pt-xl-5, .pr-xl-5, .pb-xl-5, .pl-xl-5, .px-xl-5, .py-xl-5, .m-xl-5, .mt-xl-5, .mr-xl-5, .mb-xl-5, .ml-xl-5, .mx-xl-5, .my-xl-5, .p-xl-0, .pt-xl-0, .pr-xl-0, .pb-xl-0, .pl-xl-0, .px-xl-0, .py-xl-0, .m-xl-n1, .mt-xl-n1, .mr-xl-n1, .mb-xl-n1, .ml-xl-n1, .mx-xl-n1, .my-xl-n1, .t-xl-4, .my-xl-4, .mr-xl-4, .mx-xl-4, .mb-xl-4, .ml-xl-4, .p-xl-4, .pt-xl-4, .pr-xl-4, .pb-xl-4, .pl-xl-4, .px-xl-4, .py-xl-4, .m-xl-4, .mt-xl-4, .mr-xl-4, .mb-xl-4, .ml-xl-4, .mx-xl-4, .my-xl-4 verwendet, um Padding und Margin auf XL-Bildschirmgrößen zu steuern.",
+      "reference_context": "Document 1327: r-xl-4,.px-xl-4{padding-right:1.5rem!important}.pb-xl-4,.py-xl-4{padding-bottom:1.5rem!important}.pl-xl-4,.px-xl-4{padding-left:1.5rem!important}.p-xl-5{padding:3rem!important}.pt-xl-5,.py-xl-5{padding-top:3rem!important}.pr-xl-5,.px-xl-5{padding-right:3rem!important}.pb-xl-5,.py-xl-5{padding-bottom:3rem!important}.pl-xl-5,.px-xl-5{padding-left:3rem!important}.m-xl-n1{margin:-.25rem!important}.mt-xl-n1,.my-xl-n1{margin-top:-.25rem!important}.mr-xl-n1,.mx-xl-n1{margin-right:-.25rem!important}.mb-\n\nDocument 1752: r-xl-4,.px-xl-4{padding-right:1.5rem!important}.pb-xl-4,.py-xl-4{padding-bottom:1.5rem!important}.pl-xl-4,.px-xl-4{padding-left:1.5rem!important}.p-xl-5{padding:3rem!important}.pt-xl-5,.py-xl-5{padding-top:3rem!important}.pr-xl-5,.px-xl-5{padding-right:3rem!important}.pb-xl-5,.py-xl-5{padding-bottom:3rem!important}.pl-xl-5,.px-xl-5{padding-left:3rem!important}.m-xl-n1{margin:-.25rem!important}.mt-xl-n1,.my-xl-n1{margin-top:-.25rem!important}.mr-xl-n1,.mx-xl-n1{margin-right:-.25rem!important}.mb-\n\nDocument 1324: t-xl-4,.my-xl-4{margin-top:1.5rem!important}.mr-xl-4,.mx-xl-4{margin-right:1.5rem!important}.mb-xl-4,.my-xl-4{margin-bottom:1.5rem!important}.ml-xl-4,.mx-xl-4{margin-left:1.5rem!important}.m-xl-5{margin:3rem!important}.mt-xl-5,.my-xl-5{margin-top:3rem!important}.mr-xl-5,.mx-xl-5{margin-right:3rem!important}.mb-xl-5,.my-xl-5{margin-bottom:3rem!important}.ml-xl-5,.mx-xl-5{margin-left:3rem!important}.p-xl-0{padding:0!important}.pt-xl-0,.py-xl-0{padding-top:0!important}.pr-xl-0,.px-xl-0{padding-righ\n\nDocument 1749: t-xl-4,.my-xl-4{margin-top:1.5rem!important}.mr-xl-4,.mx-xl-4{margin-right:1.5rem!important}.mb-xl-4,.my-xl-4{margin-bottom:1.5rem!important}.ml-xl-4,.mx-xl-4{margin-left:1.5rem!important}.m-xl-5{margin:3rem!important}.mt-xl-5,.my-xl-5{margin-top:3rem!important}.mr-xl-5,.mx-xl-5{margin-right:3rem!important}.mb-xl-5,.my-xl-5{margin-bottom:3rem!important}.ml-xl-5,.mx-xl-5{margin-left:3rem!important}.p-xl-0{padding:0!important}.pt-xl-0,.py-xl-0{padding-top:0!important}.pr-xl-0,.px-xl-0{padding-righ",
+      "metadata": {
+        "question_type": "situational",
+        "seed_document_id": 1327,
+        "situational_context": "An intern at Develop 4 Future is searching for technical documentation to better understand the company’s frontend styling conventions.",
+        "topic": "CSS Utility Classes"
+      },
+      "conversation_history": []
+    },
+    {
+      "id": "ab776ff2-5138-4b91-aa59-2372fe7f5907",
+      "question": "Wie hat sich das ausgewirkt?",
+      "reference_answer": "Die Coronapandemie hat die Kundenakquise extrem erschwert, da die Grundschulen durch die Pandemiebewältigung über Gebühr belastet waren.",
+      "reference_context": "Document 4224: Die seit dem März 2020 grassierende Coronapandemie hat die Kundenakquise extrem erschwert. Die Grundschulen zeigten sich durch die Pandemiebewältigung über Gebühr belastet.",
+      "metadata": {
+        "question_type": "conversational",
+        "seed_document_id": 4224,
+        "topic": "Software Development for Educational Institutions"
+      },
+      "conversation_history": [
+        {
+          "role": "user",
+          "content": "Ich möchte wissen, wie die Coronapandemie seit März 2020 die Kundenakquise beeinflusst hat."
+        },
+        {
+          "role": "assistant",
+          "content": "How can I help you with that?"
+        }
+      ]
+    },
+    {
+      "id": "bc757c0c-6dd4-44fb-bfbb-8b0dbcb5022d",
+      "question": "Sind Integrationen mit bestehenden Systemen für das Webpräsenz-System auch dann geplant, wenn der Kunde seine Domain direkt über einen externen Registrar und nicht über Develop 4 Future registriert hat?",
+      "reference_answer": "Ja, Integrationen mit bestehenden Systemen sind geplant.",
+      "reference_context": "Document 4237: Da der Hauptzweck des Systems ist, die Webpräsenz zu gestalten und kein Internes System zur Verfügung zu stellen, sind Integrationen mit bestehenden Systemen geplant.",
+      "metadata": {
+        "question_type": "distracting element",
+        "seed_document_id": 4237,
+        "distracting_context": "(1) D4f bietet ggfs. auch die Registrierung von Domainnamen (Domains) an. Wenn der Kunde d4f beauftragt, eine Domain registrieren zu lassen, kommt der Vertag unmittelbar zwischen dem Kunden und der jeweiligen Vergabestelle bzw. dem Registrar zu Stande. D4f wird für den Kunden im Rahmen eines Geschäftsbesorgungsverhältnisses tätig. Es gelten daher die maßgeblichen Registrierungsbedingungen und Richtlinien der jeweiligen Vergabestelle bzw. des Registrars. Die Kündigung des Vertragsverhältnisses",
+        "topic": "Software Development for Educational Institutions"
+      },
+      "conversation_history": []
+    },
+    {
+      "id": "15cb1c12-3944-4448-b213-426914cf3a1e",
+      "question": "Welche Funktion bietet Ln.max laut dem bereitgestellten Kontext und wie unterscheidet sich Ln.maxBy von Ln.max gemäß dem Kontext?",
+      "reference_answer": "Ln.max gibt das Maximum eines Arrays zurück, falls das Array Elemente enthält, andernfalls undefined; im Gegensatz dazu gibt Ln.maxBy das Maximum eines Arrays basierend auf einer bereitgestellten Funktion zurück, während Ln.max einfach das größte Element des Arrays zurückgibt.",
+      "reference_context": "Document 2699: o=r;return void 0!==n&&(o=(o=rc(n))<0?an(r+o,0):cn(o,r-1)),e==e?function(t,e,n){for(var r=n+1;r--;)if(t[r]===e)return r;return r}(t,e,o):Ae(t,ze,o,!0)},Ln.lowerCase=Rc,Ln.lowerFirst=Wc,Ln.lt=Za,Ln.lte=tc,Ln.max=function(t){return t&&t.length?rr(t,$c,hr):void 0},Ln.maxBy=function(t,e){return t&&t.length?rr(t,Qo(e,2),hr):void 0},Ln.mean=function(t){return Oe(t,$c)},Ln.meanBy=function(t,e){return Oe(t,Qo(e,2))},Ln.min=function(t){return t&&t.length?rr(t,$c,Er):void 0},Ln.minBy=function(t,e){return",
+      "metadata": {
+        "question_type": "double",
+        "original_questions": [
+          {
+            "question": "Welche Funktion bietet Ln.max laut dem bereitgestellten Kontext?",
+            "answer": "Ln.max gibt das Maximum eines Arrays zurück, falls das Array Elemente enthält; andernfalls gibt sie undefined zurück."
+          },
+          {
+            "question": "Wie unterscheidet sich Ln.maxBy von Ln.max gemäß dem Kontext?",
+            "answer": "Ln.maxBy gibt das Maximum eines Arrays basierend auf einer bereitgestellten Funktion zurück, während Ln.max einfach das größte Element des Arrays zurückgibt."
+          }
+        ],
+        "seed_document_id": 2699,
+        "topic": "JavaScript Frontend Frameworks"
+      },
+      "conversation_history": []
+    }
+  ]

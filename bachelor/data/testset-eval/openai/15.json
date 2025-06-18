@@ -1,0 +1,154 @@
+[
+    {
+      "id": "1caf3aed-298b-41e5-b956-e729bb7a89c2",
+      "question": "Wann ist das nicht der Fall?",
+      "reference_answer": "Die Haftungsbeschränkungen gelten nicht bei einer Verletzung von Leben, Körper oder Gesundheit sowie bei einer Haftung nach dem Produkthaftungsgesetz.",
+      "reference_context": "Document 118: (3) Bei leichter Fahrlässigkeit haftet d4f nur bei Verletzung einer wesentlichen Vertragspflicht, deren Erfüllung die ordnungsgemäße Durchführung des Vertrags überhaupt erst ermöglicht und auf deren Einhaltung der Kunde regelmäßig vertrauen darf (sog. Kardinalpflicht). In diesen Fällen haftet d4f lediglich in Höhe des vorhersehbaren, vertragstypischen Schadens.\n\n(4) In Fällen leichter Fahrlässigkeit ist die Haftung für alle übrigen Schäden, insbesondere Folgeschäden, mittelbare Schäden oder entgangenen Gewinn, ausgeschlossen.\n\n(5) Vorstehende Beschränkungen gelten nicht bei einer Verletzung von Leben, Körper oder Gesundheit, sowie bei einer Haftung nach dem Produkthaftungsgesetz.\n\n(6) Soweit die Haftung von d4f ausgeschlossen oder beschränkt ist, gilt dies auch für die Haftung der Arbeitnehmer, sonstigen Mitarbeiter, Vertreter und Erfüllungsgehilfen von d4f.",
+      "metadata": {
+        "question_type": "conversational",
+        "seed_document_id": 118,
+        "topic": "IT-Dienstleistungsverträge und Domainverwaltung"
+      },
+      "conversation_history": [
+        {
+          "role": "user",
+          "content": "Ich möchte wissen, in welchen Fällen die Haftungsbeschränkungen von d4f gelten."
+        },
+        {
+          "role": "assistant",
+          "content": "How can I help you with that?"
+        }
+      ]
+    },
+    {
+      "id": "b284bc26-8f08-42ea-8fc2-09d848199142",
+      "question": "Hallo, ich recherchiere gerade, wie und warum auf der Webseite von Develop 4 Future Cookies eingesetzt werden. Können Sie mir bitte erklären, weshalb Cookies auf Ihrer Seite verwendet werden und wie das mit der Speicherung von Server-Log-Files zusammenhängt?",
+      "reference_answer": "Cookies werden eingesetzt, um Komfortfunktionen wie persönliche Einstellungen und das Wiedererkennen des Nutzers zu ermöglichen und die Website insgesamt nutzerfreundlicher zu gestalten.",
+      "reference_context": "Document 3: Die Erfassung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Der Webseitenbetreiber hat ein berechtigtes Interesse an der technisch fehlerfreien und optimalen Darstellung seiner Webseite – hierzu müssen die Server-Log-Files erfasst werden. Diese werden innerhalb von sieben Tagen gelöscht.\n\n3.2 Einsatz von Cookies\n\nBeim Besuch unserer Seiten werden Cookies gesetzt. Bei Cookies handelt es sich um kleine Dateien, die auf Ihrer Festplatte dem von Ihnen verwendeten Browser zugeordnet gespeichert werden und durch welche unserer Website bestimmte Informationen zufließen. Cookies können keine Programme ausführen oder Viren auf Ihren Computer übertragen. Cookies ermöglichen Komfortfunktionen (z.B. persönliche Einstellungen der Website, Wiedererkennen des Nutzers). Sie dienen dazu, die Website heier-grundschule.de insgesamt nutzerfreundlicher zu gestalten.",
+      "metadata": {
+        "question_type": "situational",
+        "seed_document_id": 3,
+        "situational_context": "Jemand informiert sich darüber, wie und warum die Webseite von Develop 4 Future Cookies verwendet und wie lange Server-Log-Files gespeichert werden.",
+        "topic": "Datenschutz auf Webseiten"
+      },
+      "conversation_history": []
+    },
+    {
+      "id": "209de9ad-5e7b-4b5c-8609-b1b63c1fe1e7",
+      "question": "Welche Voraussetzung bezüglich weiterer Beschäftigungsverhältnisse muss für das Stipendium erfüllt sein und welche Anforderungen bestehen an den Einsatz und Verbrauch der ausgezahlten Mittel im Rahmen des Gründungsvorhabens?",
+      "reference_answer": "Für das Stipendium darf neben der Tätigkeit im neugegründeten Unternehmen kein weiteres Beschäftigungsverhältnis im Hauptberuf oder entgeltliche Nebentätigkeiten im Umfang von fünfzehn Stunden oder mehr pro Woche ausgeübt werden. Die ausgezahlten Mittel müssen wirtschaftlich und sparsam eingesetzt, für die Umsetzung des Gründungsvorhabens einschließlich Lebensunterhalt verwendet und innerhalb von zwei Monaten nach Auszahlung verbraucht werden.",
+      "reference_context": "Document 22: neben der Tätigkeit im neugegründeten Unternehmen kein weiteres \nBeschäftigungsverhältnis im Hauptberuf oder entgeltliche Nebentätigkeiten im Umfang von fünfzehn Stunden oder mehr pro Woche ausgeübt wurde.\n\n\tdie Ausgaben notwendig waren,\n\n\tdie Mittel wirtschaftlich und sparsam eingesetzt worden sind,\n\n\tdie Mittel für die Umsetzung des Gründungsvorhabens, die auch Ausgaben für den \nLebensunterhalt beinhalten können, verwendet wurden,\n\n\tdas neu gegründete Unternehmen mindestens jedoch dessen Betriebsstätte den \nUnternehmenssitz in Nordrhein-Westfalen (NRW) hat,\n\n\tdie ausgezahlten Beträge innerhalb von zwei Monaten nach der jeweiligen Auszahlung verbraucht wurden.\n\n\tnach dem Termin zum Coaching-/Betreuungsfahrplans mindestens zwei weitere Termine mit dem Coach abgehalten wurden.\n\n\n\n\n\n\t-------------------------------------------\t------------------------------------------------\n\n\tDatum, Ort\trechtsverbindliche Unterschrift Stipendiat/in, \nFirmenstempel (optional)",
+      "metadata": {
+        "question_type": "double",
+        "original_questions": [
+          {
+            "question": "Welche Voraussetzung bezüglich weiterer Beschäftigungsverhältnisse muss für das Stipendium erfüllt sein?",
+            "answer": "Neben der Tätigkeit im neugegründeten Unternehmen darf kein weiteres Beschäftigungsverhältnis im Hauptberuf oder entgeltliche Nebentätigkeiten im Umfang von fünfzehn Stunden oder mehr pro Woche ausgeübt werden."
+          },
+          {
+            "question": "Welche Anforderungen bestehen an den Einsatz und Verbrauch der ausgezahlten Mittel im Rahmen des Gründungsvorhabens?",
+            "answer": "Die Mittel müssen wirtschaftlich und sparsam eingesetzt sowie für die Umsetzung des Gründungsvorhabens, einschließlich Ausgaben für den Lebensunterhalt, verwendet werden. Außerdem müssen die ausgezahlten Beträge innerhalb von zwei Monaten nach der jeweiligen Auszahlung verbraucht werden."
+          }
+        ],
+        "seed_document_id": 22,
+        "topic": "Gründung und Förderung von Unternehmen in NRW"
+      },
+      "conversation_history": []
+    },
+    {
+      "id": "ea5f54b0-abfb-4129-9244-d756a84ec287",
+      "question": "Wie kann unter der Voraussetzung, dass Sie als Empfänger eines Zuwendungsbescheids für das Gründerstipendium.NRW in Gummersbach einen ablehnenden Bescheid vom Bürgermeister – Ordnungsamt – erhalten haben, Klage dagegen erhoben werden?",
+      "reference_answer": "Die Klage kann innerhalb eines Monats nach Bekanntgabe schriftlich oder zur Niederschrift der/des Urkundsbeamten/in der Geschäftsstelle beim Verwaltungsgericht Köln erhoben werden. Bei schriftlicher Klage sollen zwei Abschriften beigefügt werden. Alternativ kann die Klage auch durch Übertragung eines elektronischen Dokuments an die elektronische Poststelle des Gerichts erhoben werden, wobei das Dokument mit einer qualifizierten elektronischen Signatur versehen sein oder auf einem sicheren Übermittlungsweg gemäß § 55a Abs. 4 VwGO eingereicht werden muss.",
+      "reference_context": "Document 44: Rechtsbehelfsbelehrung:\nGegen diesen Bescheid des Bürgermeisters Gummersbach – Ordnungsamt – kann innerhalb eines Monats\nnach Bekanntgabe Klage erhoben werden. Die Klage ist beim Verwaltungsgericht Köln ​schriftlich oder zur\nNiederschrift der/des Urkundsbeamten/in der Geschäftsstelle zu erheben. Wird die Klage schriftlich erhoben,\nso sollen ihr zwei Abschriften beigefügt werden.\nDie Klage kann auch durch Übertragung eines elektronischen Dokuments an die elektronische Poststelle des\nGerichts erhoben werden. Das elektronische Dokument muss für die Bearbeitung durch das Gericht geeignet\nsein. Es muss mit einer qualifizierten elektronischen Signatur der verantwortenden Person versehen sein oder\nvon der verantwortenden Person signiert und auf einem sicheren Übermittlungsweg gemäß § 55a Abs. 4\nVerwaltungsgerichtsordnung (VwGO) eingereicht werden. Die für die Übermittlung und Bearbeitung\ngeeigneten technischen Rahmenbedingungen bestimmen sich nach näherer Maßgabe der Verordnung über",
+      "metadata": {
+        "question_type": "distracting element",
+        "seed_document_id": 44,
+        "distracting_context": "Anlage 3 zum Zuwendungsbescheid\n\n\tmit Bewilligungsdatum ab 01.10.2020\n\n\t\n\n\tZuwendungsempfänger/in:\t\n\n\tLeon Alexander, Bartz\n\n\tVorname, Nachname\n\n\tHeilerstraße, 63, 51647, Gummersbach\n\n\tStraße, Hausnummer, Postleitzahl, Ort\n\n\t\n\n\t\n\n\t\n\n\t\n\n\tBewilligungsbehörde:\n\n\tForschungszentrum Jülich GmbH\n\nProjektträger Jülich\n\nBereich TRI - «BeMi»\n\n 52425 Jülich\n\n\n\nVerwendungsnachweis\t\t\n\nDurch Zuwendungsbescheid vom Klicken oder tippen Sie, um ein Datum einzugeben., \nPtJ-Az.:      \nwurden zur Finanzierung für das Vorhaben: „Gründerstipendium.NRW      \ninsgesamt 12.000,00 Euro bewilligt.\n\n\n\nEs wurden insgesamt                   12.000 Euro ausgezahlt. \n\nAusgaben:\n\n\n\nlt. Zuwendungsbescheid \n\noder Änderungsbescheid(en) bzw. Teilwiderrufsbescheid(en)\n\n\n\ndavon in Anspruch \ngenommen\n\nZuwendung des \nLandes\nNordrhein-Westfalen\n\n\n\n      €\n\n\n\n      €\n\n(bitte die bereitgestellten Mittel laut Zuwendungsbescheid angeben (also 12.000 €),",
+        "topic": "IT-Dienstleistungsverträge und Domainverwaltung"
+      },
+      "conversation_history": []
+    },
+    {
+      "id": "fef813a2-5c95-4747-8266-be64301f9e2a",
+      "question": "Könnten Sie mir bitte mitteilen, welcher Stand für die angegebenen Datenschutzbestimmungen gilt, insbesondere im Hinblick darauf, dass Zugriffe auf die Homepage protokolliert und anonymisiert gespeichert werden?",
+      "reference_answer": "Stand: November 2019",
+      "reference_context": "Document 14: Wir behalten uns das Recht vor, diese Datenschutzbestimmungen unter Einhaltung der gesetzlichen Vorgaben jederzeit zu ändern.\n\n\nStand: November 2019",
+      "metadata": {
+        "question_type": "distracting element",
+        "seed_document_id": 14,
+        "distracting_context": "Jeder Zugriff auf unsere Homepage wird protokolliert. Die Speicherung dient internen systembezogenen und statistischen Zwecken. Protokolliert werden: Name der abgerufenen Datei, Datum und Uhrzeit des Abrufs, übertragene Datenmenge, Meldung über erfolgreichen Abruf, Webbrowser und anfragende Domain. Diese Daten sind nicht bestimmten Personen zuordenbar. Eine Zusammenführung dieser Daten mit anderen Datenquellen wird nicht vorgenommen. Wir behalten uns vor, diese Daten nachträglich zu prüfen, wenn uns konkrete Anhaltspunkte für eine rechtswidrige Nutzung bekannt werden. Zusätzlich werden die IP-Adressen der anfragenden Rechner protokolliert. Diese Daten werden anonymisiert erfasst, eine Zuordnung zu Personen ist ebenfalls nicht möglich.",
+        "topic": "Datenschutz auf Webseiten"
+      },
+      "conversation_history": []
+    },
+    {
+      "id": "65ad3d73-76b1-4980-a1f4-3c0d84a0309b",
+      "question": "Warum werden auf der Website Cookies gesetzt und welche Vorteile bieten sie den Nutzern?",
+      "reference_answer": "Cookies werden gesetzt, um Komfortfunktionen wie persönliche Einstellungen der Website und das Wiedererkennen des Nutzers zu ermöglichen. Sie dienen dazu, die Website insgesamt nutzerfreundlicher zu gestalten.",
+      "reference_context": "Document 3: Die Erfassung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Der Webseitenbetreiber hat ein berechtigtes Interesse an der technisch fehlerfreien und optimalen Darstellung seiner Webseite – hierzu müssen die Server-Log-Files erfasst werden. Diese werden innerhalb von sieben Tagen gelöscht.\n\n3.2 Einsatz von Cookies\n\nBeim Besuch unserer Seiten werden Cookies gesetzt. Bei Cookies handelt es sich um kleine Dateien, die auf Ihrer Festplatte dem von Ihnen verwendeten Browser zugeordnet gespeichert werden und durch welche unserer Website bestimmte Informationen zufließen. Cookies können keine Programme ausführen oder Viren auf Ihren Computer übertragen. Cookies ermöglichen Komfortfunktionen (z.B. persönliche Einstellungen der Website, Wiedererkennen des Nutzers). Sie dienen dazu, die Website heier-grundschule.de insgesamt nutzerfreundlicher zu gestalten.",
+      "metadata": {
+        "question_type": "simple",
+        "seed_document_id": 3,
+        "topic": "Datenschutz auf Webseiten"
+      },
+      "conversation_history": []
+    },
+    {
+      "id": "c660a4d0-a0e0-4aae-8be6-0b00de6b229d",
+      "question": "Wie hoch war die Gebühr für die Gewerbeanmeldung von Leon Bartz am 17.02.2021?",
+      "reference_answer": "Die Gebühr für die Gewerbeanmeldung von Leon Bartz am 17.02.2021 betrug 26,00 €.",
+      "reference_context": "Document 46: Quittung Gewerbeanmeldung\nLeon Bartz, Heiler Straße 63, 51647 Gummersbach\nKassenzeichen: gewa10000270510\nZuständige Stelle:\nGummersbach - Verkehr Gaststätten und Gewerbe, Rathausplatz 1, 51643 Gummersbach\n02261/87-1123\nCarmen.glasenapp@gummersbach.de\n17.02.2021\nAnlässlich Ihrer über das Wirtschafts-Service-Portal.NRW erzeugten Gewerbeanmeldung vom \n17.02.2021\n ist\nIhnen eine Gebühr in Höhe von \n26,00 €\n in Rechnung gestellt worden.\nSie haben diesen Betrag am \n17.02.2021\n vollständig beglichen. Der Betrag wurde im Auftrag des Landes NRW\ndurch das kommunale Rechenzentrum Minden-Ravensberg/Lippe eingezogen.\nIm Auftrag\nWirtschafts-Service-Portal.NRW\nMinisterium für Wirtschaft, Innovation,\nDigitalisierung und Energie\ndes Landes Nordrhein-Westfalen\n- 3 von 3 - Gummersbach - Verkehr Gaststätten und Gewerbe, Rathausplatz 1, 51643 Gummersbach",
+      "metadata": {
+        "question_type": "simple",
+        "seed_document_id": 46,
+        "topic": "Gründung und Förderung von Unternehmen in NRW"
+      },
+      "conversation_history": []
+    },
+    {
+      "id": "155cf724-3171-410e-af85-19020d9a83c9",
+      "question": "Wie hoch war die Gebühr für die Gewerbeanmeldung von Leon Bartz am 17.02.2021 und welche Behörde war für die Bearbeitung zuständig?",
+      "reference_answer": "Die Gebühr für die Gewerbeanmeldung von Leon Bartz am 17.02.2021 betrug 26,00 € und die zuständige Behörde war Gummersbach - Verkehr Gaststätten und Gewerbe, Rathausplatz 1, 51643 Gummersbach.",
+      "reference_context": "Document 46: Quittung Gewerbeanmeldung\nLeon Bartz, Heiler Straße 63, 51647 Gummersbach\nKassenzeichen: gewa10000270510\nZuständige Stelle:\nGummersbach - Verkehr Gaststätten und Gewerbe, Rathausplatz 1, 51643 Gummersbach\n02261/87-1123\nCarmen.glasenapp@gummersbach.de\n17.02.2021\nAnlässlich Ihrer über das Wirtschafts-Service-Portal.NRW erzeugten Gewerbeanmeldung vom \n17.02.2021\n ist\nIhnen eine Gebühr in Höhe von \n26,00 €\n in Rechnung gestellt worden.\nSie haben diesen Betrag am \n17.02.2021\n vollständig beglichen. Der Betrag wurde im Auftrag des Landes NRW\ndurch das kommunale Rechenzentrum Minden-Ravensberg/Lippe eingezogen.\nIm Auftrag\nWirtschafts-Service-Portal.NRW\nMinisterium für Wirtschaft, Innovation,\nDigitalisierung und Energie\ndes Landes Nordrhein-Westfalen\n- 3 von 3 - Gummersbach - Verkehr Gaststätten und Gewerbe, Rathausplatz 1, 51643 Gummersbach",
+      "metadata": {
+        "question_type": "double",
+        "original_questions": [
+          {
+            "question": "Wie hoch war die Gebühr für die Gewerbeanmeldung von Leon Bartz am 17.02.2021?",
+            "answer": "Die Gebühr für die Gewerbeanmeldung von Leon Bartz am 17.02.2021 betrug 26,00 €."
+          },
+          {
+            "question": "Welche Behörde war für die Bearbeitung der Gewerbeanmeldung von Leon Bartz zuständig?",
+            "answer": "Die zuständige Behörde war Gummersbach - Verkehr Gaststätten und Gewerbe, Rathausplatz 1, 51643 Gummersbach."
+          }
+        ],
+        "seed_document_id": 46,
+        "topic": "Gründung und Förderung von Unternehmen in NRW"
+      },
+      "conversation_history": []
+    },
+    {
+      "id": "59dbdc43-36d7-402f-9eec-fa99aa43136e",
+      "question": "Bitte erläutern Sie unter Berücksichtigung der im Kontext genannten Kostenschätzungen und der Tatsache, dass das System auf Open-Source-Software basiert, wie die Kostenstruktur und die Handhabung bei der Entwicklung einer komplett neuen Funktion im Vergleich zu individuellen Änderungswünschen einzelner Schulen geregelt ist. Gehen Sie dabei darauf ein, wie potenzielle Interessenskonflikte zwischen verschiedenen Schulen gelöst werden und welche finanziellen Konsequenzen sich daraus für die anfragenden Kunden ergeben. Antworten Sie bitte unter der Bedingung, dass eine Schule eine Änderung wünscht, die im Widerspruch zu den Anforderungen einer anderen Schule steht.",
+      "reference_answer": "Die Kosten für die Entwicklung einer neuen Funktion betragen grob 10.000 € pro Funktion. Die Kosten für eine Änderung, die sich auf bis zu 1.000 € belaufen können, werden direkt an den Kunden weitergegeben, der diese Änderung anfragt.",
+      "reference_context": "Document 62: Es besteht die Gefahr, dass eine Schule sich eine Änderung wünscht, welche nicht mit den Wünschen einer anderen Schule zu vereinbaren sind. Für diesen Fall muss eine Möglichkeit geschaffen werden, beide Funktionen einzubauen und dabei die Komplexität dieser Funktion minimal zu halten. Die Kosten für eine solche Änderung, die sich auf bis zu 1.000 € belaufen können werden direkt an den Kunden weitergegeben, der diese Änderung anfragt.\n\nBei der Entwicklung weitere Funktionen kann von grob 10.000 € pro Funktion ausgegangen werde. Die Kosten für eine neue Funktion sind zuerst hoch, rentieren sich jedoch, da die Funktion direkt sehr hochwertig entwickelt wird und damit zukünftige Kosten, welche durch Fehler entstehen, vermieden werden.\n\nDa das System auf Open-source Software gebaut ist werden keine Lizenzen benötigt, an eine Spende an die jeweiligen Projekte ist jedoch zu denken.\n\nDie Konkurrenten können das Programm dementsprechend auch ohne Lizenzen nachbauen.",
+      "metadata": {
+        "question_type": "complex",
+        "seed_document_id": 62,
+        "topic": "Gründung eines SaaS-Unternehmens für Schulsoftware"
+      },
+      "conversation_history": []
+    },
+    {
+      "id": "9da0f54e-cfe6-4abe-877f-fdc32e582c0a",
+      "question": "Beschreiben Sie unter Berücksichtigung des Vertragsdokuments 122 detailliert, welche konkreten Schritte die Vertragsparteien unternehmen müssen, falls eine Klausel des Vertrages für unwirksam erklärt wird oder eine ausfüllungsbedürftige Lücke entsteht, und erläutern Sie zusätzlich, wie dabei sichergestellt wird, dass der wirtschaftliche Zweck der ursprünglichen Bestimmung oder der Vertrag insgesamt gewahrt bleibt. Gehen Sie dabei explizit darauf ein, wie die Wirksamkeit der übrigen Vertragsbestimmungen trotz dieser Situation garantiert wird.",
+      "reference_answer": "Die Wirksamkeit der übrigen Bestimmungen bleibt unberührt. Die Parteien verpflichten sich, die unwirksame Bestimmung durch eine wirksame zu ersetzen, die dem wirtschaftlichen Zweck der unwirksamen Bestimmung am ehesten entspricht. Gleiches gilt im Falle einer Vertragslücke.",
+      "reference_context": "Document 122: (4) Sollte eine Bestimmung des Vertrages unwirksam sein oder werden oder sollte der Vertrag eine ausfüllungsbedürftige Lücke enthalten, so berührt dies die Wirksamkeit der übrigen Bestimmungen nicht. Die Parteien verpflichten sich, die unwirksame Bestimmung durch eine wirksame zu ersetzen, die dem wirtschaftlichen Zweck der unwirksamen Bestimmung am ehesten entspricht. Gleiches gilt im Falle einer Vertragslücke.\n\n[Stand: März 2021]\n\n\t\t\t\t1",
+      "metadata": {
+        "question_type": "complex",
+        "seed_document_id": 122,
+        "topic": "IT-Dienstleistungsverträge und Domainverwaltung"
+      },
+      "conversation_history": []
+    }
+  ]

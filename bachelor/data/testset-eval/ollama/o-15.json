@@ -1,0 +1,153 @@
+[
+    {
+      "id": "592dd699-80bf-4487-8ba6-d1ab1caeeae7",
+      "question": "Was sind die Preiskonditionen für Ihre Leistung?",
+      "reference_answer": "Es wird eine einmalige Installationsgebühr von 500€ verlangt.",
+      "reference_context": "Document 123: Preise und Preiskonditionen:\n\nEinmalige Installationsgebühr: 500€\n\nSonstige Abreden und zu erbringende Leistungen:\n\nKeine\n\n\n\nEs gelten die anliegenden AGB (Anlage 1) inklusive der Auftragsverarbeitungsvereinbarung\n\n(Anlage 2).\n\n\n\n\n\nGummersbach, den _________\t\t\t           _____________, den ___________\n\n\n\n___________________________\t\t\t_____________________________\n\nDevelop 4 Future (d4f)\t\t\t\t\tKunde: GGS Becke\n\nLeon Bartz\t\t\t\t\t\tName: Rektorin Jessica Schudt\n\n\t\t\t\t\t1",
+      "metadata": {
+        "question_type": "double",
+        "original_questions": [
+          {
+            "question": "Was sind die Preiskonditionen für Ihre Leistung?",
+            "answer": "Es wird eine einmalige Installationsgebühr von 500€ verlangt."
+          },
+          {
+            "question": "Gibt es weitere Abreden oder zu erbringende Leistungen?",
+            "answer": "Nein, es gibt keine weiteren Abreden oder zu erbringenden Leistungen."
+          }
+        ],
+        "seed_document_id": 123,
+        "topic": "<think>\nOkay, so I need to figure out the best topic that represents all these documents provided. Let me start by reading through each document carefully.\n\nFirst, there's a mention of \"Develop 4 Future\" multiple times. It looks like this might be the name of a company or an organization. The first document seems to be some general business terms for Develop 4 Future, talking about the scope of application and other legal stuff. Then, I see several documents that look like bank transactions or payment details. They have fields like \"Auftragskonto,\" \"Buchungstag,\" \"Betrag,\" which are German terms related to banking—like account number, booking date, amount, etc. So these are probably financial records for the company.\n\nNext, there's a section about prices and conditions: an installation fee of 500€ and some other terms referring to attached AGB (which I think stands for Allgemeine Geschäftsbedingungen, meaning general business terms) and processing agreements. This seems like a contract or agreement between Develop 4 Future and another party, GGS Becke.\n\nThen there's a legal notice about appealing against a decision by the mayor of Gummersbach. It mentions filing a lawsuit within a month at the administrative court in Cologne. So this document is about legal procedures related to some administrative decision, possibly regarding the company's operations or establishment.\n\nAnother document lists details about the company: name,成立日期 (founding date), location in Heilerstraße 63, Gummersbach, business type as an individual enterprise with one employee, and fields like future technologies, innovative services, and business models. This is clearly a profile or registration document for Develop 4 Future.\n\nLastly, there's a note about the founding being delayed due to many applications during COVID-19, but they managed to retrodate it by visiting the town hall. So this is about the company's establishment process facing some challenges.\n\nPutting all these together: The documents talk about the company's general terms, financial transactions, contracts with clients, legal notices, company profile, and founding details. All of these are related to the operations and setup of Develop 4 Future. \n\nSo the main topic should encompass all these aspects—company operations, establishment, finances, legal matters. Since it's in German, I need a concise term that captures this. \"Unternehmensgründung\" means company founding or entrepreneurship, which seems to fit because it covers starting and running the business. Alternatively, \"Unternehmensbetrieb\" would mean company operation, but since there are elements about founding as well, \"Unternehmensgründung\" might be more comprehensive.\n\nI think \"Unternehmensgründung\" is the best fit here because it encapsulates both the establishment and operational aspects of the company based on all the documents provided.\n</think>\n\n\"Unternehmensgründung"
+      },
+      "conversation_history": []
+    },
+    {
+      "id": "1641cf7a-ecf3-4cee-807a-583f9bce5f40",
+      "question": "Wie hat die Coronapandemie die Kundenakquise der Grundschulen beeinflusst, insbesondere im Hinblick auf die Einhaltung schriftlicher Kommunikationsvorgaben gemäß § 4 Abs. 4 Sätze 1-3?",
+      "reference_answer": "Die Coronapandemie, die seit März 2020 grassierte, hat die Kundenakquise extrem erschwert, da die Grundschulen durch die Pandemiebewältigung über Gebühr belastet waren.",
+      "reference_context": "Document 235: Die meisten Grundschule befinden sich zudem auch in NRW, dies bietet die Möglichkeit das vom Bundesland zu verfügte gestellte System (Logineo) einzubinden.\n\nLogineo stellt eine Lehrer- und Schülerverwaltung zu Verfügung. Weitere Informationen über Logineo und dessen Funktionen finden Sie hier.\n\n\n\nDie seit dem März 2020 grassierende Coronapandemie hat die Kundenakquise extrem erschwert. Die Grundschulen zeigten sich durch die Pandemiebewältigung über Gebühr belastet.",
+      "metadata": {
+        "question_type": "distracting element",
+        "seed_document_id": 235,
+        "distracting_context": "des Domaininhabers oder Admin-Cs. Dabei gilt als „schriftlich“ in beiden Fällen die gemäß § 4 Abs. 4 Sätze 1-3 zugelassene Form.",
+        "topic": "<think>\nOkay, I need to figure out the best topic that represents all these documents. Let me read through them carefully.\n\nFirst document talks about a strong system integrating with LMS like Logineo. Second mentions using the homepage for important info during COVID, saving phone calls. Third lists product variants with hosting, CMS, calendar, articles. Fourth says 10 schools can get systems set up per month, initial server setup is just the start, users need to be defined, and questions will decrease over time.\n\nNext, it mentions handling errors and questions, with possible custom features where costs are borne by the school but might be shared if other schools find them useful. Then, about 15 hours per customer for acquisition through emails, demo setup, and clarifying questions.\n\nMarketing strategy includes a website and business cards to contact more elementary schools. First goal is an on-site meeting with free test systems. Schools can see real data from others, which helps. Private contacts with first customers are important.\n\nOther points: IT experience, active training, founder's motivation, trend towards digitalization. Challenges include under-equipped schools, small team, start-up capital, financial situation of schools. Core competence is the founder's programming skills enabling quick development and adaptation.\n\nStronger parent associations make selling the product easier. When a school wants to buy, the principal and association are involved, along with teachers who can provide feedback. The goal is to make the website more user-friendly. Server setup takes time but future changes could reduce costs and improve robustness. Currently, each customer pays 10€ per month for server access.\n\nPutting it all together: It's about a digital solution (website) tailored for elementary schools, involving CMS, hosting, integration with LMS, marketing strategies, customer acquisition, challenges like funding and IT infrastructure, and the founder's role in development. The main focus is on providing a web-based system to improve school communication and management.\n\nSo the topic should reflect this: it's about digital solutions specifically for elementary schools.\n</think>\n\n\"Digitale Lösungen für Grundschulen"
+      },
+      "conversation_history": []
+    },
+    {
+      "id": "2c445c9f-66c8-4cec-803f-fab656f9d4bc",
+      "question": "Was sind die Verpflichtungen des Auftragnehmers bei der Verarbeitung personenbezogener Daten für den Auftraggeber?",
+      "reference_answer": "Der Auftragnehmer ist verpflichtet, hinreichende Garantien dafür zu bieten, dass geeignete technische und organisatorische Maßnahmen durchgeführt werden, um die Verarbeitung im Einklang mit den Anforderungen der DSGVO zu gewährleisten und den Schutz der Rechte der betroffenen Person zu sichern.",
+      "reference_context": "Document 111: § 8 Datenschutz\n\n(1) Erfolgt eine Verarbeitung personenbezogener Daten für den Auftraggeber, so ist der Auftragnehmer verpflichtet, hinreichende Garantien dafür zu bieten, dass geeignete technische und organisatorische Maßnahmen so durchgeführt werden, dass die Verarbeitung im Einklang mit den Anforderungen der DSGVO erfolgt und den Schutz der Rechte der betroffenen Person gewährleistet.",
+      "metadata": {
+        "question_type": "complex",
+        "seed_document_id": 111,
+        "topic": "Others"
+      },
+      "conversation_history": []
+    },
+    {
+      "id": "a5abd219-ea65-4c50-bc33-14f0e36cb19c",
+      "question": "Wie viele Schulen können im Moment monatlich ein System ohne Komplikationen eingerichtet bekommen, und welche Faktoren beeinflussen diese Anzahl?",
+      "reference_answer": "Aktuell können 10 Schulen pro Monat ein System eingerichtet bekommen.",
+      "reference_context": "Document 217: Aktuell können ohne Komplikationen 10 Schulen pro Monat ein System eingerichtet bekommen. Das Einrichten des Servers ist nur der Anfang in der Zusammenarbeit mit den Grundschulen. Es müssen von der Schule noch die Benutzer festgelegt werden und die jeweiligen Personen melden sich bei Unklarheiten oder Fragen bei Develop 4 Future. Diese Fragen werden in der Zukunft weniger und es wird möglich sein, Tutorials für die häufigsten Fragen zu erstellen.",
+      "metadata": {
+        "question_type": "complex",
+        "seed_document_id": 217,
+        "topic": "<think>\nOkay, I need to figure out the best topic that represents all these documents. Let me read through them carefully.\n\nFirst document talks about a strong system integrating with LMS like Logineo. Second mentions using the homepage for important info during COVID, saving phone calls. Third lists product variants with hosting, CMS, calendar, articles. Fourth says 10 schools can get systems set up per month, initial server setup is just the start, users need to be defined, and questions will decrease over time.\n\nNext, it mentions handling errors and questions, with possible custom features where costs are borne by the school but might be shared if other schools find them useful. Then, about 15 hours per customer for acquisition through emails, demo setup, and clarifying questions.\n\nMarketing strategy includes a website and business cards to contact more elementary schools. First goal is an on-site meeting with free test systems. Schools can see real data from others, which helps. Private contacts with first customers are important.\n\nOther points: IT experience, active training, founder's motivation, trend towards digitalization. Challenges include under-equipped schools, small team, start-up capital, financial situation of schools. Core competence is the founder's programming skills enabling quick development and adaptation.\n\nStronger parent associations make selling the product easier. When a school wants to buy, the principal and association are involved, along with teachers who can provide feedback. The goal is to make the website more user-friendly. Server setup takes time but future changes could reduce costs and improve robustness. Currently, each customer pays 10€ per month for server access.\n\nPutting it all together: It's about a digital solution (website) tailored for elementary schools, involving CMS, hosting, integration with LMS, marketing strategies, customer acquisition, challenges like funding and IT infrastructure, and the founder's role in development. The main focus is on providing a web-based system to improve school communication and management.\n\nSo the topic should reflect this: it's about digital solutions specifically for elementary schools.\n</think>\n\n\"Digitale Lösungen für Grundschulen"
+      },
+      "conversation_history": []
+    },
+    {
+      "id": "1a969553-3bba-4b58-9ad2-549b766c754d",
+      "question": "Hallo, ich plane gerade ein System für einen Kunden aufzusetzen und möchte wissen, wie viel es monatlich kostet, ein Testsystem bereitgestellt zu bekommen?",
+      "reference_answer": "10€ im Monat",
+      "reference_context": "Document 216: Am meisten Zeit braucht hier die Bereitstellung des neuen Servers vom Hostingprovider.\n\nDies soll in der Zukunft anders sein, wenn nicht mehr jede Schule einen eigenen Server hat und der Hostingprovider gewechselt wird. Durch diese Änderung können in der Zukunft Kosten gespart werden und das System robuster gestaltet werden.\n\n\n\nDa für jeden Kunden direkt ein System zu Testen auf Anfrage zu Verfügung gestellt wird, müssen die Kosten in Höhe von 10€ im Monat bezahlt werden.",
+      "metadata": {
+        "question_type": "situational",
+        "seed_document_id": 216,
+        "situational_context": "<think>\nOkay, I need to create a situational description for the user. Let me see what information I have.\n\nThe chatbot is described as one that answers questions for the startup Develop 4 Future. That gives me some context about its purpose. The context provided mentions Document 216 which talks about server setup taking a lot of time, changing hosting providers to save costs and make the system more robust. It also mentions that each customer requires a test system available on demand, costing €10 per month.\n\nSo, the user is probably someone involved with Develop 4 Future, maybe an employee or a stakeholder. They are looking at server issues and cost optimization. Their situation would be related to improving server management or reducing expenses.\n\nPutting it together: The user might be trying to find ways to reduce costs associated with server hosting for their systems. They're exploring options like changing hosting providers to save money and make the system more reliable.\n</think>\n\nA project manager at Develop 4 Future is evaluating ways to reduce server-related expenses by exploring alternative hosting solutions.",
+        "topic": "<think>\nOkay, I need to figure out the best topic that represents all these documents. Let me read through them carefully.\n\nFirst document talks about a strong system integrating with LMS like Logineo. Second mentions using the homepage for important info during COVID, saving phone calls. Third lists product variants with hosting, CMS, calendar, articles. Fourth says 10 schools can get systems set up per month, initial server setup is just the start, users need to be defined, and questions will decrease over time.\n\nNext, it mentions handling errors and questions, with possible custom features where costs are borne by the school but might be shared if other schools find them useful. Then, about 15 hours per customer for acquisition through emails, demo setup, and clarifying questions.\n\nMarketing strategy includes a website and business cards to contact more elementary schools. First goal is an on-site meeting with free test systems. Schools can see real data from others, which helps. Private contacts with first customers are important.\n\nOther points: IT experience, active training, founder's motivation, trend towards digitalization. Challenges include under-equipped schools, small team, start-up capital, financial situation of schools. Core competence is the founder's programming skills enabling quick development and adaptation.\n\nStronger parent associations make selling the product easier. When a school wants to buy, the principal and association are involved, along with teachers who can provide feedback. The goal is to make the website more user-friendly. Server setup takes time but future changes could reduce costs and improve robustness. Currently, each customer pays 10€ per month for server access.\n\nPutting it all together: It's about a digital solution (website) tailored for elementary schools, involving CMS, hosting, integration with LMS, marketing strategies, customer acquisition, challenges like funding and IT infrastructure, and the founder's role in development. The main focus is on providing a web-based system to improve school communication and management.\n\nSo the topic should reflect this: it's about digital solutions specifically for elementary schools.\n</think>\n\n\"Digitale Lösungen für Grundschulen"
+      },
+      "conversation_history": []
+    },
+    {
+      "id": "a35ca961-2bd7-443d-be84-f532431d6ebb",
+      "question": "Warum hat sich die Gründung verzögert?",
+      "reference_answer": "Die Gründung wurde verzögert, weil die Stadt Gummersbach viele Gründungsanfragen hatte und weniger Mitarbeiter*innen verfügbar waren, da viele Beamt*innen zu Corona-relevanten Aufgaben eingesetzt wurden. Dennoch konnte die Gründung auf das eigentliche Gründungsdatum rückdatiert werden, indem der Gründer das Rathaus besuchte.",
+      "reference_context": "Document 65: Auch hat sich die Gründung leider verzögert, da die Stadt Gummersbach zu der Zeit sehr viele Gründungsanfragen erhalten hat. Jedoch waren für die vielen Anfragen weniger Mitarbeiter*innen zuständig, da viele Beamt*innen zu Corona-relevanten Aufgaben berufen wurden. Die Gründung konnte jedoch rückdatiert werden auf das eigentliche Gründungsdatum. Dies war möglich durch den Besuch im Rathaus des Gründers.",
+      "metadata": {
+        "question_type": "simple",
+        "seed_document_id": 65,
+        "topic": "<think>\nOkay, so I need to figure out the best topic that represents all these documents provided. Let me start by reading through each document carefully.\n\nFirst, there's a mention of \"Develop 4 Future\" multiple times. It looks like this might be the name of a company or an organization. The first document seems to be some general business terms for Develop 4 Future, talking about the scope of application and other legal stuff. Then, I see several documents that look like bank transactions or payment details. They have fields like \"Auftragskonto,\" \"Buchungstag,\" \"Betrag,\" which are German terms related to banking—like account number, booking date, amount, etc. So these are probably financial records for the company.\n\nNext, there's a section about prices and conditions: an installation fee of 500€ and some other terms referring to attached AGB (which I think stands for Allgemeine Geschäftsbedingungen, meaning general business terms) and processing agreements. This seems like a contract or agreement between Develop 4 Future and another party, GGS Becke.\n\nThen there's a legal notice about appealing against a decision by the mayor of Gummersbach. It mentions filing a lawsuit within a month at the administrative court in Cologne. So this document is about legal procedures related to some administrative decision, possibly regarding the company's operations or establishment.\n\nAnother document lists details about the company: name,成立日期 (founding date), location in Heilerstraße 63, Gummersbach, business type as an individual enterprise with one employee, and fields like future technologies, innovative services, and business models. This is clearly a profile or registration document for Develop 4 Future.\n\nLastly, there's a note about the founding being delayed due to many applications during COVID-19, but they managed to retrodate it by visiting the town hall. So this is about the company's establishment process facing some challenges.\n\nPutting all these together: The documents talk about the company's general terms, financial transactions, contracts with clients, legal notices, company profile, and founding details. All of these are related to the operations and setup of Develop 4 Future. \n\nSo the main topic should encompass all these aspects—company operations, establishment, finances, legal matters. Since it's in German, I need a concise term that captures this. \"Unternehmensgründung\" means company founding or entrepreneurship, which seems to fit because it covers starting and running the business. Alternatively, \"Unternehmensbetrieb\" would mean company operation, but since there are elements about founding as well, \"Unternehmensgründung\" might be more comprehensive.\n\nI think \"Unternehmensgründung\" is the best fit here because it encapsulates both the establishment and operational aspects of the company based on all the documents provided.\n</think>\n\n\"Unternehmensgründung"
+      },
+      "conversation_history": []
+    },
+    {
+      "id": "4c2a185b-f53e-4cc7-9300-c22a463c8b8d",
+      "question": "Wie viel beträgt das?",
+      "reference_answer": "Der Auftragnehmer bekommt monatlich 50 EUR plus gesetzliche Umsatzsteuer, falls er umsatzsteuerpflichtig ist.",
+      "reference_context": "Document 103: § 4 Vergütung\n\n\n\n(1)Der Auftragnehmer erhält eine Vergütung von 50 EUR pro Monat, zuzüglich gesetzlicher Umsatzsteuer, sofern er umsatzsteuerpflichtig ist.\n\n\n\n(2) Das angefallene Honorar wird der Auftragnehmer dem Auftraggeber am Ende jeden Monats in Rechnung stellen. Der Auftraggeber verpflichtet sich, das Honorar innerhalb von 14 Tagen nach Erhalt einer ordnungsgemäßen Rechnung auf das in der Rechnung angegebene Konto zu überweisen.",
+      "metadata": {
+        "question_type": "conversational",
+        "seed_document_id": 103,
+        "topic": "<think>\nOkay, so I need to figure out the best topic that represents all these documents. Let me start by reading through each document carefully.\n\nLooking at the first document, it talks about administrative regulations, guidelines, and conditions for granting or recalling subsidies. It mentions specific sections like 3.4.4 and refers to legal aspects such as penalties under §264 StGB. This seems related to how subsidies are managed and the legal framework around them.\n\nThe second document is about a contractor handling business documents. It says they must store them carefully, protect against third-party access, return them at the end of the contract, and can't retain any rights. There's also a mention of providing written confirmation that they no longer have any documents. This seems more about contractual obligations regarding document management.\n\nThe third document is from an applicant who has to declare certain facts as subsidy-relevant and acknowledge the penalties for fraud. It refers back to sections 3.41-3.44, which ties it back to the administrative regulations mentioned earlier. So this is about the applicant's responsibilities in the subsidy process.\n\nAnother part talks about legal basis under §44 of the Landeshaushaltsordnung NRW (LHO), detailing specific points like purpose, legal provisions, and administrative regulations. It also mentions other laws like the Subventionsgesetz. This clearly indicates a focus on legal frameworks governing subsidies.\n\nThere's also a section about consultants being required to perform services personally unless incapacitated, which is more about service delivery terms. However, this seems less central compared to the recurring themes of subsidies and legal regulations.\n\nOther parts discuss invoicing expenses, confidentiality obligations, tax responsibilities, hiring third parties with consent, and handling contract changes. These are all contractual clauses but don't specifically tie into a single overarching theme as much as the subsidy regulations do.\n\nPutting it all together, most documents revolve around the administration of subsidies, their legal requirements, applicant obligations, and related regulations. The recurring terms like \"subventionserheblich\" (subsidy-relevant), references to specific laws, and sections about granting or recalling subsidies point towards a central theme of subsidy management within a legal framework.\n\nSo, considering all these elements, the best topic in German that encapsulates all these documents would be something like \"Subventionsverwaltung,\" which translates to \"Subsidy Administration.\" This term covers both the administrative processes and the legal aspects involved in managing subsidies.\n</think>\n\n\"Subventionsverwaltung"
+      },
+      "conversation_history": [
+        {
+          "role": "user",
+          "content": "Ich möchte wissen, wie viel Vergütung der Auftragnehmer monatlich einschließlich gesetzlicher Umsatzsteuer erhält."
+        },
+        {
+          "role": "assistant",
+          "content": "How can I help you with that?"
+        }
+      ]
+    },
+    {
+      "id": "2aa4d1c2-ff43-4bad-b3c4-91602a5dbae1",
+      "question": "Unter welchen Umständen kann der Anbieter den Vertrag kündigen, wenn das Unternehmen seine finanzwirtschaftlichen Ziele während des Stipendiums nicht erreicht?",
+      "reference_answer": "The provider may terminate the contract if the customer is in arrears with payments amounting to two monthly basic fees or if the customer breaches an essential contractual obligation and fails to remedy it after a reminder within a reasonable time. Any termination must be in written or qualified electronic form as per § 126a BGB.",
+      "reference_context": "Document 147: a)\tmit der Zahlung der Entgelte mit einem Betrag in Höhe von zwei monatlichen Grundentgelten in Verzug gerät\n\nb)\tschuldhaft gegen eine wesentliche Vertragspflicht verstößt, und der Kunde trotz Abmahnung innerhalb angemessener Frist nicht Abhilfe schafft.\n\n(4) Jede Kündigung bedarf zu ihrer Wirksamkeit der Schriftform oder alternativ der elektronischen Form des § 126a BGB (qualifizierte elektronische Signatur).",
+      "metadata": {
+        "question_type": "distracting element",
+        "seed_document_id": 147,
+        "distracting_context": "(In diesem Abschnitt soll die wirtschaftliche Entwicklung des Unternehmens während des Stipendiums kurz erläutert werden. Hierzu sollten die nachfolgenden Fragestellungen beantwortet werden: Konnten Erlöse oder Gewinne erzielt werden? Wenn ja, wie war die Umsatzentwicklung? Wie war die Beschäftigungsentwicklung? Wie war die Kundenentwicklung? Welche größeren Investitionen wurden getätigt und wie erfolgte die Kapitalakquise?)\n\n\n\n(Textumfang ca. ¾ Seite, Schriftgröße 10, Zeilenabstand 1,5)",
+        "topic": "Others"
+      },
+      "conversation_history": []
+    },
+    {
+      "id": "17b59db2-19e5-4016-9afe-bb111d7d804f",
+      "question": "Wie kann ich das tun?",
+      "reference_answer": "Sie erhalten nach Bestätigung und Versand Ihres Auftrags eine Bestätigungs-E-Mail mit Ihrer Tracking-Nummer. Klicken Sie einfach auf den im E-Mail enthaltenen Link oder besuchen Sie unsere Webseite für die Auftragsverfolgung, geben Sie dort Ihre Tracking-Nummer ein, um den Fortschritt Ihrer Sendung in Echtzeit zu verfolgen.",
+      "reference_context": "Document 80: Name Coach\tE-Mail Coach\n\n\t\n\n\t\n\n\t-------------------------------------------\t------------------------------------------------\n\n\tDatum, Ort\tUnterschrift Coach",
+      "metadata": {
+        "question_type": "conversational",
+        "seed_document_id": 80,
+        "topic": "Others"
+      },
+      "conversation_history": [
+        {
+          "role": "user",
+          "content": "Ich möchte meinen Auftrag verfolgen."
+        },
+        {
+          "role": "assistant",
+          "content": "How can I help you with that?"
+        }
+      ]
+    },
+    {
+      "id": "4fc2c118-fb0e-419a-a7ed-f53059dc26e6",
+      "question": "Wo stehen die Dienste und Funktionalitäten bereit?",
+      "reference_answer": "Die Dienste und Funktionalitäten stehen am Routerausgang des Rechenzentrums, in dem sich der hostende Server befindet, bereit.",
+      "reference_context": "Document 132: (6) Die zur Verfügung gestellten Dienste und Funktionalitäten stehen am Routerausgang des Rechenzentrums, in dem sich der hostenden Server befindet, bereit (\"Übergabepunkt\"). Das Softwareprodukt verbleibt auf dem Server des Providers. D4f ist berechtigt, den Übergabepunkt neu zu definieren, sofern dies für einen reibungslosen Zugang zu den von ihm geschuldeten Leistungen erforderlich ist.",
+      "metadata": {
+        "question_type": "simple",
+        "seed_document_id": 132,
+        "topic": "Others"
+      },
+      "conversation_history": []
+    }
+  ]

@@ -12,8 +12,8 @@ plt.switch_backend('Agg')
 
 ATTRIBUTES = ["answer_relevancy", "context_precision", "faithfulness", "context_recall"]
 
-def fetch_data(testset_id):
-    url = f"http://localhost:9876/ratings/?status=Completed&show_scores=True&testset_id={testset_id}"
+def fetch_data(testset_id, url):
+    url = f"{url}/ratings/?status=Completed&show_scores=True&testset_id={testset_id}"
     response = requests.get(url)
     response.raise_for_status()
     data = response.json()
@@ -97,10 +97,11 @@ def process_and_plot(all_scores, output_dir):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("testset_id", type=int, help="Testset ID to fetch")
+    parser.add_argument("--testset_id", type=int, help="Testset ID to fetch")
+    parser.add_argument("--url", type=str, help="URL to fetch data from", default="http://localhost:9876/")
     args = parser.parse_args()
 
-    all_scores = fetch_data(args.testset_id)
+    all_scores = fetch_data(args.testset_id, args.url)
 
     timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
     output_dir = f"./results/{timestamp}_testset_{args.testset_id}"

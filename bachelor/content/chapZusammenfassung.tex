@@ -1,5 +1,68 @@
 \chapter{Zusammenfassungen}
 
+\section{Benutzung von RAGS}
+Dank der vielen Integrationen hat sich die Verwendung von RAGAS als einfach herausgestellt.
+
+\section{Testsets}
+Die generierung von Testsets ist eines der Alleinstellungsmerkmale von RAGAs, die generierung der Testsets hat sich aus Softwaretechnischer Sicht als unkompliziert herausgestellt.
+Es gab zu den Wichtigen Themen ausreichend Dokumentation und Beispiele.
+
+Es ist mit RAGAs möglich Testsets zu generieren, jedoch gibt es mehrere Faktoren die Qualität und Praxistauglichkeit beeinflussen.
+\begin{itemize}
+    \item Die fähigkeit des LLMs zuverlässig hochwertige antworten zu generieren
+    \item Die Dokumente, desto komplexer und zusammenhangslos die Dokumente sind deste schlecchter lassen sich Fragen generieren
+\end{itemize}
+
+Bei der Generierung von Testsets mit DeepSeek kam es alleine durch die nicht generierten oder zu irrelevanten Themen generierten Fragen zu einer Fehlerquote von bis zu 45 \%.
+Selbst bei händisch ausgewählten Dokumenten lag die Fehlerquote bei mindestens 16 \%.
+
+Die händische Überprüfung hat dann weiter gezeigt, dass DeepSeek Probleme mit der konstanten Generierung von sinnvollen Fragen hat.
+Hier wiesen bis zu 65 \% der Fragen für ungefilterte Dokumente Mängel auf! Selbst bei den gefilterten Dokumenten waren mindestens 30 \% Mangelbehaftet.
+
+Die Generierung von Testsets mit OpenAIs GPT-4.1 hatte in Bezug auf nicht generierte oder Fragen zu irrelevanten Themen eine deutlich niedrigere Fehlerquote.
+Es gibt einen Ausreißer mit 205, der Rest bleibt jedoch deutlich unter 10 \%.
+Die manuelle Auswertung hat hier aber auch gezeigt, dass es viele Fragen, bis zu 60 \% bei ungefilterten Dokumenten Mängel aufweisen.
+Bei gefilterten Dokumenten kommt GPT-4.1 auf durchschnittlich 17,5 \% und halbiert damit die Fehlerquote im Vergleich mit DeepSeek. 
+
+Die Qualität des Testsets ist entscheidend da sich hier entstanden Fehler weiter bis in die Bewertung durchziehen und eine korrekte Bewertung des eigentlichen RAGs verzerren!
+
+Die bei den Versuchen generierte Testsets lassen Zweifle an einer zuverlässigen und hochwertigen generierung von Fragen aufkommen.
+
+\section{Bewertung}
+
+Auch das Generieren von Bewertungen hat sich mithilfe von RAGAS als einfach um zusetzten erwiesen.
+Sowohl das Tracing als auch die Kostenberechnung waren für die unterstützten Modelle problemlos zu benutzten.
+Das Tracing erlaubt außerdem einen tieferen Blick in die berechnung der Metriken und macht das ganze System transparenter.
+
+Es hat sich jedoch bei der Manuellen Durchsicht gezeigt, dass hier bei DeepSeek 60 \% und bei GPT-4.1 30 \% der Fragen nicht richtig beantwortet wurden.
+Dies lässt sich Teils auf die ungültigen Fragen in den Testsets zurückführen.
+
+Bei den Metriken lässt sich sagen, dass die Metriken zum Kontext (recall und precision) gut abschneiden.
+Die faithfullness zeigt eine erhöhte abweichung zu der menschlichen einschätzung und sollte mit run 10 \% .....
+
+Die Answere Relevancy hat die größte Abweichung, hier fällt auf, dass hier sowohl höhere als auch niedrigere Werte erwartet wurden.
+
+\section{Fazit}
+Insgesammt ist RAGAS kein kompletter Ersatz für die Menschliche Bewertung von RAGs. Die Idee hinter RAGAS Fragen ohne menschliches zu tuen zu generieren um Zeit zu ersparen ist mit besseren LLMs teilweise gelungen.
+Um jedoch ein aussagen kräftiges und zuverlässiges Ergebniss zu generieren ist eine menschliche Kontrolle an mehreren Stellen notwendig.
+Zuerst bei der Auswahl der Dokumente, hier muss sowohl ein Verständniss vorhanden sein, wie gut LLMs mit welchen Daten umgehen können als auch welche Daten für das KMU relevant sind.
+Nach der generierung der Testsets sollte erneut ein Mensch über die Fragen gucken um grob Falsche Fragen zumindestens zu löschen.
+
+Da die Berichte relativ konstante Bewertungen abgeben lassen sich dann durchaus verschlechterungen oder verbesserungen am RAG messen.
+Die Metriken geben Aufschluss darüber, welcher Teil des Systems nicht funktioniert, diese zusammenhänge ließen sich sehr gut sehen.
+
+Insgesammt muss jedoch auch der Zeit und Kostenaufwand für eine solche Bewertung in Betracht gezogen werden.
+Für eine aktive Entwicklung ist das abwarten von 17 Stunden für ein Bewertung eines RAGS nicht Praxistauglich und ein Hinderniss.
+Eine Bewertung inerhalb von einer Stunde ist praxistauglich, ist jedoch ein Kostenfaktor, hier muss genauer der Anwendungsfall betrachtet werden.
+
+
 \section{Zukunftsausblick}
-\section{Diskussion der Ergebnisse mit potenziellen Anwendern}
+
+Für Unternehmen bieten LLMs und RAGs großes Potential für Kostenerspaarnisse, die Qualitätskontrolle spielt dabei eine immere größere Rolle.
+RAGAs biete gute Ansätzte um die Qualitätskontrolle zu automatisieren, dass RAGAs in Zukunft in die Prozesse zur Bewertung solche Systeme einfließt ist daher sehr wahrscheinlich.
+
+
+
+
+%\section{Diskussion der Ergebnisse mit potenziellen Anwendern}
 \section{Reflektieren der Arbeit}

@@ -1,0 +1,155 @@
+[
+    {
+      "id": "96646631-8dee-4aa6-864e-b4ecb5c91510",
+      "question": "Als Gründer eines Startups, das sich mit zukunftsweisenden Technologien beschäftigt, möchte ich wissen, ob das Unternehmen nach der Förderung weitergeführt wird?",
+      "reference_answer": "Ja, das Unternehmen wird weitergeführt.",
+      "reference_context": "Document 24: zukunftsträchtiger Technologiebereich\n\n  neue innovativen Dienstleistungen\n\n  neue innovativen Geschäftsmodelle\n\nWeiterführung des Unternehmens nach der Förderung? \n\n  Ja, das Unternehmen wird weitergeführt.\n\n  Nein, das Unternehmens bzw. die Gründungsidee \n\n      wird/ wurde aufgegeben.\n\nEs wurden mindestens drei Treffen mit dem Coach abgehalten\n\n  Ja, die Treffen wurden abgehalten.\n\n  Nein, es wurden weniger Treffen abgehalten weil:  \n\n\n\n\n\nMusste das Vorhaben während der Förderung nochmals vor die Jury?\n\n  Nein.\n\n  Ja, weil: Vom Coach ein mangelnder Vortschritt des Gründungsvorhabens festgestellt wurde\n\n  \n\n\n\nKurzbeschreibung des Unternehmens \n\n(Die Kurzbeschreibung kann für die Öffentlichkeitsarbeit des Zuwendungsgebers verwendet werden. Es soll die innovative Geschäftsidee, die Umsetzung im Unternehmen und der adressierte Markt beschrieben werden.)\n\n\n\n(Textumfang ca. ½ Seite, Schriftgröße 10, Zeilenabstand 1,5) \n\nGeschäftsidee:",
+      "metadata": {
+        "question_type": "situational",
+        "seed_document_id": 24,
+        "situational_context": "A startup founder is brainstorming questions to refine their futuristic technology venture's new innovative services and business models.",
+        "topic": "Others"
+      },
+      "conversation_history": []
+    },
+    {
+      "id": "d41e6bc7-2909-4e48-9991-2264b7034317",
+      "question": "Kannst du mir erklären, wie der Vertrag zwischen dem Kunden und Develop 4 Future zustande kommt, während ich die Durchführung und Abrechnung von Datentransfervolumen überwache?",
+      "reference_answer": "Der Vertrag kommt durch Annahme des Vertragsangebots des Kunden seitens d4f zustande. Die Annahme wird entweder ausdrücklich erklärt oder gilt mit dem Beginn der Ausführung der Leistung durch d4f erklärt.",
+      "reference_context": "Document 108: (4) Ist mit dem Kunden die Durchleitung einer bestimmten Datenmenge pro Abrechnungszeitraum vereinbart, wird der Kunde dieses Limit überwachen. Übersteigt das auf das Angebot des Kunden entfallende Datentransfervolumen (Traffic), die für den jeweiligen Zeitabschnitt mit dem Kunden vereinbarte Höchstmenge, stellt d4f dem Kunden den für das überschießende Volumen entfallenden Betrag zu den hierfür vereinbarten Preisen in Rechnung.\n\n§ 6 Vertragsschluss, Vertragslaufzeit, Kündigung\n\n(1) Der Vertrag kommt durch Annahme des Vertragsangebots des Kunden seitens d4f zustande. Die Annahme wird entweder ausdrücklich erklärt oder gilt mit dem Beginn der Ausführung der Leistung durch d4f erklärt.",
+      "metadata": {
+        "question_type": "situational",
+        "seed_document_id": 108,
+        "situational_context": "Ein Mitarbeiter von Develop 4 Future arbeitet daran, die Durchführung und Abrechnung von Datentransfervolumen für einen Kunden zu überwachen.",
+        "topic": "Vertrags- und Datenschutzbestimmungen"
+      },
+      "conversation_history": []
+    },
+    {
+      "id": "61492427-9b0e-449a-a75d-d3d057894f03",
+      "question": "Wie viele Werkstudenten plant das Unternehmen einzustellen, wenn 30 Schulen betreut werden müssen?",
+      "reference_answer": "pro 30 Schulen einen Werkstudenten",
+      "reference_context": "Document 37: Auch ist in dem Zuge geplant, da der Zeitaufwand deutlich höher sein wird, pro 30 Schulen einen Werkstudenten einzustellen, da die Arbeit nicht mehr alleine getätigt werden kann. Dies beläuft sich auf momentane Schätzungen. In der Zukunft muss dies neu berechnet werden.\n\nDa leider nicht garantiert ist, ob weitere Schulen akquiriert werden können, kann keine verbindliche Aussage zu dem Umsatz, der Kundenentwicklung und Mitarbeiterentwicklung getätigt werden.\n\n\n\n\n\n\n\n\n\n\tDer Coach bestätigt, dass das Gründungsvorhaben bzw. die Weiterentwicklung des \nUnternehmens gemäß Sachbericht durchgeführt worden ist. Außerdem wird bestätigt, dass \tnach dem Termin zum Coaching-/Betreuungsfahrplan mindestens zwei weitere Termine zwischen den Stipendiaten und dem Coach abgehalten wurden.\n\n\t\n\n\t-------------------------------------------              -----------------------------------------------\n\n\tName Coach\tE-Mail Coach",
+      "metadata": {
+        "question_type": "simple",
+        "seed_document_id": 37,
+        "topic": "Schul-Webpräsenz-Entwicklung"
+      },
+      "conversation_history": []
+    },
+    {
+      "id": "88be5a2f-dd16-4036-817a-b79cd186aad5",
+      "question": "Welche Hauptdienstleistungen bietet das Website-Content-Management-System an und unter welchen Umständen darf d4f seine Leistungen erweitern oder anpassen?",
+      "reference_answer": "Das System bietet Website Hosting, Service- und Support-Dienstleistungen, sowie optional Domainregistrierung und Konnektierung an. D4f darf seine Leistungen erweitern oder anpassen, um dem technischen Fortschritt gerecht zu werden, Missbrauch zu verhindern oder wenn gesetzliche Vorschriften dies erfordern.",
+      "reference_context": "Document 100: Zurverfügungstellung eines Website-Content-Management-Systems inklusive Website Hosting (nachfolgend auch Dienste und Funktionalitäten)\n\nService-und Support-Dienstleistungen\n\nOptional aufgrund separater Vereinbarung: Domainregistrierung und Konnektierung.\n\nSonstige Zusagen, Leistungsversprechen oder Nebenabreden sind nur wirksam, wenn diese schriftlich durch d4f bestätigt werden.\n\n(2) D4f ist berechtigt, seine Leistungen zu erweitern, dem technischen Fortschritt anzupassen und/oder Verbesserungen vorzunehmen. Dies gilt insbesondere, wenn die Anpassung erforderlich erscheint, um Missbrauch zu verhindern, oder d4f aufgrund gesetzlicher Vorschriften zur Leistungsanpassung verpflichtet ist.",
+      "metadata": {
+        "question_type": "double",
+        "original_questions": [
+          {
+            "question": "Welche Hauptdienstleistungen bietet das Website-Content-Management-System an?",
+            "answer": "Das System bietet Website Hosting, Service- und Support-Dienstleistungen, sowie optional Domainregistrierung und Konnektierung an."
+          },
+          {
+            "question": "Unter welchen Umständen darf d4f seine Leistungen erweitern oder anpassen?",
+            "answer": "D4f darf seine Leistungen erweitern oder anpassen, um dem technischen Fortschritt gerecht zu werden, Missbrauch zu verhindern oder wenn gesetzliche Vorschriften dies erfordern."
+          }
+        ],
+        "seed_document_id": 100,
+        "topic": "Vertrags- und Datenschutzbestimmungen"
+      },
+      "conversation_history": []
+    },
+    {
+      "id": "1da03ae9-3ed8-409c-92be-4355b2354f0a",
+      "question": "An welche Zielgruppe richtet sich das Angebot von Develop 4 Future, unter Berücksichtigung der Tatsache, dass es sich explizit nicht an Verbraucher im Sinne des § 13 BGB wendet?",
+      "reference_answer": "Das Angebot von Develop 4 Future richtet sich explizit nicht an Verbraucher im Sinne des § 13 BGB.",
+      "reference_context": "Document 99: Develop 4 Future\n\n\t\t\tDevelop 4 Future\n\n\n\nAllgemeine Geschäftsbedingunge Develop 4 Future\n\n§ 1 Geltungsbereich\n\n(1) Die folgenden AGB regeln das Vertragsverhältnis zwischen Leon Bartz, Heilerstraße 63, 51647 Windhagen, handelnd unter Develop 4 Future, (nachfolgend d4f genannt) und dem jeweiligen Kunden. Diese AGB gelten auch für zukünftige Verträge zwischen den Parteien aus dem Bereich Website-Hosting und damit zusammenhängenden Dienstleistungen. Abweichende Geschäftsbedingungen des Kunden können nicht anerkannt werden. \n\n(2) Das Angebot von d4f auf Abschluss eines Vertrags nach diesen AGB richtet sich ausdrücklich nicht an Verbraucher. Kunde kann daher nicht sein, wer Verbraucher im Sinne des § 13 BGB ist.\n\n§ 2 Leistungspflichten von d4f\n\n(1) Die Leistungspflichten von d4f ergeben sich aus der Leistungsbeschreibung des jeweiligen Produkts. \n\nDie Dienste und Leistungen von d4f umfassen insbesondere:",
+      "metadata": {
+        "question_type": "distracting element",
+        "seed_document_id": 99,
+        "distracting_context": "Es ist geplant, einen leistungsstarken Rechner im Wert von 2.000€ anzuschaffen. Dieser soll angeschafft werden, sobald dies mit den Gewinnen aus den einmaligen Installationsgebühren möglich ist. Dies ist voraussichtlich im Feb. 2022 möglich.\n\nDer AfA dieses Rechners beträgt ca. 56€ bei einer angenommenen Lebensdauer von 36 Monaten.\n\nAls GWG ist die Anschaffung eines Handys im Wert von 506€ geplant. Dies erfolgt nach der Anschaffung des Rechners und somit voraussichtlich März 2022.\n\nFür die GuV siehe Anhang Businessplan Finanzteil.\n\n\n\n\n\nLiquiditätsplanung\n\nDie Liquidität des Unternehmens wird stetig steigen, da die Einnahmen mehr zunehmen als die dafür nötigen Ausgaben.",
+        "topic": "Others"
+      },
+      "conversation_history": []
+    },
+    {
+      "id": "e46602b2-b1a4-4c50-ab26-9b6e8ea75d59",
+      "question": "Wie hoch sind die Kosten pro Funktion, um den technischen Vorsprung zu halten, insbesondere im Hinblick auf die geplante Erweiterung des Produkts auf weiterführende Schulen?",
+      "reference_answer": "Die Kosten pro Funktion betragen 10.000€.",
+      "reference_context": "Document 60: Ein erfahrener Programmierer könnte das Projekt in einem Jahr programmieren. Es würde jedoch die Erfahrung fehlen, welche das System ausmacht. Die ständige Weiterentwicklung des Systems mit Funktionen, die nicht durch ein LMS (Lern Management System) gegeben sind, wie z.B. Logineo sorgen dafür, dass der technische Vorsprung gehalten wird.\n\nPro Funktion, welche es erlaubt, den Vorsprung zu halten, entstehen Kosten von 10.000€. Diese ergeben sich aus den Stunden, welche gebraucht werden, um diese Funktionen zu entwickeln. Diese zusätzlichen Funktionen müssen von den Kunden jedoch zusätzlich gekauft werden.",
+      "metadata": {
+        "question_type": "distracting element",
+        "seed_document_id": 60,
+        "distracting_context": "Derzeit ist das Produkt auf Grundschulen angepasst. Dementsprechend sind diese auch der angesprochene Markt. Mit der Zeit und dadurch gesammelten Erfahrung – auch durch Feedback der Schulen – ist geplant, das System weiterzuentwickeln, um den Markt zu erweitern. Die Erweiterung ist für Weiterführende Schulen gedacht. Besonders interessant sind private Grundschulen, da aus Erfahrung öffentlichen Schulen nicht so viel Geld zur Verfügung steht.\n\n\n\nBusinessplan und Meilensteine \n\n(In diesem Abschnitt soll der Projektplan kurz erläutert werden, der zu Beginn des Stipendiums zwischen Coach und Gründern ausgearbeitet wurde. Der Abschnitt sollte die folgenden Punkte beinhalten: Ziele, Meilensteine, ggf. Arbeitspakete)\n\n\n\n(Textumfang ca. ¾ Seite, Schriftgröße 10, Zeilenabstand 1,5)\n\nDie Förderung des Stipendiaten begann am 01.02.2021. Nach den ersten Treffen mit dem Coach stand der Meilensteinplan fest, welcher folgende Ziele hatte.",
+        "topic": "Others"
+      },
+      "conversation_history": []
+    },
+    {
+      "id": "749e1eff-35ca-4a9c-9c85-478c0b4be33c",
+      "question": "Können Sie die Gesamtkosten für den sonstigen betrieblichen Aufwand pro Monat angeben, die durch Dienstleistungen wie Buchhaltungssoftware und Kontoführungsgebühren entstehen?",
+      "reference_answer": "Die Kosten belaufen sich auf 90€ monatlich.",
+      "reference_context": "Document 83: Der sonstige betriebliche Aufwand setzt sich aus der Buchhaltungssoftware sevDesk Microsoft Office 356, Laravel Forge und den Kontoführungsgebühren zusammen. Die Kosten belaufen sich hierbei auf 90€ Monatlich.\n\n\n\nBesondere Aufwendungen\n\nZur Gründung des Unternehmens wurden\n\nKundenverträge\n\nAGBen\n\nDatenschutzinformationen nach der DSGVO\n\nund Arbeitsvertrag zur Auftragsverarbeitung der Daten\n\nangefertigt. Die Kosten auf 2.400€ beliefen.\n\nZudem wurde eine Webseite für 400€ angefertigt. Die Kosten für diese Ausgaben wurden von dem Gründer privat gezahlt.\n\n\n\nGuV / Szenarien\n\nSiehe Anhang Businessplan Finanzteil.\n\n\n\nAusreichender Gewinn/Lebensunterhalt\n\nSobald 9 Schulen vertraglich gebunden sind, die das Premium Paket kaufen, wird der entstehende Gewinn für die Bestreitung des Lebensunterhalts des Gründers reichen.\n\nBei Standard oder Basic Paketen werden 12 bzw. 14 Kunden für die Bestreitung des Lebensunterhaltes benötigt.\n\n\n\n\n\nInvestitionsplanung",
+      "metadata": {
+        "question_type": "complex",
+        "seed_document_id": 83,
+        "topic": "Unternehmensfinanzierung"
+      },
+      "conversation_history": []
+    },
+    {
+      "id": "ca3a5709-d7bc-466e-b85c-554f437ba9ae",
+      "question": "Welche Software wird verwendet, um die Server für die Schulen zu verwalten, und wie hoch sind die monatlichen Kosten für das Bereitstellen eines Testsystems für Kunden?",
+      "reference_answer": "Die Verwaltung der Server wird von der Software „Laravel Forge“ übernommen, und die Kosten für das Bereitstellen eines Testsystems betragen 10€ im Monat.",
+      "reference_context": "Document 64: Um eine einfache und strikte Trennung der Daten der jeweiligen Schulen zu garantieren, wird für jede Schule ein eigener Server gemietet. Die Verwaltung dieses Servers wird von der Software „Laravel Forge“ übernommen, welche genau die benötigten Funktionen bietet. Hierdurch wird viel Zeit gespart und ein schnelleres Verwalten der Server ist möglich.\n\nAuch das Einrichten von neuen Servern geht sehr schnell. Das Bereitstellen eines neuen Servers geschieht binnen weniger Stunden.\n\nAm meisten Zeit braucht hier die Bereitstellung des neuen Servers vom Hostingprovider.\n\nDies soll in der Zukunft anders sein, wenn nicht mehr jede Schule einen eigenen Server hat und der Hostingprovider gewechselt wird. Durch diese Änderung können in der Zukunft Kosten gespart werden und das System robuster gestaltet werden.\n\n\n\nDa für jeden Kunden direkt ein System zu Testen auf Anfrage zu Verfügung gestellt wird, müssen die Kosten in Höhe von 10€ im Monat bezahlt werden.",
+      "metadata": {
+        "question_type": "double",
+        "original_questions": [
+          {
+            "question": "Welche Software wird verwendet, um die Server für die Schulen zu verwalten?",
+            "answer": "Die Verwaltung der Server wird von der Software „Laravel Forge“ übernommen."
+          },
+          {
+            "question": "Wie hoch sind die monatlichen Kosten für das Bereitstellen eines Testsystems für Kunden?",
+            "answer": "Die Kosten für das Bereitstellen eines Testsystems betragen 10€ im Monat."
+          }
+        ],
+        "seed_document_id": 64,
+        "topic": "Schulwebseiten-Systeme"
+      },
+      "conversation_history": []
+    },
+    {
+      "id": "aa992849-29ae-4806-8429-3397e86126cb",
+      "question": "Welche Maßnahmen ergreift der Provider, um Datenverlust zu verhindern und unbefugten Zugriff auf Kundendaten zu vermeiden?",
+      "reference_answer": "Der Provider verpflichtet sich, geeignete, dem Stand der Technik entsprechende Vorkehrungen gegen Datenverlust und zur Verhinderung unbefugten Zugriffs Dritter auf die Daten des Kunden zu treffen. Zu diesem Zweck nimmt der Provider mindestens tägliche Backups vor.",
+      "reference_context": "Document 103: (7) Im Rahmen der Nutzung der zur Verfügung gestellten Dienste und Funktionalitäten wird d4f dem Kunden Speicherplatz in produktspezifisch angemessenem Umfang auf einem Datenserver des Providers oder eines von dem Provider beauftragten Datenservers bereitstellen. Diesen Speicherplatz kann der Kunde nutzen, um bestimmte Daten in Datenbanken ablegen, einsehen und bearbeiten zu können, die für die Nutzung des Softwareprodukts notwendig sind. D4f schuldet lediglich das Bereitstellen des Speicherplatzes und das Sichern der vom Kunden übermittelten und verarbeiteten Daten. Der Provider verpflichtet sich, geeignete, dem Stand der Technik entsprechende Vorkehrungen gegen Datenverlust und zur Verhinderung unbefugten Zugriffs Dritter auf die Daten des Kunden zu treffen. Zu diesem Zweck nimmt der Provider mindestens tägliche Backups vor. Darüber hinaus treffen den Provider keine Verwahrungs- oder Obhutspflichten. \n\n§ 3 Leistungspflichten von D4f bei Domainregistrierung",
+      "metadata": {
+        "question_type": "simple",
+        "seed_document_id": 103,
+        "topic": "Vertrags- und Datenschutzbestimmungen"
+      },
+      "conversation_history": []
+    },
+    {
+      "id": "37cc9d92-4924-435d-8372-0158dbcfdfc2",
+      "question": "Was garantiert diese Firma?",
+      "reference_answer": "D4f garantiert nicht, dass von ihnen eingesetzte oder bereitgestellte Hard- und Software den Anforderungen des Kunden genügt, für bestimmte Anwendungen geeignet ist, und dass diese absturz-, fehler- und frei von Schadsoftware ist.",
+      "reference_context": "Document 117: (2) D4f weist darauf hin, dass es nach dem derzeitigen Stand der Technik nicht möglich ist, Hard- und Software so zu erstellen, dass sie in allen Anwendungskombinationen fehlerfrei arbeitet oder gegen jedwede Manipulation durch Dritte geschützt werden kann. D4f garantiert nicht, dass von d4f eingesetzte oder bereitgestellte Hard- und Software den Anforderungen des Kunden genügt, für bestimmte Anwendungen geeignet ist, und ferner, dass diese absturz-, fehler- und frei von Schadsoftware ist. D4f gewährleistet gegenüber dem Kunden nur, dass von d4f eingesetzte oder bereitgestellte Hard- und Software zum Überlassungszeitpunkt, unter normalen Betriebsbedingungen und bei normaler Instandhaltung im Wesentlichen gemäß der Leistungsbeschreibung des Herstellers funktioniert.\n\n§ 10 Haftung\n\n(1) D4f haftet, gleich aus welchem Rechtsgrund, nur nach Maßgabe der nachstehenden Regelungen.\n\n(2) D4f haftet bei Vorsatz und grober Fahrlässigkeit nach den gesetzlichen Vorschriften.",
+      "metadata": {
+        "question_type": "conversational",
+        "seed_document_id": 117,
+        "topic": "Vertrags- und Datenschutzbestimmungen"
+      },
+      "conversation_history": [
+        {
+          "role": "user",
+          "content": "D4f garantiert etwas bezüglich der von ihnen eingesetzten oder bereitgestellten Hard- und Software."
+        },
+        {
+          "role": "assistant",
+          "content": "How can I help you with that?"
+        }
+      ]
+    }
+  ]

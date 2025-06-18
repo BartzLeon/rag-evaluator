@@ -1,40 +1,134 @@
 \chapter{Methoden und Materialien}
 
-\subsection{Tools}
+\subsection{Werkzeuge}
 
-Für das RAG selbst und die Bewertung der RAGs werden gewisse Tools benötigt.
-Diese Tools werden im Folgenden erklärt.
+Für die RAGs und die Bewertung der RAGs werden Tools benötigt, im nachfolgende werden diese Tools genauer erklärt.
 
 \subsubsection{Ollama}
 Ollama ist ein Open-Source LLM-Server, der auf einem eigenen Computer oder in der Cloud ausgeführt wird.
-Es können verschiedene Open-Source LLMs und Embedding-Modelle ausgeführt werden. In unserem Fall werden die Modelle ollama/nomic-embed-text und ollama/deepseek-r1:32b verwendet.
+Es können verschiedene Open-Source LLMs und Embedding-Modelle ausgeführt werden. In der vorliegenden Arbeit werden die Modelle ollama/nomic-embed-text und ollama/deepseek-r1:32b verwendet.
 
-\subsubsection{ChromaDB}
-ChromaDB ist eine Open-Source Vektordatenbank, die für die Speicherung von Vektordatenbanken verwendet wird.
-Diese Datenbank wird in unseren Experimenten sowohl für die Open-Source Modelle verwendet, als auch für die Closed-Source Modelle von OpenAI.
-Damit soll eine einheitliche Grundlage für die Experimente geschaffen werden.
+\subsubsection{Vektordatenbank}
+ChromaDB ist eine Open-Source-Vektordatenbank, die zur persistenten Speicherung und effizienten Abfrage von hochdimensionalen Embeddings eingesetzt wird.
+Die Vektordatenbank ist also ein fester Bestandteil des RAGs und wird sowohl für die Open-Source Modelle als auch für die Closed-Source Modelle von z.B. OpenAi benutzt. Dies schafft eine einheitlichere Basis zum vergeleichen der LLMs.
 
 \subsubsection{RAGAS}
 RAGAS ist eine Bibliothek, die Werkzeuge bereitstellt, um die Evaluation von Large Language Model (LLM) Anwendungen zu verbessern.
 Sie wurde entwickelt, um die Bewertung von LLM-Anwendungen einfach und zuverlässig zu gestalten.
-\footnote{\url{https://docs.ragas.io/en/stable/#frequently-asked-questions}}
+\footnote{\url{https://docs.ragas.io/en/stable/\#frequently-asked-questions}}
 
 RAGAS ist ein Open-Source-Tool und liefert neben dem Tool selber hilfreiche Dokumentation für die Metriken und die Bewertung von RAGs.
+Es werden Funktionen wie die automatische Generation von Interessengruppen, die Testset-Generierung und die Bewertung von RAGs anhand von Testsets bereitgestellt.
 Für diese Arbeit sind die Funktionen der Testset-Generierung und die damit ermöglichte Bewertung der RAGs relevant.
-Es gibt noch weitere Funktionen wie die automatische Generation von Interessengruppen, diese sind für diese Arbeit jedoch nicht relevant.
 
-Was RAGAS besonders macht zu vorherigen Tools ist, dass keine "reference answer" benötigt wird.
-RAGAS ist beliebt, da es sich gut mit vielen Tools integriert.
+Was RAGAS von den vorherigen Tools unterscheidet, ist, dass keine \texttt{"}reference answer\texttt{"} benötigt wird.
+RAGAS ist beliebt, da es sich gut mit vielen Tools integriert. \cite{ragas_integrations_2025}
 
 \subsubsection{Giskard}
 Giskard ist ein teils Open-Source-Tool, welches die Bewertung von RAGs unterstützt.
-Der Schwerpunkt von Giskard liegt eher auf der generellen Bewertung von LLMs.
-Dazu gehören unter anderem Prompt-Injectionen, Halluzinationen und andere Fehler, welche durch die Verwendung von LLMs entstehen können.
+Der Schwerpunkt von Giskard liegt größtenteils auf der generellen Bewertung von LLMs.
+Dazu gehören unter anderem Prompt-Injectionen, Halluzinationen und andere Fehler, die durch die Verwendung von LLMs entstehen können.
 
 
 
 \subsection{Daten}
+Da die Nutzung von RAG Evaluation Tools für betriebliche Abläufe untersucht werden soll, werden zum Teil echte, nicht generierte Dokumente, im Folgenden originale Dokumente gennant verwendet.
+Die Dokumente stammen aus Unterlagen eines Einzelunternehmens, welches vereinfachte CMS Webseiten für Grundschulen entwickelt hat. Die Unternehmung wird nicht mehr aktiv verfolg und die Daten können ohne Bedenken für diese Arbeit genutzt werden.\\
+In den Versuchen wurden drei unterschiedliche Anzahlen an Dokumenten getestet, 10, 100 und 400.
+Aus den eigenen Unternehmungen ließen sich 73 Dokumente finden die nutzbar sind. Neben den Dokumenten welche Businesspläne, Finanzpläne aber auch Elternbriefe umfassen gibt es den dazugehörigen Code.
+Für die zehn Dokumente wurden nur \texttt{"}originale\texttt{"} Dokumente genutzt. Um von 73 gegebenen Dokumenten auf 100 Dokumente zu kommen, wurden mithilfe von LLMs weitere Dokumente generiert.
+Beim Generieren der Dokumente wurden dem LLM die bisherigen Dokumente zur Verfügung gestellt und komplett neue Bereiche/Projekte erfunden. Diese bestehen dann aus Kostenplanungen, Zeitplänen und auch Elternbriefen für Datenschutzinformationen.
+Für die 400 Dokumente wurde der Code des reellen Produktes mit einbezogen. Dieser besteht aus drei Projekten: 1. die Webseite, die öffentlich zugänglich ist 2. dem Admin Bereich und 3. dem Backend. 
+
+Die folgenden drei Stufen wurden gewählt, um typische Anwendungsszenarien realistisch abzubilden:
+\begin{enumerate}
+    \item \textbf{10 Dokumente:} Ein einzelner Anwendungsfall – das RAG-System wird nur temporär genutzt und danach verworfen.
+    \item \textbf{100 Dokumente:} Kontinuierliche Nutzung durch eine Einzelperson – das System wächst schrittweise über die Zeit hinweg.
+    \item \textbf{400 Dokumente:} Gemeinsame Nutzung durch mehrere Personen – das RAG muss verschiedene Themenbereiche abdecken und eine breitere Wissensbasis verwalten.
+\end{enumerate}
+
+
+
+\subsection{Fragebögen}
+
+\subsubsection{Fragetypen}
+
+RAGAS unterstützt verschiedene Fragetypen für die Testset-Generierung, die unterschiedliche Aspekte der RAG-Performance evaluieren.
+Die folgende Abbildung zeigt die verschiedenen Fragetypen, die RAGAS für die Evaluation von RAG-Systemen verwendet:
+
+\begin{center}
+    \begin{tikzpicture}[
+      node distance=1cm and -0.5cm,
+      every node/.style={draw=orange, fill=white, rounded corners, minimum width=3.2cm, minimum height=1cm, align=center},
+      arrow/.style={-{Latex}, thick}
+    ]
+    
+    % Top-level node
+    \node (queries) {Queries};
+    
+    % Second level
+    \node (singlehop) [below left=of queries] {Single-Hop Query};
+    \node (multihop)  [below right=of queries] {Multi-Hop Query};
+    
+    % Third level - Single-Hop children
+    \node (sh-specific) [below left=of singlehop, xshift=0cm] {Specific Query};
+    \node (sh-abstract) [below right=of singlehop, xshift=-2cm] {Abstract Query};
+    
+    % Third level - Multi-Hop children
+    \node (mh-specific) [below left=of multihop, xshift=2cm] {Specific Query};
+    \node (mh-abstract) [below right=of multihop, xshift=0cm] {Abstract Query};
+    
+    % Edges
+    \draw[arrow] (queries) -- (singlehop);
+    \draw[arrow] (queries) -- (multihop);
+    
+    \draw[arrow] (singlehop) -- (sh-specific);
+    \draw[arrow] (singlehop) -- (sh-abstract);
+    
+    \draw[arrow] (multihop) -- (mh-specific);
+    \draw[arrow] (multihop) -- (mh-abstract);
+    
+    \end{tikzpicture}
+\end{center}
+    
+
+Diese verschiedenen Fragetypen ermöglichen es, unterschiedliche Aspekte der RAG-Performance zu testen.
+Während spezifische Fragen häufig mit einer einzigen Anfrage an die Wissensdatenbank beantwortet werden kann benötigen abstrakte Fragen eine Erklärung.
+In der RAGAS Dokumentation \cite{ragas_query_types} wird für konkrete Fragen das Beispiel gemacht "Wann hat Einstein die Relativitätstheorie veröffentlicht?" während eine abstraktere Frage wäre, "Wie hat Einsteins Relativitätstheorie unser Verständnis der Welt verändert?"
+
+Bei Multihop Querys handelt es sich um Fragen, welche mehr als eine Wissensabfrage benötigen, die Frage "Welche Wissenschaftler haben Einsteins Relativitätstheorie beeinflusst und welche Theorie haben sie vorgeschlagen?" benötigt erst eine Abfrage um die Wissenschaftler herauszufinden und dann weitere um die jeweils vorgeschlagene Theorie abzufragen.
+Für die Abstrakte Multihop Query können wir wieder nach einer Erklärung für den Inhalt und wie sich dieser über die Zeit verändert hat Fragen.
+
+Diese Unterscheidung wird getroffen, um sowohl sehr gezielte Wissensabfragen als auch abstraktere Abfragen über mehrere Dokumente zu testen.
+
+
+\subsubsection{Wissensgraf}
+
+
+Für die eben erwähnten Multihop Querys müssen aus den gegebenen Dokumenten Themen, welche zusammenhängen aber nicht direkt im gleichen Dokument sind, gefunden werden.
+Da dies bei großen Datensätzen manuell oder selbst mit einem LLM schwierig ist, wird ein Wissensgraf erstellt. \\
+Dies passiert in drei Schritten, zuerst werden die Dokumente beim sogenannten chunking in kleiner Einheiten (Knoten) unterteilt.
+Aus diesen Einheiten können dann Entitäten wie z.B. Namen (Einstein) oder Schlüsselbegriffe (Relativitätstheorie) extrahiert werden.
+Im letzten Schritt werden dann Verbindungen zwischen Knoten hergestellt. (Vergleich mit Wikipedia Links in Artikeln)
+
+\begin{tikzpicture}[node distance=10cm, auto,>=stealth, thick,
+    % Stile für die Knoten (repräsentieren Dokumenten-Chunks)
+    chunk/.style={rectangle, rounded corners, draw=black, fill=blue!10, text width=6cm, text centered, minimum height=2cm},
+    % Stil für die Kanten (repräsentieren Beziehungen)
+    relation/.style={->, draw=black}]
+
+    % Knoten für die Dokumenten-Chunks definieren
+    \node[chunk] (n1) at (0,0) {\textbf{Knoten 1 (Chunk A)}\\ \small Extrahiert: Einstein, Relativitätstheorie};
+    \node[chunk] (n2) at (7,0) {\textbf{Knoten 2 (Chunk B)}\\ \small Extrahiert: Hendrik Lorentz, Lorentz-Transformation};
+    \node[chunk] (n3) at (3.5,-4.5) {\textbf{Knoten 3 (Chunk C)}\\ \small Enthält Informationen, die Chunk A und B verbinden, z.B. Einsteins Arbeit basierend auf Lorentz' Ideen};
+
+    % Kanten zeichnen, die Beziehungen zwischen den Chunks darstellen
+    \draw[relation] (n1) -- (n3);
+    \draw[relation] (n2) -- (n3);
+
+\end{tikzpicture}
+
+Für die Daten aus den Versuchen mit 100 Dokumenten hat RAGAS 27 Themen identifiziert, unter anderem waren dort folgende Themen dabei:\\
+Finanzmanagement, Bildungsprojekt Digitalisierung, Projektmanagement und Planung, Zuwendungsverwaltung, Break-Even-Analyse, Finanzplanung und Investitionen, Finanzplanung und Liquidität
 
 \subsection{Evaluation}
-
-\subsection{Datenbank}

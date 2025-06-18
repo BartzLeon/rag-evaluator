@@ -19,6 +19,56 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global/global}
+    \entry{gao2023rtre}{inproceedings}{}{}
+      \name{author}{4}{}{%
+        {{hash=7ef8e07d2bd57499ac7dd40d1123fb5d}{%
+           family={Gao},
+           familyi={G\bibinitperiod},
+           given={Luyu},
+           giveni={L\bibinitperiod}}}%
+        {{hash=d2448757aae98465fe067babd0604f8d}{%
+           family={Dai},
+           familyi={D\bibinitperiod},
+           given={Zhuyun},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=d68fb461fc3e26ff36f49c7b52ef0c3f}{%
+           family={Lin},
+           familyi={L\bibinitperiod},
+           given={Jimmy},
+           giveni={J\bibinitperiod}}}%
+        {{hash=032fc1d6032783d20182bca491b35d2f}{%
+           family={Callan},
+           familyi={C\bibinitperiod},
+           given={Jamie},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computational Linguistics}%
+      }
+      \strng{namehash}{33afec8508fadcedb9fb8ffe8cfd4bfa}
+      \strng{fullhash}{3204c9bfc2a34a92e81c7409c293ae73}
+      \strng{fullhashraw}{3204c9bfc2a34a92e81c7409c293ae73}
+      \strng{bibnamehash}{33afec8508fadcedb9fb8ffe8cfd4bfa}
+      \strng{authorbibnamehash}{33afec8508fadcedb9fb8ffe8cfd4bfa}
+      \strng{authornamehash}{33afec8508fadcedb9fb8ffe8cfd4bfa}
+      \strng{authorfullhash}{3204c9bfc2a34a92e81c7409c293ae73}
+      \strng{authorfullhashraw}{3204c9bfc2a34a92e81c7409c293ae73}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)}
+      \field{title}{{RT-RAG: Leveraging Retrieval-Generated Chains for Open-Domain Question Answering}}
+      \field{year}{2023}
+      \field{pages}{9784\bibrangedash 9800}
+      \range{pages}{17}
+      \verb{urlraw}
+      \verb https://aclanthology.org/2023.acl-long.546/
+      \endverb
+      \verb{url}
+      \verb https://aclanthology.org/2023.acl-long.546/
+      \endverb
+    \endentry
     \entry{gemini2024v15}{misc}{}{}
       \name{author}{1}{}{%
         {{hash=176790f20018e62732750fd3853fffa5}{%
@@ -111,6 +161,71 @@
       \endverb
       \verb{url}
       \verb https://pixion.co/blog/rag-in-practice-test-set-generation
+      \endverb
+    \endentry
+    \entry{press2022measuring}{article}{}{}
+      \name{author}{8}{}{%
+        {{hash=b9d9adacad2d6080196f6d02f94ef54d}{%
+           family={Press},
+           familyi={P\bibinitperiod},
+           given={Ofir},
+           giveni={O\bibinitperiod}}}%
+        {{hash=0ed87b415d06be7bd812bc1d6982a039}{%
+           family={Lopatto},
+           familyi={L\bibinitperiod},
+           given={Kevin},
+           giveni={K\bibinitperiod}}}%
+        {{hash=61d2b530580e13bc5bcf540ad2718991}{%
+           family={Du},
+           familyi={D\bibinitperiod},
+           given={Xuezhi},
+           giveni={X\bibinitperiod}}}%
+        {{hash=344188ecf7200c8a36f09db17ec67731}{%
+           family={Lintz},
+           familyi={L\bibinitperiod},
+           given={Sebastian},
+           giveni={S\bibinitperiod}}}%
+        {{hash=25d8324ca4bd4785cbc0644004f525b9}{%
+           family={Taylor},
+           familyi={T\bibinitperiod},
+           given={Maarten\bibnamedelima Bosma},
+           giveni={M\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=62efade83d70f0323fe248755e6c90c5}{%
+           family={Shazeer},
+           familyi={S\bibinitperiod},
+           given={Noam},
+           giveni={N\bibinitperiod}}}%
+        {{hash=c636f146591d51579a8119b777394878}{%
+           family={Le},
+           familyi={L\bibinitperiod},
+           given={Quoc\bibnamedelima V},
+           giveni={Q\bibinitperiod\bibinitdelim V\bibinitperiod}}}%
+        {{hash=a2da348cbbad750c6fe76dda9c35ffcd}{%
+           family={Narang},
+           familyi={N\bibinitperiod},
+           given={Sharan},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{d7ce5044c92a210859c60204e942a1bd}
+      \strng{fullhash}{415b2201c4b9a6044123f83ad526494d}
+      \strng{fullhashraw}{415b2201c4b9a6044123f83ad526494d}
+      \strng{bibnamehash}{d7ce5044c92a210859c60204e942a1bd}
+      \strng{authorbibnamehash}{d7ce5044c92a210859c60204e942a1bd}
+      \strng{authornamehash}{d7ce5044c92a210859c60204e942a1bd}
+      \strng{authorfullhash}{415b2201c4b9a6044123f83ad526494d}
+      \strng{authorfullhashraw}{415b2201c4b9a6044123f83ad526494d}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:2211.08411}
+      \field{title}{Measuring Faithfulness in Chain-of-Thought Reasoning}
+      \field{year}{2022}
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2211.08411
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2211.08411
       \endverb
     \endentry
     \entry{ragas_context_entities_recall}{misc}{}{}
@@ -287,7 +402,7 @@
       \verb https://docs.ragas.io/en/stable/concepts/metrics/available_metrics/nvidia_metrics/
       \endverb
     \endentry
-    \entry{ragas_response_relevancy}{misc}{}{}
+    \entry{ragas_query_types}{misc}{}{}
       \name{author}{1}{}{%
         {{hash=b1999c0b68db3b28e7336ea0e30dcd52}{%
            family={Ragas},
@@ -302,6 +417,35 @@
       \strng{authorfullhash}{b1999c0b68db3b28e7336ea0e30dcd52}
       \strng{authorfullhashraw}{b1999c0b68db3b28e7336ea0e30dcd52}
       \field{extraname}{7}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: 2024}
+      \field{title}{Query types in RAG}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://docs.ragas.io/en/stable/concepts/test_data_generation/rag/#query-types-in-rag
+      \endverb
+      \verb{url}
+      \verb https://docs.ragas.io/en/stable/concepts/test_data_generation/rag/#query-types-in-rag
+      \endverb
+    \endentry
+    \entry{ragas_response_relevancy}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=b1999c0b68db3b28e7336ea0e30dcd52}{%
+           family={Ragas},
+           familyi={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{b1999c0b68db3b28e7336ea0e30dcd52}
+      \strng{fullhash}{b1999c0b68db3b28e7336ea0e30dcd52}
+      \strng{fullhashraw}{b1999c0b68db3b28e7336ea0e30dcd52}
+      \strng{bibnamehash}{b1999c0b68db3b28e7336ea0e30dcd52}
+      \strng{authorbibnamehash}{b1999c0b68db3b28e7336ea0e30dcd52}
+      \strng{authornamehash}{b1999c0b68db3b28e7336ea0e30dcd52}
+      \strng{authorfullhash}{b1999c0b68db3b28e7336ea0e30dcd52}
+      \strng{authorfullhashraw}{b1999c0b68db3b28e7336ea0e30dcd52}
+      \field{extraname}{8}
       \field{sortinit}{R}
       \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
       \field{labelnamesource}{author}

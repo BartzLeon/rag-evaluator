@@ -1,0 +1,137 @@
+[
+    {
+      "id": "dc8c7ca1-7362-4555-ab67-31a622da47ff",
+      "question": "Welche Informationen über Zahlungsmethoden, Versand oder Bestellverfolgung sind in den bereitgestellten Abschnitten zu finden, wenn ausschließlich Angaben zur schriftlichen Kommunikation gemäß § 4 Abs. 4 Sätze 1-3 gemacht werden?",
+      "reference_answer": "In den bereitgestellten Abschnitten sind keine Informationen über Zahlungsmethoden, Versand oder Bestellverfolgung enthalten. Die Abschnitte bestehen ausschließlich aus scheinbar kodierten oder nicht lesbaren Zeichenfolgen.",
+      "reference_context": "Document 3087: 1fz0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1fz0 1cN0 1cL0 1cN0 1cL0 s10 1Vz0 LB0 1BX0 1cN0 1fz0 1a10 1fz0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1fz0 1a10 1fz0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 14p0 1lb0 14p0 1nX0 11B0 1nX0 11B0 1nX0 14p0 1lb0 14p0 1lb0 14p0 1nX0 11B0 1nX0 11B0 1nX0 14p0 1lb0 14p0 1lb0 14p0 1lb0 14p0 1nX0 11B0 1nX0 11B0 1nX0 14p0 1lb0 14p0 1lb0 14p0 1nX0 11B0 1nX0 11B0 1nX0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0\n\nDocument 3012: 1cN0 1cL0 1cN0 1cL0 1cN0 1fz0 1cN0 1cL0 1cN0 1cL0 s10 1Vz0 LB0 1BX0 1cN0 1fz0 1a10 1fz0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1fz0 1a10 1fz0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 14p0 1lb0 14p0 1nX0 11B0 1nX0 11B0 1nX0 14p0 1lb0 14p0 1lb0 14p0 1nX0 11B0 1nX0 11B0 1nX0 14p0 1lb0 14p0 1lb0 14p0 1lb0 14p0 1nX0 11B0 1nX0 11B0 1nX0 14p0 1lb0 14p0 1lb0 14p0 1nX0 11B0 1nX0 11B0 1nX0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0\n\nDocument 3137: 1cL0 1cN0 1fz0 1cN0 1cL0 1cN0 1cL0 s10 1Vz0 LB0 1BX0 1cN0 1fz0 1a10 1fz0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1fz0 1a10 1fz0 cn0 10q0 1cL0 1cN0 1cL0 1cN0 1cL0 14p0 1lb0 14p0 1nX0 11B0 1nX0 11B0 1nX0 14p0 1lb0 14p0 1lb0 14p0 1nX0 11B0 1nX0 11B0 1nX0 14p0 1lb0 14p0 1lb0 14p0 1lb0 14p0 1nX0 11B0 1nX0 11B0 1nX0 14p0 1lb0 14p0 1lb0 14p0 1nX0 11B0 1nX0 11B0 1nX0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0\n\nDocument 3084: 1cL0 1cN0 1fz0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1fz0 1a10 1fz0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1fz0 1a10 1fz0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 14p0 1lb0 14p0 1nX0 11B0 1nX0 11B0 1nX0 14p0 1lb0 14p0 1lb0 14p0 1nX0 11B0 1nX0 11B0 1nX0 14p0 1lb0 14p0 1lb0 14p0 1lb0 14p0 1nX0 11B0 1nX0 11B0 1nX0 14p0 1lb0 14p0 1lb0 14p0 1nX0 11B0 1nX0 11B0 1nX0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0",
+      "metadata": {
+        "question_type": "distracting element",
+        "seed_document_id": 3087,
+        "distracting_context": "des Domaininhabers oder Admin-Cs. Dabei gilt als „schriftlich“ in beiden Fällen die gemäß § 4 Abs. 4 Sätze 1-3 zugelassene Form.",
+        "topic": "Encoded Data Sequences"
+      },
+      "conversation_history": []
+    },
+    {
+      "id": "99ee9918-0f04-46f7-9da6-3a535f05a13c",
+      "question": "Analysieren Sie den bereitgestellten Kontext und erläutern Sie unter der Voraussetzung, dass Sie keine externen Quellen verwenden dürfen, welches zentrale Thema oder welcher Hauptzweck in dem Textabschnitt behandelt wird. Begründen Sie Ihre Antwort anhand spezifischer Textstellen.",
+      "reference_answer": "Im bereitgestellten Kontext wird ein Ausschnitt aus einem JavaScript-Code beschrieben, der sich mit Komponentenoptionen, Renderfunktionen und der Initialisierung von Komponenten beschäftigt.",
+      "reference_context": "Document 2377: o=r.componentOptions;n.propsData=o.propsData,n._parentListeners=o.listeners,n._renderChildren=o.children,n._componentTag=o.tag,e.render&&(n.render=e.render,n.staticRenderFns=e.staticRenderFns)}(e,t):e.$options=Bt(_n(e.constructor),t||{},e),e._renderProxy=e,e._self=e,function(t){var",
+      "metadata": {
+        "question_type": "complex",
+        "seed_document_id": 2377,
+        "topic": "JavaScript Source Code"
+      },
+      "conversation_history": []
+    },
+    {
+      "id": "91f3db77-90ca-44ad-a356-0c626019184f",
+      "question": "Hallo, ich recherchiere gerade als Webentwickler die besten CSS-Grid-Layouts für ein Kundenprojekt mit Develop 4 Future. Sind im bereitgestellten Kontext irgendwelche Informationen zu Zahlungsmethoden oder Versandoptionen enthalten, die ich für die Gestaltung berücksichtigen sollte?",
+      "reference_answer": "Im bereitgestellten Kontext sind keine Informationen über Zahlungsmethoden oder Versandoptionen enthalten.",
+      "reference_context": "Document 1374: it-box-ordinal-group:8;order:7}.order-8{-webkit-box-ordinal-group:9;order:8}.order-9{-webkit-box-ordinal-group:10;order:9}.order-10{-webkit-box-ordinal-group:11;order:10}.order-11{-webkit-box-ordinal-group:12;order:11}.order-12{-webkit-box-ordinal-group:13;order:12}.offset-1{margin-left:8.3333333333%}.offset-2{margin-left:16.6666666667%}.offset-3{margin-left:25%}.offset-4{margin-left:33.3333333333%}.offset-5{margin-left:41.6666666667%}.offset-6{margin-left:50%}.offset-7{margin-left:58.3333333333\n\nDocument 950: it-box-ordinal-group:8;order:7}.order-8{-webkit-box-ordinal-group:9;order:8}.order-9{-webkit-box-ordinal-group:10;order:9}.order-10{-webkit-box-ordinal-group:11;order:10}.order-11{-webkit-box-ordinal-group:12;order:11}.order-12{-webkit-box-ordinal-group:13;order:12}.offset-1{margin-left:8.3333333333%}.offset-2{margin-left:16.6666666667%}.offset-3{margin-left:25%}.offset-4{margin-left:33.3333333333%}.offset-5{margin-left:41.6666666667%}.offset-6{margin-left:50%}.offset-7{margin-left:58.3333333333",
+      "metadata": {
+        "question_type": "situational",
+        "seed_document_id": 1374,
+        "situational_context": "A web developer is researching the best CSS grid layouts for a client project with Develop 4 Future.",
+        "topic": "CSS Grid and Flexbox Classes"
+      },
+      "conversation_history": []
+    },
+    {
+      "id": "6c813ef1-e1b2-4e26-8c02-372c8e775374",
+      "question": "Welches Ziel verfolgt Develop 4 Future im ersten Schritt bei der Zusammenarbeit mit Schulen und was unterscheidet den Infofuchs von anderen Webseitenbaukästen?",
+      "reference_answer": "Das erste Ziel von Develop 4 Future ist, ein Gespräch vor Ort mit den Schulen zu vereinbaren und bei Interesse ein Gratis-Testsystem bereitzustellen. Der Infofuchs unterscheidet sich von anderen Webseitenbaukästen dadurch, dass er nur die nötigen Funktionen anbietet und dadurch besonders anfängerfreundlich ist.",
+      "reference_context": "Document 4228: Das erste Ziel ist, ein Gespräch vor Ort zu vereinbaren. Den Schulen wird ein Gratis-Testsystem zur Verfügung gestellt, falls die Schulen hieran Interesse zeigen.\n\n\n\n\n\nIm Vergleich mit den existierenden Webseitenbaukästen werden beim Infofuchs nur die nötigen Funktionen zu Verfügung gestellt. Das macht dieses System sehr anfängerfreundlich.",
+      "metadata": {
+        "question_type": "double",
+        "original_questions": [
+          {
+            "question": "Welches Ziel verfolgt Develop 4 Future im ersten Schritt bei der Zusammenarbeit mit Schulen?",
+            "answer": "Das erste Ziel ist, ein Gespräch vor Ort zu vereinbaren. Den Schulen wird ein Gratis-Testsystem zur Verfügung gestellt, falls die Schulen hieran Interesse zeigen."
+          },
+          {
+            "question": "Was unterscheidet den Infofuchs von anderen Webseitenbaukästen?",
+            "answer": "Im Vergleich mit den existierenden Webseitenbaukästen werden beim Infofuchs nur die nötigen Funktionen zu Verfügung gestellt. Das macht dieses System sehr anfängerfreundlich."
+          }
+        ],
+        "seed_document_id": 4228,
+        "topic": "Others"
+      },
+      "conversation_history": []
+    },
+    {
+      "id": "30e8a62f-f006-4b81-a433-67b4f5ff8bbd",
+      "question": "Nennen Sie alle im Kontext aufgeführten CSS-Klassen, die speziell für das Ausrichten von Inhalten auf XL-Bildschirmgrößen verwendet werden, und erläutern Sie zusätzlich, welches Verhalten jede dieser Klassen im Layout bewirkt. Beschränken Sie Ihre Antwort ausschließlich auf Klassen, die das Wort 'align' enthalten.",
+      "reference_answer": "Im Kontext werden CSS-Klassen wie .align-content-xl-around, .align-content-xl-stretch, .align-self-xl-auto, .align-self-xl-start, .align-self-xl-end, .align-self-xl-center, .align-self-xl-baseline, .align-self-xl-stretch, .float-left und .float-right für das Ausrichten von Inhalten verwendet.",
+      "reference_context": "Document 1703: mportant}.align-content-xl-around{align-content:space-around!important}.align-content-xl-stretch{align-content:stretch!important}.align-self-xl-auto{align-self:auto!important}.align-self-xl-start{align-self:flex-start!important}.align-self-xl-end{align-self:flex-end!important}.align-self-xl-center{align-self:center!important}.align-self-xl-baseline{align-self:baseline!important}.align-self-xl-stretch{align-self:stretch!important}}.float-left{float:left!important}.float-right{float:right!importan\n\nDocument 1278: mportant}.align-content-xl-around{align-content:space-around!important}.align-content-xl-stretch{align-content:stretch!important}.align-self-xl-auto{align-self:auto!important}.align-self-xl-start{align-self:flex-start!important}.align-self-xl-end{align-self:flex-end!important}.align-self-xl-center{align-self:center!important}.align-self-xl-baseline{align-self:baseline!important}.align-self-xl-stretch{align-self:stretch!important}}.float-left{float:left!important}.float-right{float:right!importan",
+      "metadata": {
+        "question_type": "complex",
+        "seed_document_id": 1703,
+        "topic": "CSS Flexbox and Alignment Classes"
+      },
+      "conversation_history": []
+    },
+    {
+      "id": "8c3c9bac-e28e-4560-96dc-533440148d1d",
+      "question": "Hallo, ich bin gerade dabei, die API-Sicherheitseinstellungen für unsere neue Anwendung bei Develop 4 Future zu überprüfen. Welche Einstellung muss ich setzen, damit Anmeldeinformationen (Credentials) bei CORS-Anfragen unterstützt werden?",
+      "reference_answer": "Die Einstellung 'supports_credentials' legt fest, ob Anmeldeinformationen (Credentials) bei CORS-Anfragen unterstützt werden.",
+      "reference_context": "Document 326: 'paths' => ['*'],\n\n    'allowed_methods' => ['*'],\n\n    'allowed_origins' => ['*'],\n\n    'allowed_origins_patterns' => ['*'],\n\n    'allowed_headers' => ['*'],\n\n    'exposed_headers' => [],\n\n    'max_age' => 0,\n\n    'supports_credentials' => false,\n\n];",
+      "metadata": {
+        "question_type": "situational",
+        "seed_document_id": 326,
+        "situational_context": "A junior web developer reviews API security settings to ensure the new application for Develop 4 Future allows proper cross-origin requests.",
+        "topic": "Laravel PHP Application Code"
+      },
+      "conversation_history": []
+    },
+    {
+      "id": "f7ef9929-e2f4-42f2-95c3-8a8254670226",
+      "question": "Bitte analysiere sorgfältig den bereitgestellten Kontext und erläutere, ob darin explizite oder implizite Informationen zu Zahlungsmethoden oder Versand enthalten sind. Begründe deine Antwort unter Berücksichtigung der Dokumentennummern und gehe dabei auch auf eventuelle Hinweise im Text ein, die auf Zahlungs- oder Versandmodalitäten schließen lassen könnten.",
+      "reference_answer": "Im bereitgestellten Kontext finden sich keine Informationen über Zahlungsmethoden oder Versand. Der Text enthält ausschließlich CSS-Klassen für Abstände (margin) in verschiedenen Bildschirmgrößen.",
+      "reference_context": "Document 1314: :.5rem!important}.mt-lg-2,.my-lg-2{margin-top:.5rem!important}.mr-lg-2,.mx-lg-2{margin-right:.5rem!important}.mb-lg-2,.my-lg-2{margin-bottom:.5rem!important}.ml-lg-2,.mx-lg-2{margin-left:.5rem!important}.m-lg-3{margin:1rem!important}.mt-lg-3,.my-lg-3{margin-top:1rem!important}.mr-lg-3,.mx-lg-3{margin-right:1rem!important}.mb-lg-3,.my-lg-3{margin-bottom:1rem!important}.ml-lg-3,.mx-lg-3{margin-left:1rem!important}.m-lg-4{margin:1.5rem!important}.mt-lg-4,.my-lg-4{margin-top:1.5rem!important}.mr-lg-\n\nDocument 1739: :.5rem!important}.mt-lg-2,.my-lg-2{margin-top:.5rem!important}.mr-lg-2,.mx-lg-2{margin-right:.5rem!important}.mb-lg-2,.my-lg-2{margin-bottom:.5rem!important}.ml-lg-2,.mx-lg-2{margin-left:.5rem!important}.m-lg-3{margin:1rem!important}.mt-lg-3,.my-lg-3{margin-top:1rem!important}.mr-lg-3,.mx-lg-3{margin-right:1rem!important}.mb-lg-3,.my-lg-3{margin-bottom:1rem!important}.ml-lg-3,.mx-lg-3{margin-left:1rem!important}.m-lg-4{margin:1.5rem!important}.mt-lg-4,.my-lg-4{margin-top:1.5rem!important}.mr-lg-\n\nDocument 1730: :.5rem!important}.mt-md-2,.my-md-2{margin-top:.5rem!important}.mr-md-2,.mx-md-2{margin-right:.5rem!important}.mb-md-2,.my-md-2{margin-bottom:.5rem!important}.ml-md-2,.mx-md-2{margin-left:.5rem!important}.m-md-3{margin:1rem!important}.mt-md-3,.my-md-3{margin-top:1rem!important}.mr-md-3,.mx-md-3{margin-right:1rem!important}.mb-md-3,.my-md-3{margin-bottom:1rem!important}.ml-md-3,.mx-md-3{margin-left:1rem!important}.m-md-4{margin:1.5rem!important}.mt-md-4,.my-md-4{margin-top:1.5rem!important}.mr-md-\n\nDocument 1305: :.5rem!important}.mt-md-2,.my-md-2{margin-top:.5rem!important}.mr-md-2,.mx-md-2{margin-right:.5rem!important}.mb-md-2,.my-md-2{margin-bottom:.5rem!important}.ml-md-2,.mx-md-2{margin-left:.5rem!important}.m-md-3{margin:1rem!important}.mt-md-3,.my-md-3{margin-top:1rem!important}.mr-md-3,.mx-md-3{margin-right:1rem!important}.mb-md-3,.my-md-3{margin-bottom:1rem!important}.ml-md-3,.mx-md-3{margin-left:1rem!important}.m-md-4{margin:1.5rem!important}.mt-md-4,.my-md-4{margin-top:1.5rem!important}.mr-md-",
+      "metadata": {
+        "question_type": "complex",
+        "seed_document_id": 1314,
+        "topic": "CSS Utility Classes"
+      },
+      "conversation_history": []
+    },
+    {
+      "id": "df25f346-39f0-45d6-b0a9-23dda1975960",
+      "question": "Hallo, ich arbeite gerade an einem Projekt für Develop 4 Future und lese die technische Dokumentation. Können Sie mir erklären, was passiert, wenn this._activeTarget nicht mit this._targets[o] übereinstimmt und t größer oder gleich this._offsets[o] ist?",
+      "reference_answer": "Wenn this._activeTarget nicht mit this._targets[o] übereinstimmt und t größer oder gleich this._offsets[o] ist (und entweder this._offsets[o+1] nicht definiert ist oder t kleiner als this._offsets[o+1] ist), wird die Methode this._activate(this._targets[o]) aufgerufen.",
+      "reference_context": "Document 2890: this._activeTarget=null,void this._clear();for(var o=this._offsets.length;o--;)this._activeTarget!==this._targets[o]&&t>=this._offsets[o]&&(void 0===this._offsets[o+1]||t<this._offsets[o+1])&&this._activate(this._targets[o])}},n._activate=function(t){this._activeTarget=t,this._clear();var n=this._selector.split(\",\").map((function(e){return",
+      "metadata": {
+        "question_type": "situational",
+        "seed_document_id": 2890,
+        "situational_context": "A developer is researching technical documentation to troubleshoot an issue while working on a project for Develop 4 Future.",
+        "topic": "JavaScript Source Code"
+      },
+      "conversation_history": []
+    },
+    {
+      "id": "4a2806ab-6122-421b-91e8-13f406986f01",
+      "question": "Hallo, ich recherchiere gerade als Unternehmer SQL-Schlüsselwörter und Datenbankfunktionen, um ein Softwareprojekt für Develop 4 Future zu verbessern. Können Sie mir erklären, welche Bedeutung Begriffe wie 'EXTRACT', 'FLOAT', 'GRANT' und 'INDEX' im gegebenen Kontext haben?",
+      "reference_answer": "Die Begriffe wie 'EXTRACT', 'FLOAT', 'GRANT' und 'INDEX' sind Teil einer Liste von Schlüsselwörtern, die vermutlich in Programmiersprachen oder Datenbanksystemen verwendet werden.",
+      "reference_context": "Document 2538: ,\"EXTRACT\",\"FALSE\",\"FETCH\",\"FINAL\",\"FIRST\",\"FIXED\",\"FLOAT\",\"FOR\",\"FORALL\",\"FORCE\",\"FROM\",\"FUNCTION\",\"GENERAL\",\"GOTO\",\"GRANT\",\"GROUP\",\"HASH\",\"HEAP\",\"HIDDEN\",\"HOUR\",\"IDENTIFIED\",\"IF\",\"IMMEDIATE\",\"IN\",\"INCLUDING\",\"INDEX\",\"INDEXES\",\"INDICATOR\",\"INDICES\",\"INFINITE\",\"INSTANTIABLE\",\"INT\",\"INTEGER\",\"INTERFACE\",\"INTERVAL\",\"INTO\",\"INVALIDATE\",\"IS\",\"ISOLATION\",\"JAVA\",\"LANGUAGE\",\"LARGE\",\"LEADING\",\"LENGTH\",\"LEVEL\",\"LIBRARY\",\"LIKE\",\"LIKE2\",\"LIKE4\",\"LIKEC\",\"LIMITED\",\"LOCAL\",\"LOCK\",\"LONG\",\"MAP\",\"MAX\",\"MAXLEN\",\"",
+      "metadata": {
+        "question_type": "situational",
+        "seed_document_id": 2538,
+        "situational_context": "An entrepreneur is researching SQL keywords and database functionalities to enhance a software project for Develop 4 Future.",
+        "topic": "SQL and Database Keywords"
+      },
+      "conversation_history": []
+    },
+    {
+      "id": "8879adb8-caf4-4d0c-a9c7-4f1e0a59fec9",
+      "question": "Was ist der Zweck des Objekts 'a' im bereitgestellten Kontext?",
+      "reference_answer": "Das Objekt 'a' wird erstellt und mit einer Iterator-Funktion versehen, um als Prototyp für einen Iterator zu dienen.",
+      "reference_context": "Document 1830: strict\";var r=n(61),o=n(13),i=n(30),a={};n(6)(a,n(1)(\"iterator\"),(function(){return this})),t.exports=function(t,e,n){t.prototype=r(a,{next:o(1,n)}),i(t,e+\" Iterator\")}},function(t,e,n){var r=n(8),o=n(62),i=n(28),a=n(17)(\"IE_PROTO\"),c=function(){},s=function(){var t,e=n(20)(\"iframe\"),r=i.length;for(e.style.display=\"none\",n(63).appendChild(e),e.src=\"javascript:\",(t=e.contentWindow.document).open(),t.write(\"<script>document.F=Object<\\/script>\"),t.close(),s=t.F;r--;)delete s.prototype[i[r]];return",
+      "metadata": {
+        "question_type": "simple",
+        "seed_document_id": 1830,
+        "topic": "JavaScript Source Code"
+      },
+      "conversation_history": []
+    }
+  ]

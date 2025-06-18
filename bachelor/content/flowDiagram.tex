@@ -1,30 +1,3 @@
-\section{RAG-Bewertungsprozess}
-
-Das Flussdiagramm veranschaulicht die drei Hauptphasen des RAG-Bewertungsprozesses:
-
-\begin{enumerate}
-    \item \textbf{Dokumentenverarbeitung}
-    \begin{itemize}
-        \item Dokumente werden geladen und in Abschnitte unterteilt
-        \item Textabschnitte werden eingebettet
-        \item Eingebettete Vektoren werden in ChromaDB gespeichert
-    \end{itemize}
-    
-    \item \textbf{Erstellung des Testsets}
-    \begin{itemize}
-        \item Verwendet LLM zur Generierung von Fragen
-        \item Erstellt Testsets mit Fragen und Referenzantworten
-    \end{itemize}
-    
-    \item \textbf{Bewertungsprozess}
-    \begin{itemize}
-        \item Verwendet das generierte Testset
-        \item Ruft Kontext aus ChromaDB ab
-        \item Bewertet Modellantworten mit LLM als Richter
-        \item Generiert umfassende Bewertungsberichte
-    \end{itemize}
-\end{enumerate}
-
 \begin{figure}[htbp]
     \centering
     \resizebox{\textwidth}{!}{
@@ -47,17 +20,17 @@ Das Flussdiagramm veranschaulicht die drei Hauptphasen des RAG-Bewertungsprozess
         \node[storage] (chroma) [below=of vstore] {ChromaDB-Sammlung};
 
         % Stage 2: Testset-Erstellung
-        \node[process] (tsgen) [right=4.5cm of dl] {Testset-Generator};
-        \node[stage_label] (stage2_label) at (stage1_label -| tsgen) {Phase 2: Testset-Erstellung};
-        \node[model] (llm1) [above=0.8cm of tsgen] {LLM für die Testset-Generierung};
+        \node[process] (tsgen) [right=4.5cm of doc, yshift=-1.8cm] {Testset-Generator};
+        \node[stage_label] (stage2_label) [above=of tsgen] {Phase 2: Testset-Erstellung};
+        \node[model] (llm1) [above left=0.8cm and 0.4cm of tsgen] {LLM für die Testset-Generierung};
         \node[model] (emb2) [below left=0.8cm and 0.4cm of tsgen] {Einbettungsmodell für die Testset-Generierung};
-        \node[data] (testset) [below right=0.8cm and 0.4 of tsgen] {Testset};
+        \node[data] (testset) [below=of tsgen] {Testset};
 
         % Stage 3: RAG-Bewertung
-        \node[process] (eval) [right=4.5cm of tsgen] {Bewerter};
-        \node[stage_label] (stage3_label) at (stage1_label -| eval) {Phase 3: RAG-Bewertung};
-        \node[model] (llm2) [above=0.8cm of eval, xshift=-1.7cm] {\textbf{Zu bewertendes Modell}};
-        \node[model] (llm3) [above=0.8cm of eval, xshift=1.7cm] {\textbf{LLM-Modell als Richter}};
+        \node[process] (eval) [right=4.5cm of tsgen] {Bewertung};
+        \node[stage_label] (stage3_label) [above=of eval] {Phase 3: RAG-Bewertung};
+        \node[model] (llm2) [above left=0.8cm and 0.4cm of eval] {\textbf{Zu bewertendes Modell}};
+        \node[model] (llm3) [below left=0.8cm and 0.4cm of eval] {LLM-Modell als Richter};    
         \node[data] (report) [below=of eval] {Bewertungsbericht};
         \node[storage] (repfile) [below=of report] {Berichtsdateien};
 
@@ -77,7 +50,7 @@ Das Flussdiagramm veranschaulicht die drei Hauptphasen des RAG-Bewertungsprozess
         \draw[arrow] (tsgen) -- (testset);
 
         % Bewertungsfluss
-        \draw[arrow] (testset) -- (eval.west);
+        \draw[arrow] (testset.north east) to[bend left=15] (eval.west);
         \draw[arrow] (chroma.east) -| (eval.west);
         \draw[arrow] (llm2) -- (eval);
         \draw[arrow] (llm3) -- (eval);
@@ -88,18 +61,3 @@ Das Flussdiagramm veranschaulicht die drei Hauptphasen des RAG-Bewertungsprozess
     \caption{Flussdiagramm des RAG-Bewertungsprozesses, das die Interaktion zwischen verschiedenen Komponenten und Modellen zeigt. Spezifische Modellnamen (z.B. gpt-4-turbo, text-embedding-3-large) sind im Haupttext beschrieben.}
     \label{fig:rag-flow}
 \end{figure}
-
-% Farblegende für das Flussdiagramm
-\begin{center}
-\begin{minipage}{0.85\textwidth}
-\textbf{Legende für Flussdiagrammfarben:}
-\begin{itemize}
-    \item \colorbox{pink!20}{\strut\hspace{1.5em}} \textbf{Modell}: (z.B. LLMs, Einbettungsmodelle)
-    \item \colorbox{blue!20}{\strut\hspace{1.5em}} \textbf{Speicher}: (z.B. Vektorspeicher, ChromaDB)
-    \item \colorbox{green!20}{\strut\hspace{1.5em}} \textbf{Prozess}: (z.B. Dokumentenlader, Bewertung)
-    \item \colorbox{red!20}{\strut\hspace{1.5em}} \textbf{Daten}: (z.B. Dokumentensammlung, Testset, Bericht)
-\end{itemize}
-\end{minipage}
-\end{center}
-
-Das Diagramm hebt hervor, wie bestimmte Komponenten, wie LLM, für verschiedene Zwecke wiederverwendet werden, während separate Einbettungsmodelle für spezifische Aufgaben beibehalten werden. Dieser modulare Ansatz ermöglicht flexible versuche mit verschiedenen Modellen und Konfigurationen, während ein konsistentes Bewertungsframework beibehalten wird. 

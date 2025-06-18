@@ -1,12 +1,12 @@
-\chapter{Experimente}
+\chapter{Versuche}
 
-\section{Experiment plan}
+\section{Versuchsplan}
 
-Um systematisch zu bewerten, ob RAG-Bewertungstools für den Einsatz in kleineren Unternehmen bereit sind, ist ein umfassender experimenteller Ansatz erforderlich. Der folgende Experiment plan skizziert die wichtigsten Variablen, die Methodik und die Bewertungskriterien.
+Um systematisch zu bewerten, ob RAG-Bewertungstools für den Einsatz in kleineren Unternehmen bereit sind, sind umfassende Versuche erforderlich. Der folgende versuchsplan skizziert die wichtigsten Variablen, die Methodik und die Bewertungskriterien.
 
 \subsection{Forschungsfragen}
 
-Das Experiment wird die folgenden zentralen Forschungsfragen behandeln:
+Der Versuch wird die folgenden zentralen Forschungsfragen behandeln:
 
 \begin{enumerate}
     \item Sind aktuelle RAG-Bewertungsframeworks in Bezug auf Kosten, Komplexität und Ressourcenanforderungen für den Einsatz in kleinen Unternehmen geeignet?
@@ -15,64 +15,64 @@ Das Experiment wird die folgenden zentralen Forschungsfragen behandeln:
     \item Was ist das optimale Gleichgewicht zwischen Kosten, Leistung und Implementierungskomplexität für jeden Anwendungsfall in kleinen Unternehmen?
 \end{enumerate}
 
-\subsection{Experimentelle Variablen}
+\subsection{Variablen in den Versuchen}
 
 \subsubsection{Dokumenttypen}
 Verschiedene Dokumentformate werden getestet, um die Vielseitigkeit des Systems zu bewerten:
 \begin{itemize}
+    \item PDF (.pdf)
     \item Klartext (.txt)
-    \item PDF-Dokumente mit Text, Tabellen und Bildern
-    \item HTML-Inhalte von Webseiten
-    \item Microsoft Office-Dokumente (.docx, .xlsx)
-    \item JSON und strukturierte Datenformate
+    \item Word-Dokumente (.docx, .doc)
+    \item Excel-Tabellen (.xlsx, .xls)
+    \item CSV-Dateien (.csv)
+    \item E-Mails (.eml)
+    \item PowerPoint-Präsentationen (.pptx, .ppt)
 \end{itemize}
 
 \subsubsection{Datenvolumen}
-Die Skalierbarkeit des Systems wird mit unterschiedlichen Datenmengen getestet:
+Die Skalierbarkeit des Systems wird wie bereits beschrieben mit unterschiedlichen Datenmengen getestet, 10, 100 und 400 Dokumente.
 \begin{itemize}
-    \item Klein (10-50 Dokumente, ~100 Seiten): Dies könnte pro Anwendungsfall eingerichtet und nach dem Experiment verworfen werden
-    \item Mittel (100-500 Dokumente, ~1.000 Seiten): Dies könnte pro Benutzer eingerichtet werden und im Laufe der Zeit wachsen
-    \item Groß (1.000+ Dokumente, ~10.000 Seiten): Dies könnte unternehmensweit eingerichtet werden und im Laufe der Zeit wachsen
+    \item Für die Versuche mit \textbf{10 Dokumenten} werden existierende Dokumente ausgewählt.
+    \item Für die Versuche mit \textbf{100} müssen zusätzliche Dokumente generiert werden, vorzugsweise mit einem LLM.
+    \item Für die Versuche mit \textbf{400 Dokumenten} wird zusätzlich Code verwendet.
 \end{itemize}
 
 \subsubsection{Modelle zur Bewertung}
-Mehrere Modelle werden bewertet, die verschiedene Kostenschichten und Fähigkeiten repräsentieren. Hierbei ist es wichtig zu überlegen, welche Optionen für kleine Unternehmen gültige Anwendungsfälle sind.
-Open-Source-Modelle (z.B. Llama 2, Mistral 7B, Deepseek R1) bieten eine Vielzahl von Vorteilen, wie die Möglichkeit, sie zu modifizieren und mehr Kontrolle über die Daten zu haben, was rechtliche Vorteile bietet, aber auch Nachteile. Die Fähigkeit, sie selbst zu hosten, kann ein Plus, aber auch ein Minus sein, je nach Art des Unternehmens.\
-Mittelklasse-API-Modelle (z.B. Claude Haiku, GPT-3.5 Turbo) sind günstiger als die Hochleistungsmodelle und bieten dennoch eine gute Leistung. Da sie nicht Open Source sind, bieten sie weniger Kontrolle über die Daten und das Modell selbst. Manchmal muss man mehr für private Instanzen zahlen.\
-Hochleistungsmodelle (z.B. GPT-4, Claude 3 Opus) sind die teuerste Option, bieten aber auch die beste Leistung, sowohl in Bezug auf Geschwindigkeit als auch auf die Qualität der generierten Antworten. Sie haben ähnliche Vor- und Nachteile wie die Mittelklasse-API-Modelle. \
-Aus rechtlicher Sicht sind die Hochleistungsmodelle die sicherste Option, da sie bestimmte Dokumentationen veröffentlichen und rechtliche Garantien bieten müssen.
+Mehrere Modelle werden bewertet, die verschiedene Kostenschichten und Fähigkeiten repräsentieren. Hierbei ist es wichtig zu überlegen, welche Optionen für kleine Unternehmen gültige Anwendungsfälle sind.\\
+\textbf{Open-Source-Modelle} (z.B. Llama 2, Mistral 7B, Deepseek R1) bieten eine Vielzahl von Vorteilen, wie die Möglichkeit, sie zu modifizieren und mehr Kontrolle über die Daten zu haben, was rechtliche Vorteile bietet, aber auch Nachteile. Entscheident ist zudem wieder die Technische Kompeten welche benötigt wurd um diese Modelle selber zu Hosten.\\
+\textbf{Mittelklasse-API-Modelle} (z.B. Claude Haiku, GPT-3.5 Turbo) sind günstiger als die Hochleistungsmodelle und bieten dennoch eine gute Leistung. Da sie nicht Open Source sind, bieten sie weniger Kontrolle über die Daten und das Modell selbst. Manchmal muss man mehr für private Instanzen zahlen.\\
+\textbf{Hochleistungsmodelle} (z.B. GPT-4, Claude 3 Opus) sind die teuerste Option, bieten aber auch die beste Leistung, sowohl in Bezug auf Geschwindigkeit als auch auf die Qualität der generierten Antworten. Sie haben ähnliche Vor- und Nachteile wie die Mittelklasse-API-Modelle.\\
 % TODO: artikel 53 und Anhang 12 und 13
 % TODO: erklären
 
 \subsubsection{Bewertungsmetriken}
-Während des Experiments werden neben der menschlichen Bewertung zwei Frameworks zur Bewertung verwendet.
+Während des Versuchs werden neben der menschlichen Bewertung zwei Frameworks zur Bewertung verwendet.
 Giskard und RAGAS werden die später beschriebenen Metriken generieren, die später verglichen und bewertet werden können.
 Die menschliche Bewertung wird als subjektives Maß verwendet, um die Ergebnisse der anderen beiden zu vergleichen.
 
 \subsection{Kosten- und Zeitanalyse}
 Ob wir dies tun wollen, ist noch nicht klar. RAGAS bietet Kostenberechnung an, aber ich habe es mir noch nicht angesehen.
 
-\subsection{Experimentelles Protokoll}
+\subsection{Versuchsprotokoll}
 
 \begin{enumerate}
     \item \textbf{Dokumentensammlung und -vorbereitung}
-    Sammeln Sie Dokumente in allen oben genannten Zielformaten.
+    Die Dokumente werden in allen oben genannten Zielformaten gesammelt.
     
     \item \textbf{Testset-Generierung}
-    Generieren Sie verschiedene Fragetypen (faktisch, inferentiell, vergleichend) und erstellen Sie Referenzantworten zur Bewertung.
+    Verschiedene Fragetypen (faktisch, inferentiell, vergleichend) werden generiert und Referenzantworten zur Bewertung erstellt.
     Dies geschieht automatisch durch das RAGAS-Framework.
-    Validieren Sie das Testset manuell auf Qualität und Abdeckung. Dies wird an einer Reihe zufälliger Proben durchgeführt.
-    
+    Das Testset wird manuell auf Qualität und Abdeckung validiert, wobei dies anhand einer Reihe zufälliger Proben erfolgt.
     
     \item \textbf{Systemkonfiguration}
-    Konfigurieren Sie Einbettungsmodelle und Parameter, richten Sie Vektorspeicher mit konsistenten Einstellungen ein und setzen Sie Bewertungsframeworks ein.
+    Die Einbettungsmodelle und Parameter werden konfiguriert, Vektorspeicher mit konsistenten Einstellungen eingerichtet und die Bewertungsframeworks implementiert.
     
     \item \textbf{Durchführung der Bewertung}
-    Da wir die hochgeladenen Dateien, die generierten Dokumente und das Testset wiederverwenden können, werden diese zuerst erstellt.
-    Dann wird die Bewertungspipeline ausgeführt und die Ergebnisse werden aufgezeichnet.
+    Die hochgeladenen Dateien, generierten Dokumente und das Testset werden wiederverwendet und zunächst erstellt.
+    Anschließend wird die Bewertungspipeline ausgeführt und die Ergebnisse werden aufgezeichnet.
     
     \item \textbf{Analyse und Berichterstattung}
-    Vergleichende Analyse über alle Variablen hinweg, Kosten-Nutzen-Analyse für geschäftliche Entscheidungsfindung und Empfehlungen für optimale Konfigurationen.
+    Eine vergleichende Analyse über alle Variablen hinweg wird durchgeführt, einschließlich einer Kosten-Nutzen-Analyse für die geschäftliche Entscheidungsfindung und Empfehlungen für optimale Konfigurationen.
 \end{enumerate}
 
 \subsection{Bewertungskriterien für die Geschäftstauglichkeit}
@@ -81,10 +81,10 @@ Die endgültige Bewertung wird RAG-Systeme in diesen Dimensionen bewerten:
 \begin{itemize}
     \item \textbf{Implementierungskomplexität}: Wie schwierig ist die Einrichtung und Wartung?
     \item \textbf{Kostenvorhersehbarkeit}: Sind die Kosten stabil und vorhersehbar?
-    \item \textbf{Leistungszuverlässigkeit}: Leistet das System konsistent?
+    \item \textbf{Leistungszuverlässigkeit}: Sind die Ergebnisse konsisten und nicht komplett anders bei jeder Bewertung.
     \item \textbf{Skalierbarkeit}: Wie gut bewältigt das System wachsende Datenanforderungen?
     %\item \textbf{Integrationspotenzial}: Kann es mit bestehenden Geschäftssystemen verbunden werden?
     %\item \textbf{Gesamtkosten des Eigentums}: Was sind die vollständigen Kosten über die Zeit?
 \end{itemize}
 
-Dieser experimentelle Ansatz bietet einen umfassenden Rahmen, um zu bewerten, ob aktuelle RAG-Bewertungstools ausreichend ausgereift für die Einführung in kleinen Unternehmen sind, mit klaren Anleitungen zu optimalen Konfigurationen und Implementierungsstrategien. 
+Dieser Ansatz mit Versuchen bietet einen umfassenden Rahmen, um zu bewerten, ob aktuelle RAG-Bewertungstools ausreichend ausgereift für die Einführung in kleinen Unternehmen sind, mit klaren Anleitungen zu optimalen Konfigurationen und Implementierungsstrategien. 

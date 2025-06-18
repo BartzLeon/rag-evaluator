@@ -1,0 +1,95 @@
+[
+    {
+      "id": "bf9c11e3-7c01-44c9-8f86-cbd67bee3fb1",
+      "question": "Was passiert mit dem Registrierungsvertrag einer Domain, wenn der Vertrag mit dem Provider gekündigt wird, und wer wird tätig, wenn ein Kunde D4f beauftragt, eine Domain zu registrieren?",
+      "reference_answer": "Die Kündigung des Vertragsverhältnisses mit dem Provider lässt den Registrierungsvertrag über eine Domain unberührt, und wenn ein Kunde D4f beauftragt, eine Domain zu registrieren, wird D4f für den Kunden im Rahmen eines Geschäftsbesorgungsverhältnisses tätig.",
+      "reference_context": "Document 104: (1) D4f bietet ggfs. auch die Registrierung von Domainnamen (Domains) an. Wenn der Kunde d4f beauftragt, eine Domain registrieren zu lassen, kommt der Vertag unmittelbar zwischen dem Kunden und der jeweiligen Vergabestelle bzw. dem Registrar zu Stande. D4f wird für den Kunden im Rahmen eines Geschäftsbesorgungsverhältnisses tätig. Es gelten daher die maßgeblichen Registrierungsbedingungen und Richtlinien der jeweiligen Vergabestelle bzw. des Registrars. Die Kündigung des Vertragsverhältnisses mit dem Provider lässt den jeweils zwischen dem Kunden und der Vergabestelle bzw. dem Registrar bestehenden Registrierungsvertrag über eine Domain grundsätzlich unberührt.",
+      "metadata": {
+        "question_type": "double",
+        "original_questions": [
+          {
+            "question": "Was passiert mit dem Registrierungsvertrag einer Domain, wenn der Vertrag mit dem Provider gekündigt wird?",
+            "answer": "Die Kündigung des Vertragsverhältnisses mit dem Provider lässt den jeweils zwischen dem Kunden und der Vergabestelle bzw. dem Registrar bestehenden Registrierungsvertrag über eine Domain grundsätzlich unberührt."
+          },
+          {
+            "question": "Wer wird tätig, wenn ein Kunde D4f beauftragt, eine Domain zu registrieren?",
+            "answer": "D4f wird für den Kunden im Rahmen eines Geschäftsbesorgungsverhältnisses tätig."
+          }
+        ],
+        "seed_document_id": 104,
+        "topic": "Webhosting und Domainverwaltung"
+      },
+      "conversation_history": []
+    },
+    {
+      "id": "507efa69-1d14-487f-97c0-7aa179e074f4",
+      "question": "Wie lange muss er dies tun?",
+      "reference_answer": "Der Auftragnehmer ist verpflichtet, auch über das Ende dieses Beratungsvertrages hinaus strengstes Stillschweigen zu bewahren.",
+      "reference_context": "Document 90: (1) Der Auftragnehmer verpflichtet sich, über alle ihm bekannt gewordenen Geschäfts- und Betriebsgeheimnisse, sowie als vertraulich qualifizierte oder aufgrund sonstiger Umstände erkennbar als vertraulich zu behandelnde Informationen des Auftraggebers oder der mit dem Auftraggeber gemäß §§ 15 ff. AktG verbundenen Unternehmen auch über Ende dieses Beratungsvertrages hinaus strengstes Stillschweigen zu bewahren und diese nicht für Zwecke, die nicht im Interesse des Auftraggebers stehen, zu nutzen. Der Auftraggeber wird den Auftragnehmer von dieser Geheimhaltungspflicht entbinden, falls er gesetzlich zur Offenlegung der Informationen verpflichtet ist.",
+      "metadata": {
+        "question_type": "conversational",
+        "seed_document_id": 90,
+        "topic": "Others"
+      },
+      "conversation_history": [
+        {
+          "role": "user",
+          "content": "Der Auftragnehmer ist verpflichtet, die Geheimhaltung der ihm bekannt gewordenen Informationen zu wahren."
+        },
+        {
+          "role": "assistant",
+          "content": "How can I help you with that?"
+        }
+      ]
+    },
+    {
+      "id": "40e45e6a-2e8d-44bf-9191-e64227026597",
+      "question": "Welche Kündigungsfrist muss eingehalten werden, um eine Domain-Registrierung für die spezifischen Top-Level-Domains .de, .at, .com, .net, .org, .biz, .info und .eu zu beenden?",
+      "reference_answer": "sechs Wochen zum Ende der Laufzeit des Registrierungsverhältnisses",
+      "reference_context": "Document 112: (2) Die Frist zur Erteilung von Domain-Kündigungsaufträgen an den Provider beträgt für alle Domains in Verbindung mit den Top-Level-Domains .de, .at, .com, .net, .org, .biz, .info, .eu sechs Wochen zum Ende der Laufzeit des Registrierungsverhältnisses, für alle anderen Domains drei Monate. Verspätete Domain-Kündigungsaufträge wird d4f unverzüglich ab deren Erhalt an die Vergabestelle bzw. den Registrar weiterleiten. Verlängert sich deswegen die Laufzeit der Domainregistrierung gegenüber der Vergabestelle bzw. dem Registrar, bleibt die Vergütungspflicht des Kunden für den Zeitraum der Verlängerung bestehen. Kündigt der Kunde zwar das Vertragsverhältnis mit dd4f, erklärt jedoch nicht ausdrücklich, wie mit etwaig registrierten Domains zu verfahren ist, bleibt die Vergütungspflicht für die Domains bis auf weiteres ebenfalls bestehen. Nach ergebnisloser Aufforderung an den Kunden, die an die vom Kunden hinterlegte E-Mail-Adresse geschickt wird, sich innerhalb angemessener Frist schriftlich",
+      "metadata": {
+        "question_type": "complex",
+        "seed_document_id": 112,
+        "topic": "Webhosting und Domainverwaltung"
+      },
+      "conversation_history": []
+    },
+    {
+      "id": "a519ee6b-9c3e-4992-a5cd-b6148a111a2a",
+      "question": "Welche staatliche Institution hat den Auftrag für die Entwicklung des Wirtschafts-Service-Portal.NRW vergeben, insbesondere im Hinblick auf die Anpassung an Bildungseinrichtungen?",
+      "reference_answer": "Ministerium für Wirtschaft, Innovation, Digitalisierung und Energie des Landes Nordrhein-Westfalen",
+      "reference_context": "Document 43: Gummersbach - Gummersbach - Verkehr Gaststätten und Gewerbe.\nIm Auftrag\nWirtschafts-Service-Portal.NRW\nMinisterium für Wirtschaft, Innovation,\nDigitalisierung und Energie\ndes Landes Nordrhein-Westfalen\n- 1 von 3 - Gummersbach - Verkehr Gaststätten und Gewerbe, Rathausplatz 1, 51643 Gummersbach",
+      "metadata": {
+        "question_type": "distracting element",
+        "seed_document_id": 43,
+        "distracting_context": "Derzeit ist das Produkt auf Grundschulen angepasst. Dementsprechend sind diese auch der angesprochene Markt. Mit der Zeit und dadurch gesammelten Erfahrung – auch durch Feedback der Schulen – ist geplant, das System weiterzuentwickeln, um den Markt zu erweitern. Die Erweiterung ist für Weiterführende Schulen gedacht. Besonders interessant sind private Grundschulen, da aus Erfahrung öffentlichen Schulen nicht so viel Geld zur Verfügung steht.\n\n\n\nBusinessplan und Meilensteine \n\n(In diesem Abschnitt soll der Projektplan kurz erläutert werden, der zu Beginn des Stipendiums zwischen Coach und Gründern ausgearbeitet wurde. Der Abschnitt sollte die folgenden Punkte beinhalten: Ziele, Meilensteine, ggf. Arbeitspakete)\n\n\n\n(Textumfang ca. ¾ Seite, Schriftgröße 10, Zeilenabstand 1,5)\n\nDie Förderung des Stipendiaten begann am 01.02.2021. Nach den ersten Treffen mit dem Coach stand der Meilensteinplan fest, welcher folgende Ziele hatte.",
+        "topic": "Deutsche Verwaltungsdokumente"
+      },
+      "conversation_history": []
+    },
+    {
+      "id": "6214c7ad-d664-4c4e-a249-cf4ebe52f92e",
+      "question": "Was kann d4f mit den bisher kostenlos angebotenen Diensten tun?",
+      "reference_answer": "D4f ist berechtigt, solche bisher vergütungsfrei zur Verfügung gestellten Dienste innerhalb angemessener Frist einzustellen, zu ändern oder nur noch gegen Entgelt anzubieten.",
+      "reference_context": "Document 101: (3) Stellt d4f Zusatzleistungen ohne zusätzliches Entgelt zur Verfügung, hat der Kunde auf ihre Erbringung keinen Erfüllungsanspruch. D4f ist berechtigt, solche bisher vergütungsfrei zur Verfügung gestellten Dienste innerhalb angemessener Frist einzustellen, zu ändern oder nur noch gegen Entgelt anzubieten. In einem solchen Fall wird d4f den Kunden rechtzeitig informieren.\n\n(4) D4f ist dem Kunden gegenüber zu technischer Unterstützung (Support) nur im Rahmen des vertraglich Vereinbarten verpflichtet. Darüber hinaus gewährt d4f dem Kunden keine kostenlosen Supportleistungen.",
+      "metadata": {
+        "question_type": "simple",
+        "seed_document_id": 101,
+        "topic": "Webhosting und Domainverwaltung"
+      },
+      "conversation_history": []
+    },
+    {
+      "id": "24569cbc-85f4-4ff1-ba53-c9439a235e8e",
+      "question": "Als Gründer eines Startups, das sich derzeit der Beendigung des Vertrags mit unserem aktuellen Anbieter nähert, würde ich gerne wissen, was mit Domains passiert, wenn sie nicht rechtzeitig an einen dritten Provider übergeben werden?",
+      "reference_answer": "d4f ist berechtigt, die Domains in die direkte Verwaltung der jeweiligen Vergabestelle bzw. des Registrars zu überführen oder die Domains im Namen des Kunden freizugeben.",
+      "reference_context": "Document 114: (3) Für den Fall, dass Domains vom Kunden nicht spätestens zum Beendigungstermin des Vertrags mit d4f in die Verwaltung eines dritten Providers gestellt wurden, ist d4f berechtigt, die Domains in die direkte Verwaltung der jeweiligen Vergabestelle bzw. des Registrars zu überführen oder die Domains im Namen des Kunden freizugeben. Dies gilt insbesondere auch für den Fall, dass der Kunde zwar im Hinblick auf die Überführung der Domain an einen dritten Provider eine Anweisung erteilt hat, diese aber nicht rechtzeitig umgesetzt wird.\n\n\n\n\n\n§ 8 Preise und Zahlung",
+      "metadata": {
+        "question_type": "situational",
+        "seed_document_id": 114,
+        "situational_context": "A startup founder is seeking guidance on handling domain management and transfer policies as they approach the contract termination with their current provider.",
+        "topic": "Webhosting und Domainverwaltung"
+      },
+      "conversation_history": []
+    }
+  ]
