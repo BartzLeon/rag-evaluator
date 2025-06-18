@@ -9,6 +9,7 @@ import os
 import time
 import json
 from langchain.callbacks.tracers import LangChainTracer
+from ragas.cost import get_token_usage_for_openai
 
 class RagasEvaluator(Evaluator):
 
@@ -45,14 +46,19 @@ class RagasEvaluator(Evaluator):
 
         tracer = LangChainTracer(project_name="ragas", tags=[str(self.rating_id), sys.platform])
 
+        token_usage = None
+        if self.judge_llm_type.startswith("openai"):
+            token_usage = get_token_usage_for_openai
+
         # Removed embeddings preparation and parameter
         result = ragas_evaluate(
             dataset=evaluation_dataset,
             llm=self.judge_llm,
             embeddings=ragas_embeddings,
-            run_config=run_config,
+            #run_config=run_config,
             show_progress=True, # Can be True for overall progress
             callbacks=[tracer],
+            token_usage_parser=token_usage
         )
         
         scores_df = result.to_pandas() if hasattr(result, 'to_pandas') else pd.DataFrame()
