@@ -1,8 +1,8 @@
-\section{Konkretisierung der versuche}
+\section{Konkretisierung der Versuche}
 
 \subsection{Dokumentenverarbeitung}
 
-Damit die Dokumente in der Vektordatenbank gesichert werden können müssen sie erst zu Vektoren konvertiert werden. Das wird mit Embeddings gemacht, hier werden wir auch wieder die von OpenAI verwenden aber auch eine Open-Source Variante von nomic.ai.
+Damit die Dokumente in der Vektordatenbank gesichert werden können, müssen sie erst in Vektoren konvertiert werden. Hier benutzt der Author Embeddings von OpenAI sowie Open-Source-Embeddings von nomic.ai \cite{nomic_embed_text_v1_blog}.
 
 \begin{table}[htbp]
     \centering
@@ -14,7 +14,7 @@ Damit die Dokumente in der Vektordatenbank gesichert werden können müssen sie 
         ollama/nomic-embed-text       & X & X & X \\
         \hline
     \end{tabular}
-    \caption{Kombinationen aus Dokumentanzahl und Embedding-Modell für die Versuche (X = Kombination wird getestet)}
+    \caption{Kombinationen aus Dokumentenanzahl und Embedding-Modell für die Versuche (X = Kombination wird getestet)}
     \label{tab:dokument-erstellung}
 \end{table}
 
@@ -26,7 +26,7 @@ Um die optimale Anzahl an Fragen pro Testset zu untersuchen, werden folgende Kom
     \centering
     \begin{tabular}{|c|c|c|}
         \hline
-        \textbf{Dokumentanzahl} & \textbf{Anzahl Fragen pro Testset} & \textbf{Anzahl Testsets pro Modell} \\
+        \textbf{Dokumentenanzahl} & \textbf{Anzahl Fragen pro Testset} & \textbf{Anzahl Testsets pro Modell} \\
         \hline
         10   & 15, 30    & 2 \\
         100  & 50, 100   & 2 \\
@@ -35,31 +35,31 @@ Um die optimale Anzahl an Fragen pro Testset zu untersuchen, werden folgende Kom
         \multicolumn{2}{|c|}{\textbf{Summe Testsets pro Modell}} & 6 \\
         \hline
     \end{tabular}
-    \caption{Kombinationen aus Dokumentanzahl und Testset-Größe}
+    \caption{Kombinationen aus Dokumentenanzahl und Testset-Größe}
 \end{table}
 
 \subsection{Bewertung}
-Um die Robustheit und Übertragbarkeit der Bewertungsergebnisse zu erhöhen, werden alle Kombinationen aus Embedding-Modell und Bewertungsmodell getestet. Das bedeutet, dass für jedes Testset sowohl openai/text-embedding-3-large als auch ollama/nomic-embed-text als Embedding-Modell verwendet werden und die Bewertung jeweils mit GPT-4 sowie Deepseek-R1 (ollama/deepseek-r1:7b) erfolgt. Insgesamt ergeben sich so 24 Versuche (2 Embeddings × 2 Bewerter × 6 Testset-Varianten).
-
+\label{sec:bewertung}
+Um die Robustheit und Übertragbarkeit der Bewertungsergebnisse zu erhöhen, werden alle Kombinationen aus Embedding-Modell und Bewertungsmodell getestet. Das bedeutet, dass für jedes Testset sowohl \textbf{openai/text-embedding-3-large} als auch \textbf{ollama/nomic-embed-text} als Embedding-Modell verwendet werden und die Bewertung jeweils mit \textbf{GPT-4} sowie \textbf{Deepseek-R1} (\textbf{ollama/deepseek-r1:7b}) erfolgt. Insgesamt ergeben sich so 24 Versuche (2 Embeddings $\times$ 2 Bewerter $\times$ 6 Testset-Varianten).
 \begin{table}[htbp]
     \centering
     \begin{tabular}{|c|c|c|c|c|c|c|}
         \hline
-        \textbf{versuch} & \textbf{Embedding} & \textbf{Dokumente} & \textbf{Fragen} & \textbf{Bewerter} & \textbf{Richter} & \textbf{Wdh.} \\
+        \textbf{Versuch} & \textbf{Embedding} & \textbf{Dokumente} & \textbf{Fragen} & \textbf{Bewerter} & \textbf{Richter} & \textbf{Wdh.} \\
         \hline
-        1  & OAI-E & 10   & 15  & GPT-4 & GPT-4 & 1/1 \\
-        2  & OAI-E & 10   & 30  & GPT-4 & GPT-4 & 4/4 \\
-        3  & OAI-E & 100  & 50  & GPT-4 & GPT-4 & 1/1 \\
-        4  & OAI-E & 100  & 100 & GPT-4 & GPT-4 & 4/4 \\
-        5  & OAI-E & 400 & 150 & GPT-4 & GPT-4 & 1/1 \\
+        1  & OAI-E & 10   & 15  & GPT-4 & GPT-4 & 1 \\
+        2  & OAI-E & 10   & 30  & GPT-4 & GPT-4 & 4 \\
+        3  & OAI-E & 100  & 50  & GPT-4 & GPT-4 & 1 \\
+        4  & OAI-E & 100  & 100 & GPT-4 & GPT-4 & 4 \\
+        5  & OAI-E & 400 & 150 & GPT-4 & GPT-4 & 1 \\
         6  & OAI-E & 400 & 300 & GPT-4 & GPT-4 & 1 \\
         \hline
-        7  & OAI-E & 10   & 15  & DSK-R & DSK-R & 1 \\
-        8  & OAI-E & 10   & 30  & DSK-R & DSK-R & 1 \\
-        9  & OAI-E & 100  & 50  & DSK-R & DSK-R & 1 \\
-        10 & OAI-E & 100  & 100 & DSK-R & DSK-R & 1 \\
-        11 & OAI-E & 400 & 150 & DSK-R & DSK-R & 1 \\
-        12 & OAI-E & 400 & 300 & DSK-R & DSK-R & 1 \\
+        7  & OLL-E & 10   & 15  & DSK-R & DSK-R & 1 \\
+        8  & OLL-E & 10   & 30  & DSK-R & DSK-R & 1 \\
+        9  & OLL-E & 100  & 50  & DSK-R & DSK-R & 1 \\
+        10 & OLL-E & 100  & 100 & DSK-R & DSK-R & 1 \\
+        11 & OLL-E & 400 & 150 & DSK-R & DSK-R & 1 \\
+        12 & OLL-E & 400 & 300 & DSK-R & DSK-R & 1 \\
         \hline
     \end{tabular}
     \caption{Übersicht aller 24 zu generierenden Bewertungsberichte mit Abkürzungen und Wiederholungen}
@@ -69,8 +69,8 @@ Um die Robustheit und Übertragbarkeit der Bewertungsergebnisse zu erhöhen, wer
 \noindent
 \textbf{Verwendete Abkürzungen in der Tabelle:}
 \begin{itemize}
-    \item \textbf{OAI-E} = openai/text-embedding-3-large
-    \item \textbf{OLL-E} = ollama/nomic-embed-text
-    \item \textbf{GPT-4} = openai/gpt-4
-    \item \textbf{DSK-R} = ollama/deepseek-r1:7b
-\end{itemize} 
+    \item \textbf{OAI-E} = \textbf{openai/text-embedding-3-large}
+    \item \textbf{OLL-E} = \textbf{ollama/nomic-embed-text}
+    \item \textbf{GPT-4} = \textbf{openai/gpt-4}
+    \item \textbf{DSK-R} = \textbf{ollama/deepseek-r1:7b}
+\end{itemize}

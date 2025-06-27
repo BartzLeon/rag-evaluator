@@ -1,19 +1,44 @@
 \chapter{Ähnliche Arbeiten}
 
 \section{RAG Evaluation: Assessing the Usefulness of Ragas}
-\url{https://tech.beatrust.com/entry/2024/05/02/RAG_Evaluation%3A_Assessing_the_Usefulness_of_Ragas}
+Das Team von Beatrust hat im Februar 2024 eine Reihe zu RAGs veröffentlicht \cite{beatrust_ragas_2024}. Es werden unter anderem die Notwendigkeit und auch die einzelnen Metriken von RAGAS erklärt.\\
+Im dritten Artikel dieser Reihe unternehmen sie einen Versuch, die Nützlichkeit von RAGAS zu untersuchen.\\
+Der Versuch besteht aus 50 Fragen aus einem Interessensfeld des Autors. Diese wurden von einem RAG mit GPT-4 und einem mit GPT-3.5-turbo beantwortet und dann sowohl von RAGAS als auch von ihm bewertet.\\
+Der Autor kommt zu dem Ergebnis, dass RAGAS geeignet ist, um RAGs zu bewerten und besser ist, als die Bewertung von Langchain. Es wird jedoch angemerkt, dass der Autor eine höhere Übereinstimmung mit seinen Ergebnissen erwartet hätte.
 
+%\url{https://www.qed42.com/insights/simplifying-rag-evaluation-with-ragas} nicht relevnt
 
-Das Team von Beatrust hat im Februar 2024 eine Reihe zu RAGs veröffetlicht. Es werden unter anderem die Notwendigkeit und auch die einzelden Metriken von RAGAS erklört.
-Im dritten Artikel dieser Reihe machen sie ein Versuch um die Nützlichkeit von RAGAS zu untersuchen.  
-Der Versuch besteht aus 50 Fragen aus einem INteressensfeld des Authors, diese wurden vom einem RAG mit GPT-4 und einem mit GPT-3.5-turbo beantwortet und dann sowohl von RAGAS als auch von ihm bewertet.
-Der Author kommt zu dem Ergebniss, dass RAGAS geeignet ist um RAGs zu bewerten und besser ist als die Bewertung von Langchain. Es wird jedoch angemerkt, dass der Author eine höhere Übereinstimmung mit seinen Ergebnissen erwartet hätte.
+%\url{https://medium.aiplanet.com/evaluate-rag-pipeline-using-ragas-fbdd8dd466c1} nicht relevant
 
+\section{Benchmarking Large Language Models in Retrieval-Augmented Generation}
+In ihrem Paper \enquote{Benchmarking Large Language Models in Retrieval-Augmented Generation}\cite{Chen2023BenchmarkingLL} haben Jiawei Chen, Hongyu Lin, Xianpei Han and Le Sun ihre eigenen Metriken entwickelt, um die Fähigkeit von RAGs zu bewerten.
 
-https://www.qed42.com/insights/simplifying-rag-evaluation-with-ragas
+Die vier Metriken sind
 
+\begin{itemize}
+    \item \textbf{Noise Robustness (Rauschrobustheit)}, die untersucht das Verhalten, wenn mehr Informationen gegeben sind als notwendig wären, um die Frage zu beantworten.
+                                                       Dies könnte die Frage nach einem bestimmten Ereignis sein und das Rauschen würde ein Dokument zu einem anderen Ereignis sein.
 
-https://medium.aiplanet.com/evaluate-rag-pipeline-using-ragas-fbdd8dd466c1
+    \item \textbf{Negative Rejection (Negative Ablehnung)}, werden dem LLM nur irrelevante Dokumente zur Verfügung gestellt. Das LLM sollte in diesem Fall antworten, dass es die Frage nicht beantworten kann.
 
+    \item \textbf{Information Integration (Informationsintegration)}, untersucht wie gut ein LLM zwei Fragen in einem aus mehreren Dokumenten beantworten kann.
 
-https://arxiv.org/pdf/2309.01431
+    \item \textbf{Counterfactual Robustness (Kontrafaktische Robustheit)}, die dem LLM zwei Dokumente mit widersprüchlichen Informationen gibt.
+
+\end{itemize}
+
+Diese Metriken werden von den Autoren Retrieval-Augmented Generation Benchmark (RGB) genannt.
+Mithilfe von RGB bewerten sie in englischer und chinesischer Sprache sechs damals state of the art Modelle ChatGPT (OpenAI 2022), ChatGLM-6B (THUDM 2023a), ChatGLM2-6B (THUDM 2023b), Vicuna-7B-v1.3 (Chiang et al. 2023), Qwen-7B-Chat (QwenLM 2023), BELLE-7B-2M (Yunjie Ji 2023)
+
+Es ließ sich zeigen, dass die LLMs generell gut darin sind, einfache Fragen auch bei irrelevanten Dokumenten zu finden.
+Wenn sich die Information jedoch über einen größeren Text verteilt, dann haben die LLMs Schwierigkeiten.
+Auch eine hohe Rauschrate von über 80 \% führt zu einer deutlichen Verschlechterung.
+
+Bei der \enquote{Negative Ablehnung} war das beste Ergebnis für Englisch bei 45 \% und 43,33 \% für Chinesisch. Dies bedeutet, dass die LLMs Anweisungen missachten und sich verwirren lassen, wenn es keinen relevanten Inhalt gibt.
+
+Bei der Informationsintegration, also dem Beantworten einer komplexeren Frage über mehrere Dokumente, sank die Genauigkeit der Antworten deutlich.
+Es wurde ein maximaler Score von 60 \% für englische und 67 \% für chinesische Fragen erreicht. Wenn auch Rauschen mit hinzugefügt wird, sinkt die Genauigkeit weiter auf 43 \% und 55 \%.
+
+Die letzte \enquote{Metrik Kontrafaktische} Robustheit zeigte, dass, selbst wenn das LLM selber die richtige Antwort kennt, es den falschen Informationen vertraut. Das ist ein großes Problem für RAGs und deren Zuverlässigkeit!
+
+Insgesamt zeigt das Paper auf, dass LLMs 2023 noch einige Probleme mit wichtigen Bereichen eines RAGs haben.

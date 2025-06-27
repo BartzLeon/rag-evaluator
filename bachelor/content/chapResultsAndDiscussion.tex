@@ -3,211 +3,223 @@
 \section{Ergebnisse aus den Versuchen}
 
 \subsection{Generierte Fragebögen}
-%((15 +30 + 50 +100 + 150 + 300) * 2) =
-Da insgesammt 1.290 Fragen generiert werden lassen sich diese aufgrund des zeitlichen Aufwandes nicht alle bewerten. Aus jedem Fragebogen werden stichprobenartig 10 Fragen ausgesucht und überprüft, wie Sinnvoll diese sind.
+Da insgesamt 1.290 Fragen generiert wurden, lassen sich diese aufgrund des zeitlichen Aufwandes nicht alle bewerten. Aus jedem sechs generierten Fragebögen werden stichprobenartig 10 Fragen ausgesucht und überprüft, wie sinnvoll diese sind.
 
 \subsubsection{Deepseek/Nomic}
 
-Bei der generierung von Fragen mit DeepSeekkam es zu mehreren Problemen.\\
-Bei dem Fragenset welches 300 Fragen umfassen sollte traten Folgende Probleme auf.
+Bei der Generierung von Fragen mit DeepSeek kam es zu mehreren Problemen.
+Bei dem Fragenset, welches 300 Fragen umfassen sollte, traten folgende Probleme auf:
 \begin{itemize}
-    \item Von den angeforderten 300 Fragen wurden nur 267 Fragen (11 \%) überhaupt generiert, der Rest ist aufgrund von technischen Problemen oder ungültigen Antworten seitens DeepSeek nicht generiert worden
-    \item Von diesen sind 101 zu Themen rund um Bezahlmethoden, Versand und ähnliches. In den Dokumenten welche dem DeepSeek zu verfügung gestellt wurden traten diese Themen nicht auf. Diese Fragen sind daher als ungültig bewertet worden.
+    \item Von den angeforderten 300 Fragen wurden nur 267 Fragen (89\,\%) überhaupt generiert; der Rest ist aufgrund von technischen Problemen oder ungültigen Antworten seitens DeepSeek nicht generiert worden.
+    \item Von diesen sind 101 zu Themen rund um Bezahlmethoden, Versand und Ähnlichem. In den Dokumenten, welche DeepSeek zur Verfügung gestellt wurden, traten diese Themen nicht auf. Diese Fragen sind daher als ungültig bewertet worden.
 \end{itemize}
 
-Am Ende bleiben also 166 von 300 Fragen übrig, \textbf{ca. 45 \%} der angeforderten Fragen sind nicht daher irrelevant!
+Am Ende bleiben 166 von 300 Fragen übrig. \textbf{Ca. 45\,\%} der angeforderten Fragen sind irrelevant!
 
-Beim generieren des Testsets mit 100 Fragen sah das ganze etwas besser aus
+Beim Generieren des Testsets mit 100 Fragen zeigte sich eine leichte Verbesserung:
 \begin{itemize}
-    \item Von den 100 angeforderten Fragen wurden 88 Fragen generiert. Ganze 12 \% wurden hier auch nicht generiert.
-    \item Dieses Mal sind jedoch nur 4 Fragen zu irrelevanten Themen wie Bezahlmethoden, Versand etc.,
+    \item Von den 100 angeforderten Fragen wurden 88 Fragen generiert. Ganze 12\,\% wurden hier auch nicht generiert.
+    \item Dieses Mal sind jedoch nur 4 Fragen zu irrelevanten Themen wie Bezahlmethoden, Versand etc.
 \end{itemize}
-Am Ende haben wir für das testset mit 100Fragen eine Fehlerquote von \textbf{16 \%}.
+Am Ende hat das Testset mit 100 Fragen eine \textbf{Fehlerquote} von \textbf{16\,\%}.
 
-Aus der Tabelle 5.1 wird ersichtlich, dass die Fehlerrate in den Testsets für die 400 Dokumente deutlich großer ist. Der Grund dafür wird noch untersucht.
+Aus der Tabelle 5.1 wird ersichtlich, dass die \textbf{Fehlerquote} in den Testsets für die 400 Dokumente deutlich größer ist. Der Grund dafür wird noch untersucht.
 
 \begin{table}[htbp]
     \centering
     \begin{tabular}{|c|c|c|c|c|}
         \hline
-        \textbf{Angefragt} & \textbf{Generiert} & \textbf{Irrelevant} & \textbf{Verlust} & \textbf{Fehlerrate} \\
+        \textbf{Angefragt} & \textbf{Generiert} & \textbf{Irrelevant} & \textbf{Fehlerquote} \\
         \hline
-        15   & 11  & 0   & 4  & 27 \% \\
-        30   & 27  & 7   & 3  & 33 \% \\
-        50   & 40  & 0   & 10 & 20 \% \\
-        100  & 88  & 4   & 12 & 16 \% \\
-        150  & 137 & 49  & 13 & 41 \% \\
-        300  & 267 & 101 & 33 & 45 \% \\
+        15   & 11  & 0   & 27\,\% \\
+        30   & 27  & 7   & 33\,\% \\
+        50   & 40  & 0   & 20\,\% \\
+        100  & 88  & 4   & 16\,\% \\
+        150  & 137 & 49  & 41\,\% \\
+        300  & 267 & 101 & 45\,\% \\
         \hline
     \end{tabular}
-    \caption{Übersicht der generierten Fragen und Fehlerraten pro Testset für DeepSeek}
+    \caption{Übersicht der generierten Fragen und Fehlerquoten pro Testset für DeepSeek}
 \end{table}
 
-
-\subsubsection{Open-AI}
-
+\subsubsection{OpenAI}
 
 \begin{table}[htbp]
     \centering
     \begin{tabular}{|c|c|c|c|c|}
         \hline
-        \textbf{Angefragt} & \textbf{Generiert} & \textbf{Irrelevant} & \textbf{Verlust} & \textbf{Fehlerrate} \\
+        \textbf{Angefragt} & \textbf{Generiert} & \textbf{Irrelevant} & \textbf{Fehlerquote} \\
         \hline
-        15   & 12   & 0   & 3  & 20\% \\
-        30   & 30   & 1   & 0  & 3\%  \\
-        50   & 48   & 0   & 2  & 4\%  \\
-        100  & 95   & 1   & 5  & 6\%  \\
-        150  & 150  & 8   & 0  & 5\%  \\
-        300  & 300  & 16  & 0  & 5\%  \\
+        15   & 12   & 0   & 20\% \\
+        30   & 30   & 1   & 3\%  \\
+        50   & 48   & 0   & 4\%  \\
+        100  & 95   & 1   & 6\%  \\
+        150  & 150  & 8   & 5\%  \\
+        300  & 300  & 16  & 5\%  \\
         \hline
     \end{tabular}
-    \caption{Übersicht der generierten Fragen und Fehlerraten pro Testset}
+    \caption{Übersicht der generierten Fragen und Fehlerquoten pro Testset für OpenAI}
 \end{table}
+
+---
 
 \subsection{Manuelle Auswertung der Fragebögen}
 \subsubsection{DeepSeek}
 
-Bei der manuellen Sichtung der Testsets wurden weitere Fehler entdeckt
+Bei der manuellen Sichtung der Testsets wurden weitere Fehler entdeckt.
 
+\textbf{Beispiel 1:}\\
 Neben dem vorhin angesprochenen Problem mit den irrelevanten Themen hat DeepSeek auch zwischendurch Fragen und beispielhafte Antworten auf Englisch generiert.
-
 Frage:
-How much does it cost?
+\enquote{How much does it cost?}
 
 Antwort:
-For orders under \$50, shipping costs \$5.99.
+\enquote{For orders under \$50, shipping costs \$5.99.}
 
-Bei dieser Frage hat das LLM verdreht, wer bezahlt und fragt, wie viel die Schulen weniger \textbf{verdienen} und nicht wie viel sie weniger \textbf{bezahlen}.
+Diese Frage ist auf Englisch obwohl explizit Deutsch als Sprache angegeben wurde. Zudem ist diese Frage nicht sinnvoll, da es nie um Lieferungen oder Lieferkosten in den Daten ging.
 
-Frage:
-Hallo! Ich bin Schulleiter/in und überlege, ob wir als Pilotenschule bei Develop 4 Future teilnehmen sollen. Könnt ihr mir sagen, wie viel weniger die beiden Pilotenschulen im ersten Jahr verdienen verglichen mit anderen Schulen?
+\textbf{Beispiel 2:}\\
+Bei dieser Frage hat das LLM verdreht, wer bezahlt, und fragt, wie viel die Schulen weniger \textbf{verdienen} und nicht, wie viel sie weniger \textbf{bezahlen}.\\
+Develop 4 Future wird von den Schulen bezahlt und bietet das Produkt den Pilotschulen zu einem günstigeren Preis and, dadurch entstehen die niedrigeren Einnahmen seitens Develop 4 Future nicht seitens der Grundschulen.
 
-Antwort:
-Die beiden Pilotenschulen verdienen im ersten Jahr 2.000 \texteuro weniger als die anderen Schulen.
-
-Auch gab es Probleme mit Fragen, die zu allgemein gefasst waren. \"Ich möchte wissen, wie die Verfügbarkeit der Webseite für Schulen ist.\"
-Hier ist nicht geklärt, worauf sich die Verfügbarkeit bezieht. Es könnte sich hier sowohl um die Frage handeln, ob aktuell eine Webseite gekauft werden kann oder auch wie viel Prozent Erreichbarkeit garantiert wird.
-
-Ebenso ist "Wie hoch ist die Gesamtsumme der Passiva?" eine Frage welche nicht spezifiziert um welches Jahr es sich handelt Fehleranfällig.
-
-Es gab auch Fragen, welche sich vom Kontext verwirren lassen haben.\\
 Frage:\\
-Hallo, ich bin ein kanadischer Student, der sich für die Schulsysteme in Deutschland interessiert. Könntest du mir erklären, warum sich die meisten Grundschulen in NRW befinden?\\
+\enquote{Hallo! Ich bin Schulleiter/in und überlege, ob wir als Pilotenschule bei Develop 4 Future teilnehmen sollen. Könnt ihr mir sagen, wie viel weniger die beiden Pilotenschulen im ersten Jahr verdienen verglichen mit anderen Schulen?}\\
+
 Antwort:\\
-Die meisten Grundschulen befinden sich in NRW, damit sie das vom Bundesland zur Verfügung gestellte System Logineo einbinden können, das Lehrer- und Schülerverwaltung bietet.
+\enquote{Die beiden Pilotenschulen verdienen im ersten Jahr 2.000 \texteuro{} weniger als die anderen Schulen.}
+
+Diese Frage ist also, auch wenn sie erst gut aussieht, inhaltlich falsch.
+
+\textbf{Beispiel 3:}\\
+Auch gab es Probleme mit Fragen, die zu allgemein gefasst waren.\\
+\enquote{Ich möchte wissen, wie die Verfügbarkeit der Webseite für Schulen ist.}\\
+Hier ist nicht geklärt, worauf sich die Verfügbarkeit bezieht. Es könnte sich hier sowohl um die Frage handeln, ob aktuell eine Webseite gekauft werden kann, oder auch, wie viel Prozent Erreichbarkeit garantiert wird.
+
+\textbf{Beispiel 4:}\\
+Ebenso ist \enquote{Wie hoch ist die Gesamtsumme der Passiva?} eine Frage, welche nicht spezifiziert, um welches Jahr es sich handelt und ist daher fehleranfällig.
+
+\textbf{Beispiel 5:}\\
+Es gab auch Fragen, die aufgrund des Kontextes verwirrend waren.\\
+Frage:\\
+\enquote{Hallo, ich bin ein kanadischer Student, der sich für die Schulsysteme in Deutschland interessiert. Könntest du mir erklären, warum sich die meisten Grundschulen in NRW befinden?}\\
+
+Antwort:\\
+\enquote{Die meisten Grundschulen befinden sich in NRW, damit sie das vom Bundesland zur Verfügung gestellte System Logineo einbinden können, das Lehrer- und Schülerverwaltung bietet.}
+
+Dies ist nicht richtig, die Anzahl der Grundschulen richtet sich nach der demografischen Verteilung der Bevölkerung.
 
 \begin{table}[htbp]
     \centering
     \begin{tabular}{|l|c|}
         \hline
-        \textbf{Testset} & \textbf{Fragliche Fragen} \\
+        \textbf{Testset} & \textbf{Fehlerhafte Fragen} \\
         \hline
-        Ollama – 10 Dok (10)   & 2 \\
-        Ollama – 10 Dok (30)   & 6 \\
+        Ollama – 10 Dok (15 Fragen)   & 2 \\
+        Ollama – 10 Dok (30 Fragen)   & 6 \\
         \hline
         \multicolumn{2}{|l|}{\textbf{Summe 10 Dok: \quad 8 / 20 = 40\%}} \\
         \hline
-        Ollama – 100 Dok (50)  & 2 \\
-        Ollama – 100 Dok (100) & 4 \\
+        Ollama – 100 Dok (50 Fragen)  & 2 \\
+        Ollama – 100 Dok (100 Fragen) & 4 \\
         \hline
         \multicolumn{2}{|l|}{\textbf{Summe 100 Dok: \quad 6 / 20 = 30\%}} \\
         \hline
-        Ollama – 400 Dok (150) & 5 \\
-        Ollama – 400 Dok (300) & 8 \\
+        Ollama – 400 Dok (150 Fragen) & 5 \\
+        Ollama – 400 Dok (300 Fragen) & 8 \\
         \hline
         \multicolumn{2}{|l|}{\textbf{Summe 400 Dok: \quad 13 / 20 = 65\%}} \\
         \hline
         \multicolumn{2}{|l|}{\textbf{Gesamt (Ollama): \quad 27 / 60 = 45\%}} \\
         \hline
     \end{tabular}
-    \caption{Anzahl fraglicher Fragen pro Testset und Gesamtübersicht für Ollama}
+    \caption{Anzahl fehlerhafter Fragen pro Testset und Gesamtübersicht für Ollama}
 \end{table}
 
-Die Fehlerqute von 45\% zeigt, dass die fragen die DeepSeek generiert nicht einfach eingesetzt werden können. 
-Es sind hier eindeutige Unterschiede im Vergleich zu von Menschen generierten Fragen erkenntlich.
+Die Fehlerquote von 45\,\% zeigt, dass die Fragen, die DeepSeek generiert, nicht einfach eingesetzt werden können.
+Es wird deutlich, dass diese Fragen weit entfernt davon sind, die Qualität von menschlich erstellten Fragen zu erreichen.
 
 \subsubsection{OpenAI}
 
 Bei ChatGPT wurden auch Mängel bei der manuellen Überprüfung festgestellt. \\
-Die Fragen werden so gestellt, dass sie den ``gegebenen Kontext'' bewerten sollen. Es fehlen dadurch wichtige Infromationen welche zum finden der relevanten Dokumente fehlen.\\
-``Analysieren Sie den bereitgestellten Kontext und erläutern Sie unter der Voraussetzung, dass Sie keine externen Quellen verwenden dürfen, welches zentrale Thema oder welcher Hauptzweck in dem Textabschnitt behandelt wird. Begründen Sie Ihre Antwort anhand spezifischer Textstellen.''
 
-Bei einer Frage war das vorliegende dokument ein Fragebogen, Fehlerhafterweise wurde die erste Option als die richtige Antwort verstanden, da der Fragebogen nicht ausgefüllt ist ergibt dies keinen Sinn.
+\textbf{Beispiel 1:}\\
+Die Fragen werden so gestellt, dass sie den \enquote{gegebenen Kontext} bewerten sollen. Es fehlen dadurch wichtige Informationen, welche zum Finden der relevanten Dokumente notwendig sind.
+\enquote{Analysieren Sie den bereitgestellten Kontext und erläutern Sie unter der Voraussetzung, dass Sie keine externen Quellen verwenden dürfen, welches zentrale Thema oder welcher Hauptzweck in dem Textabschnitt behandelt wird. Begründen Sie Ihre Antwort anhand spezifischer Textstellen.}
 
-Auch eine Frage welche die Antwort schon beinhaltet wurde generiert:
-``Kannst du mir erklären, was das besondere Merkmal des neuen Schulwebseiten Systems ist, das ich als Lehrer verwenden werde, um Abwesenheitsmeldungen schnell und einfach zu veröffentlichen?''
+\textbf{Beispiel 2:}\\
+Bei einer Frage war das vorliegende Dokument ein Fragebogen. Fehlerhafterweise wurde die erste Option als die richtige Antwort verstanden, da der Fragebogen nicht ausgefüllt ist, ergibt dies keinen Sinn.
+
+\textbf{Beispiel 3:}\\
+Auch eine Frage, welche die Antwort schon beinhaltet, wurde generiert:
+\enquote{Kannst du mir erklären, was das besondere Merkmal des neuen Schulwebseiten-Systems ist, das ich als Lehrer verwenden werde, um Abwesenheitsmeldungen schnell und einfach zu veröffentlichen?}
 
 \begin{table}[htbp]
     \centering
     \begin{tabular}{|l|c|}
         \hline
-        \textbf{Testset} & \textbf{Fragliche Fragen} \\
+        \textbf{Testset} & \textbf{Fehlerhafte Fragen} \\
         \hline
-        OpenAi – 10 Dok (10)   & 0 \\
-        OpenAi – 10 Dok (30)   & 3 \\
+        OpenAI – 10 Dok (15 Fragen)   & 0 \\
+        OpenAI – 10 Dok (30 Fragen)   & 3 \\
         \hline
         \multicolumn{2}{|l|}{\textbf{Summe 10 Dok: \quad 3 / 20 = 15\%}} \\
         \hline
-        OpenAi – 100 Dok (50)  & 3 \\
-        OpenAi – 100 Dok (100) & 1 \\
+        OpenAI – 100 Dok (50 Fragen)  & 3 \\
+        OpenAI – 100 Dok (100 Fragen) & 1 \\
         \hline
         \multicolumn{2}{|l|}{\textbf{Summe 100 Dok: \quad 4 / 20 = 20\%}} \\
         \hline
-        OpenAi – 400 Dok (150) & 5 \\
-        OpenAi – 400 Dok (300) & 7 \\
+        OpenAI – 400 Dok (150 Fragen) & 5 \\
+        OpenAI – 400 Dok (300 Fragen) & 7 \\
         \hline
         \multicolumn{2}{|l|}{\textbf{Summe 400 Dok: \quad 12 / 20 = 60\%}} \\
         \hline
-        \multicolumn{2}{|l|}{\textbf{Gesamt (OpenAi): \quad 19 / 60 = 31{,}67\%}} \\
+        \multicolumn{2}{|l|}{\textbf{Gesamt (OpenAI): \quad 19 / 60 = 31.67\%}} \\
         \hline
     \end{tabular}
-    \caption{Anzahl fraglicher Fragen pro Testset und Gesamtübersicht für OpenAi}
+    \caption{Anzahl fehlerhaften Fragen pro Testset und Gesamtübersicht für OpenAI}
 \end{table}
 
-Wenn wir die Testsets mit Code (150/300 Fragen) ignorieren kommen wir auf eine Fehlerquote von 17,5 \%, dies ist die Hälfte von Ollamas 35 \% also eine deutliche Verbesserung jedoch immer noch eine beachtliche Menge!
+Wenn wir die Testsets mit Code (150/300 Fragen) ignorieren, kommen wir auf eine \textbf{Fehlerquote} von 17.5\,\%. Dies ist die Hälfte von Ollamas 35\,\%, also eine deutliche Verbesserung, jedoch immer noch eine beachtliche Menge!
 
-Bei einem Vergleich mit einem von Menschen erstellten Fragebogen sind hier jedoch deutlichen Unterscheide was die Qualität der Fragen betrifft.
-
+Dennoch offenbaren sich im Vergleich zu einem von Menschen erstellten Fragebogen deutliche qualitative Unterschiede bezüglich der Fragenformulierung.
 
 \subsection{Auswertung der Reports}
-Für die Auswertung der Reports werden wieder die selben Fragen wie vorher aus den Testsets verwenden.
-Dabei wird geguckt
+Für die Auswertung der Reports werden wieder dieselben Fragen wie vorher aus den Testsets verwendet.
+Dabei wird geprüft:
 
 \begin{itemize}
-    \item Ist die Frage an sich richtig? Das heißt, ergibt es Sinn mit dem ursprünglich gegebenen Kontext diese Frage zu stellen.
-    \item Wurde die Frage vom RAG richtig beantwortet
+    \item Ist die Frage an sich richtig? Das heißt, ergibt es Sinn, mit dem ursprünglich gegebenen Kontext diese Frage zu stellen?
+    \item Wurde die Frage vom RAG richtig beantwortet?
     \item Ist die Bewertung der vier Metriken richtig?
-    \item Auffällig war, dass Answere Relevancy am häufigsten abweichend war, deswegen wurd hier zusätzlich Bewertet ob die Bewertung besser oder schlechter sein sollte.
+    \item Auffällig war, dass Answer Relevancy am häufigsten abweichend war, deswegen wurde hier zusätzlich bewertet, ob die Bewertung besser oder schlechter sein sollte.
 \end{itemize}
 
 \subsubsection{Manuelle Auswertung DeepSeek}
-Bei der Manuellen Bewertung fällt auf, dass ganze 64 \% nicht richtig beantwortet wurden, dabei muss jedoch beachtet werden, dass 43 \% erst garnicht als sinnvoll sind.
+Bei der manuellen Bewertung fällt auf, dass ganze 64\,\% nicht richtig beantwortet wurden. Dabei muss jedoch beachtet werden, dass 43\,\% der Fragen erst gar nicht sinnvoll sind.
 
-Auch die nicht bewerteten Metriken sind mit bis zu 83 \% fast unbrauchbar, dies liegt wieder daran, dass das LLM zu lange zum Antworten braucht oder eine ungültige Antwort geliefert hat.
-% Tabelle für DeepSeek
+Auch die nicht bewerteten Metriken sind mit bis zu 48\,\% zu einem großen Teil unbrauchbar. Dies liegt wieder daran, dass das LLM zu lange zum Antworten braucht oder eine ungültige Antwort geliefert hat.
 \begin{table}[h!]
     \centering
     \begin{tabular}{|l|c|c|c|}
     \hline
     \textbf{Metrik} & \textbf{Richtig} & \textbf{Falsch} & \textbf{Nicht bewertet} \\
     \hline
-    Richtige Frage                        & 34 (56.7\%) & 26 (43.3\%) & -- \\
-    Gültige Antwort                       & 22 (36.7\%) & 38 (63.3\%) & -- \\
-    context\_precision                    & 10 (16.7\%) & --         & 50 (83.3\%) \\
-    faithfulness                          & 11 (18.6\%) & 2 (3.4\%)  & 47 (78.0\%) \\
-    context\_recall                       & 60 (100\%)  & --         & -- \\
-    answer\_relevancy                     & 43 (71.7\%) & 15 (25.0\%) & 2 (3.3\%) \\
-    answer\_relevancy sollte höher sein  & 4 (100\%)   & --         & -- \\
+    Richtige Frage                        & 31 (51.7\%)  & 29 (48.3\%)  & -- \\
+    Gültige Antwort                       & 22 (36.7\%)  & 38 (63.3\%)  & -- \\
+    context\_precision           & 39 (65.0\%)  & 1 (1.7\%)    & 20 (33.3\%) \\
+    faithfulness                 & 29 (48.3\%)  & 2 (3.3\%)    & 29 (48.3\%) \\
+    context\_recall              & 60 (100.0\%) & --           & -- \\
+    answer\_relevancy            & 44 (73.3\%)  & 15 (25.0\%)  & 1 (1.7\%) \\
+    answer\_relevancy sollte höher sein & 4 (100.0\%) & --          & -- \\
     \hline
     \end{tabular}
     \caption{Verteilung der Bewertungen für DeepSeek (mit Prozentangaben)}
 \end{table}
 
-
 \subsubsection{Manuelle Auswertung OpenAI}
-Bei der Nutzunge der OpenAi Api für GPT-4 kam es zu keinen Timeouts oder ähnlichem welche zu ungültigen Werte führen würden. Es kam jedoch zu zwischenzeitlichen RateLimits, diese könnten von einer Firma jedoch bei einem Vertragsschluss mit OpenAI erhöht werden.
+Bei der Nutzung der OpenAI API für GPT-4 kam es zu keinen Timeouts oder Ähnlichem, welche zu ungültigen Werten führen würden. Es kam jedoch zu zwischenzeitlichen Rate Limits. Diese könnten von einer Firma jedoch bei einem Vertragsschluss mit OpenAI erhöht werden.
 
-% Tabelle für OpenAI
 \begin{table}[h!]
     \centering
     \begin{tabular}{|l|c|c|}
@@ -216,91 +228,89 @@ Bei der Nutzunge der OpenAi Api für GPT-4 kam es zu keinen Timeouts oder ähnli
     \hline
     Richtige Frage                        & 43 (72.9\%) & 16 (27.1\%) \\
     Gültige Antwort                       & 42 (71.2\%) & 17 (28.8\%) \\
-    context\_precision                    & 56 (94.9\%) & 3 (5.1\%) \\
-    faithfulness                          & 51 (86.4\%) & 8 (13.6\%) \\
-    context\_recall                       & 57 (96.6\%) & 2 (3.4\%) \\
-    answer\_relevancy                     & 43 (72.9\%) & 16 (27.1\%) \\
+    context\_precision           & 56 (94.9\%) & 3 (5.1\%) \\
+    faithfulness                 & 51 (86.4\%) & 8 (13.6\%) \\
+    context\_recall              & 57 (96.6\%) & 2 (3.4\%) \\
+    answer\_relevancy            & 43 (72.9\%) & 16 (27.1\%) \\
     answer\_relevancy sollte höher sein  & 7 (53.8\%)  & 6 (46.2\%) \\
     \hline
     \end{tabular}
-    \caption{Verteilung der Bewertungen für OpenAI (gesamt) mit Prozentangaben}
+    \caption{Verteilung der Bewertungen für OpenAI mit Prozentangaben}
 \end{table}
 
-GPT-4.1 schneidet deutlich besser als DeepSeek ab, 27 \% an nicht sinnvollen Fragen ist jedoch immer noch ein hoher Wert!
-Die hälfte der ungültigen Antworten ist durch sinnlose Fragen bedingt, hier ziehen sich also die schlecht generierten Fragen durch.
-
+GPT-4 schneidet deutlich besser als DeepSeek ab, 27\,\% an nicht sinnvollen Fragen ist jedoch immer noch ein hoher Wert!
+Die Hälfte der ungültigen Antworten ist durch sinnlose Fragen bedingt, hier ziehen sich also die schlecht generierten Fragen durch.
 
 \subsubsection{Probleme mit Code}
-Da es sowhol bei der Testset generierung als auch bei der Bewertung der Testsets, die 400 Dokumente nutzten, höhere Fehlerraten zu beobachten sind wird das genauer untersucht.
+Da sowohl bei der Testset-Generierung als auch bei der Bewertung der Testsets, die 400 Dokumente nutzten, höhere \textbf{Fehlerquoten} zu beobachten sind, wird dies genauer untersucht.
 
 \begin{figure}[htbp]
     \centering
-    \begin{minipage}[b]{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{images/3_3_code_invest_D_D.png}
-        \caption{DeepSeek Ergebnis für 300 Fragen}
-        \label{fig:deepseek}
-    \end{minipage}
-    \hfill
-    \begin{minipage}[b]{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{images/127_44_code_invest_O_O.png}
-        \caption{ChatGPT Ergebnis für 300 Fragen}
-        \label{fig:chatgpt}
-    \end{minipage}
+    \includegraphics[width=0.7\textwidth]{images/3_3_code_invest_D_D.png}
+    \caption{DeepSeek Ergebnis für 300 Fragen (mit Code-Dokumenten)}
+    \label{fig:deepseek_code}
 \end{figure}
-Der Vergleich der Anzahl der 0.0 Bewertungen mit DeepSeek (Abbildung 5.1) im Vergleich zu OpenAI (Abbildung 5.2) ist eindeutig.\\
 
-106 (~40 \%) der Ergebnisse insgesamt 276 zu bewertenden Fragen waren mit komplett 0.0 bewertet worden. Bei der Analyse der Speziellen Charaktere im Kontextes fällt auf, dass 89 Bewertungen (~83 \%) zu mehr als 5 \% nur aus diesen besteht, dies deutet darauf hin, dass DeepSeek starke Probleme hat Fragen mit Code zu generieren und oder zu finden.
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.7\textwidth]{images/127_44_code_invest_O_O.png}
+    \caption{ChatGPT Ergebnis für 300 Fragen (mit Code-Dokumenten)}
+    \label{fig:chatgpt_code}
+\end{figure}
+Der Vergleich der Anzahl der 0.0-Bewertungen mit DeepSeek (Abbildung \ref{fig:deepseek_code}) im Vergleich zu OpenAI (Abbildung \ref{fig:chatgpt_code}) ist eindeutig.
+
+106 (~40\,\%) der insgesamt 276 zu bewertenden Fragen waren mit komplett 0.0 bewertet worden. Bei der Analyse der speziellen Zeichen im Kontext fällt auf, dass 89 Bewertungen (~83\,\%) zu mehr als 5\,\% nur aus diesen bestehen. Dies deutet darauf hin, dass DeepSeek starke Probleme hat, Fragen mit Code zu generieren und/oder zu finden.
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.8\textwidth]{images/3_3_special_characters.png}
-    \caption{Abweichungen des Faithfullness Scores.}
-    \label{fig:sample-image}
+    \caption{Abweichungen des Faithfulness Scores bei Code-Dokumenten.}
+    \label{fig:special_characters}
 \end{figure}
 
-Ein großer Teil der Fragen hat sich also durch Dokumente mit minderer Qualität, im Bezug auf mögliche Fragestellungen, verwirren lassen.
-es zeigt sich wieder einmal, dass die Qualität der Daten eine entscheidende Rolle spielt!
-Wenn wir uns jetzt die Ergebnisse ohne Dokumente welche Code enthalten angucken sehen wir, dass die 0.0 Bewertungen bei DeepSeek deutlich zurück gehen aber wie zu erwarten OpenAi\'s ChatGPT-4 immer noch deutlich besser ist.
+Ein großer Teil der Fragen hat sich also auf Dokumente mit minderwertiger Qualität, bezogen. Durch diese minderwertigen Dokumente hat sich das LLM dann verwirren lassen.
+Es zeigt sich wieder einmal, dass die Qualität der Daten eine entscheidende Rolle spielt!
+Bei betrachtung der Ergebnisse ohne Dokumente, welche Code enthalten, sehen wir, dass die 0.0-Bewertungen bei DeepSeek deutlich zurückgehen. Wie zu erwarten war, ist OpenAI's ChatGPT-4 immer noch deutlich besser.
 
 \begin{figure}[htbp]
     \centering
     \begin{minipage}[b]{0.48\textwidth}
         \centering
         \includegraphics[width=\textwidth]{images/20_4_D_D_distribution.png}
-        \caption{DeepSeek Ergebnis für 100 Fragen}
-        \label{fig:deepseek}
+        \caption{DeepSeek Ergebnis für 100 Fragen (ohne Code-Dokumente)}
+        \label{fig:deepseek_no_code}
     \end{minipage}
     \hfill
     \begin{minipage}[b]{0.48\textwidth}
         \centering
         \includegraphics[width=\textwidth]{images/127_38_O_O_distribution.png}
-        \caption{ChatGPT Ergebnis für 100 Fragen}
-        \label{fig:chatgpt}
+        \caption{ChatGPT Ergebnis für 100 Fragen (ohne Code-Dokumente)}
+        \label{fig:chatgpt_no_code}
     \end{minipage}
 \end{figure}
 
+---
 
 \subsection{Unterschiede über mehrere Durchläufe}
 
-Um zu gucken, wie sich die Ergebnisse von Durchlauf zu Durchlauf unterscheiden wurden für das Testset mit 100 Fragen für 100 Dokumente mit beiden Modellen vier Durchläufe vorgenommen.
-In diesem Versuch geht es, um die Unterscheide pro Durchlauf für das Modell festzustellen und nicht die Modelle miteinander zu vergleichen.
+Um zu prüfen, wie sich die Ergebnisse von Durchlauf zu Durchlauf unterscheiden, wurden für das Testset mit 100 Fragen für 100 Dokumente mit beiden Modellen vier Durchläufe vorgenommen.
+In diesem Versuch geht es dann die Unterschiede pro Durchlauf für das Modell festzustellen und nicht die Modelle miteinander zu vergleichen.
 
-\begin{figure}[htbp]
+\begin{figure}[h!]
     \centering
     \includegraphics[width=0.9\textwidth]{images/strip_plot_100_100_D_D.png}
     \caption{Bewertung der vier Durchläufe mit DeepSeek}
-    \label{fig:sample-image}
+    \label{fig:strip_plot_deepseek}
 \end{figure}
 
-\begin{figure}[htbp]
+\begin{figure}[h!]
     \centering
     \includegraphics[width=0.9\textwidth]{images/strip_plot_100_100_O_O.png}
     \caption{Bewertung der vier Durchläufe mit GPT-4}
-    \label{fig:sample-image}
+    \label{fig:strip_plot_gpt4}
 \end{figure}
 
-Beim Betrachten der Strip Plots lässt sich gut sehen, dass die Verteilung der Werte pro Durchlauf sehr ähnlich sind und keine großen Abweichungen erkennbar sind.
+Beim Betrachten der Strip Plots lässt sich gut sehen, dass die Verteilung der Werte pro Durchlauf sehr ähnlich ist und keine großen Abweichungen erkennbar sind.
+Der Mean und Std wurde über alle Fragen hinweg berechnet.
 
 \begin{table}[h!]
     \centering
@@ -319,8 +329,8 @@ Beim Betrachten der Strip Plots lässt sich gut sehen, dass die Verteilung der W
     \caption{Durchschnittswerte und Standardabweichungen der Metriken über vier Durchläufe für DeepSeek}
 \end{table}
 
-Beim Betrachten des Durchschnitts und der Standardabweichung lässt sich für die answer relevancy und die faithfullnes sehen, dass eine gewisse Schwankung vorhanden ist, die Metriken für den Kontext sind jedoch sehr konstant!
-Bei der answer relevancy lässt sich ein Unterschied von 3.7 \% feststellen, bei der faithfullnes 3.1 \%, dies liegt für 4 Durchläufe im Rahmen bedeutet aber auch, dass dies beim Einrichten einer automatischen Pipeline berücksichtigt werden sollte.
+Beim Betrachten des Durchschnitts und der Standardabweichung lässt sich für die Answer Relevancy und die Faithfulness sehen, dass eine gewisse Schwankung vorhanden ist. Die Metriken für den Kontext sind jedoch sehr konstant!\\
+Bei der Answer Relevancy lässt sich ein Unterschied von 3.7\,\% feststellen, bei der Faithfulness 3.1\,\%. Dies liegt für vier Durchläufe im Rahmen, bedeutet aber auch, dass dies beim Einrichten einer automatischen Pipeline berücksichtigt werden sollte.
 
 \begin{table}[h!]
     \centering
@@ -329,64 +339,60 @@ Bei der answer relevancy lässt sich ein Unterschied von 3.7 \% feststellen, bei
     \hline
     \textbf{Metrik} & \textbf{Mean 1} & \textbf{Mean 2} & \textbf{Mean 3} & \textbf{Mean 4} & \textbf{Std 1} & \textbf{Std 2} & \textbf{Std 3} & \textbf{Std 4} \\
     \hline
-    Answer Relevancy    & 0.490 & 0.493 & 0.666 & 0.681 & 0.340 & 0.351 & 0.315 & 0.314 \\
-    Faithfulness         & 0.632 & 0.613 & 0.815 & 0.800 & 0.434 & 0.444 & 0.273 & 0.295 \\
-    Context Precision    & 0.669 & 0.684 & 0.666 & 0.670 & 0.445 & 0.445 & 0.444 & 0.445 \\
-    Context Recall       & 0.663 & 0.667 & 0.681 & 0.671 & 0.461 & 0.466 & 0.458 & 0.456 \\
+    Answer Relevancy    & 0.680 & 0.681 & 0.666 & 0.667 & 0.320 & 0.314 & 0.315 & 0.313 \\
+    Context Precision    & 0.671 & 0.670 & 0.666 & 0.667 & 0.443 & 0.445 & 0.444 & 0.445 \\
+    Context Recall       & 0.647 & 0.671 & 0.681 & 0.665 & 0.472 & 0.456 & 0.458 & 0.461 \\
+    Faithfulness         & 0.846 & 0.800 & 0.815 & 0.823 & 0.247 & 0.295 & 0.273 & 0.295 \\
     \hline
     \end{tabular}%
     }
     \caption{Durchschnittswerte und Standardabweichungen der Metriken über vier Durchläufe für GPT-4}
 \end{table}
 
+Beim Betrachten des Durchschnitts und der Standardabweichung zeigt sich, dass GPT-4 insgesamt eine konstante Leistung liefert. Die Werte für Answer Relevancy bewegen sich zwischen 66.6\,\% und 68.1\,\%, was einer Abweichung von lediglich 1.5\,\% entspricht. Auch die Standardabweichung ist mit etwa 0{,}31 gleichmäßig verteilt.
+
+Bei der Faithfulness sind die Mittelwerte etwas variabler und reichen von 80.0\,\% bis 84.6\,\%. Dies ergibt eine Differenz von 4.6\,\%, die im Rahmen liegt, aber auf gewisse inhaltliche Schwankungen hinweist.
+
+Die Metriken für den Kontext (Context Precision und Context Recall) zeigen ebenfalls eine stabile Entwicklung mit geringen Unterschieden in den Mittelwerten. Die Standardabweichungen sind bei diesen Metriken nahezu konstant.
+
+Insgesamt zeigt GPT-4 verlässliche Ergebnisse mit nur geringen Varianzen über mehrere Durchläufe hinweg. 
+
 
 \subsection{Zuverlässigkeit von Metriken}
 
-Um genauer zu untersuchen, wie sich die Metriken bei merhfacher ausführung verhalten wurden die vier Metriken jeweils 50 Mal ausgeführt.
-Bei der bewertung wurde immer GPT-4.1 verwendet.
+Um genauer zu untersuchen, wie sich die Metriken bei mehrfacher Ausführung verhalten, wurden die vier Metriken jeweils 50 Mal ausgeführt.
+Bei der Bewertung wurde immer GPT-4.1 verwendet.
 
-\subsubsection{Context Precision\&Recall}
-%a5abd219-ea65-4c50-bc33-14f0e36cb19c
+\subsubsection{Context Precision \& Recall}
+Beide Metriken wurden 50 Mal bewertet und haben sich wie bei DeepSeek in der Gesamtbewertung als sehr stabil herausgestellt. Es gab in keinem der Durchläufe eine Abweichung.
 
-%'question': 'Wie viele Schulen können im Moment monatlich ein System ohne Komplikationen eingerichtet bekommen, und welche Faktoren beeinflussen diese Anzahl?',
-%'response': 'Im Moment können ohne Komplikationen 10 Schulen pro Monat ein System eingerichtet bekommen. Die Faktoren, die diese Anzahl beeinflussen, umfassen:\n\n1. **Modular System**: ermöglicht Skalierung und zukünftige Erweiterungen.\n2. **Supportprozesse**: Schools müssen Benutzer definieren und bei Fragen Kontakt aufnehmen;.future tutorials könnten den Setup vereinfachen.\n3. **Anpassungsanfragen**: unterschiedliche Wünsche können Ressourcen beanspruchen und Komplexität hervorrufen.\n4. **Stärke des Fördervereins**: Ein starker Förderverein erleichtert Vertrieb und Implementierung.\n\nDiese Faktoren zusammen bestimmen die derzeitige Kapazität von 10 Schulen pro Monat.','retrieved_contexts': ['verleihen dem Produkt den Feinschliff. Dies ist der momentane Stand. Im Verlaufe der nächsten fünf Jahre kann zu einem späteren Zeitpunkt das System so weit erweitert werden, dass Funktionen für weiterführende Schulen eingebracht werden. Dies ist einzig und allein durch das Modular aufgebaute System möglich.',
-%Kontext:
-%'Aktuell können ohne Komplikationen 10 Schulen pro Monat ein System eingerichtet bekommen. Das Einrichten des Servers ist nur der Anfang in der Zusammenarbeit mit den Grundschulen. Es müssen von der Schule noch die Benutzer festgelegt werden und die jeweiligen Personen melden sich bei Unklarheiten oder Fragen bei Develop 4 Future. Diese Fragen werden in der Zukunft weniger und es wird möglich sein, Tutorials für die häufigsten Fragen zu erstellen.',
-%'Es besteht die Gefahr, dass eine Schule sich eine Änderung wünscht, welche nicht mit den Wünschen einer anderen Schule zu vereinbaren sind. Für diesen Fall muss eine Möglichkeit geschaffen werden, beide Funktionen einzubauen und dabei die Komplexität dieser Funktion minimal zu halten. Die Kosten für eine solche Änderung, die sich auf bis zu 1.000 € belaufen können werden direkt an den Kunden weitergegeben, der diese Änderung anfragt.',
-%'Je stärker der Förderverein der Grundschulen ist, desto einfacher lässt sich das Produkt inklusive weiterer Verbesserungen verkaufen.\n\n\n\nWenn die Schule das System kaufen möchte, dann ist sind in der Regel die Schulleitung und der Förderverein beteiligt. Weitere LehrerInnen, die vorher an der Webseite gearbeitet haben oder zukünftig daran arbeiten sollen, können auch involviert sein, um Feedback für die Schulleitung und den Förderverein zu geben.'],
-
-Beide Metriken wurden 50 Mal bewertet und haben sich wie bei DeepSeek in der gesamt Bewertung als sehr stabil herausgestellt.
-
-
-\subsubsection{Answere Relevency}
-Hier wurden minimale Abweichungen festgestellt, diese belaufen sich aber auf die zweite Nachkommastelle in der Prozentangabe und sind daher vernachlässigbar
+\subsubsection{Answer Relevancy}
+Hier wurden minimale Abweichungen festgestellt; diese belaufen sich aber auf die zweite Nachkommastelle in der Prozentangabe und sind daher vernachlässigbar.
 
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.8\textwidth]{images/answer_relevancy.png}
-    \caption{Abweichungen des Answere Relevancy Scores.}
-    \label{fig:sample-image}
+    \caption{Abweichungen des Answer Relevancy Scores.}
+    \label{fig:answer_relevancy_deviation}
 \end{figure}
 
-\subsubsection{Faithfullness}
-%a5abd219-ea65-4c50-bc33-14f0e36cb19c
-Bei der Faithfullness sieht dies schon etwas anders aus. Die richtige Bewertung wäre 62.5 \%, in 66 \% der Fälle war dem auch so, es ist jedoch ersichtlich, dass der Wert Teilweise bis zu 12.5\% abweichen kann.
+\subsubsection{Faithfulness}
+Bei der Faithfulness sieht dies schon etwas anders aus. Die richtige Bewertung wäre 62.5\,\%. In 66\,\% der Fälle war dem auch so, es ist jedoch ersichtlich, dass der Wert teilweise bis zu 12.5\,\% abweichen kann.
 
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.8\textwidth]{images/faithfullness.png}
-    \caption{Abweichungen des Faithfullness Scores.}
-    \label{fig:sample-image}
+    \caption{Abweichungen des Faithfulness Scores.}
+    \label{fig:faithfulness_deviation}
 \end{figure}
 
-Die Faithfullness Metrik hat die größten Schwankungen, dies war auch schon bei dem Versuch mit mehreren Durchläufen ersichtlich.
-
-
+Die Faithfulness-Metrik hat die größten Schwankungen; dies war auch schon bei dem Versuch mit mehreren Durchläufen ersichtlich.
 
 \subsubsection{Ausführungszeiten DeepSeek}
-Da es bei OpenAi zu den Rate Limits kommen kann wurde die Anzahl an gleichzeitigen Abfragen von 16 auf 1 reduziert, da sonst besonders bei längeren durchläufen zu Problemen kommt.
-Das führt zu einer deutlichen verschlechterung der Ausführungszeit, bei dem Testset mit 15 Fragen sind wir von 2 Minuten mit maximal 16 gleichzeitigen Anfragen auf 7 Minuten bei maximal einer gleichzeitigen Anfrage.
-Mit diesen Zahlen lässt sich annehmen, dass der Versuch mit 300 Fragen ohne Rate Limit seitens OpenAi sicherlich unter einer Stunde geschafft werden könnte.
+Da es bei OpenAI zu den Rate Limits kommen kann, wurde die Anzahl an gleichzeitigen Abfragen von 16 auf 1 reduziert, da es sonst besonders bei längeren Durchläufen zu Problemen kommt.
+Das führt zu einer deutlichen Verschlechterung der Ausführungszeit.
+Das Generieren des Testsets mit 15 Fragen dauerte bei 16 gleichzeitigen Anfragen 2 Minuten, bei nur einer maximalen Anfrage wurden es 7 Minuten.
+Mit diesen Zahlen lässt sich annehmen, dass der Versuch mit 300 Fragen ohne Rate Limit seitens OpenAI sicherlich unter einer Stunde geschafft werden könnte.
 
 \begin{table}[h!]
     \centering
@@ -402,14 +408,14 @@ Mit diesen Zahlen lässt sich annehmen, dass der Versuch mit 300 Fragen ohne Rat
     300  & 02:30 \\
     \hline
     \end{tabular}
-    \caption{Dauer der Evaluation pro Dokumentenzahl mit OpenAI}
+    \caption{Dauer der Evaluation pro Dokumentenanzahl mit DeepSeek}
 \end{table}
 
-\subsubsection{Ausführungszeiten OpenAi}
-Für die Bewertung das Testset mit 300 Fragen (400 Dokumente) wurde Tracing genutzt, die lässt uns genauer gucken, warum gewisse Bewertungen fehlgeschlagen sind.\\ 
-Es kam insgesamt zu 20 Fehlern, 12 Zeitüberschreitungen, weil das LLM nicht inerhalb von 10 Minuten geantwortet hat, acht Antworten waren in einem ungültigen Format, sieben davon für context\_recal und eine für faithfullnes.\\
-Mit den 20 fehlgeschlagen Metriken kommen wir auf eine Fehlerrate von 1.9 \%.
-% 20/(4*267) eig 300 aber die wurden nicht alle generiert
+\subsubsection{Ausführungszeiten OpenAI}
+Für die Bewertung des Testsets mit 300 Fragen (400 Dokumente) wurde Tracing genutzt. Dies lässt uns genauer prüfen, warum gewisse Bewertungen fehlgeschlagen sind.
+Es kam insgesamt zu 20 Fehlern: 12 Zeitüberschreitungen, weil das LLM nicht innerhalb von 10 Minuten geantwortet hat, acht Antworten waren in einem ungültigen Format, sieben davon für context\_recall und eine für faithfulness.
+Mit den 20 fehlgeschlagenen Metriken kommen wir auf eine \textbf{Fehlerquote} von 1.9\,\%.
+
 \begin{table}[h!]
     \centering
     \begin{tabular}{|c|c|}
@@ -424,43 +430,39 @@ Mit den 20 fehlgeschlagen Metriken kommen wir auf eine Fehlerrate von 1.9 \%.
     300  & 17:29 \\
     \hline
     \end{tabular}
-    \caption{Dauer der Evaluation pro Dokumentenzahl}
+    \caption{Dauer der Evaluation pro Dokumentenanzahl mit OpenAI}
 \end{table}
 
 \subsection{Kostenberechnung}
 
-Die Bewertung des RAGs, mit den 300 Fragen, hat 2 Stunden und 30 Minuten gedauert, dabei sind Kosten in Höhe von 12 Euro entstanden.
-
+Die Bewertung des RAGs mit den 300 Fragen und OpenAI hat 2 Stunden und 30 Minuten gedauert, dabei sind Kosten in Höhe von 12 Euro entstanden.
 
 Dies kann man mit einer Bewertung, wie in den Versuchen, auf einem Mac Studio (M2 Ultra) vergleichen.
 \begin{itemize}
-    \item Laufzeit pro Bewertung: 17\,h
-    \item Stromkosten: 0{,}12\texteuro/h $\Rightarrow$ 17\,h $\times$ 0{,}12\texteuro/h = \textbf{2{,}04\texteuro}
-    \item OpenAI API-Kosten pro Bewertung: 12{,}00\texteuro\\
-          Davon sollen 2{,}00\texteuro lokal durch eigene Ausführung ersetzt werden $\Rightarrow$ verbleibende Abschreibung: \textbf{10{,}00\texteuro/Run}
-    \item Geräteanschaffung: 7.200\texteuro $\Rightarrow$ amortisiert über 720 Runs à 10{,}00\texteuro
-    \item Gesamtkosten pro Run: 2{,}04\texteuro (Strom) + 10{,}00\texteuro (Abschreibung) = \textbf{12{,}04\texteuro}
+    \item Laufzeit pro Bewertung DeepSeek: 17\,h
+    \item Stromkosten: 0,12\,\texteuro/h $\Rightarrow$ 17\,h $\times$ 0,12\,\texteuro/h = \textbf{2,04\,\texteuro}
+    \item OpenAI API-Kosten pro Bewertung: 12,00\,\texteuro\\
+          Davon sollen 2,00\,\texteuro lokal durch eigene Ausführung ersetzt werden $\Rightarrow$ verbleibende Abschreibung: \textbf{10,00\,\texteuro/Run}
+    \item Geräteanschaffung: 7.200\,\texteuro $\Rightarrow$ amortisiert über 720 Runs à 10,00\,\texteuro
+    \item Gesamtkosten pro Run: 2,04\,\texteuro (Strom) + 10,00\,\texteuro (Abschreibung) = \textbf{12,04\,\texteuro}
     \item Gesamtlaufzeit (720 Runs): 720 $\times$ 17\,h = 12.240\,h $\approx$ \textbf{1 Jahr, 4 Monate, 10 Tage}
 \end{itemize}
 
-
+Die Preise für die Nutzung eines LLMs über eine Schnittstelle zu entscheiden liegt hier komplett beim Anbieter.
+Auch die Preise für Strom oder Hochleistungs-GPUs können in Zukunft schwanken.
+Sollte es also in Zukunft Änderungen an diesen variablen Preisen geben könnte diese Entscheidung anders ausfallen.
 
 \section{Abhängigkeit der Metriken untereinander}
-Dadurch, dass die Metriken für den Kontext einen früheren Schritt in der Abfrage an ein RAG bewerten als die für die Antwort, ergeben sich gewisse Abhängigkeiten.\\
-
+Die Metriken für den Kontext finden früher im Ablauf einer Anfrage an das RAG statt. Sollten diese Metriken als besonders gut order schlecht sein, lässt sich deutlich sehen, wie sich dies auf die danach folgenden Metriken auswirkt.
 
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.8\textwidth]{images/metric_influence_400_300_O_O.png}
-    \caption{Abweichungen des Answere Relevancy Scores.}
-    \label{fig:sample-image}
+    \caption{Abhängigkeit der Metriken voneinander (OpenAI, 300 Fragen, 400 Dokumente)}
+    \label{fig:metric_influence}
 \end{figure}
 
-Wenn die Metriken für den Kontext (context\_precision und context\_recall) eine Bewertung von 0 haben ist die Wahrscheinlichkeit, dass die anderen Metriken auch 0 sind relativ hoch.\\
-In diesem konkreten Beispiel werden die Abhängigkeiten von dem OpenAI Rag für die 300 Fragen gezeigt, es lässt sich sehen, die faithfullness deutlich weniger von 
+Wenn die Metriken für den Kontext (context\_precision und context\_recall) eine Bewertung von 0 haben, ist die Wahrscheinlichkeit, dass die anderen Metriken auch 0 sind, relativ hoch.
+In diesem konkreten Beispiel werden die Abhängigkeiten des OpenAI RAGs für die 300 Fragen gezeigt. Es lässt sich sehen, dass die faithfulness deutlich weniger von den Kontext-Metriken abhängt.
 
-
-
-
-\section{Identifikation von Interessenten}
-
+In der finalen Auswertung sollten Anwender also überlegen, Metriken wie Answere Accuracy besonders zu betrachten, wenn die Context Metriken gut bewertet worden sind.

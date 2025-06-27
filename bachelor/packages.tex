@@ -19,7 +19,7 @@
 \usepackage{microtype}
 %
 %\usepackage{ziffer}% optional
-%\usepackage[locale=DE]{siunitx}% optional
+\usepackage[locale=DE,group-separator={~}]{siunitx}% for proper number formatting
 %
 \usepackage{tikz}
 \usetikzlibrary{positioning}
@@ -47,3 +47,9 @@
 
 %\usepackage[utf8x]{inputenc}
 \usepackage{libertine}
+
+\DeclareUnicodeCharacter{202F}{\,}
+
+\newenvironment{plainquote}
+  {\par\noindent\ignorespaces}
+  {\par\noindent\ignorespacesafterend}
