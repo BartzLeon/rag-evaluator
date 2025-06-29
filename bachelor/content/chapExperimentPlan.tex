@@ -1,75 +1,88 @@
 \chapter{Versuche}
 
-\section{Versuchsplan}
+Um systematisch zu bewerten, ob RAG-Bewertungstools für den Einsatz in kleinen und mittleren Unternehmen (KMU)~\cite{esf_kmu_2025} bereit sind, sind umfassende Versuche erforderlich.
+Es würden unter anderem die Zeitaufwände für die Untersuchungen bestimmt und relevante Datensätze ausgewählt werden.
 
-Um systematisch zu bewerten, ob RAG-Bewertungstools für den Einsatz in kleinen und mittleren Unternehmen (KMU) \footcite{esf_kmu_2025} bereit sind, sind umfassende Versuche erforderlich. Der folgende Versuchsplan skizziert die wichtigsten Variablen, die Methodik und die Bewertungskriterien.
+\section{Versuchsplan}
+Der folgende Versuchsplan skizziert die wichtigsten Variablen, die Methodik und die Bewertungskriterien.
 
 \subsection{Forschungsfragen}
 
 Der Versuch wird die folgenden zentralen Forschungsfragen behandeln:
 
-\begin{enumerate}
-    \item Sind aktuelle RAG-Bewertungsframeworks in Bezug auf Kosten, Komplexität und Ressourcenanforderungen für den Einsatz in einem KMU geeignet?
-    \item Wie beeinflussen verschiedene Dokumententypen und Datenvolumina die Qualität von Abruf und Generierung?
-    \item Wie zuverlässig und konsistent sind die verfügbaren Bewertungsmetriken zur Beurteilung der RAG-Leistung?
-    \item Was ist das optimale Gleichgewicht zwischen Kosten, Leistung und Implementierungskomplexität für jeden Anwendungsfall in einem KMU?
-\end{enumerate}
+\begin{itemize}
+    \item Relevanz: Können RAG-Evaluierungstools aussagekräftige und kontextrelevante Fragebögen im Kontext der betrieblichen Abläufe besonders für KMUs generieren?
+    \item Zuverlässigkeit: Ermöglichen die durch das Evaluierungstool RAGAS bereitgestellten Metriken und Bewertungen eine valide und zuverlässige Einschätzung der Leistungsfähigkeit von RAG-Systemen?
+    \item Varianz: Zeigen die mit RAGAS durchgeführten Bewertungen signifikante Schwankungen, und welche Implikationen ergeben sich daraus für die Verlässlichkeit der Evaluation?
+    \item Effizienz: Was ist das optimale Gleichgewicht zwischen Kosten und Leistung für jeden Anwendungsfall in einem KMU?
+\end{itemize}
 
 \subsection{Variablen in den Versuchen}
 
 \subsubsection{Dokumententypen}
 Verschiedene Dokumentenformate werden getestet, um die Vielseitigkeit des Systems zu bewerten:
-\begin{itemize}
-    \item PDF (\texttt{.pdf})
-    \item Klartext (\texttt{.txt})
-    \item Word-Dokumente (\texttt{.docx}, \texttt{.doc})
-    \item Excel-Tabellen (\texttt{.xlsx}, \texttt{.xls})
-    \item CSV-Dateien (\texttt{.csv})
-    \item E-Mails (\texttt{.eml})
-    \item PowerPoint-Präsentationen (\texttt{.pptx}, \texttt{.ppt})
-\end{itemize}
+\begin{table}[h]
+    \centering
+    \caption{Verteilung der Dateitypen und generierten Inhalte}
+    \begin{tabular}{|l|l|r|r|r|}
+        \hline
+        \textbf{Dateityp} & \textbf{Erweiterungen} & \textbf{Gesamt} & \textbf{Synthetisch} & \textbf{\% Synthetisch} \\
+        \hline
+        Dokumente & .docx, .doc & 22 & 0 & 0{,}0\% \\
+        Tabellen & .xlsx, .csv & 17 & 6 & 35{,}3\% \\
+        Präsentationen & .pptx & 2 & 0 & 0{,}0\% \\
+        Bilder & .jpg, .jpeg, .png & 6 & 0 & 0{,}0\% \\
+        Textdateien & .txt & 21 & 21 & 100{,}0\% \\
+        PDFs & .pdf & 5 & 0 & 0{,}0\% \\
+        \hline
+        \textbf{Summe} & & \textbf{73} & \textbf{27} & \textbf{36{,}5\%} \\
+        \hline
+    \end{tabular}
+    \label{tab:file_distribution}
+\end{table}
 
 \subsubsection{Datenvolumen}
 Die Skalierbarkeit des Systems wird, wie bereits beschrieben, mit unterschiedlichen Datenmengen getestet: 10, 100 und 400 Dokumente.
 \begin{itemize}
-    \item Für die Versuche mit \textbf{10 Dokumenten} werden existierende Dokumente ausgewählt.
-    \item Für die Versuche mit \textbf{100 Dokumenten} müssen zusätzliche Dokumente generiert werden, vorzugsweise mit einem LLM.
+    \item Für die Versuche mit \textbf{10 Dokumenten} werden originale Dokumente ausgewählt.
+    \item Für die Versuche mit \textbf{100 Dokumenten} müssen synthetische Dokumente generiert werden, vorzugsweise mit einem LLM.
     \item Für die Versuche mit \textbf{400 Dokumenten} wird zusätzlich Code verwendet.
 \end{itemize}
 
 \subsubsection{Modelle zur Bewertung}
-Mehrere Modelle werden bewertet, die verschiedene Kostenschichten und Fähigkeiten repräsentieren. Hierbei ist es wichtig zu überlegen, welche Optionen für KMUs gültige Anwendungsfälle sind.
-\textbf{Open-Source-Modelle} (z.B. Llama 2, Mistral 7B, Deepseek R1) bieten eine Vielzahl von Vorteilen, wie die Möglichkeit, sie zu modifizieren und mehr Kontrolle über die Daten zu haben. Entscheidend ist zudem die technische Kompetenz, welche benötigt wird, um diese Modelle selbst zu hosten.
-\textbf{Mittelklasse-API-Modelle} (z.B. Claude Haiku, GPT-3.5 Turbo) sind günstiger als die Hochleistungsmodelle und bieten dennoch eine gute Leistung. Da sie nicht Open Source sind, bieten sie weniger Kontrolle über die Daten und das Modell selbst. Manchmal muss man mehr für private Instanzen zahlen.
-\textbf{Hochleistungsmodelle} (z.B. GPT-4, Claude 3 Opus) sind die teuerste Option, bieten aber auch die beste Leistung, sowohl in Bezug auf Geschwindigkeit als auch auf die Qualität der generierten Antworten.
+Mehrere LLM-Modelle werden bewertet, die verschiedene Kostenschichten und Fähigkeiten repräsentieren. Hierbei ist es wichtig zu überlegen, welche Optionen für KMU gültige Anwendungsfälle sind.\\
+\textbf{Open-Source-Modelle} (z.B. Llama 2, Mistral 7B, Deepseek R1) bieten eine Vielzahl von Vorteilen, wie die Möglichkeit, sie zu modifizieren und mehr Kontrolle über die Daten zu haben. Entscheidend ist zudem die technische Kompetenz, welche benötigt wird, um diese Modelle selbst zu hosten.\\
+\textbf{Mittelklasse-API-Modelle} (z.B. Claude Haiku, GPT-3.5 Turbo) sind günstiger als die Hochleistungsmodelle und bieten dennoch eine gute Leistung. Da sie nicht Open Source sind, bieten sie weniger Kontrolle über die Daten und das Modell selbst. Manchmal muss man mehr für private Instanzen zahlen.\\
+\textbf{Hochleistungsmodelle} (z.B. GPT-4, Claude 3 Opus) sind die teuerste Option, bieten aber auch die beste Leistung, sowohl in Bezug auf Geschwindigkeit als auch auf die Qualität der generierten Antworten.\\
 
 \subsubsection{Bewertungsmetriken}
-Während des Versuchs wird neben der menschlichen Bewertung Ragas zur Bewertung verwendet.
+Während des Versuchs wird neben der menschlichen Bewertung RAGAS zur Bewertung verwendet.
 RAGAS wird die beschriebenen Metriken generieren, die später verglichen und bewertet werden können.
-Die menschliche Bewertung wird als subjektives Maß verwendet, um die Ergebnisse von Ragas zu vergleichen.
+Die menschliche Bewertung wird als subjektives Maß verwendet, um die Ergebnisse von RAGAS zu vergleichen.
 
 \subsection{Kosten- und Zeitanalyse}
-Die Kosten für die Bewertung eines RAGS werden mithilfe der in RAGAS eingebauten Funktionen berechnet. Die Zeit, welche die Ausführung braucht, wird ebenfalls für die Bewertungen gemessen.
+Die Kosten für die Bewertung eines RAGs werden mithilfe der in RAGAS eingebauten Funktionen berechnet.
+Die Zeit, welche die Ausführung braucht, wird ebenfalls für die Bewertungen gemessen.
 
 \subsection{Versuchsprotokoll}
 
 \begin{enumerate}
-    \item \textbf{Dokumentensammlung und -vorbereitung}
+    \item \textbf{Dokumentensammlung und -vorbereitung:}
     Die Dokumente werden in allen oben genannten Zielformaten gesammelt.
 
-    \item \textbf{Testset-Generierung}
+    \item \textbf{Testset-Generierung:}
     Verschiedene Fragetypen (faktisch, inferentiell, vergleichend) werden generiert und Referenzantworten zur Bewertung erstellt.
     Dies geschieht automatisch durch das RAGAS-Framework.
     Das Testset wird manuell auf Qualität und Abdeckung validiert, wobei dies anhand einer Reihe zufälliger Proben erfolgt.
 
-    \item \textbf{Systemkonfiguration}
+    \item \textbf{Systemkonfiguration:}
     Die Einbettungsmodelle und Parameter werden konfiguriert, Vektorspeicher mit konsistenten Einstellungen eingerichtet und die Bewertungsframeworks implementiert.
 
-    \item \textbf{Durchführung der Bewertung}
+    \item \textbf{Durchführung der Bewertung:}
     Die hochgeladenen Dateien, generierten Dokumente und das Testset werden wiederverwendet. Im ersten Schritt werden diese Daten erstellt.
     Anschließend wird die Bewertungspipeline ausgeführt und die Ergebnisse werden aufgezeichnet.
 
-    \item \textbf{Analyse und Berichterstattung}
+    \item \textbf{Analyse und Berichterstattung:}
     Eine vergleichende Analyse über alle Variablen hinweg wird durchgeführt, einschließlich einer Kosten-Nutzen-Analyse für die geschäftliche Entscheidungsfindung und Empfehlungen für optimale Konfigurationen.
 \end{enumerate}
 
@@ -85,4 +98,4 @@ Die endgültige Bewertung wird RAG-Systeme in diesen Dimensionen bewerten:
     %\item \textbf{Gesamtkosten des Eigentums}: Was sind die vollständigen Kosten über die Zeit?
 \end{itemize}
 
-Dieser Ansatz mit Versuchen bietet einen umfassenden Rahmen, um zu bewerten, ob aktuelle RAG-Bewertungstools ausreichend ausgereift für die Einführung in einem KMU sind, mit klaren Anleitungen zu optimalen Konfigurationen und Implementierungsstrategien.
+Dieser Ansatz mit Versuchen bietet einen umfassenden Rahmen, um zu bewerten, ob aktuelle RAG-Bewertungstools ausreichend ausgereift für die Einführung in einem KMU sind. Sie bieten klare Anleitungen zu optimalen Konfigurationen und Implementierungsstrategien.

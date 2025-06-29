@@ -1,32 +1,32 @@
 \section{RAG-Bewertungsprozess}
 
-Das Flussdiagramm veranschaulicht die drei Hauptphasen des RAG-Bewertungsprozesses:
+Das Flussdiagramm~\ref{fig:rag-flow} veranschaulicht die drei Hauptphasen des RAG-Bewertungsprozesses:
 
 \begin{enumerate}
-    \item \textbf{Dokumentenverarbeitung}
-    \begin{itemize}
+    \item \textbf{Dokumentenverarbeitung:}
+    \begin{enumerate}
         \item Dokumente werden geladen und in Abschnitte unterteilt
         \item Textabschnitte werden eingebettet
         \item Eingebettete Vektoren werden in ChromaDB gespeichert
-    \end{itemize}
+    \end{enumerate}
     
-    \item \textbf{Erstellung Fragebögen}
-    \begin{itemize}
-        \item Verwendet LLM zur Generierung von Fragen
-        \item Erstellt Testsets mit Fragen und Referenzantworten
-    \end{itemize}
+    \item \textbf{Fragebogenerstellung:}
+    \begin{enumerate}
+        \item Generierung von Fragen mittels LLM
+        \item Erstellung von Testsets mit Fragen und Referenzantworten
+    \end{enumerate}
     
-    \item \textbf{Bewertungsprozess}
-    \begin{itemize}
-        \item Verwendet das generierte Testset
-        \item Ruft Kontext aus ChromaDB ab
-        \item Bewertet Modellantworten mit LLM als Richter
-        \item Generiert umfassende Bewertungsberichte
-    \end{itemize}
+    \item \textbf{Bewertungsprozess:}
+    \begin{enumerate}
+        \item Verwendung des generierte Testsets
+        \item Abruf des Kontexts aus der ChromaDB
+        \item Bewertung der Modellantworten mittels LLM als Richter
+        \item Generierung umfassender Bewertungsberichte
+    \end{enumerate}
 \end{enumerate}
 
 
-\begin{figure}[htbp]
+\begin{figure}[!ht]
     \centering
     \resizebox{\textwidth}{!}{
     \begin{tikzpicture}[
@@ -39,7 +39,7 @@ Das Flussdiagramm veranschaulicht die drei Hauptphasen des RAG-Bewertungsprozess
         stage_label/.style={font=\bfseries, text width=3.5cm, text centered, node distance=0.8cm}
     ]
         % Stage 1: Datenverarbeitung
-        \node[data] (doc) {Dokumentensammlung};
+        \node[data] (doc) {Dokumenten\-sammlung};
         \node[stage_label] (stage1_label) [above=of doc] {Phase 1: Datenverarbeitung};
         \node[process] (dl) [below=of doc] {Dokumentenlader};
         \node[data] (chunks) [below=of dl] {\textbf{Textabschnitte}};
@@ -86,7 +86,7 @@ Das Flussdiagramm veranschaulicht die drei Hauptphasen des RAG-Bewertungsprozess
         \draw[arrow] (report) -- (repfile);
     \end{tikzpicture}
     }
-    \caption{Flussdiagramm des RAG-Bewertungsprozesses, das die Interaktion zwischen verschiedenen Komponenten und Modellen zeigt. Spezifische Modellnamen (z.B. gpt-4-turbo, text-embedding-3-large) sind im Haupttext beschrieben.}
+    \caption[Flussdiagramm des RAG-Bewertungsprozesses]{Flussdiagramm des RAG-Bewertungsprozesses, das die Interaktion zwischen verschiedenen Komponenten und Modellen zeigt. Spezifische Modellnamen (z.B. gpt-4-turbo, text-embedding-3-large) sind im Haupttext beschrieben.}
     \label{fig:rag-flow}
 \end{figure}
 
@@ -103,4 +103,4 @@ Das Flussdiagramm veranschaulicht die drei Hauptphasen des RAG-Bewertungsprozess
 \end{minipage}
 \end{center}
 
-Das Diagramm hebt hervor, wie bestimmte Komponenten, wie LLM, für verschiedene Zwecke wiederverwendet werden, während separate Einbettungsmodelle für spezifische Aufgaben beibehalten werden. Dieser modulare Ansatz ermöglicht flexible Versuche mit verschiedenen Modellen und Konfigurationen, während ein konsistentes Bewertungsframework beibehalten wird. 
+Das in Abbildung~\ref{fig:rag-flow} dargestellte Diagramm hebt hervor, wie bestimmte Komponenten, wie LLM, für verschiedene Zwecke wiederverwendet werden, während separate Einbettungsmodelle für spezifische Aufgaben beibehalten werden. Dieser modulare Ansatz ermöglicht flexible Versuche mit verschiedenen Modellen und Konfigurationen, während ein konsistentes Bewertungsframework beibehalten wird.

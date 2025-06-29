@@ -11,7 +11,7 @@
         stage_label/.style={font=\bfseries, text width=3.5cm, text centered, node distance=0.8cm}
     ]
         % Stage 1: Datenverarbeitung
-        \node[data] (doc) {Dokumentensammlung};
+        \node[data, text width=2.5cm] (doc) {Dokumenten\-sammlung};
         \node[stage_label] (stage1_label) [above=of doc] {Phase 1: Datenverarbeitung};
         \node[process] (dl) [below=of doc] {Dokumentenlader};
         \node[data] (chunks) [below=of dl] {\textbf{Textabschnitte}};
@@ -58,6 +58,6 @@
         \draw[arrow] (report) -- (repfile);
     \end{tikzpicture}
     }
-    \caption{Flussdiagramm des RAG-Bewertungsprozesses, das die Interaktion zwischen verschiedenen Komponenten und Modellen zeigt. Spezifische Modellnamen (z.B. gpt-4-turbo, text-embedding-3-large) sind im Haupttext beschrieben.}
+    \caption[Flussdiagramm des RAG-Bewertungsprozesses]{Flussdiagramm des RAG-Bewertungsprozesses, das die Interaktion zwischen verschiedenen Komponenten und Modellen zeigt. Spezifische Modellnamen (z.B. gpt-4-turbo, text-embedding-3-large) sind im Haupttext beschrieben.}
     \label{fig:rag-flow}
 \end{figure}

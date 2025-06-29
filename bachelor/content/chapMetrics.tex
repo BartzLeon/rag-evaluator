@@ -1,23 +1,23 @@
-\chapter{Metriken}
-
-\label{chap:formal}
-In diesem Kapitel geht es um die verschiedenen Metriken, die für die Bewertung von RAG-Evaluierungstools verwendet werden können.
+\section{Metriken}
+\label{chap:metrics}
+Diese Kapitel beschreibt verschiedenen Metriken, die für die Bewertung von RAG-Evaluierungstools verwendet werden können.
 Metriken sind das Herzstück der Bewertung von RAGs, da sie die Qualität der RAGs bewerten und somit die Entwicklung und den Fortschritt der RAGs messen.
-Weitere Informationen können in der Dokumentation von Ragas gefunden werden \cite{ragas_metrics_2025}.
+Weitere Informationen können in der Dokumentation von RAGAS gefunden werden \cite{ragas_metrics_2025}.
 
-In dieser Arbeit werden die vier Metriken Context Precision, Context Recall, Response Relevancy und Faithfulness für die Bewertung genutzt.
-Die Kombination dieser Metriken deckt die wichtigen Funktionen eines RAGs ab. Sie werden von Ragas standardmäßig genutzt und wurden von zusammen mit der Idee der Fragen generierung durch LLMs in dem Paper von Ragas vorgestell \cite{es_ragas_2024}.
+In dieser Arbeit werden die vier Metriken \enquote{Context Precision}, \enquote{Context Recall}, \enquote{Response Relevancy} und \enquote{Faithfulness} für die Bewertung genutzt.
+Die Kombination dieser Metriken deckt die wichtigen Funktionen eines RAGs ab. Sie werden von RAGAS standardmäßig genutzt und wurden zusammen mit der Idee der Fragengenerierung durch LLMs in dem Paper von RAGAS vorgestellt \cite{es-etal-2024-ragas}.
 
-\section{Retrieval Augmented Generation}
+\subsection{Verwendete Metriken}
 Diese Metriken basieren auf Faktenextraktion, mithilfe derer sich dann Bewertungen berechnen lassen.
-Für die Extraktion der Fakten wird häufig ein LLM verwendet, welches als Richter fungiert.
+Für die Extraktion der Fakten wird häufig ein LLM verwendet, das als Richter fungiert.
+Diese sind alle in Ragas implementiert und können direkt genutzt werden.
 
-\subsection{Context Precision}
+\subsubsection{Context Precision}
 \begin{plainquote}
 Die Kontextpräzision ist eine Metrik, die den Anteil relevanter Textabschnitte in den abgerufenen Kontexten misst.
-Sie wird als Mittelwert der Präzision@k für jeden Textabschnitt im Kontext berechnet.
-$$\text{Kontext-Präzision@K} = \frac{\sum_{k=1}^{K}{(\text{Präzision@k} \times v_k)}}{\text{Gesamtzahl der relevanten Elemente in den Top } K \text{ Ergebnissen}}$$
-$$\text{Präzision@k} = \frac{\text{richtig positive@k}}{(\text{richtig positive@k} + \text{falsch positive@k})}$$
+Sie wird als Mittelwert der Präzision~k für jeden Textabschnitt im Kontext berechnet.
+$$\text{Kontext-Präzision~K} = \frac{\sum_{k=1}^{K}{(\text{Präzision~k} \times v_k)}}{\text{Gesamtzahl der relevanten Elemente in den Top } K \text{ Ergebnissen}}$$
+$$\text{Präzision~k} = \frac{\text{richtig positive~k}}{(\text{richtig positive~k} + \text{falsch positive~k})}$$
 
 (eigene Übersetzung nach \cite{ragas_context_precision})
 \end{plainquote}
@@ -27,7 +27,7 @@ Diese Metrik ist für uns als Qualitätskontrolle wichtig, da sie uns sagt, ob e
 Wenn es einen guten Context Precision Score gibt, dann lässt sich hier gut bewerten, ob das LLM in der Lage ist, die relevanten Informationen in dem Kontext zu finden.
 Da dies ein wichtiger Aspekt eines guten RAGs ist, wird diese Metrik im Rahmen dieser Arbeit betrachtet.
 
-\subsection{Context Recall}
+\subsubsection{Context Recall}
 \begin{plainquote}
 Context Recall misst, wie viele der relevanten Dokumente (oder Informationsstücke) erfolgreich abgerufen wurden.
 Es konzentriert sich darauf, keine wichtigen Ergebnisse zu verpassen.
@@ -39,16 +39,16 @@ Kurz gesagt geht es beim Recall darum, nichts Wichtiges zu übersehen.
 Wenn es einen guten Context Recall Score gibt, dann lässt sich hier gut bewerten, ob das LLM in der Lage ist, die relevanten Informationen in dem Kontext zu finden.
 Da dies ein wichtiger Aspekt eines guten RAGs ist, wird diese Metrik im Rahmen dieser Arbeit betrachtet.
 
-\subsection{Response Relevancy}
+\subsubsection{Response Relevancy}
 \begin{plainquote}
 Die Response Relevancy-Metrik misst, wie relevant eine Antwort in Bezug auf die Nutzereingabe ist. Höhere Werte zeigen eine bessere Übereinstimmung mit der Nutzereingabe an, während niedrigere Werte vergeben werden, wenn die Antwort unvollständig ist oder redundante Informationen enthält.\\
 (eigene Übersetzung nach \cite{ragas_response_relevancy})
 \end{plainquote}
 
 Diese Metrik bildet mit der Noise Sensitivity eine wichtige Grundlage für die Bewertung des RAGs.
-Denn selbst wenn die Antworten richtig sind, ist die Bewertung des RAGs nicht gut, wenn die Antworten nicht relevant zur Frage sind.
+Denn selbst wenn die Antworten richtig sind, ist die Bewertung des RAGs nicht gut, wenn die Antworten nicht relevant für die Frage sind.
 
-\subsection{Faithfulness}
+\subsubsection{Faithfulness}
 \begin{plainquote}
 Die Faithfulness-Metrik misst, wie faktentreu eine Antwort im Vergleich zum abgerufenen Kontext ist.\\
 
@@ -67,8 +67,14 @@ Die Berechnung erfolgt nach folgender Formel:
 (eigene Übersetzung nach \cite{ragas_faithfulness})
 \end{plainquote}
 
-\subsection{Context Entities Recall}
-In diesem Kontext ist eine Entity eine Informationseinheit, die im Kontext vorkommt.
+\subsection{Weitere RAGAS Metriken}
+
+Die folgenden Metriken sind ebenfalls in RAGAS implementiert, werden jedoch nicht in dieser Arbeit betrachtet.
+
+\subsubsection{Retrieval Augmented Generation}
+
+\textbf{Context Entities Recall}\\
+In diesem Kontext ist eine Entität eine Informationseinheit, die im Kontext vorkommt.
 Dies könnte z.B. ein Name, ein Ort, ein Datum oder eine andere Informationseinheit sein.
 
 \begin{plainquote}
@@ -78,83 +84,110 @@ Einfach ausgedrückt misst sie, welcher Anteil der Entitäten aus der Referenz i
 \end{plainquote}
 Diese Metrik ist als Qualitätskontrolle wichtig, da sie aussagt, ob es Probleme beim Testen mit dem Vector Store gibt.
 
-\subsection{Noise Sensitivity}
+\textbf{Noise Sensitivity}\\
 \begin{plainquote}
-Noise Sensitivity misst, wie häufig ein System Fehler macht, indem es falsche Antworten gibt, wenn entweder relevante oder irrelevante abgerufene Dokumente verwendet werden.\\
-Um die Noise Sensitivity zu bestimmen, wird jede Aussage in der generierten Antwort daraufhin überprüft, ob sie auf der Grundlage der Referenz korrekt ist und ob sie dem relevanten (oder irrelevanten) abgerufenen Kontext zugeordnet werden kann.\\
+Noise Sensitivity misst, wie häufig ein System Fehler macht, indem es falsche Antworten gibt, wenn entweder relevante oder irrelevante abgerufene Dokumente verwendet werden.
+Um die Noise Sensitivity zu bestimmen, wird jede Aussage in der generierten Antwort daraufhin überprüft, ob sie auf der Grundlage der Referenz korrekt ist und ob sie dem relevanten (oder irrelevanten) abgerufenen Kontext zugeordnet werden kann.
 (eigene Übersetzung nach \cite{ragas_noise_sensitivity})
 \end{plainquote}
+Diese Metrik ist wichtig, sie ist jedoch durch die Context Precision und Context Recall abgedeckt.
 
-\subsection{Multimodal Faithfulness/Multimodal Relevance}
-Ragas bietet auch Metriken für MLLMs. Da es in dieser Arbeit nur um LLMs geht sind diese nicht für diese Arbeit relevant.
+\textbf{Multimodal Faithfulness/Multimodal Relevance}\\
+RAGAS bietet auch Metriken für MLLMs. Da es in dieser Arbeit nur um LLMs geht, sind diese nicht für diese Arbeit relevant.
 
-\section{Nvidia Metrics}
-Diese Metriken erheben keinen Anspruch auf objecktivität, sie Fragen das LLM direkter nach einer bewertung und nutzten es nicht zu Extraktion von Daten für weitere Berechnungen.
+\subsubsection{Nvidia Metrics}
+Die \enquote{Nvidia Metrics} erheben keinen Anspruch auf Objektivität, sie fragen das LLM direkter nach einer Bewertung und nutzen es nicht zur Extraktion von Daten für weitere Berechnungen.
 Hier werden einzelne Bewertungen generiert, welche keinen tieferen Einblick in die Bewertung gewähren.
 
-\subsection{Answer Accuracy}
+\textbf{Answer Accuracy}\\
 \begin{plainquote}
 Answer Accuracy misst die Übereinstimmung zwischen der Antwort eines Modells und einer Referenz (Ground Truth) für eine gegebene Frage. Dies geschieht über zwei verschiedene LLMs, diese geben jeweils eine Bewertung (0, 2 oder 4) zurück. Die Metrik wandelt diese Bewertungen in eine Skala von [0,1] um und nimmt dann den Durchschnitt der beiden Bewertungen der Richter.
-\\
+
 (eigene Übersetzung nach \cite{ragas_nvidia_metrics})
 \end{plainquote}
 
-Diese Metrik nutzt ein LLM. Die Antwort und die Musterlösung werden dem LLM zur Bewertung vorgelegt. Da es hier zu einem positional Bias kommen kann, wird das LLM zweimal nach einer Bewertung gefragt, jeweils mit einer anderen Reihenfolge.
+Die \enquote{Answer Accuracy} Metrik nutzt ein LLM. Die Antwort und die Musterlösung werden dem LLM zur Bewertung vorgelegt. Da es hier zu einem positional Bias kommen kann, wird das LLM zweimal nach einer Bewertung gefragt, jeweils mit einer anderen Reihenfolge.
 Dies hat Vorteile gegenüber der Answer Correctness, da es weniger Aufrufe mit weniger Tokens an das LLM braucht.
 Es werden im Vergleich zur Answer Correctness auch robustere Bewertungen getroffen, jedoch werden weniger Einblicke in die Bewertung ermöglicht.
 
-\section{Natural Language Comparison}
+\subsubsection{Natural Language Comparison}
 
-\subsection{Factual Correctness}
-Diese Metriken basieren zu Teilen auf der Wahrheitsmatrix (Confusion Matrix), welche die vier Kategorien True Positive, False Positive, False Negative und True Negative definiert \cite{wikipedia_confusion_matrix}.
+\textbf{Factual Correctness}\\
+Diese Metriken basieren zum Teil auf der Wahrheitsmatrix (Confusion Matrix), welche die vier Kategorien True Positive, False Positive, False Negative und True Negative definiert \cite{wikipedia_confusion_matrix}.
 Aus dieser Matrix lassen sich dann Precision, Recall und F1 Score berechnen.
 
-True Positive (TP) = Anzahl der Aussagen in der Antwort, die auch in der Referenz enthalten sind\\
-False Positive (FP) = Anzahl der Aussagen in der Antwort, die nicht in der Referenz enthalten sind\\
-False Negative (FN) = Anzahl der Aussagen in der Referenz, die nicht in der Antwort enthalten sind\\
+True Positive (TP) = Anzahl der Aussagen in der Antwort, die auch in der Referenz enthalten sind
+False Positive (FP) = Anzahl der Aussagen in der Antwort, die nicht in der Referenz enthalten sind
+False Negative (FN) = Anzahl der Aussagen in der Referenz, die nicht in der Antwort enthalten sind
 
-\begin{quote}
-\begin{equation}
-  \label{eq:precision}
-  \text{Precision} = \frac{\text{True Positives}}{\text{True Positives} + \text{False Positives}}
-\end{equation}
 
-\begin{equation}
-  \label{eq:recall}
-  \text{Recall} = \frac{\text{True Positives}}{\text{True Positives} + \text{False Negatives}}
-\end{equation}
+\begin{gather*}
+    \label{eq:precision}
+    \text{Precision} = \frac{\text{True Positives}}{\text{True Positives} + \text{False Positives}} \\
+    \label{eq:recall}
+    \text{Recall} = \frac{\text{True Positives}}{\text{True Positives} + \text{False Negatives}} \\
+    \label{eq:f1_score}
+    \text{F1 Score} = 2 \cdot \frac{\text{Precision} \cdot \text{Recall}}{\text{Precision} + \text{Recall}}
+\end{gather*}
+\cite{wikipedia_confusion_matrix} % Zitat außerhalb der mathematischen Umgebung, falls es sich auf alle bezieht
 
-\begin{equation}
-  \label{eq:f1_score}
-  \text{F1 Score} = 2 \cdot \frac{\text{Precision} \cdot \text{Recall}}{\text{Precision} + \text{Recall}}
-\end{equation}
-\cite{wikipedia_confusion_matrix}
-\end{quote}
 
-\subsection{Semantic Similarity}
-Diese Metrik nutzt Embeddings, um zu messen, wie ähnlich die Antwort zu der Musterlösung ist.
+\textbf{Semantic Similarity}\\
+Diese Metrik nutzt Embeddings, um zu messen, wie ähnlich die Antwort der Musterlösung ist.
 
-\section{Non LLM String Similarity}
-Die String-Ähnlichkeitsmetrik wird ohne LLM berechnet. Das bietet Vorteile hinsichtlich Geschwindigkeit und Kosten im Vergleich zur LLM-Variante.
-\subsection{BLEU Score}
-Der BLEU Score misst die Ähnlichkeit zwischen der Antwort und der Referenz. Dabei wird die Wortanzahl der Referenz berücksichtigt und eine entsprechende Bestrafung für zu kurze Antworten eingeführt.
-\subsection{ROUGE Score}
-Mithilfe von n-gram Recall, Precision und dem F1 Score wird die Ähnlichkeit zwischen der Antwort und der Referenz berechnet.
-\subsection{String Presence}
-Eine einfache Metrik, um zu sehen, ob die Referenz in der Antwort enthalten ist.
-\subsection{Exact Match}
-Eine noch einfachere Metrik, die nur prüft, ob die Antwort exakt der Referenz entspricht. Diese ist für einzelne Wörter sinnvoll.
+\subsubsection{Non LLM String Similarity}
+Die String-Ähnlichkeitsmetrik wird ohne LLM berechnet.
+Das bietet Vorteile hinsichtlich Geschwindigkeit und Kosten im Vergleich zur LLM-Variante.
 
-\section{General Purpose}
+\textbf{BLEU Score}\\
+Der BLEU Score misst die Ähnlichkeit zwischen der Antwort und der Referenz.
+Dabei wird die Wortanzahl der Referenz berücksichtigt und eine entsprechende Bestrafung für zu kurze Antworten eingeführt~\cite{ragas_traditional_metrics}.
+
+\textbf{ROUGE Score}\\
+Mithilfe von n-gram Recall, Precision und dem F1 Score wird die Ähnlichkeit zwischen der Antwort und der Referenz berechnet\cite{ragas_traditional_metrics}.
+
+\textbf{String Presence}\\
+Eine einfache Metrik, um zu sehen, ob die Referenz in der Antwort enthalten ist~\cite{ragas_traditional_metrics}.
+\begin{description}
+    \item[Frage] \enquote{Was ist die Hauptstadt von Deutschland?}
+    \item [Antwort] \enquote{Berlin ist die Hauptstadt von Deutschland.}
+    \item [Referenz] \enquote{Berlin}
+\end{description}
+
+\textbf{Exact Match}\\
+Eine noch einfachere Metrik, die nur prüft, ob die Antwort exakt der Referenz entspricht~\cite{ragas_traditional_metrics}.
+\begin{description}
+    \item[Frage] \enquote{Was ist die Hauptstadt von Deutschland?}
+    \item [Antwort] \enquote{Berlin}
+    \item [Referenz] \enquote{Berlin}
+\end{description}
+
+\subsubsection{General Purpose}
 Dies sind Metriken, welche manuell konfiguriert werden müssen, aber eine gute Bewertung der Qualität eines RAGs liefern können.
 Die Metriken reichen von einfachen Fragen, wie \enquote{Ist die Antwort schädlich} oder \enquote{Hat die Intention des Users verletzt}, bis hin zu komplexeren, einleitend definierten Bewertungen.
-\begin{itemize}
-    \item Aspect Critic, dem LLM können eigene Kriterien vorgegeben werden \enquote{Ist die Antwort schädlich?}, hier gibt es nur Ja oder Nein als Antwort
-    \item Simple Criteria Scoring, wie die Aspect Critic nur mit einer Zahl als Antwort
-    \item Rubrics based Scoring, erlaubt eine Bewertung mit Vorgaben, welche Kriterien für welchen Score erfüllt seien müssen
-    \item Instance Specific Rubrics Scoring, ist sehr ähnlich zu Rubrics based Scoring, erlaubt jedoch noch genauere Definition von Bewertungskriterien pro Frage
-\end{itemize}
+\begin{description}
+    \item [Aspect Critic:] Dem LLM können eigene Kriterien vorgegeben werden, z.B. \enquote{Ist die Antwort schädlich?}; hier gibt es nur Ja oder Nein als Antwort.
+    \item [Simple Criteria Scoring:] Ähnlich wie der Aspect Critic, jedoch mit einer Zahl als Antwort.
+    \item [Rubrics based Scoring:] Erlaubt eine Bewertung mit Vorgaben, welche Kriterien für welchen Score erfüllt sein müssen.
+    \item [Instance Specific Rubrics Scoring:] Ist sehr ähnlich zu Rubrics based Scoring, erlaubt jedoch noch genauere Definition von Bewertungskriterien pro Frage.
+\end{description}
 
-\section{Andere Metriken}
-\subsection{Summarization}
-Summarization ist die Anzahl der richtig beantworteten Fragen geteilt durch die Anzahl aller Fragen. Dies ist eine sehr einfache und oberflächliche Metrik.
+Der Vollständigkeit halber wird angemerkt, dass RAGAS noch die Summarization-Metrik anbietet, die die Anzahl der richtig beantworteten Fragen geteilt durch die Anzahl aller Fragen misst.
+
+
+
+\subsection{Spezielle Metriken}
+\label{sec:rgb_metrics}
+
+Diese Metriken sind nicht Teil von RAGAS und werden in in einer ähnlichen Arbeit verwendet die in Abschnitt~\ref{sec:rgb} beschrieben wird.
+
+\begin{itemize}
+    \item \textbf{Noise Robustness (Rauschrobustheit)}, die untersucht das Verhalten, wenn mehr Informationen gegeben sind als notwendig wären, um die Frage zu beantworten.
+    Dies könnte die Frage nach einem bestimmten Ereignis sein und das Rauschen würde ein Dokument zu einem anderen Ereignis sein.
+
+    \item \textbf{Negative Rejection (Negative Ablehnung)}, werden dem LLM nur irrelevante Dokumente zur Verfügung gestellt. Das LLM sollte in diesem Fall antworten, dass es die Frage nicht beantworten kann.
+
+    \item \textbf{Information Integration (Informationsintegration)}, untersucht wie gut ein LLM zwei Fragen in einem aus mehreren Dokumenten beantworten kann.
+
+    \item \textbf{Counterfactual Robustness (Kontrafaktische Robustheit)}, die dem LLM zwei Dokumente mit widersprüchlichen Informationen gibt.
+\end{itemize}

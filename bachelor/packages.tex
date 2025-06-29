@@ -26,7 +26,7 @@
 \usetikzlibrary{arrows.meta}
 \usepackage{pgfplots}
 %
-\usepackage[backend=biber]{biblatex}
+\usepackage[backend=biber, sorting=none]{biblatex}
 %
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -53,3 +53,16 @@
 \newenvironment{plainquote}
   {\par\noindent\ignorespaces}
   {\par\noindent\ignorespacesafterend}
+
+
+\usepackage{caption}
+
+\captionsetup[table]{position=above}
+
+
+\setcounter{secnumdepth}{5}
+
+
+\renewcommand{\labelenumii}{\arabic{enumi}.\arabic{enumii}}
+\renewcommand{\labelenumiii}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}}
+\renewcommand{\labelenumiv}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}.\arabic{enumiv}}
