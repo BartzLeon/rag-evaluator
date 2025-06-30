@@ -1,36 +1,43 @@
-\chapter*{Kurzfassung/\emph{Abstract}}
+\chapter*{Kurzfassung}
 \label{chap:abstract}
 
 %context
-Heutzutage gewinnen Large Language Models (LLMs) wie ChatGPT und Gemini immer weiter an Beliebtheit.
-In Kombination mit relevanten, häufig nicht öffentlichen Dokumenten können Sie noch hilfreicher sein.
+Heutzutage gewinnen Wissensabfragen mittels Large Language Models (LLMs), die auf öffentlich zugänglichen Daten trainiert wurden immer weiter an Bedeutung.
+In Kombination mit relevanten, nicht öffentlichen Dokumenten, können diese noch besser auf den Suchkontext angepasst werden.
 
 %need / have
-Wenn man mithilfe von LLMs jetzt relevante Daten in einer Datenbank sucht, um damit kontextabhängige Fragen zu beantworten hat man ein Retrieval-Augmented Generation (RAG).
+Wenn man mithilfe von LLMs jetzt relevante Daten verwendet, um damit kontextabhängige Fragen zu beantworten, bedient man ein Retrieval-Augmented Generation (RAG).
 %need / want
-Wie gut RAGs jedoch funktioniert, hängt von vielen unterschiedlichen Faktoren ab.
+Wie gut RAGs funktioniert, hängt von vielen unterschiedlichen Faktoren ab.
 RAGs manuell zu bewerten ist ein zeit- und kostenintensiver Prozess.\\
 %task
 Retrieval Augmented Generation Assessment (RAGAS) hat ein System entwickelt, um RAGs automatisch zu bewerten.
 %object of this doc
 Wie gut diese automatisierte Bewertung von RAGs mithilfe von RAGAS funktioniert ist der Hauptfokus dieser Arbeit.
-Dabei werden besonders drei Bereiche untersucht, die generierten Fragebögen, die Bewertung und die Zuverlässigkeit bei mehreren Wiederholungen.
+Dabei werden besonders drei Bereiche untersucht, zunächst die generierten Fragebögen, dann die Bewertung und zudem die Zuverlässigkeit bei mehreren Wiederholungen.
+
 %findings
-Wir haben beobachtet, dass das genutzte LLM eine große Rolle spielt.
-Bessere LLMs haben sowohl weniger Fehler während der Generierung der Fragebögen gemacht als auch allgemein bessere Fragen generiert.
-Es hat sich außerdem gezeigt, dass Fehler aus den Fragebögen sich durch die Bewertung ziehen und dadurch die Bewertung negativ beeinflussen.
+Es war zu beobachten, dass das genutzte LLM eine große Rolle spielt.
+Größere LLMs, d. h. LLMs mit vielen Parametern, haben sowohl weniger Fehler während der Generierung der Fragebögen gemacht als auch allgemein bessere Fragen generiert.
+Es hat sich außerdem gezeigt, dass Fehler aus der Fragebogenerstellung sich letztlich durch die Bewertung ziehen und dadurch die Bewertung negativ beeinflussen.
 Die Metriken und Bewertungen waren konstant über mehrere Bewertungen hinweg und es waren nur minimale Schwankungen festzustellen.
+Kurz wird auch auf die rechtlichen Rahmenbedingungen eingegangen.
+
+Als Erstes konnte gezeigt werden, dass es bei der Fragebogengenerierung Probleme gab, die eine menschliche Kontrolle notwendig machten. Die Fehlerrate konnte mithilfe eines größeren LLMs minimiert, aber nicht vollständig vermieden werden.
+Des Weiteren konnten mithilfe der RAGAS-Metriken die Fehler in den falsch beantworteten Fragen identifiziert werden. Die Aufteilung der Metriken ermöglichte eine klare Zuordnung der Fehlerquelle.
+Als drittes Ergebnis konnte gezeigt werden, dass die Bewertungen über mehrere Durchläufe hinweg praxistauglich konstant waren.
+Als letztes Ergebnis konnte gezeigt werden, dass die Berücksichtigung der rechtlichen Rahmenbedingungen und die deutlich unterschiedlichen Kosten- und Zeitaufwände eine individuelle Betrachtung für jeden betrieblichen Ablauf erfordern.
 
 %conclusion
-Zusammenfassen lässt sich sagen, dass Ragas nicht als alleiniger Faktor eingesetzt werden kann und mindestens bei der Testset-Generierung eine menschliche Überprüfung stattfinden sollte.
+Zusammenfassend lässt sich sagen, dass RAGAS derzeit nicht vollständig automatisiert eingesetzt werden kann und mindestens bei der Testset-Generierung eine menschliche Überprüfung stattfinden sollte.
 Für die meisten Fälle ist zudem ein LLM mit vielen Parametern zu empfehlen, da dieses bessere Ergebnisse liefert.
 
 %perspective
-Zukünftig lässt sich Ragas mit weiterentwickelten LLMs und einer verbesserten Fragebogengenerierung vielleicht komplett automatisieren
-!TODO!
+Zukünftig lässt sich RAGAS mit weiterentwickelten LLMs und einer verbesserten Fragebogengenerierung vielleicht automatisiert einsetzten.
+Dann ließe sich die menschliche Arbeit weiter minimieren und die Kosteneffizienz verbessern.
 
 
 
 
-Schlagwörter/Schlüsselwörter: gegebenenfalls Angabe von 3 bis 10 Schlagwörtern.
+Schlagwörter/Schlüsselwörter:
 LLM, KI, RAG, Ragas, Automatisierung

@@ -21,9 +21,9 @@ Beim Generieren des Testsets mit 100 Fragen zeigte sich eine leichte Verbesserun
     \item Von den 100 angeforderten Fragen wurden 88 Fragen generiert. Ganze 12\,\% wurden hier nicht generiert.
     \item Dieses Mal sind jedoch nur vier Fragen zu irrelevanten Themen wie Bezahlmethoden, Versand etc.
 \end{itemize}
-Am Ende hat das Testset mit 100 Fragen eine \textbf{Fehlerquote} von \textbf{16\,\%}.
+Am Ende weist das Testset mit 100 Fragen eine \textbf{Fehlerquote} von \textbf{16\,\%} auf.
 
-Aus der Tabelle~\ref{tab:deepseek_questions_overview} wird ersichtlich, dass die \textbf{Fehlerquote} in den Testsets für die 400 Dokumente deutlich größer ist. Der Grund dafür wird noch untersucht.
+Aus Tabelle~\ref{tab:deepseek_questions_overview} wird ersichtlich, dass die \textbf{Fehlerquote} in den Testsets für die 400 Dokumente deutlich größer ist.
 
 \begin{table}[htbp]
     \centering
@@ -70,7 +70,8 @@ Abgesehen von dem Ausreißer mit 15 Fragen, wo 20\,\% der Fragen irrelevant sind
 
 \subsection{Manuelle Auswertung der Fragebögen}\label{subsec:manuelle-auswertung-der-fragebogen}
 
-Bei der manuellen Auswertung der Fragebögen gucken wir uns einzelne Fragen genauer an und zeigen auf, weshalb diese problematisch sind.
+Bei der manuellen Auswertung der Fragebögen wurden einzelne Fragen genauer betrachtet.
+So können einige Probleme genauer geschildert werden.
 
 \subsubsection{DeepSeek}
 
@@ -150,7 +151,7 @@ Die Fragen werden so gestellt, dass sie den \enquote{gegebenen Kontext} bewerten
 \enquote{Analysieren Sie den bereitgestellten Kontext und erläutern Sie unter der Voraussetzung, dass Sie keine externen Quellen verwenden dürfen, welches zentrale Thema oder welcher Hauptzweck in dem Textabschnitt behandelt wird. Begründen Sie Ihre Antwort anhand spezifischer Textstellen.}
 
 \textbf{Beispiel 2:}\\
-Bei einer Frage war das vorliegende Dokument ein Fragebogen. Fehlerhafterweise wurde die erste Option als die richtige Antwort verstanden, da der Fragebogen nicht ausgefüllt ist, ergibt dies keinen Sinn.
+Bei einer Frage war das vorliegende Dokument ein Fragebogen. Fehlerhafterweise wurde die erste Option als die richtige Antwort verstanden. Da der Fragebogen nicht ausgefüllt ist, ergibt dies keinen Sinn.
 
 \textbf{Beispiel 3:}\\
 Auch eine Frage, welche die Antwort schon beinhaltet, wurde generiert:
@@ -183,7 +184,7 @@ Auch eine Frage, welche die Antwort schon beinhaltet, wurde generiert:
     \end{tabular}\label{tab:wrong_wquestions_openai}
 \end{table}
 
-Wenn wir in der Tabelle~\ref{tab:wrong_wquestions_openai} die Testsets mit Code (150/300 Fragen) ignorieren, kommen wir auf eine \textbf{Fehlerquote} von 17.5\,\%.
+Wenn wir in Tabelle~\ref{tab:wrong_wquestions_openai} die Testsets mit Code (150/300 Fragen) ignorieren, kommen wir auf eine \textbf{Fehlerquote} von 17.5\,\%.
 Dies ist die Hälfte von Ollamas 35\,\%, also eine deutliche Verbesserung, jedoch immer noch eine relevante Menge.
 
 Dennoch offenbaren sich im Vergleich zu einem von Menschen erstellten Fragebogen deutliche qualitative Unterschiede bezüglich der Fragenformulierung.
@@ -250,7 +251,7 @@ Diese könnten von einer Firma jedoch bei einem Vertragsschluss mit OpenAI erhö
     \label{tab:openai_evaluation}
 \end{table}
 
-Die Tabelle~\ref{tab:openai_evaluation} zeigt, dass GPT-4 deutlich besser abschneidet als DeepSeek, 27\,\% an nicht sinnvollen Fragen ist jedoch immer noch ein hoher Wert.
+Tabelle~\ref{tab:openai_evaluation} zeigt, dass GPT-4 deutlich besser abschneidet als DeepSeek. 27\,\% an nicht sinnvollen Fragen ist jedoch immer noch ein hoher Wert.
 Die Hälfte der ungültigen Antworten ist durch sinnlose Fragen bedingt; hier ziehen sich also die schlecht generierten Fragen durch.
 
 \subsection{Probleme mit Programm-Code}
@@ -280,7 +281,7 @@ Der Vergleich der Anzahl der 0.0-Bewertungen mit DeepSeek (Abbildung \ref{fig:de
 
 Ein großer Teil der Fragen hat sich also auf Dokumente mit minderwertiger Qualität bezogen. Durch diese minderwertigen Dokumente hat sich das LLM dann verwirren lassen.
 Es zeigt sich wieder einmal, dass die Qualität der Daten eine entscheidende Rolle spielt.
-Bei Betrachtung der Ergebnisse ohne Dokumente in~\ref{fig:deepseek_no_code} und~\ref{fig:chatgpt_no_code}, welche Code enthalten, sehen wir, dass die 0.0-Bewertungen bei DeepSeek deutlich zurückgehen.
+Bei Betrachtung der Ergebnisse ohne Dokumente in Abbildung~\ref{fig:deepseek_no_code} und Abbildung~\ref{fig:chatgpt_no_code}, welche Code enthalten, sehen wir, dass die 0.0-Bewertungen bei DeepSeek deutlich zurückgehen.
 Wie zu erwarten war, ist OpenAI's ChatGPT-4 immer noch deutlich besser.
 
 \begin{figure}[!ht]
@@ -301,7 +302,7 @@ Wie zu erwarten war, ist OpenAI's ChatGPT-4 immer noch deutlich besser.
 
 Um zu prüfen, wie sich die Ergebnisse von Durchlauf zu Durchlauf unterscheiden, wurden für das Testset mit 100 Fragen für 100 Dokumente mit beiden Modellen vier Durchläufe vorgenommen.
 In diesem Versuch geht es dann um die Unterschiede pro Durchlauf für das Modell festzustellen und nicht die Modelle miteinander zu vergleichen.
-Der Mean und Std wurde über alle Fragen hinweg berechnet.
+Der Mittelwert und die Standardabweichung wurden über alle Fragen hinweg berechnet.
 
 % \begin{figure}[h!]
 %     \centering
@@ -408,11 +409,11 @@ Das Generieren des Testsets mit 15 Fragen dauerte bei 16 gleichzeitigen Anfragen
 Mit diesen Zahlen lässt sich annehmen, dass der Versuch mit 300 Fragen ohne Rate Limit seitens OpenAI sicherlich unter einer Stunde geschafft werden könnte.
 
 Für die Bewertung des Testsets mit 300 Fragen (400 Dokumente) wurde Tracing genutzt.
-Dies lässt uns genauer prüfen, warum gewisse Bewertungen fehlgeschlagen sind.
+So lässt sich genauer prüfen, warum gewisse Bewertungen fehlgeschlagen sind.
 Es kam insgesamt zu 20 Fehlern: 12 Zeitüberschreitungen, weil das LLM nicht innerhalb von 10 Minuten geantwortet hat, acht Antworten waren in einem ungültigen Format, sieben davon für context\_recall und eine für faithfulness.
-Mit den 20 fehlgeschlagenen Metriken kommen wir auf eine \textbf{Fehlerquote} von 1.9\,\%.
+Mit den 20 fehlgeschlagenen Metriken liegt die \textbf{Fehlerquote} bei 1.9\,\%.
 
-In der Tabelle~\ref{tab:evaluation_times} lassen sich die deutlichen Unterschiede in der Ausführungszeit zwischen OpenAI und DeepSeek erkennen.
+In Tabelle~\ref{tab:evaluation_times} lassen sich die deutlichen Unterschiede in der Ausführungszeit zwischen OpenAI und DeepSeek erkennen.
 Mit Rate Limit ist OpenAI immer noch siebenmal schneller als DeepSeek, sollten hier höhere Limits gelten, könnte OpenAI sogar bis zu 20-mal schneller sein.
 
 \begin{table}[h!]

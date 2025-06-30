@@ -1,12 +1,11 @@
 \chapter{Versuche}
 
 Um systematisch zu bewerten, ob RAG-Bewertungstools für den Einsatz in kleinen und mittleren Unternehmen (KMU)~\cite{esf_kmu_2025} bereit sind, sind umfassende Versuche erforderlich.
-Es würden unter anderem die Zeitaufwände für die Untersuchungen bestimmt und relevante Datensätze ausgewählt werden.
 
 \section{Versuchsplan}
 Der folgende Versuchsplan skizziert die wichtigsten Variablen, die Methodik und die Bewertungskriterien.
 
-\subsection{Forschungsfragen}
+\subsection{Forschungsfragen}\label{subsec:forschungsfragen}
 
 Der Versuch wird die folgenden zentralen Forschungsfragen behandeln:
 
@@ -19,8 +18,8 @@ Der Versuch wird die folgenden zentralen Forschungsfragen behandeln:
 
 \subsection{Variablen in den Versuchen}
 
-\subsubsection{Dokumententypen}
-Verschiedene Dokumentenformate werden getestet, um die Vielseitigkeit des Systems zu bewerten:
+\subsubsection{Dokumentenformate}
+Verschiedene Dokumentenformate werden getestet, um die Vielseitigkeit des Systems zu bewerten. Diese sind in Tabelle~\ref{tab:file_distribution} dargestellt.
 \begin{table}[h]
     \centering
     \caption{Verteilung der Dateitypen und generierten Inhalte}
@@ -44,7 +43,7 @@ Verschiedene Dokumentenformate werden getestet, um die Vielseitigkeit des System
 \subsubsection{Datenvolumen}
 Die Skalierbarkeit des Systems wird, wie bereits beschrieben, mit unterschiedlichen Datenmengen getestet: 10, 100 und 400 Dokumente.
 \begin{itemize}
-    \item Für die Versuche mit \textbf{10 Dokumenten} werden originale Dokumente ausgewählt.
+    \item Für die Versuche mit \textbf{10 Dokumenten} werden Originaldokumente ausgewählt.
     \item Für die Versuche mit \textbf{100 Dokumenten} müssen synthetische Dokumente generiert werden, vorzugsweise mit einem LLM.
     \item Für die Versuche mit \textbf{400 Dokumenten} wird zusätzlich Code verwendet.
 \end{itemize}
@@ -52,7 +51,7 @@ Die Skalierbarkeit des Systems wird, wie bereits beschrieben, mit unterschiedlic
 \subsubsection{Modelle zur Bewertung}
 Mehrere LLM-Modelle werden bewertet, die verschiedene Kostenschichten und Fähigkeiten repräsentieren. Hierbei ist es wichtig zu überlegen, welche Optionen für KMU gültige Anwendungsfälle sind.\\
 \textbf{Open-Source-Modelle} (z.B. Llama 2, Mistral 7B, Deepseek R1) bieten eine Vielzahl von Vorteilen, wie die Möglichkeit, sie zu modifizieren und mehr Kontrolle über die Daten zu haben. Entscheidend ist zudem die technische Kompetenz, welche benötigt wird, um diese Modelle selbst zu hosten.\\
-\textbf{Mittelklasse-API-Modelle} (z.B. Claude Haiku, GPT-3.5 Turbo) sind günstiger als die Hochleistungsmodelle und bieten dennoch eine gute Leistung. Da sie nicht Open Source sind, bieten sie weniger Kontrolle über die Daten und das Modell selbst. Manchmal muss man mehr für private Instanzen zahlen.\\
+\textbf{Mittelklassen-API-Modelle} (z.B. Claude Haiku, GPT-3.5 Turbo) sind günstiger als die Hochleistungsmodelle und bieten dennoch eine gute Leistung. Da sie nicht Open Source sind, bieten sie weniger Kontrolle über die Daten und das Modell selbst. Manchmal muss man mehr für private Instanzen zahlen.\\
 \textbf{Hochleistungsmodelle} (z.B. GPT-4, Claude 3 Opus) sind die teuerste Option, bieten aber auch die beste Leistung, sowohl in Bezug auf Geschwindigkeit als auch auf die Qualität der generierten Antworten.\\
 
 \subsubsection{Bewertungsmetriken}

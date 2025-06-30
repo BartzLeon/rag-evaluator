@@ -9,23 +9,22 @@ Ollama~\cite{ollama_2025} ist ein Open-Source LLM-Server, der auf einem eigenen 
 Es können verschiedene Open-Source LLMs und Embedding-Modelle ausgeführt werden. In der vorliegenden Arbeit werden die Modelle ollama/nomic-embed-text und ollama/deepseek-r1:32b verwendet. 
 
 \subsection{Embeddings}
-Vektoren sind die Beschreibung einer Position im mehrdimensionalen Raum. Es handelt sich hier meist um Positionen, welche mehrere Tausende Dimensionen haben.
+Vektoren sind die Beschreibung einer Position im mehrdimensionalen Raum. Es handelt sich hier meist um Positionen, welche mehrere tausend Dimensionen haben.
 Embeddings ermöglichen die Darstellung von z. B. Wörtern im mehrdimensionalen Raum.
 Je näher zwei Wörter im Raum beieinander sind, desto ähnlicher sind sie.
 Welche Embeddings für welche Versuche genutzt werden, wird in Kapitel~\ref{sec:bewertung} \enquote{Bewertung} beschrieben.
 
 \subsection{Vektordatenbank ChromaDB}
 ChromaDB~\cite{trychroma_2025} ist eine Open-Source-Vektordatenbank, die zur persistenten Speicherung und effizienten Abfrage von hochdimensionalen Embeddings eingesetzt wird.
-
 Die Vektordatenbank ist also ein fester Bestandteil des RAGs und wird sowohl für die Open-Source-Modelle als auch für die Closed-Source-Modelle von z.B. OpenAI benutzt. Dies schafft eine einheitlichere Basis zum Vergleichen der LLMs.
 
 \subsection{RAGAS}
-RAGAS ist ein Open-Source-Tool und liefert neben dem Tool selbst hilfreiche Dokumentation für die Metriken und die Bewertung von RAGs.
+RAGAS ist ein Open-Source-Tool und liefert neben dem Tool selbst hilfreiche Dokumentation für die Metriken und die Bewertung von RAGs~\cite{es-etal-2024-ragas}.
 Es werden Funktionen wie die automatische Generierung von Interessengruppen, die Testset-Generierung und die Bewertung von RAGs anhand von Testsets bereitgestellt.
 Für diese Arbeit sind die Funktionen der Testset-Generierung und die damit ermöglichte Bewertung der RAGs relevant.
 
 Was RAGAS von Giskard und Comet unterscheidet, ist, dass keine \glqq reference answer\grqq{} benötigt wird.
-RAGAS ist mit 9.4 tausend Sternen bei Github beliebt, dazu trägt sicherlich auch die gute integration mit vielen anderen Werkzeugen bei.
+RAGAS ist mit 9400 Sternen bei Github beliebt, dazu trägt sicherlich auch die gute Integration mit vielen anderen Werkzeugen bei.
 
 \subsection{Langchain}
 Langchain~\cite{langchain_framework} ist ein Framework, das bei der Entwicklung von Anwendungen, die LLMs nutzen, eine erhebliche Hilfe ist.
@@ -33,24 +32,26 @@ Durch die vielen Komponenten und Integrationen wichtiger Tools bietet es die Gru
 In dieser Arbeit wird Langchain genutzt, um die Vektordatenbank und Ollama mit RAGAS zu verbinden. Genutzt wurde die Version 0.3.25.
 
 \section{Daten}
-Da in dieser Arbeit die Nutzung von RAG-Evaluation-Tools für betriebliche Abläufe untersucht werden soll, werden zum Teil echte, nicht generierte Dokumente – im Folgenden \enquote{Originale Dokumente} genannt – verwendet.
-Da die Menge and originalen Dokumenten begrenzt ist, werden diese mit synthetischen Daten ergänzt.
+Da in dieser Arbeit die Nutzung von RAG-Evaluation-Tools für betriebliche Abläufe untersucht werden soll, werden zum Teil echte, nicht generierte Dokumente – im Folgenden \enquote{Originaldokumente} genannt – verwendet.
+Da die Menge an Originaldokumenten begrenzt ist, werden diese mit synthetischen Daten ergänzt.
 
-\subsection{Originale Dokumente}
+\subsection{Originaldokumente}
 Die Dokumente stammen aus Unterlagen des Einzelunternehmens \enquote{Develop 4 Future (D4F)}, das vereinfachte CMS-Webseiten für Grundschulen entwickelt hat.
 Der Einzelunternehmer hinter D4F war der Autor.
 Die Unternehmung wird nicht mehr aktiv verfolgt und die anonymisierten Daten können ohne Bedenken für diese Arbeit genutzt werden.
 In den Versuchen wurden drei unterschiedliche Anzahlen an Dokumenten getestet: 10, 100 und 400.
-Aus den Unterlagen von D4F ließen sich 73 nutzbare Dokumente finden.
-Neben den Dokumenten, welche Businesspläne, Finanzpläne, aber auch Elternbriefe umfassen, gibt es den dazugehörigen Code.
+Aus den Unterlagen von D4F ließen sich 73 nutzbare Originaldokumente finden.
+Neben den Originaldokumente, welche Businesspläne, Finanzpläne, aber auch Elternbriefe umfassen, gibt es den dazugehörigen Code, der für die Programmierung von Webseiten verwendet wurde.
 Dieser besteht aus drei Projekten:
 \begin{enumerate}
     \item Die Webseite, die öffentlich zugänglich ist
     \item dem Admin-Bereich, welcher nur für das Personal der Grundschule zugänglich ist
     \item dem Backend, welches die Daten verwaltet.
 \end{enumerate}
-Für die Versuche mit zehn Dokumente wurden nur \enquote{originale} Dokumente genutzt.
+Für die Versuche mit zehn Dokumenten wurden nur \enquote{Originaldokumente} genutzt.
 
+\subsubsection{Originaldokument Beispiel}
+Ein typisches Origianldokument sieht wie folgt aus:
 
 \textbf{Anfang: \enquote{SmartKlassenzimmer\_Risikoanalyse.txt}}
 \begin{quote}
@@ -97,7 +98,7 @@ Sie sind die Grundlage für die Bewertung der RAGs. Es gibt unterschiedliche Fra
 \subsection{Fragetypen}
 
 RAGAS unterstützt verschiedene Fragetypen für die Testset-Generierung, die unterschiedliche Aspekte der RAG-Performance evaluieren.
-Die Abbildung~\ref{fig:ragas_query_types} zeigt die verschiedenen Fragetypen, die RAGAS für die Evaluation von RAG-Systemen verwendet:
+Abbildung~\ref{fig:ragas_query_types} zeigt die verschiedenen Fragetypen, die RAGAS für die Evaluation von RAG-Systemen verwendet:
 
 \begin{figure}[h!]
     \centering
@@ -140,10 +141,11 @@ Die Abbildung~\ref{fig:ragas_query_types} zeigt die verschiedenen Fragetypen, di
 
 Diese in Abbildung~\ref{fig:ragas_query_types} gezeigten verschiedenen Fragetypen ermöglichen es, unterschiedliche Aspekte der RAG-Performance zu testen.
 Während spezifische Fragen häufig mit einer einzigen Anfrage an die Wissensdatenbank beantwortet werden können, benötigen abstrakte Fragen eine Erklärung.
-In der RAGAS-Dokumentation \cite{ragas_query_types} wird für konkrete Fragen das Beispiel gegeben: \enquote{Wann hat Einstein die Relativitätstheorie veröffentlicht?}, während eine abstraktere Frage wäre: \glqq Wie hat Einsteins Relativitätstheorie unser Verständnis der Welt verändert?\grqq{}
+In der RAGAS-Dokumentation \cite{ragas_query_types} wird für konkrete Fragen das Beispiel gegeben: \enquote{Wann hat Einstein die Relativitätstheorie veröffentlicht?}.
+Eine abstraktere Frage wäre: \glqq Wie hat Einsteins Relativitätstheorie unser Verständnis der Welt verändert?\grqq{}
 
 Bei Multi-Hop-Queries handelt es sich um Fragen, die mehr als eine Wissensabfrage benötigen. Die Frage \glqq Welche Wissenschaftler haben Einsteins Relativitätstheorie beeinflusst und welche Theorie haben sie vorgeschlagen?\grqq{} benötigt erst eine Abfrage, um die Wissenschaftler herauszufinden, und dann weitere, um die jeweils vorgeschlagene Theorie abzufragen.
-Für die abstrakte Multi-Hop-Query können wir wieder nach einer Erklärung für den Inhalt und wie sich dieser über die Zeit verändert hat, fragen.
+Für die abstrakte Multi-Hop-Query kann man wieder nach einer Erklärung für den Inhalt und wie sich dieser über die Zeit verändert hat, fragen.
 
 Diese Unterscheidung wird getroffen, um sowohl sehr gezielte Wissensabfragen als auch abstraktere Abfragen über mehrere Dokumente zu testen.
 

@@ -4,10 +4,11 @@
 
 Damit die Dokumente in der Vektordatenbank gesichert werden können, müssen sie erst in Vektoren konvertiert werden.
 Hierfür wurden Embeddings von OpenAI sowie Open-Source-Embeddings von nomic.ai \cite{nomic_embed_text_v1_blog} verwendet.
+Tabelle~\ref{tab:dokument-erstellung} zeigt die entsprechenden Kombinationen.
 
 \begin{table}[htbp]
     \centering
-    \caption[Kombinationen aus Dokumentenanzahl und Embedding-Modell für die Versuche]{Kombinationen aus Dokumentenanzahl und Embedding-Modell für die Versuche (X = Kombination wird getestet)}
+    \caption[Kombinationen aus Dokumentenanzahl und Embedding-Modell]{Kombinationen aus Dokumentenanzahl und Embedding-Modell für die Versuche (X = Kombination wird getestet)}
     \begin{tabular}{|l|c|c|c|}
         \hline
         \textbf{Embedding-Modell} & \textbf{10} & \textbf{100} & \textbf{400} \\
@@ -21,7 +22,7 @@ Hierfür wurden Embeddings von OpenAI sowie Open-Source-Embeddings von nomic.ai 
 
 \subsection{Testset-Generierung}
 
-Um die optimale Anzahl an Fragen pro Testset zu untersuchen, werden folgende Kombinationen generiert:
+Um die optimale Anzahl an Fragen pro Testset zu untersuchen, werden die in Tabelle~\ref{tab:testset_generation} dargestellten Kombinationen generiert:
 
 \begin{table}[htbp]
     \centering
@@ -37,11 +38,13 @@ Um die optimale Anzahl an Fragen pro Testset zu untersuchen, werden folgende Kom
         \multicolumn{2}{|c|}{\textbf{Summe Testsets pro Modell}} & 6 \\
         \hline
     \end{tabular}
+    \label{tab:testset_generation}
 \end{table}
 
 \subsection{Bewertung}
 \label{sec:bewertung}
 Um die Robustheit und Übertragbarkeit der Bewertungsergebnisse zu erhöhen, werden alle Kombinationen aus Embedding-Modell und Bewertungsmodell getestet. Das bedeutet, dass für jedes Testset sowohl \textbf{openai/text-embedding-3-large} als auch \textbf{ollama/nomic-embed-text} als Embedding-Modell verwendet werden und die Bewertung jeweils mit \textbf{GPT-4} sowie \textbf{Deepseek-R1} (\textbf{ollama/deepseek-r1:7b}) erfolgt. Insgesamt ergeben sich so 24 Versuche (2 Embeddings $\times$ 2 Bewerter $\times$ 6 Testset-Varianten).
+Diese werden in Tabelle~\ref{tab:bewertungsberichte} dargestellt.
 \begin{table}[htbp]
     \centering
     \caption[Übersicht der Versuche]{Übersicht aller 12 zu generierenden Bewertungsberichte mit Abkürzungen und Wiederholungen}

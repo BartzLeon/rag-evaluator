@@ -1,6 +1,8 @@
 \chapter{Zusammenfassende Betrachtungen}
 
 \section{Forschungsfragen}
+Im Folgenden werden die in Kapitel~\ref{subsec:forschungsfragen} formulierten Forschungsfragen zu den Themen Relevanz, Zuverlässigkeit, Varianz und Effizienz einzeln eingehend beleuchtet.
+
 \subsection{Relevanz}
 Die Generierung von Fragebögen ist eines der Alleinstellungsmerkmale von RAGAS. Die Generierung der Fragebögen hat sich aus softwaretechnischer Sicht als unkompliziert erwiesen.
 
@@ -14,24 +16,24 @@ Bei der Generierung von Fragebögen mit DeepSeek kam es allein durch die nicht g
 Selbst bei händisch ausgewählten Dokumenten lag die Fehlerquote bei mindestens 16\,\%.
 
 Die händische Überprüfung hat dann weiter gezeigt, dass DeepSeek Probleme mit der konstanten Generierung von sinnvollen Fragen hat.
-Hier wiesen bis zu 65\,\% der Fragen für ungefilterte Dokumente Mängel auf! Selbst bei den gefilterten Dokumenten waren mindestens 30\,\% mangelbehaftet.
+Hier wiesen bis zu 65\,\% der Fragen für ungefilterte Dokumente Mängel auf. Selbst bei den gefilterten Dokumenten waren mindestens 30\,\% mangelbehaftet.
 
 Die Generierung von Fragebögen mit OpenAIs GPT-4 hatte in Bezug auf nicht generierte oder Fragen zu irrelevanten Themen eine deutlich niedrigere Fehlerquote.
 Es gibt einen Ausreißer mit 20\,\%, der Rest bleibt jedoch deutlich unter 10\,\%.
 Die manuelle Auswertung hat hier aber auch gezeigt, dass viele Fragen, bis zu 60\,\% bei ungefilterten Dokumenten, Mängel aufweisen.
 Bei gefilterten Dokumenten kommt GPT-4 auf durchschnittlich 17,5\,\% und halbiert damit die Fehlerquote im Vergleich mit DeepSeek.
 Es ist also stark zu empfehlen ein LLM zu wählen, welches eine hohe Qualität bei der Generierung von Fragen bietet.
-Dies wird sich durch die bei der manuellen Überprüfung gespaarten Zeit rentieren.
+Dies wird sich durch die bei der manuellen Überprüfung gesparten Zeit rentieren.
 
 Die bei den Versuchen generierten Fragebögen lassen Zweifel an einer automatischen, zuverlässigen und hochwertigen Generierung von Fragen aufkommen.
 Eine händische Überprüfung der generierten Fragen ist notwendig, um die Qualität der Fragebögen zu gewährleisten.
 
 Im Kontext eines KMU ist die Generierung von Fragebögen mit RAGAS jedoch ein großer Vorteil.
-In einem KMU ist es oft nicht möglich alle Fragen händisch zu generieren, da entweder die Zeit oder die Ressourcen fehlen, die manuelle Überprüfung ist jedoch noch im Ramen des Möglichen.
+In einem KMU ist es oft nicht möglich alle Fragen händisch zu generieren, da entweder die Zeit oder die Ressourcen fehlen, die manuelle Überprüfung ist jedoch noch im Rahmen des Möglichen.
 
 \subsection{Zuverlässigkeit}
 
-Die Qualität der Fragebögen ist entscheidend, da sich hier entstandene Fehler weiter bis in die Bewertung durchziehen und eine korrekte Bewertung des eigentlichen RAGs verzerren!
+Die Qualität der Fragebögen ist entscheidend, da sich hier entstandene Fehler weiter bis in die Bewertung durchziehen und eine korrekte Bewertung des eigentlichen RAGs verzerren.
 Auch das Generieren von Bewertungen hat sich mithilfe von RAGAS als einfach umsetzbar erwiesen.
 Sowohl das Tracing als auch die Kostenberechnung waren für die unterstützten Modelle problemlos zu benutzen.
 Das Tracing erlaubt außerdem einen tieferen Blick in die Berechnung der Metriken und macht das ganze System transparenter.
@@ -41,13 +43,12 @@ Dies lässt sich teils auf die ungültigen Fragen in den Fragebögen zurückfüh
 
 Bei den Metriken lässt sich sagen, dass die Metriken zum Kontext (recall und precision) gut abschneiden.
 Die faithfulness zeigt eine erhöhte Abweichung zur menschlichen Einschätzung und sollte mit einer Toleranz von 10\,\% beachtet werden.
-
 Die Answer Relevancy hat die größte Abweichung; hier fällt auf, dass sowohl höhere als auch niedrigere Werte erwartet wurden.
 
 Um die Aussagekraft der Bewertungen zu erhöhen, ist es jedoch zu empfehlen die Metriken einer genaueren Auswertung zu unterziehen.
 Beispielsweise sollten die Metriken Answer Relevancy und Faithfulness mehr gewichtet werden, wenn die Kontext-Metriken gut abschneiden.
 
-Zusammenfassend lässt sich sagen, dass RAGAS durch die bereitgestellten Metriken eine gute Grundlage bietet um die einzelnen Komponenten eines RAGs zu bewerten.
+Zusammenfassend lässt sich sagen, dass RAGAS durch die bereitgestellten Metriken eine gute Grundlage bietet, um die einzelnen Komponenten eines RAGs zu bewerten.
 Die Metriken lassen sich mittels der Tracing-Funktion gut nachvollziehen und die Kosten für die Bewertung sind transparent.
 Wie auch bei der Generierung der Fragebögen hat das gewählte LLM einen großen Einfluss auf die Qualität der Bewertung.
 
@@ -59,7 +60,7 @@ Hier war der Unterschied zwischen DeepSeek und OpenAI jedoch deutlich geringer a
 Insgesamt lässt sich sagen, dass die minimalen Schwankungen die Praxistauglichkeit nicht beeinflussen und sich auf die Ergebnisse verlassen werden kann.
 
 \subsection{Effizienz}
-In einem KMU gibt es mehrer Anwendungsfälle für RAGs.
+In einem KMU gibt es mehrere Anwendungsfälle für RAGs. Z. B. das Erstellen eines Projektberichtes oder das Beantworten einer E-Mail, die Wissen über den Kunden voraussetzt.
 Sollte das KMU aktiv an der Entwicklung eines RAGs arbeiten, so ist eine Bewertung innerhalb von 17 Stunden nicht praxistauglich.
 Hier ist die Verwundung eines LLMs, das innerhalb einer Stunde eine Bewertung generieren kann, notwendig.
 
@@ -67,10 +68,10 @@ Wird jedoch getestet, wie gut ein RAG mit neuen Dokumenten umgeht, so ist eine B
 Die hohen Anschaffungskosten, die nicht parallele Ausführung und die lange Dauer der Bewertungen reduziert die Anwendungsfälle jedoch stark.
 
 
-\section{Fazit}
+\section{Fazit}\label{sec:fazit}
 Insgesamt ist RAGAS kein kompletter Ersatz für die menschliche Bewertung von RAGs. Die Idee hinter RAGAS, Fragen ohne menschliches Zutun zu generieren, um Zeit zu sparen, ist mit besseren LLMs teilweise gelungen.
 Um jedoch ein aussagekräftiges und zuverlässiges Ergebnis zu generieren, ist eine menschliche Kontrolle an mehreren Stellen notwendig.
-Zuerst bei der Auswahl der Dokumente: Hier muss sowohl ein Verständnis vorhanden sein, wie gut LLMs mit welchen Daten umgehen können, als auch welche Daten für das KMU relevant sind.
+Zuerst bei der Auswahl der Dokumente: Hier muss sowohl ein Verständnis vorhanden sein, wie gut LLMs mit welchen Daten umgehen können als auch, welche Daten für das KMU relevant sind.
 Nach der Generierung der Fragebögen sollte erneut ein Mensch die Fragen überprüfen, um grob falsche Fragen zumindest zu löschen.
 
 Da die Berichte relativ konstante Bewertungen abgeben, lassen sich dann durchaus Verschlechterungen oder Verbesserungen am RAG messen.
@@ -93,23 +94,21 @@ Die sich daraus ergebenden Einschränkungen und Verpflichtungen müssen für die
 \begin{figure}[ht!]
     \centering
     \includegraphics[width=0.8\textwidth]{images/bitcom_ki_vo_pyramide}
-    \caption[Pisikopyramide KI-Systme]{Pisikopyramide KI-Systme\\Quelle: \cite{Bitkom2024Umsetzungsleitfaden}}
+    \caption[Risikopyramide KI-Systme]{Risikopyramide KI-Systeme\\Quelle: \cite{Bitkom2024Umsetzungsleitfaden}}
     \label{fig:bitcom_ki_vo_pyramide}
 \end{figure}
 
-Hinzukommen eventuell Verpflichtungen nach der DS-GVO, wenn in den Dokumenten personenbezogene Daten nach Artikel 4 DSG-VO, enthalten sein sollten.
+Hinzu kommen eventuell Verpflichtungen nach der DS-GVO, wenn in den Dokumenten personenbezogene Daten nach Artikel 4 DSG-VO, enthalten sein sollten.
 Ebenso wie bei der Verletzung der KI-VO können auch hier hohe Bußgelder drohen.
 
 \section{Reflexion der Arbeit}
 
-Vor Beginn dieser Arbeit antizipierte wir bereits Schwierigkeiten bei der Bewertung von RAG-Systemen mittels RAGAS:
-\begin{description}
-    \item [\textbf{Kosten}] Die Kosten, die bei der Bewertung entstehen. %Welche Kosten, LLM Wartung etc.
-    \item [\textbf{Zeitbedarf}] Die Dauer für die Durchführung der Bewertung. Die Bewertung kann schneller durchgeführt werden, wenn mehr Ressourcen zur Verfügung stehen.
-    \item [\textbf{Implementierung}] Das Aufsetzen des zu testenden Systems. Dies beinhaltet eine eventuelle doppelte Speicherung der Daten und die für das Testen benötigten Aufrufe des LLMs. %Installation
-    \item [\textbf{Aktualisierung}] Das System muss auf dem neuesten Stand gehalten werden, da sich dieses aktuelle Thema schnell entwickelt.
-\end{description}
+Vor Beginn dieser Arbeit wurden während der in Kapitel 1 beschriebenen Tätigkeit des Autors als Werkstudent bereits Schwierigkeiten bei der Bewertung von RAG-Systemen mittels RAGAS antizipiert.
+Es traten Fragen nach den Kosten, die bei der Bewertung entstehen, auf\footnote{Insgesamt entstanden für alle Anfragen an OpenAI im Rahmen dieser Arbeit Kosten in Höhe von ~350\,\texteuro}.
 
+Zudem stellte sich die Frage nach der Dauer für die Durchführung der Bewertung. Die Bewertung kann schneller durchgeführt werden, wenn mehr Ressourcen zur Verfügung stehen.
+Es wurden über die Implementierung nachgedacht, das Aufsetzen des zu testenden Systems. Dies beinhaltet eine eventuelle doppelte Speicherung der Daten und die für das Testen benötigten Aufrufe des LLMs. %Installation
+Auch die Aktualisierung erschien problematisch. Das System muss auf dem neuesten Stand gehalten werden, da sich dieses aktuelle Thema schnell entwickelt.
 
 Während der Arbeit an dieser Bachelorarbeit gab es einige Herausforderungen und Erkenntnisse, die den Ablauf und die Ergebnisse beeinflusst haben. Hier sind einige Überlegungen zur Reflexion der Arbeit:
 
@@ -117,8 +116,8 @@ Während der Arbeit an dieser Bachelorarbeit gab es einige Herausforderungen und
 
     \item{Dokumente}\\
     Im ersten Schritt, dem Sammeln der Dokumente und deren Aufbereitung, gab es einige Herausforderungen.
-    Es standen nicht genügend originale Dokumente zur Verfügung, sodass synthetische Dokumente generiert werden mussten.
-    Damit das LLM realistische Dokumente generieren kann, wurden die originalen Dokumente als Grundlage genutzt und neue Bereiche und und Projekte erfunden.
+    Es standen nicht genügend Originaldokumente zur Verfügung, sodass synthetische Dokumente generiert werden mussten.
+    Damit das LLM realistische Dokumente generieren kann, wurden die Originaldokumente als Grundlage genutzt und neue Bereiche und und Projekte erfunden.
 
     \item{RAGs und RAGAS verstehen}\\
     Da es bereits Erfahrungen mit RAGs im betrieblichen Umfeld gab, war es einfach, die neuesten Entwicklungen zu verstehen.
@@ -133,7 +132,7 @@ Während der Arbeit an dieser Bachelorarbeit gab es einige Herausforderungen und
 
     \item{Implementierung}\\
     Die grundlegende Implementierung von RAGAS war dank Langchain und der guten Dokumentation einfach.
-    Durch die vielen Abhängigkeiten und die schnelle Weiterentwicklung von Python-Bibliotheken gab es jedoch einige Probleme, die die Implementierung erschwerten.
+    Durch die vielen Abhängigkeiten und die schnelle Weiterentwicklung von Python-Bibliotheken gab es jedoch einige Probleme, welche die Implementierung erschwerten.
     So gab es ein Problem mit dem Paket LiteLLM; einen Fix gab es schon, aber dieser war noch nicht in Version 1.67.5 übernommen worden, weshalb dieser Fix eigens implementiert werden musste.
     Das System, welches implementiert wurde, war jedoch sehr hilfreich, da hier die Generierung der Testsets und die Bewertung der RAGs automatisiert im Hintergrund abliefen.
     Dies war besonders bei langlaufenden Versuchen wichtig, damit die Versuche nicht manuell gestartet werden mussten.
@@ -143,9 +142,9 @@ Während der Arbeit an dieser Bachelorarbeit gab es einige Herausforderungen und
     Eine solche Durchsatzbegrenzung soll dann die zugrundeliegende Dienste und Resourcen schützen~\cite{BuiltinRateLimiter}.
     Der implementierte Durchsatzbegrenzer war nicht sehr ausgereift und war einer der Punkte, welche die Dauer der Versuche verlängert haben.
     Sowohl bei OpenAI als auch bei DeepSeek gab es Probleme mit der Durchsatzbegrenzungs-Implementierung, welche zu ungültigen Ergebnissen führten und das erneute Starten der Versuche notwendig machten.
-    Auch die Auswahl der Hardware wurde während der Arbeit gewechselt, da zuerst auf einem Laptop gearbeitet wurde, welcher nicht die Leistung hatte, um die Versuche in einem angemessenen Zeitrahmen durchzuführen.
+    Auch die Hardware wurde während der Arbeit gewechselt, da zuerst auf einem Laptop gearbeitet wurde, welcher nicht die Leistung hatte, um die Versuche in einem angemessenen Zeitrahmen durchzuführen.
     Die 32 GB RAM wurden komplett ausgeschöpft und führten zum Absturz des Systems.
-    Das finale System, ein M2 Ultra mit 192 GB RAM, konnte die Versuche in einem angemessenen Zeitrahmen durchführen und war auch für die zukünftige Nutzung praxistauglich.
+    Das finale System mit 192 GB RAM konnte die Versuche in einem angemessenen Zeitrahmen durchführen und wäre auch für die zukünftige Nutzung praxistauglich.
 
     \item{Auswertung}\\
     Die Auswertung war aufgrund der vielen Daten und der manuellen Auswertung aufwendig; außerdem fielen Fehler während der manuellen Auswertung auf.
@@ -154,3 +153,6 @@ Während der Arbeit an dieser Bachelorarbeit gab es einige Herausforderungen und
     Während des Versuchs für die Zuverlässigkeit der Bewertung wurde die Modellversion von GPT-4 geändert, was zu einer Abweichung der Ergebnisse führte und das erneute Durchführen der Versuche erforderte.
 
 \end{enumerate}
+
+Abschließend möchte ich anmerken, dass das Thema für mich weiterhin sehr interessant bleiben wird.
+Die rasanten Entwicklungen werde ich weiterhin verfolgen, da sie auch für meinen beruflichen Alltag relevant sein werden.
